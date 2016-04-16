@@ -1,0 +1,59 @@
+
+.content-right{
+    background-color: #EFEFEF;
+    min-height: 700px;
+}
+.management-content-right-table{
+    background-color: #fff;
+    margin-top: 15px;
+}
+
+
+.management-content-right-table table{
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.management-content-right-table table tr td{
+    line-height: 40px;
+    text-align: center;
+}
+
+.management-content-right-table table tr th{
+    text-align: center;
+    max-width: 200px;
+}
+.management-content-right-table table tr td img{
+    height: 20px;
+
+}
+
+.updateBox{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.busiMonitoringConf .content-right-busiConfGrid,
+.busiMonitoringConf .content-right-top{
+    background-color: #fff;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;   
+}
+#busiConfGrid{
+    border : 0 #fff;
+}
+.k-grid-header-wrap{
+    border: 0 #fff;
+}
+.k-grid-header th{
+    background-image: none;
+    color: #fff;
+    background-color: #2196F3;
+    border: 0 #fff;
+}
+
+
+
+
+
+

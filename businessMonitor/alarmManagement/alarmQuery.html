@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>六合业务监测系统</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/kendo.common.min.css">
+    <link rel="stylesheet" href="../css/kendo.default.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/alarmManagement.css">
+    <script src="../js/jquery.min.js"></script>
+    <!--<script src="js/kendo.web.min.js"></script>-->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navbar-static-top header">
+    <div class="container-fluid header-top">
+        <div class="header-logo col-xs-6">
+            <p class="header-logo-text">六合业务监测系统</p>
+        </div>
+        <div class="col-xs-6  hidden-xs">
+            <div class="col-xs-8 col-xs-offset-4 header-nav-main">
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid header-bottom">
+        <div class="header-login-info col-xs-4">
+            欢迎 <span>【用户名】</span>
+            <a href="#">登录</a> |
+            <a href="#">退出</a>
+        </div>
+        <div class="header-time col-xs-4">
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid content ">
+    <div class="col-xs-2 content-left clearfix">
+        <!--loading nav-->
+    </div>
+    <div class="col-xs-10  content-right alarmQueryMain">
+        <div class="col-xs-12">
+            <div class="cole-xs-12 content-right-box clearfix">
+                <div class="col-xs-4">
+                    开始时间 : <input type="text" id="startTime">
+                </div>
+                <div class="col-xs-4">
+                    结束时间 : <input type="text" id="endTime">
+                </div>
+                <div class="col-xs-4">
+                    业务渠道 : <input type="text" id="businessChannel">
+                </div>
+                <div class="col-xs-4">
+                    业务类型 : <input type="text" id="businessType">
+                </div>
+                <div class="col-xs-4">
+                    交易渠道 : <input type="text" class="k-textbox" id="hall">
+                </div>
+                <div class="col-xs-4">
+                    办理状态 : <input type="text" id="handleState">
+                </div>
+
+                <div class="col-xs-4">
+                    手机号码 : <input type="text" class="k-textbox" id="userPhone">
+                </div>
+                <div class="col-xs-4">
+                    操作工号 : <input type="text" class="k-textbox" id="operatorNo">
+                </div>
+
+                <div class="col-xs-4 ">
+                    <button class="btn btn-primary query">查询</button>
+                </div>
+            </div>
+            <div class="contentArea col-xs-12 businessDetailsTable">
+                <div class="businessDetailsTableMain" id="businessDetailsTableMain"></div>
+                <div class="businessDetailsTablePage col-xs-12 text-center"></div>
+            </div>
+
+            <div class="contentArea col-xs-12 commandWordTable">
+                <div class="commandWordTableMain" id="commandWordTableMain"></div>
+                <div class="commandWordTablePage col-xs-12 text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/kendo.all.min.js"></script>
+<script src="../js/kendo.web.min.js"></script>
+<script src="../js/kendo.culture.zh-CN.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/tools.js"></script>
+<script src="../js/extendPagination.js"></script>
+<script src="../js/alarmManagement/alarmQuery.js"></script>
+</body>
+</html>

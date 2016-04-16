@@ -1,0 +1,135 @@
+.content-right {
+    background-color: #eee;
+    min-height: 700px;
+    padding-bottom: 15px; 
+}
+.content-right-businessChannel,
+.content-right-top{
+	margin-top: 15px;
+	padding: 15px 0;
+	background-color: #fff;
+}
+#configure{
+	padding: 5px 10px;
+	border: 0;
+	border-radius: 0;
+}
+.content-right-businessComparison{
+	padding: 0;
+}
+.content-right-businessComparison-box .char,
+.content-right-businessComparison-box .radialGauge{
+	height: 100px;
+}
+.content-right-businessComparison-identification{
+	margin-top: 15px;
+	padding-top: 15px; 
+	background-color: #fff; 
+	height: 215px;
+}
+.content-right-businessComparison-main{
+	padding:0;
+}
+.content-right-businessComparison-identification-box .identification{
+	height: 15px;
+	width: 15px;
+	/*background-color: #698B22; */
+	float: left;
+	margin-right: 15px;
+}
+.content-right-businessComparison-identification-box .identification2{
+	height: 15px;
+	width: 15px;
+	/*background-color: #FF7F24; */
+}
+.content-right-businessComparison-identification-box p{
+	line-height: 15px;
+}
+
+.content-right-businessComparison-box{
+	margin: 15px 0 0 0; 
+	padding: 0;
+}
+.content-right-businessComparison-rate,
+.content-right-businessComparison-alarm{
+	padding-left: 15px;
+}
+.content-right-businessComparison-box>div{
+	background-color: #fff;
+}
+.content-right-businessComparison-box .business-title{
+	/*margin: 15px 0 0 0; */
+	padding-top: 15px; 
+	height: 100%;
+}
+.content-right-businessComparison-box .business-title .title{
+	margin-top: 5px;
+	font-size: 15px; 
+	color: #999;
+}
+.content-right-businessComparison-box .business-title .value{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 25px;
+	font-weight: 500px;
+	color: #333;
+}
+.content-right-businessChannel-tab{
+	cursor: pointer;
+	background-color: #999;
+	padding: 5px 0;
+	margin-right: 15px; 
+	font-size: 16px;
+	color: #fff;
+}
+.content-right-businessChannel-tab.action{
+	background-color: #2196F3;
+}
+.content-right-businessComparison-box {
+	height: 100px;
+}
+#busiConfGrid,
+.content-right-businessChannel-grid{
+	border: 0 #fff;
+
+}
+.content-right-businessChannel-grid-title p ,
+.content-right-businessChannel-keyBusiness-title p{
+	padding: 10px 0;
+	font-size: 15px;
+	font-weight: 500;
+	color: #999;
+	border-bottom: 1px #eee solid;
+}
+
+.content-right-businessChannel-keyBusiness-box{
+	/*height: 300px;*/
+}
+
+.k-grid-header-wrap{
+	border: 0 #fff;
+}
+
+.k-grid-header th{	 
+	background-image: none;
+	color: #fff;
+	background-color: #2196F3;
+	border: 0 #fff;
+}
+.k-grid-header .k-header{
+	padding-top: 10px;
+}
+.k-grid-content td{
+	border: 0 #fff;
+	/*border-bottom: 1px #999 solid;*/
+}
+/*modal*/
+.busiConfGridMain,
+.addBusiConfMain,
+.modal-top{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/*.modal-top{
+	border-bottom: 1px #999 solid;
+}*/
