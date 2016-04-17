@@ -106,6 +106,7 @@ var configs = {
         OP: "操作"
     },
     busiConf: {
+        INDEX: "INDEX",
         ID: "_ID",
         NAME: "NAME",
     },
@@ -119,6 +120,7 @@ var configs = {
         getBusinessChannelAlarmList: "app_view_listAlarmsOfBusiType",
         getKeyBusiness: "app_view_getChartData",
         getBusiConfList: "app_view_getMonitorBusiTypes",
+        updateBusiConf: "app_view_updateMonitorBusiTypes",
         // getBusi: "getBusi"
     },
     Env: {
@@ -141,10 +143,13 @@ var main = {
         },
         BusiConf: {
             busiConf: [],
+            busiConfObj: {},
             init: function() {
-                // this.getChannel();
+                this.getChannel();
                 this.listenerBusiConfAreaChange();
                 this.listenerBusiConfChannelChange();
+                this.listenerAddBusiConfClick();
+
             },
             openBusiConfWin: function() {
                 $(configs.box.busiConfWin).modal("show");
@@ -192,36 +197,80 @@ var main = {
                 }
             },
             setBusiConfList: function(data) {
-                main.ctrl.BusiConf.busiConf = data["MONITORED"];
+
+                var busiConf = data["MONITORED"];
                 var busiData = data["ALL"];
                 var busiConfData = [];
-                for (var i = 0, l = busiData.length; i < l; i++) {
-                    for (var j = 0, c_l = busiConf.length; j < c_l; j++) {
-                        if (busiConf[j] == busiData[i]["value"]) {
+                var index = 0;
+                for (var i = 0, l = busiConf.length; i < l; i++) {
+                    for (var j = 0, c_l = busiData.length; j < c_l; j++) {
+                        if (busiConf[i] == busiData[j]["_id"]) {
                             busiConfData.push({
-                                _ID: busiConf[j],
-                                NAME: busiData[i]["_value"]
+                                _ID: busiConf[i],
+                                NAME: busiData[j]["busiName"]
                             });
                         }
                     }
                 }
-                main.ctrl.BusiConf.setBusi(busiData);
+                var busiDataObj = {};
+                for (var a = 0, b = busiData.length; a < b; a++) {
+                    if (busiDataObj[busiData[a]["busiName"]]) {
+                        busiDataObj[busiData[a]["busiName"]].push(busiData[a]["_id"]);
+                    } else {
+                        busiDataObj[busiData[a]["busiName"]] = [];
+                        busiDataObj[busiData[a]["busiName"]].push(busiData[a]["_id"]);
+                    }
+                }
+
+                var busiConfObj = {};
+                for (var c = 0, d = busiConfData.length; c < d; c++) {
+                    if (busiConfObj[busiConfData[c]["NAME"]]) {
+                        busiConfObj[busiConfData[c]["NAME"]].push(busiConfData[c]["_ID"]);
+                    } else {
+                        busiConfObj[busiConfData[c]["NAME"]] = [];
+                        busiConfObj[busiConfData[c]["NAME"]].push(busiConfData[c]["_ID"]);
+                    }
+                }
+                main.ctrl.BusiConf.busiConfObj = busiConfObj;
+                var busiConfs = [];
+                main.ctrl.BusiConf.busiConf = [];
+                for (t in busiConfObj) {
+                    index++;
+                    busiConfs.push({
+                        INDEX: index,
+                        NAME: t,
+                        _ID: busiConfObj[t].join(",")
+                    });
+                    main.ctrl.BusiConf.busiConf.push(busiConfObj[t].join(","))
+                }
+
+
+                main.ctrl.BusiConf.setBusi(busiDataObj);
 
                 var busiConfGrid = $(configs.box.busiConfGrid).data("kendoGrid");
-                busiConfGrid.dataSource.data(data);
+                busiConfGrid.dataSource.data(busiConfs);
+                main.ctrl.BusiConf.listenerRemoveBusiConfClick();
             },
             setBusi: function(data) {
-                if (data.lenght) {
+                var busiData = [];
+                for (i in data) {
+                    busiData.push({
+                        busiName: i,
+                        _id: data[i].join(",")
+                    })
+                }
+                if (busiData.length) {
                     var comboBox = $(configs.box.busiConfBusi).data("kendoComboBox");
-                    comboBox.dataSource.data(data);
-                    comboBox.value(data[0]["_id"]);
+                    comboBox.dataSource.data(busiData);
+                    comboBox.value(busiData[0]["_id"]);
                 }
             },
             addBusiConf: function() {
                 var channel = $(configs.box.busiConfChannel).val();
                 var busiId = $(configs.box.busiConfBusi).val();
                 if (busiId && channel) {
-                    var busiConf = main.ctrl.BusiConf.busiConf.push(busiId);
+                    main.ctrl.BusiConf.busiConf.push(busiId);
+                    var busiConf = main.ctrl.BusiConf.busiConf
                     var params = {
                         CHANNEL: parseInt(channel),
                         BUSI_TYPES: busiConf.join(","),
@@ -229,8 +278,9 @@ var main = {
                     main.model.updateBusiConf(params);
                 }
             },
-            addBusiConfReturn: function() {
-                main.ctrl.busiConf.getBusiConfList();
+            updateBusiConfRetrun: function() {
+                main.ctrl.BusiConf.getBusiConfList();
+                main.ctrl.getAllBusiness();
             },
             removeConf: function() {
 
@@ -238,14 +288,15 @@ var main = {
                     return;
                 }
                 var channel = $(configs.box.busiConfChannel).val();
-                var busiId = $(configs.box.busiConfBusi).val();
-                if (busiId && channel) {
-
-                    var busiConf = main.ctrl.BusiConf.busiConf;
-                    for (var i = 0, l = busiConf.length; i < l; i++) {
-                        if (busiConf[i] == parseInt(busiId)) {
-                            busiConf.splice(i, 1)
-                        }
+                var busiName = $(this).attr("value");
+                if (busiName && channel) {
+                    var busiConfObj = main.ctrl.BusiConf.busiConfObj;
+                    if (busiConfObj[busiName]) {
+                        delete busiConfObj[busiName];
+                    }
+                    var busiConf = [];
+                    for (i in busiConfObj) {
+                        busiConf.push(busiConfObj[i].join(","))
                     }
                     var params = {
                         CHANNEL: parseInt(channel),
@@ -253,9 +304,6 @@ var main = {
                     }
                     main.model.updateBusiConf(params);
                 }
-            },
-            removeConfReturn: function() {
-                main.ctrl.busiConf.getBusiConfList();
             }
         },
         getTime: function() {
@@ -325,8 +373,7 @@ var main = {
         setBusinessComparison: function(data) {
             var value1 = main.ctrl.getSignBusinessComparison(data[0]);
             var value2 = main.ctrl.getSignBusinessComparison(data[1]);
-            console.log(value1);
-            console.log(value2);
+
             main.ctrl.setBusinessComparisonRate(value1.rate, value2.rate);
             main.ctrl.setBusinessComparisonHandling(value1.handling, value2.handling);
             main.ctrl.setBusinessComparisonDuration(value1.duration, value2.duration);
@@ -453,7 +500,6 @@ var main = {
 
                 myData.push(d);
             }
-            console.log(myData);
             $(configs.box.businessSurvey).data("kendoGrid").dataSource.data(myData);
             $tools.closeLoading();
         },
@@ -473,7 +519,6 @@ var main = {
                 }
                 myData.push(d);
             }
-            console.log(myData);
             $(configs.box.businessAlame).data("kendoGrid").dataSource.data(myData);
             $tools.closeLoading();
         },
@@ -489,8 +534,7 @@ var main = {
         setKeyBusiness: function(data) {
             var BUSI_TYPES = data["BUSI_TYPES"];
             var ALARMS_COUNT_DATA = data["ALARMS_COUNT_DATA"];
-            // var LAST_STEP_SYS_USED_TIME_DATA = data["LAST_STEP_SYS_USED_TIME_DATA"];
-            var LAST_STEP_SYS_USED_TIME_DATA = [];
+            var LAST_STEP_SYS_USED_TIME_DATA = data["LAST_STEP_SYS_USED_TIME_DATA"];
 
             var TRANS_COUNT_DATA = data["TRANS_COUNT_DATA"];
 
@@ -509,15 +553,6 @@ var main = {
                         var alarm = ALARMS_COUNT_DATA[j]["value"]
                     }
                 }
-                for (var z = 0, l_l = LAST_STEP_SYS_USED_TIME_DATA.length; z < l_l; z++) {
-                    if (BUSI_TYPES[i]["_id"] == LAST_STEP_SYS_USED_TIME_DATA[z]["_id"]) {
-                        durationChar.push({
-                            id: BUSI_TYPES[i]["_id"],
-                            data: LAST_STEP_SYS_USED_TIME_DATA[z]["value"],
-                            name: BUSI_TYPES[i]["busiName"]
-                        });
-                    }
-                }
                 for (var k = 0, t_l = TRANS_COUNT_DATA.length; k < t_l; k++) {
                     if (BUSI_TYPES[i]["_id"] == TRANS_COUNT_DATA[k]["_id"]) {
                         handlingChar.push({
@@ -528,29 +563,175 @@ var main = {
                         var handling = TRANS_COUNT_DATA[k]["value"]
                     }
                 }
+            };
 
-                rateChar.push({
-                    id: BUSI_TYPES[i]["_id"],
-                    value: parseInt((1 - alarm / handling) * 100),
-                    name: BUSI_TYPES[i]["busiName"]
-                });
-            }
+            durationChar = main.ctrl.getDurationCharData(LAST_STEP_SYS_USED_TIME_DATA, BUSI_TYPES);
+            console.log(durationChar);
             main.ctrl.setKeyBusinessHandlingChar(handlingChar);
-            main.ctrl.setKeyBusinessDurationChar(durationChar);
+            main.ctrl.setKeyBusinessDurationChar(durationChar, BUSI_TYPES);
             main.ctrl.setKeyBusinessAlarmChar(alarmChar);
-            main.ctrl.setKeyBusinessRateChar(rateChar);
+            main.ctrl.setKeyBusinessRateChar(durationChar, BUSI_TYPES);
+        },
+        getDurationCharData: function(LAST_STEP_SYS_USED_TIME_DATA, BUSI_TYPES) {
+            var durationChar = [];
+            var l_s = LAST_STEP_SYS_USED_TIME_DATA;
+            for (var z = 0, l_l = l_s.length; z < l_l; z++) {
+                var TIME_DATA = {};
+                for (var a = 0, l_d_l = l_s[z].length; a < l_d_l; a++) {
+                    TIME_DATA["time"] = l_s[z][0]["time"];
+                    for (var b = 0, bt_l = BUSI_TYPES.length; b < bt_l; b++) {
+                        if (BUSI_TYPES[b]["_id"] == l_s[z][a]["_id"]) {
+                            var td = parseInt(l_s[z][a]["lastStepSysUsedTime"] / 1000) || 0;
+                            var busiName = "busiName" + BUSI_TYPES[b]["busiName"]
+                            if (TIME_DATA[busiName]) {
+                                TIME_DATA[busiName].push(td);
+                            } else {
+                                TIME_DATA[busiName] = [];
+                                TIME_DATA[busiName].push(td);
+                            }
+                            var to = l_s[z][a]["totalTransCount"];
+                            var fa = l_s[z][a]["sysFailedCount"];
+                            var ra = parseInt((1 - fa / to) * 100) || 0;
+
+
+                            var rateName = "rateName" + BUSI_TYPES[b]["busiName"];
+                            if (TIME_DATA[rateName]) {
+                                TIME_DATA[rateName].push(ra);
+                            } else {
+                                TIME_DATA[rateName] = [];
+                                TIME_DATA[rateName].push(ra);
+                            }
+                        }
+                    }
+                }
+                durationChar.push(TIME_DATA);
+            }
+
+            for (var x = 0, l = durationChar.length; x < l; x++) {
+                for (i in durationChar[x]) {
+                    if (typeof durationChar[x][i] == "object") {
+                        durationChar[x][i] = main.ctrl.getArrayTotalAndAvg(durationChar[x][i]);
+                    }
+                }
+            }
+            console.log(durationChar);
+            return durationChar;
+        },
+        getArrayTotalAndAvg: function(data) {
+            var result = 0;
+            for (var i = 0, l = data.length; i < l; i++) {
+                result += data[i];
+            }
+            result = parseInt(result / l) || 0;
+            return result;
         },
         setKeyBusinessHandlingChar: function(data) {
-            $(configs.box.keyBusinessHandlingChar).data("kendoChart").dataSource.data(data);
+            var data_obj = {};
+            for (var j = 0, l = data.length; j < l; j++) {
+                if (data_obj[data[j]["name"]]) {
+                    data_obj[data[j]["name"]] += data[j]["value"];
+                } else {
+                    data_obj[data[j]["name"]] = data[j]["value"];
+                }
+            }
+            var chartData = [];
+            for (i in data_obj) {
+                chartData.push({
+                    name: i,
+                    value: data_obj[i]
+                })
+            }
+            $(configs.box.keyBusinessHandlingChar).data("kendoChart").dataSource.data(chartData);
         },
-        setKeyBusinessDurationChar: function(data) {
-            $(configs.box.keyBusinessDurationChar).data("kendoChart").dataSource.data(data);
+        setKeyBusinessDurationChar: function(durationChar, BUSI_TYPES) {
+            var duration = $(configs.box.keyBusinessDurationChar).data("kendoChart");
+            var series = [];
+            var result = 0;
+            var data_obj = {};
+            for (var i = 0, l = BUSI_TYPES.length; i < l; i++) {
+                if (data_obj[BUSI_TYPES[i]["busiName"]]) {
+                    data_obj[BUSI_TYPES[i]["busiName"]]++;
+                } else {
+                    data_obj[BUSI_TYPES[i]["busiName"]] = 1
+                }
+            }
+
+            var n =0;
+            for (j in data_obj) {
+                var color = "";
+                if($tools.color[n]){
+                    color = $tools.color[n];
+                    n++;
+                }
+                series.push({
+                    name: j,
+                    field: "busiName" + j,
+                    color: color
+                });
+            }
+            duration.setOptions({
+                series: series
+            });
+            duration.dataSource.data(durationChar);
         },
         setKeyBusinessAlarmChar: function(data) {
-            $(configs.box.keyBusinessAlarmChar).data("kendoChart").dataSource.data(data);
+            console.log(data);
+            var data_obj = {};
+            for (var j = 0, l = data.length; j < l; j++) {
+                if (data_obj[data[j]["category"]]) {
+                    data_obj[data[j]["category"]] += data[j]["value"];
+                } else {
+                    data_obj[data[j]["category"]] = data[j]["value"];
+                }
+
+            }
+            var chartData = [];
+            var n = 0;
+            for (i in data_obj) {
+                var color = "";
+                if($tools.color[n]){
+                    color = $tools.color[n];
+                    n++;
+                }
+                chartData.push({
+                    category: i,
+                    value: data_obj[i],
+                    color: color
+                })
+            }
+            $(configs.box.keyBusinessAlarmChar).data("kendoChart").dataSource.data(chartData);
         },
-        setKeyBusinessRateChar: function(data) {
-            $(configs.box.keyBusinessRateChar).data("kendoChart").dataSource.data(data);
+        setKeyBusinessRateChar: function(rateChar, BUSI_TYPES) {
+            var rate = $(configs.box.keyBusinessRateChar).data("kendoChart");
+            var series = [];
+            var result = 0;
+            var data_obj = {};
+            console.log(series);
+            for (var i = 0, l = BUSI_TYPES.length; i < l; i++) {
+                if (data_obj[BUSI_TYPES[i]["busiName"]]) {
+                    data_obj[BUSI_TYPES[i]["busiName"]]++;
+                } else {
+                    data_obj[BUSI_TYPES[i]["busiName"]] = 1
+                }
+            }
+            var n = 0;
+            for (j in data_obj) {
+                var color = "";
+                if($tools.color[n]){
+                    color = $tools.color[n];
+                    n++;
+                }
+                series.push({
+                    name: j,
+                    field: "rateName" + j,
+                    color: color
+                });
+            }
+            rate.setOptions({
+                series: series
+            });
+            console.log(series);
+            rate.dataSource.data(rateChar);
         }
     },
 
@@ -595,6 +776,11 @@ var main = {
             $tools.loadData(configs.url.getBusiConfList,
                 params,
                 main.ctrl.BusiConf.setBusiConfList, null, configs.Env.bpcMonitor);
+        },
+        updateBusiConf: function(params) {
+            $tools.loadData(configs.url.updateBusiConf,
+                params,
+                main.ctrl.BusiConf.updateBusiConfRetrun, null, configs.Env.bpcMonitor);
         }
     },
     view: {
@@ -603,7 +789,7 @@ var main = {
             $tools.kendoComboBox(configs.box.time, "NAME", "VALUE", []);
             $tools.kendoComboBox(configs.box.busiConfArea, "text", "_id", []);
             $tools.kendoComboBox(configs.box.busiConfChannel, "text", "_id", []);
-            $tools.kendoComboBox(configs.box.busiConfBusi, "text", "_id", []);
+            $tools.kendoComboBox(configs.box.busiConfBusi, "busiName", "_id", []);
 
             this.BusinessComparison.init();
             this.BusinessChannel.init();
@@ -615,7 +801,7 @@ var main = {
                 $(configs.box.busiConfGrid).kendoGrid({
                     height: 400,
                     columns: [{
-                        field: configs.busiConf.ID,
+                        field: configs.busiConf.INDEX,
                         title: configs.busiConf_text.INDEX,
                         width: 100,
                     }, {
@@ -624,7 +810,7 @@ var main = {
                     }, {
                         field: configs.busiConf.ID,
                         title: configs.busiConf_text.OP,
-                        template: "<button class='removeBusiConf btn' value=#:" + configs.busiConf.ID + "#>" + "删除</button>",
+                        template: "<button class='removeBusiConf btn' value=#:" + configs.busiConf.NAME + "#>" + "删除</button>",
                         width: 100,
                     }]
                 });
@@ -984,7 +1170,7 @@ var main = {
                         color: configs.charNodeBackground[0]
                     }],
                     chartArea: {
-                        height: 300,
+                        height: 200,
                     },
                     categoryAxis: {
                         field: "name",
@@ -993,8 +1179,8 @@ var main = {
                         },
                     },
                     valueAxis: {
-                        majorUnit: 100,
-                        visible: false,
+                        // majorUnit: 100,
+                        // visible: false,
                         majorGridLines: {
                             visible: false
                         }
@@ -1008,67 +1194,57 @@ var main = {
             createKeyBusinessDurationChar: function() {
                 $(configs.box.keyBusinessDurationChar).kendoChart({
                     chartArea: {
-                        height: 300
+                        height: 200
                     },
                     legend: {
                         position: "bottom",
-                        // visible: false
                     },
                     seriesDefaults: {
                         type: "line",
-                        style: "smooth"
+                        style: "smooth",
+                        markers: {
+                            visible: false
+                        }
                     },
-                    series: [{
-                        name: "India",
-                        data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
-                    }, {
-                        name: "World",
-                        data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
-                    }, {
-                        name: "Russian Federation",
-                        data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3]
-                    }, {
-                        name: "Haiti",
-                        data: [-0.253, 0.362, -3.519, 1.799, 2.252, 3.343, 0.843, 2.877, -5.416, 5.590]
-                    }],
                     valueAxis: {
                         labels: {
-                            format: "{0}%"
+                            format: "{0}ms"
                         },
-                        line: {
-                            visible: false
-                        },
-                        axisCrossingValue: -10
+                        
                     },
                     categoryAxis: {
-                        categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                        field: "time",
                         majorGridLines: {
                             visible: false
                         },
                         labels: {
-                            rotation: "auto"
+                            rotation: "auto",
+
+                            template: function(obj) {
+                                return obj.value.split(" ")[1].substr(0, 5);
+                            }
                         }
                     },
                     tooltip: {
                         visible: true,
-                        format: "{0}%",
-                        template: "#= series.name #: #= value #"
+                        template: "<p> #= category # </p> #= series.name #: #= value #",
+                        color: "#fff"
                     }
                 });
             },
             createKeyBusinessAlarmChar: function() {
                 $(configs.box.keyBusinessAlarmChar).kendoChart({
                     legend: {
-                        position: "bottom",
+                        position: "right",
                     },
                     chartArea: {
-                        height: 300
+                        height: 200
                     },
                     seriesDefaults: {
                         labels: {
                             template: "#= category # - #= value#",
                             position: "outsideEnd",
-                            visible: true,
+                            visible: false,
                             background: "transparent"
                         }
                     },
@@ -1086,40 +1262,44 @@ var main = {
             createKeyBusinessRateChar: function() {
                 $(configs.box.keyBusinessRateChar).kendoChart({
                     chartArea: {
-                        height: 300,
+                        height: 200
                     },
                     legend: {
                         position: "bottom",
-                        visible: false
                     },
                     seriesDefaults: {
                         type: "line",
-                        stack: true
-                    },
-                    series: [{
-                        field: "value",
-                        name: "name",
-                        border: {
-                            width: 0
-                        },
-                        color: configs.charNodeBackground[1]
-                    }],
-                    categoryAxis: {
-                        field: "name",
-                        majorGridLines: {
+                        style: "smooth",
+                        markers: {
                             visible: false
                         }
                     },
                     valueAxis: {
-                        majorUnit: 100,
-                        visible: false,
+                        labels: {
+                            format: "{0}%"
+                        },
+                        // majorGridLines: {
+                        //     visible: false
+                        // },
+                    },
+                    categoryAxis: {
+                        field: "time",
                         majorGridLines: {
                             visible: false
+                        },
+                        majorTicks: {
+                            visible: false
+                        },
+                        labels: {
+                            rotation: "auto",
+                            template: function(obj) {
+                                return obj.value.split(" ")[1].substr(0, 5);
+                            }
                         }
                     },
                     tooltip: {
                         visible: true,
-                        format: "{0}",
+                        template: "<p> #= category # </p> #= series.name #: #= value #%",
                         color: "#fff"
                     }
                 });

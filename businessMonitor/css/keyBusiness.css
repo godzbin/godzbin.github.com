@@ -1,18 +1,25 @@
+
+
 .content-right {
     background-color: #eee;
     min-height: 700px;
-    padding-bottom: 15px; 
+    padding: 0 10px;
+    padding-bottom: 10px; 
+	
 }
 .content-right-trendAnalysis,
 /*.content-right-step,*/
 
 .content-right-KPI,
 .content-right-top{
-	margin-top: 15px;
-	padding: 15px 0;
+	margin-top: 10px;
+	padding: 10px 0;
 	background-color: #fff;
 }
-
+.content-right-top{
+	/*margin-top: 0;*/
+	padding: 5px 0;　
+}
 .content-right-step-left .title,
 .content-right-step-right .content-right-step-right-box .title{
 	font-size: 16px;
@@ -24,16 +31,17 @@
 	font-weight: 500;
 }
 .content-right-step-left{
-	margin-top: 15px;
-	padding: 15px 0;
+	margin-top: 10px;
+	padding: 10px 0;
 	background-color: #fff;
 }
 .content-right-step-right{
+	padding-left: 10px; 
 	padding-right: 0; 
 }
 .content-right-step-right .content-right-step-right-box{
-	margin-top: 15px;
-	padding: 15px 0;
+	margin-top: 10px;
+	padding: 10px 0;
 	background-color: #fff;
 	height: 250px;
 }
@@ -50,7 +58,7 @@
 }
 .content-right-KPI-box .content-right-KPI-box-title .title{
 	text-align: right;
-	margin-top: 15px;
+	margin-top: 10px;
 	font-size: 15px; 
 	color: #999;
 }
@@ -63,7 +71,7 @@
 }
 
 .content-right-step-left{
-	height: 515px;
+	height: 510px;
 }
 .content-right-step .title{
 	text-align: left;
@@ -74,7 +82,7 @@
 
 
 .content-right-trendAnalysis-center{
-	margin-top: 15px; 
+	margin-top: 10px; 
 	padding: 0;
 }
 .content-right-trendAnalysis-char{
@@ -82,11 +90,11 @@
 }
 .content-right-trendAnalysis-center-char{
 	padding: 0;
-	padding-right: 15px;
+	padding-right: 10px;
 }
 .content-right-trendAnalysis-center-char .box{
 	background-color: #fff;
-	padding: 15px;
+	padding: 10px;
 }
 .content-right-trendAnalysis-center-char:last-child{
 	padding-right: 0;
@@ -118,7 +126,7 @@
 /*step*/
 #busiStepChar{
 	width: 50%;
-	margin-top: 15px; 
+	margin-top: 10px; 
 }
 .stepTop{
 	width: 100%;
@@ -133,12 +141,23 @@
 	height: 60px;
 	padding: 20px;
 	margin: 0 auto;
-	margin-bottom: 15px;
+	/*margin-bottom: 15px;*/
 	/*background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: content;*/
 	color: #fff;
 	border-radius: 50px;
+	overflow:hidden;;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...);*/
+	white-space:nowrap;/* 不换行 */
+	cursor: pointer;
+}
+.stop-magin{
+	height: 15px;
+	margin: 0 auto;
+	/*width: 100%;*/
+	cursor: pointer;
+	
 }
 .step1{
 	width: 100%;
@@ -151,13 +170,51 @@
 	background-color: #ea5412; 
 }
 .step3{
-	padding: 10px 20px;
-	width: 60%;
+	width: 65%;
 	/*background-image: url("../img/setp3.png");*/
 	background-color: #f8ee10; 
 }
 .step4{
-	width: 40%;
+	width: 50%;
 	/*background-image: url("../img/setp4.png");*/
 	background-color: #8fc31f; 
 }
+.stop-magin1{
+	width: 40%;
+	transform:skewX(30deg);
+	background-color: #B00619; 
+}
+.stop-magin2{
+	width: 30%;
+	transform:skewX(-30deg);
+	background-color: #D63200; 
+}
+.stop-magin3{
+	width: 20%;
+	transform:skewX(30deg);
+	background-color: #62953E; 
+}
+#stepDatails{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	padding: 10px;
+	border-radius: 20px;
+	/*height: 100px;*/
+	background-color: #f00;
+	color: #fff;
+}
+#stepDuration{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	padding: 10px;
+	border-radius: 20px;
+	/*height: 100px;*/
+	background-color: #f00;
+	color: #fff;
+}	

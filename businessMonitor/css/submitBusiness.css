@@ -78,6 +78,7 @@
 	cursor: pointer;
 	background-color: #999;
 	padding: 5px 0;
+	width: 150px;
 	margin-right: 15px; 
 	font-size: 16px;
 	color: #fff;
@@ -91,7 +92,6 @@
 #busiConfGrid,
 .content-right-businessChannel-grid{
 	border: 0 #fff;
-
 }
 .content-right-businessChannel-grid-title p ,
 .content-right-businessChannel-keyBusiness-title p{

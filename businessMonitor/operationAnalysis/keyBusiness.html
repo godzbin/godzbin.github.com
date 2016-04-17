@@ -27,7 +27,7 @@
 </head>
 
 <body>
-<div class="navbar-static-top header">
+<div class="navbar-static-top header ">
     <div class="container-fluid header-top">
         <div class="header-logo col-xs-6">
             <p class="header-logo-text">六合业务监测系统</p>
@@ -49,7 +49,7 @@
     </div>
 </div>
 <div class="container-fluid content ">
-    <div class="col-xs-2 content-left ">
+    <div class="col-xs-2 content-left navbar-fixed-">
 
     </div>
     <div class="col-xs-10  content-right ">
@@ -71,7 +71,7 @@
         	<div id="processHandling"  class="content-right-KPI-box col-xs-4">
         		<div class="content-right-KPI-box-title col-xs-6">
         			<p class="title">全过程业务量</p>
-        			<p class="value">222</p>
+        			<p class="value"></p>
         		</div>
         		<div class="content-right-KPI-box-char col-xs-6">
         			<div id="handlingRadialGauge"  class="radialGauge"></div>
@@ -101,14 +101,22 @@
 				业务步骤
 			</div>
 			<div class="col-xs-12">
-				<div id="busiStepChar" class="col-xs-8">
+				<div id="busiStepChar" class="col-xs-offset-2 col-xs-8">
 					<div class=" stepTop"></div>
-					<div class="step1 step">选择产品</div>
-					<div class="step2 step">身份确认</div>
-					<div class="step3 step">经费结算及经办人信息录入</div>
-					<div class="step4 step">提交</div>
+					<div class="step1 step" value="1">进入密码重置界面</div>
+
+					<div class="stop-magin1 stop-magin" value="1"></div>	
+
+					<div class="step2 step" value="2">9选3校验后点击”下一步“按钮</div>
+
+					<div class="stop-magin2 stop-magin" value="2"></div>
+
+					<div class="step3 step" value="3">点击提交按钮</div>
+
+					<div class="stop-magin3 stop-magin" value="3"></div>
+
+					<div class="step4 step" value="4">信息确认界面点击确定后返回办理结果反馈</div>
 				</div>
-				
 			</div>
 		</div>
 		<div class="content-right-step-right col-xs-5">
@@ -130,11 +138,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="content-right-trendAnalysis col-xs-12">
+		<!-- <div class="content-right-trendAnalysis col-xs-12">
 			<div class="title col-xs-12">
 				趋势分析
 			</div>
-		</div>
+		</div> -->
 		<div class="content-right-trendAnalysis-center col-xs-12">
 			<div class="content-right-trendAnalysis-center-char col-xs-4">
 				<div class="box col-xs-12">
@@ -170,6 +178,28 @@
 		</div>
 
     </div>
+</div>
+<div id="stepDatails">
+	<div class="title">
+		
+	</div>
+	<div class="handling">
+		
+	</div>
+	<div class="duration">
+		
+	</div>
+	<div class="rate">
+		
+	</div>
+</div>
+<div id="stepDuration">
+	<div class="title">
+		
+	</div>
+	<div class="wait">
+		
+	</div>
 </div>
 </body>
 </html>
