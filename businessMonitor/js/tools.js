@@ -126,7 +126,7 @@ $tools.loadData = function(url, params, callback, callbackParams, Env) {
         url: dataUrl,
         data: dataParams,
         dataType: "JSON",
-        type: "POST",
+        type: "GET",
         success: function(data) {
             if (data["STATE"] == 1) {
                 callback(data["CONTENT"], callbackParams);
