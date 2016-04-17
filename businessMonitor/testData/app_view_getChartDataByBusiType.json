@@ -1,0 +1,55 @@
+{
+	"STATE": 1,
+	"ERR_MSG": null,
+	"CONTENT": [{
+		"time": "2015-09-21 09:00:00",
+		"totalTransCount": 36,
+		"busiUsedTime": 288067,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:01:00",
+		"totalTransCount": 20,
+		"busiUsedTime": 157993,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:02:00",
+		"totalTransCount": 24,
+		"busiUsedTime": 955614,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:03:00",
+		"totalTransCount": 26,
+		"busiUsedTime": 637368,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:04:00",
+		"totalTransCount": 42,
+		"busiUsedTime": 1467124,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:05:00",
+		"totalTransCount": 52,
+		"busiUsedTime": 3106628,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:06:00",
+		"totalTransCount": 54,
+		"busiUsedTime": 3545157,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:07:00",
+		"totalTransCount": 60,
+		"busiUsedTime": 4105894,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:08:00",
+		"totalTransCount": 39,
+		"busiUsedTime": 2090108,
+		"sysFailedCount": 0
+	}, {
+		"time": "2015-09-21 09:09:00",
+		"totalTransCount": 38,
+		"busiUsedTime": 3251540,
+		"sysFailedCount": 0
+	}]
+}

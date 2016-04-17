@@ -1,1 +1,1232 @@
-{"CONTENT": {"LAST_STEP_SYS_USED_TIME_DATA": [[{"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "_id": 858, "lastStepSysUsedTime": 1886000, "totalTransCount": 1}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "_id": 697, "lastStepSysUsedTime": 8240000, "totalTransCount": 3}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 36353000, "totalTransCount": 11}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 686}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 719}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:00:00", "sysFailedCount": 0, "value": 0, "_id": 669}], [{"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 2112000, "totalTransCount": 1}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 29047000, "totalTransCount": 3}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 686}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 697}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:01:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 3419000, "totalTransCount": 1}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 26307000, "totalTransCount": 9}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 686}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 697}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:02:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "_id": 858, "lastStepSysUsedTime": 1141000, "totalTransCount": 1}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 2798000, "totalTransCount": 1}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "_id": 697, "lastStepSysUsedTime": 6766000, "totalTransCount": 2}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "_id": 686, "lastStepSysUsedTime": 402000, "totalTransCount": 1}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 61581000, "totalTransCount": 10}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:03:00", "sysFailedCount": 0, "value": 0, "_id": 669}], [{"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 67236000, "totalTransCount": 15}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 686}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 719}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 697}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:04:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 3566000, "totalTransCount": 4}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "_id": 697, "lastStepSysUsedTime": 5138000, "totalTransCount": 2}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "_id": 686, "lastStepSysUsedTime": 610000, "totalTransCount": 1}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 74018000, "totalTransCount": 20}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:05:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 1544000, "totalTransCount": 6}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "_id": 697, "lastStepSysUsedTime": 3682000, "totalTransCount": 3}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "_id": 686, "lastStepSysUsedTime": 4000, "totalTransCount": 1}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "_id": 866, "lastStepSysUsedTime": 579000, "totalTransCount": 1}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 78329000, "totalTransCount": 21}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:06:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 579000, "totalTransCount": 1}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "_id": 697, "lastStepSysUsedTime": 175000, "totalTransCount": 2}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "_id": 686, "lastStepSysUsedTime": 501000, "totalTransCount": 1}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 104074000, "totalTransCount": 27}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:07:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 553000, "totalTransCount": 1}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 27438000, "totalTransCount": 11}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 686}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 697}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:08:00", "sysFailedCount": 0, "value": 0, "_id": 858}], [{"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "_id": 719, "lastStepSysUsedTime": 3250000, "totalTransCount": 4}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "_id": 697, "lastStepSysUsedTime": 247000, "totalTransCount": 1}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "_id": 668, "lastStepSysUsedTime": 52909000, "totalTransCount": 17}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 703}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 1153}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 706}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 866}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 868}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 677}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 678}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 1635}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 748}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 686}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 1141}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 727}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 25}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 1147}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 1149}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 669}, {"time": "2015-09-21 09:09:00", "sysFailedCount": 0, "value": 0, "_id": 858}]], "TRANS_COUNT_DATA": [{"value": 2, "_id": 858}, {"value": 19, "_id": 719}, {"value": 13, "_id": 697}, {"value": 4, "_id": 686}, {"value": 1, "_id": 866}, {"value": 144, "_id": 668}, {"value": 0, "_id": 703}, {"value": 0, "_id": 1153}, {"value": 0, "_id": 706}, {"value": 0, "_id": 868}, {"value": 0, "_id": 677}, {"value": 0, "_id": 678}, {"value": 0, "_id": 1635}, {"value": 0, "_id": 748}, {"value": 0, "_id": 1141}, {"value": 0, "_id": 727}, {"value": 0, "_id": 25}, {"value": 0, "_id": 1147}, {"value": 0, "_id": 1149}, {"value": 0, "_id": 669}], "ALARMS_COUNT_DATA": [{"value": 1, "_id": 866}, {"value": 1, "_id": 719}, {"value": 0, "_id": 703}, {"value": 0, "_id": 1153}, {"value": 0, "_id": 706}, {"value": 0, "_id": 868}, {"value": 0, "_id": 677}, {"value": 0, "_id": 678}, {"value": 0, "_id": 1635}, {"value": 0, "_id": 748}, {"value": 0, "_id": 686}, {"value": 0, "_id": 1141}, {"value": 0, "_id": 727}, {"value": 0, "_id": 697}, {"value": 0, "_id": 25}, {"value": 0, "_id": 1147}, {"value": 0, "_id": 668}, {"value": 0, "_id": 1149}, {"value": 0, "_id": 669}, {"value": 0, "_id": 858}], "BUSI_TYPES": [{"busiName": "产品变更", "_id": 25}, {"busiName": "产品变更", "_id": 668}, {"busiName": "品牌转换", "_id": 669}, {"busiName": "产品变更", "_id": 677}, {"busiName": "补卡", "_id": 678}, {"busiName": "产品变更", "_id": 686}, {"busiName": "申请停机", "_id": 697}, {"busiName": "产品变更", "_id": 703}, {"busiName": "预约销户", "_id": 706}, {"busiName": "补卡", "_id": 719}, {"busiName": "产品变更", "_id": 727}, {"busiName": "产品变更", "_id": 748}, {"busiName": "产品变更", "_id": 858}, {"busiName": "改密码", "_id": 866}, {"busiName": "产品变更", "_id": 868}, {"busiName": "产品变更", "_id": 1141}, {"busiName": "预约销户", "_id": 1147}, {"busiName": "产品变更", "_id": 1149}, {"busiName": "产品变更", "_id": 1153}, {"busiName": "产品变更", "_id": 1635}]}, "ERR_MSG": null, "STATE": 1}
+{
+	"CONTENT": {
+		"LAST_STEP_SYS_USED_TIME_DATA": [
+			[{
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"_id": 858,
+				"lastStepSysUsedTime": 1886000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"_id": 697,
+				"lastStepSysUsedTime": 8240000,
+				"totalTransCount": 3
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 36353000,
+				"totalTransCount": 11
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 686
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 719
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:00:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}],
+			[{
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 2112000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 29047000,
+				"totalTransCount": 3
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 686
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 697
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:01:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 3419000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 26307000,
+				"totalTransCount": 9
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 686
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 697
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:02:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"_id": 858,
+				"lastStepSysUsedTime": 1141000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 2798000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"_id": 697,
+				"lastStepSysUsedTime": 6766000,
+				"totalTransCount": 2
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"_id": 686,
+				"lastStepSysUsedTime": 402000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 61581000,
+				"totalTransCount": 10
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:03:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}],
+			[{
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 67236000,
+				"totalTransCount": 15
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 686
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 719
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 697
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:04:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 3566000,
+				"totalTransCount": 4
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"_id": 697,
+				"lastStepSysUsedTime": 5138000,
+				"totalTransCount": 2
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"_id": 686,
+				"lastStepSysUsedTime": 610000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 74018000,
+				"totalTransCount": 20
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:05:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 1544000,
+				"totalTransCount": 6
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"_id": 697,
+				"lastStepSysUsedTime": 3682000,
+				"totalTransCount": 3
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"_id": 686,
+				"lastStepSysUsedTime": 4000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"_id": 866,
+				"lastStepSysUsedTime": 579000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 78329000,
+				"totalTransCount": 21
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:06:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 579000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"_id": 697,
+				"lastStepSysUsedTime": 175000,
+				"totalTransCount": 2
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"_id": 686,
+				"lastStepSysUsedTime": 501000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 104074000,
+				"totalTransCount": 27
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:07:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 553000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 27438000,
+				"totalTransCount": 11
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 686
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 697
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:08:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}],
+			[{
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"_id": 719,
+				"lastStepSysUsedTime": 3250000,
+				"totalTransCount": 4
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"_id": 697,
+				"lastStepSysUsedTime": 247000,
+				"totalTransCount": 1
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"_id": 668,
+				"lastStepSysUsedTime": 52909000,
+				"totalTransCount": 17
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 703
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1153
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 706
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 866
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 868
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 677
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 678
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1635
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 748
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 686
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1141
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 727
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 25
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1147
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 1149
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 669
+			}, {
+				"time": "2015-09-21 09:09:00",
+				"sysFailedCount": 0,
+				"value": 0,
+				"_id": 858
+			}]
+		],
+		"TRANS_COUNT_DATA": [{
+			"value": 2,
+			"_id": 858
+		}, {
+			"value": 19,
+			"_id": 719
+		}, {
+			"value": 13,
+			"_id": 697
+		}, {
+			"value": 4,
+			"_id": 686
+		}, {
+			"value": 1,
+			"_id": 866
+		}, {
+			"value": 144,
+			"_id": 668
+		}, {
+			"value": 0,
+			"_id": 703
+		}, {
+			"value": 0,
+			"_id": 1153
+		}, {
+			"value": 0,
+			"_id": 706
+		}, {
+			"value": 0,
+			"_id": 868
+		}, {
+			"value": 0,
+			"_id": 677
+		}, {
+			"value": 0,
+			"_id": 678
+		}, {
+			"value": 0,
+			"_id": 1635
+		}, {
+			"value": 0,
+			"_id": 748
+		}, {
+			"value": 0,
+			"_id": 1141
+		}, {
+			"value": 0,
+			"_id": 727
+		}, {
+			"value": 0,
+			"_id": 25
+		}, {
+			"value": 0,
+			"_id": 1147
+		}, {
+			"value": 0,
+			"_id": 1149
+		}, {
+			"value": 0,
+			"_id": 669
+		}],
+		"ALARMS_COUNT_DATA": [{
+			"value": 1,
+			"_id": 866
+		}, {
+			"value": 1,
+			"_id": 719
+		}, {
+			"value": 0,
+			"_id": 703
+		}, {
+			"value": 0,
+			"_id": 1153
+		}, {
+			"value": 0,
+			"_id": 706
+		}, {
+			"value": 0,
+			"_id": 868
+		}, {
+			"value": 0,
+			"_id": 677
+		}, {
+			"value": 0,
+			"_id": 678
+		}, {
+			"value": 0,
+			"_id": 1635
+		}, {
+			"value": 0,
+			"_id": 748
+		}, {
+			"value": 0,
+			"_id": 686
+		}, {
+			"value": 0,
+			"_id": 1141
+		}, {
+			"value": 0,
+			"_id": 727
+		}, {
+			"value": 0,
+			"_id": 697
+		}, {
+			"value": 0,
+			"_id": 25
+		}, {
+			"value": 0,
+			"_id": 1147
+		}, {
+			"value": 0,
+			"_id": 668
+		}, {
+			"value": 0,
+			"_id": 1149
+		}, {
+			"value": 0,
+			"_id": 669
+		}, {
+			"value": 0,
+			"_id": 858
+		}],
+		"BUSI_TYPES": [{
+			"busiName": "产品变更",
+			"_id": 25
+		}, {
+			"busiName": "产品变更",
+			"_id": 668
+		}, {
+			"busiName": "品牌转换",
+			"_id": 669
+		}, {
+			"busiName": "产品变更",
+			"_id": 677
+		}, {
+			"busiName": "补卡",
+			"_id": 678
+		}, {
+			"busiName": "产品变更",
+			"_id": 686
+		}, {
+			"busiName": "申请停机",
+			"_id": 697
+		}, {
+			"busiName": "产品变更",
+			"_id": 703
+		}, {
+			"busiName": "预约销户",
+			"_id": 706
+		}, {
+			"busiName": "补卡",
+			"_id": 719
+		}, {
+			"busiName": "产品变更",
+			"_id": 727
+		}, {
+			"busiName": "产品变更",
+			"_id": 748
+		}, {
+			"busiName": "产品变更",
+			"_id": 858
+		}, {
+			"busiName": "改密码",
+			"_id": 866
+		}, {
+			"busiName": "产品变更",
+			"_id": 868
+		}, {
+			"busiName": "产品变更",
+			"_id": 1141
+		}, {
+			"busiName": "预约销户",
+			"_id": 1147
+		}, {
+			"busiName": "产品变更",
+			"_id": 1149
+		}, {
+			"busiName": "产品变更",
+			"_id": 1153
+		}, {
+			"busiName": "产品变更",
+			"_id": 1635
+		}]
+	},
+	"ERR_MSG": null,
+	"STATE": 1
+}
