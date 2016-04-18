@@ -8,6 +8,7 @@ $(function() {
     }, 1000);
 });
 var $tools = {};
+$tools.isTest = true;
 $tools.color = ["#5EEF5A", "#00A3F4", "#FFB522", "#FF3131", ""]
 $tools.alertTest = {
     error: "网络错误，请稍后再试"
@@ -16,11 +17,14 @@ $tools.configs = {
     Env: "bpcKpiView"
 };
 $tools.getNav = function(url, box, callback) {
-    $(box).load(url, function() {
-        callback()
-    });
-
+    var html = nav_html[url];
+    $(box).html(html);
+    callback();
+    // $(box).load(url, function() {
+    //     callback()
+    // });
 };
+
 //日期格式输出
 $tools.dateZerofill = function(time) {
     var year = time.getFullYear();
@@ -111,36 +115,51 @@ $tools.getData = function(url, params, callback, callbackParams, Env) {
 };
 
 $tools.loadData = function(url, params, callback, callbackParams, Env) {
-    // var dataUrl = "../../../dataProcess";
-    var dataUrl = "../testData/"+url+".json";
-    var Env = Env || "bpcEnv";
-    var dataParams = {
-        FUNC: "view_invokeEnvFunc",
-        FUNC_PARAMS: JSON.stringify({
-            ENV: Env,
-            FUNC: url,
-            FUNC_PARAMS: JSON.stringify(params)
-        })
-    };
-    $.ajax({
-        url: dataUrl,
-        data: dataParams,
-        dataType: "JSON",
-        type: "GET",
-        success: function(data) {
-            if (data["STATE"] == 1) {
-                callback(data["CONTENT"], callbackParams);
-            } else {
+    if ($tools.isTest) {
+        $tools.loadDataTest(url,callback,callbackParams); 
+    } else {
+        var dataUrl = "../../../dataProcess";
+        // var dataUrl = "../testData/" + url + ".json";
+        var Env = Env || "bpcEnv";
+        var dataParams = {
+            FUNC: "view_invokeEnvFunc",
+            FUNC_PARAMS: JSON.stringify({
+                ENV: Env,
+                FUNC: url,
+                FUNC_PARAMS: JSON.stringify(params)
+            })
+        };
+        $.ajax({
+            url: dataUrl,
+            data: dataParams,
+            dataType: "JSON",
+            type: "POST",
+            success: function(data) {
+                if (data["STATE"] == 1) {
+                    callback(data["CONTENT"], callbackParams);
+                } else {
+                    $tools.closeLoading();
+                    alert(data["ERR_MSG"]);
+                }
+            },
+            error: function(e) {
                 $tools.closeLoading();
-                alert(data["ERR_MSG"]);
-            }
-        },
-        error: function(e) {
-            $tools.closeLoading();
-            // alert($tools.alertTest.error);
+                // alert($tools.alertTest.error);
 
-        }
-    });
+            }
+        });
+    }
+
+};
+$tools.loadDataTest = function(url, callback, callbackParams){
+    var data = testData[url];
+    if(data){
+         callback(data["CONTENT"],callbackParams);
+    }else{
+         callback([],callbackParams);
+    }
+    $tools.closeLoading();
+   
 };
 $tools.pageDefault = function(start, count, total, showCount, pageBox) {
     this.start = start;

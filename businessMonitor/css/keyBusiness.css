@@ -125,7 +125,7 @@
 
 /*step*/
 #busiStepChar{
-	width: 50%;
+	width: 80%;
 	margin-top: 10px; 
 }
 .stepTop{
@@ -140,6 +140,7 @@
 	text-align: center;
 	height: 60px;
 	padding: 20px;
+
 	margin: 0 auto;
 	/*margin-bottom: 15px;*/
 	/*background-size: 100% 100%;
@@ -201,6 +202,7 @@
 	left: 0;
 	width: 200px;
 	padding: 10px;
+	padding-left: 20px;
 	border-radius: 20px;
 	/*height: 100px;*/
 	background-color: #f00;

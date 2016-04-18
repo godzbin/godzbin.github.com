@@ -49,21 +49,22 @@ var configs = {
     charNodeBackground: ["#30BCFF", "#6E797F"],
     rangesColor: ["#5EEF5A", "#00A3F4", "#FFB522", "#FF3131"],
     stepDatails: {
-        busiStep: "busiStep",
-        busiHandling: "busiHandling",
+        busiStep: "name",
+        busiHandling: "handling",
         duration: "duration",
         rate: "rate",
     },
     stepDatails_text: {
         busiStep: "业务步骤",
         busiHandling: "业务量",
-        duration: "步骤时长",
+        duration: "步骤时长(ms)",
         rate: "步骤成功率",
     },
     url: {
         getTime: "app_view_getTimeIntervals",
         getTopKPIsByBusiType: "app_view_getTopKPIsByBusiType",
-        getChartDataByBusiType: "app_view_getChartDataByBusiType"
+        getChartDataByBusiType: "app_view_getChartDataByBusiType",
+        getBusiStep : "app_view_getBusiStep",
     },
     Env: {
         bpcMonitor: "bpcMonitor",
@@ -73,25 +74,29 @@ var configs = {
         handling: 120,
         duration: 120,
         rate: 100,
-        wait: 19
+        wait: 19,
+        retention: 100
     }, {
         name: "9选3校验后点击”下一步“按钮",
         handling: 120,
         duration: 120,
         rate: 100,
-        wait: 19
+        wait: 19,
+        retention: 80
     }, {
         name: "点击提交按钮",
         handling: 120,
         duration: 120,
         rate: 100,
-        wait: 19
+        wait: 19,
+        retention: 70
     }, {
         name: "信息确认界面点击确定后返回办理结果反馈",
         handling: 120,
         duration: 120,
         rate: 100,
-        wait: 19
+        wait: 19,
+        retention: 50
     }]
 };
 var main = {
@@ -150,7 +155,7 @@ var main = {
             });
         },
         createDurationRadialGauge: function() {
-            var value = 30;
+            var value = 300;
             var ranges = this.getRanges(value);
             var minorUnit = parseFloat(value / 4);
             $(configs.box.durationRadialGauge).kendoRadialGauge({
@@ -211,30 +216,24 @@ var main = {
                 }, {
                     field: configs.stepDatails.busiHandling,
                     title: configs.stepDatails_text.busiHandling,
+                    width: 80
                 }, {
                     field: configs.stepDatails.duration,
                     title: configs.stepDatails_text.duration,
+                    width: 120
                 }, {
                     field: configs.stepDatails.rate,
                     title: configs.stepDatails_text.rate,
+                    template: function(obj){
+                        console.log(obj);
+                        return obj[configs.stepDatails.rate] + "%";
+                    },
+                    width: 100
                 }]
             });
         },
         createCustomerRetentionRateChar: function() {
             $(configs.box.customerRetentionRateChar).kendoChart({
-                dataSource: [{
-                    name: "选择产品",
-                    value: 90
-                }, {
-                    name: "身份确认",
-                    value: 80
-                }, {
-                    name: "经费",
-                    value: 70
-                }, {
-                    name: "提交",
-                    value: 70
-                }],
                 chartArea: {
                     height: 180,
                 },
@@ -243,33 +242,51 @@ var main = {
                     visible: false
                 },
                 seriesDefaults: {
-                    type: "line",
-                    stack: true
+                    type: "area",
+                    area: {
+                        line: {
+                            style: "smooth"
+                        }
+                    },
+                    opacity: 0.8
                 },
                 series: [{
-                    field: "value",
+                    field: "retention",
                     name: "name",
                     border: {
                         width: 0
                     },
-                    color: configs.charNodeBackground[0]
+                    color: $tools.color[4]
                 }],
                 categoryAxis: {
                     field: "name",
                     majorGridLines: {
                         visible: false
+                    },
+                    labels: {
+                        template: function(obj) {
+                            var value = obj.value
+                            if (obj.value.length > 8) {
+                                value = obj.value.substr(0, 8) + "..";
+                            }
+                            return value;
+                        }
                     }
                 },
                 valueAxis: {
                     majorUnit: 20,
+                    max: 100,
                     visible: true,
                     majorGridLines: {
                         visible: false
-                    }
+                    },
+                    labels: {
+                        format: "{0}%"
+                    },
                 },
                 tooltip: {
                     visible: true,
-                    format: "{0}",
+                    template: "<p>#= category # </p> #= value #%",
                     color: "#fff"
                 }
             });
@@ -321,7 +338,7 @@ var main = {
                 },
                 tooltip: {
                     visible: true,
-                    format: "{0}",
+                    template: "#= series.name # : #= value #",
                     color: "#fff"
                 }
             });
@@ -365,6 +382,7 @@ var main = {
                 },
                 valueAxis: {
                     majorUnit: 20,
+                    max: 100,
                     visible: true,
                     labels: {
                         format: "{0}%"
@@ -375,7 +393,7 @@ var main = {
                 },
                 tooltip: {
                     visible: true,
-                    format: "{0}%",
+                    template: "#= series.name # : #= value #%",
                     color: "#fff"
                 }
             });
@@ -418,7 +436,7 @@ var main = {
                 },
                 valueAxis: {
                     labels: {
-                        format: "{0}ms"
+                        format: "{0}s"
                     },
                     visible: true,
                     majorGridLines: {
@@ -427,7 +445,7 @@ var main = {
                 },
                 tooltip: {
                     visible: true,
-                    format: "{0}",
+                    template: "#= series.name # : #= value #s",
                     color: "#fff"
                 }
             });
@@ -500,8 +518,8 @@ var main = {
         setTime: function(data) {
             var kendoComboBox = $(configs.box.time).data("kendoComboBox");
             kendoComboBox.dataSource.data(data);
-            if (data[0]) {
-                kendoComboBox.value(data[0]["VALUE"]);
+            if (data[1]) {
+                kendoComboBox.value(data[1]["VALUE"]);
             }
             main.ctrl.getAllBusi();
         },
@@ -562,7 +580,7 @@ var main = {
                 });
                 rate.push({
                     time: data[i]["time"],
-                    rate: (data[i]["totalTransCount"] / data[i]["totalTransCount"] - data[i]["sysFailedCount"]) * 100 || 0
+                    rate: (parseFloat(((data[i]["totalTransCount"] - data[i]["sysFailedCount"])/data[i]["totalTransCount"] )) * 100).toFixed(2) || 0
 
                 });
                 duration.push({
@@ -591,9 +609,16 @@ var main = {
         },
         setBusiStep: function(data) {
             main.ctrl.setBusiStepChar(data);
-            
+            main.ctrl.setBusiStepGrid(data);
+            main.ctrl.customerRetention(data)
         },
-        setBusiStepChar: function() {
+        customerRetention: function(data) {
+            $(configs.box.customerRetentionRateChar).data("kendoChart").dataSource.data(data);
+        },
+        setBusiStepGrid: function(data) {
+            $(configs.box.stepDatailsGrid).data("kendoGrid").dataSource.data(data);
+        },
+        setBusiStepChar: function(data) {
             var setpTop = '<div class="stepTop"></div>';
             var setp = '<div class="step{{index}} step" value=' + "'" + '{{data}}' + "'" + '>{{name}}</div>' +
                 ' <div class="stop-magin{{index}} stop-magin" value=' + "'" + '{{data}}' + "'" + '></div>';
@@ -617,7 +642,7 @@ var main = {
         showStep: function() {
             var id = $(this).attr("value");
             var bg = $(this).css("background-color");
-            var x = $(this).offset().left + $(this).width() + 100;
+            var x = $(this).offset().left + $(this).width() + 60;
             var y = $(this).offset().top - 20;
 
             var data = $.parseJSON($(this).attr("value"));
@@ -635,7 +660,7 @@ var main = {
             };
             $(configs.box.stepDatails).find(".title").html("步骤：" + data.name);
             $(configs.box.stepDatails).find(".handling").html("业务量:" + data.handling);
-            $(configs.box.stepDatails).find(".duration").html("步骤时长:" + data.duration + "s");
+            $(configs.box.stepDatails).find(".duration").html("步骤时长:" + data.duration + "ms");
             $(configs.box.stepDatails).find(".rate").html("步骤成功率:" + data.rate + "%");
             $(configs.box.stepDatails).css({
                 "background-color": bg,
@@ -698,8 +723,11 @@ var main = {
                 params,
                 main.ctrl.setChartDataByBusiType, null, configs.Env.bpcMonitor);
         },
-        getBusiStep: function() {
-            main.ctrl.setBusiStep(configs.busiStep)
+        getBusiStep: function(params) {
+            // main.ctrl.setBusiStep(configs.busiStep)
+            $tools.loadData(configs.url.getBusiStep,
+                params,
+                main.ctrl.setBusiStep, null, configs.Env.bpcMonitor);
         }
     },
 };

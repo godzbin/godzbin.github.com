@@ -107,9 +107,13 @@
 }
 
 .k-grid-header-wrap{
+
 	border: 0 #fff;
 }
-
+.k-grid-header{
+	background-image: none;
+	background-color: #2196F3;
+}
 .k-grid-header th{	 
 	background-image: none;
 	color: #fff;

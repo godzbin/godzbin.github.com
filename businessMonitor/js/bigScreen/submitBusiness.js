@@ -380,7 +380,8 @@ var main = {
             main.ctrl.setBusinessComparisonAlarm(value1.alarm, value2.alarm);
         },
         setBusinessComparisonRate: function(businessHall, eleChannel) {
-            var totalValue = (businessHall + eleChannel) / 2;
+            var totalValue = parseFloat(parseInt(businessHall + eleChannel) / 2).toFixed(2);
+            console.log(businessHall);
             var titleValue = $(configs.box.businessComparisonRate).find(".value");
             var radialGauge = $(configs.box.rateRadialGauge).data("kendoRadialGauge");
             titleValue.html(totalValue + "%");
@@ -388,11 +389,11 @@ var main = {
 
             var dataSource = [{
                 name: "营业厅",
-                value: businessHall,
+                value: parseInt(businessHall),
                 color: configs.charNodeBackground[0]
             }, {
                 name: "电渠",
-                value: eleChannel,
+                value: parseInt(eleChannel),
                 color: configs.charNodeBackground[1]
             }];
             var char = $(configs.box.rateChar).data("kendoChart");
@@ -492,7 +493,7 @@ var main = {
                 d[configs.businessSurvey.handling] = da["transCount"];
                 if (da["transCount"]) {
                     d[configs.businessSurvey.duration] = parseInt(da["lastStepSysUsedTime"] / da["transCount"] / 1000);
-                    d[configs.businessSurvey.rate] = ((1 - da["sysFailCount"] / da["transCount"]) * 100).toFixed(2) + "%";
+                    d[configs.businessSurvey.rate] = parseInt((1 - da["sysFailCount"] / da["transCount"]) * 100) + "%";
                 } else {
                     d[configs.businessSurvey.rate] = "100%";
                     d[configs.businessSurvey.duration] = 0;
@@ -874,7 +875,7 @@ var main = {
             createRateRadialGauge: function() {
                 var value = 100;
                 var ranges = this.getRanges(value);
-                var minorUnit = parseFloat(value / 4);
+                var minorUnit = parseInt(value / 4);
                 $(configs.box.rateRadialGauge).kendoRadialGauge({
                     pointer: {
                         value: 0
@@ -924,7 +925,7 @@ var main = {
                 });
             },
             createAlarmRadialGauge: function() {
-                var value = 10;
+                var value = 12;
                 var ranges = this.getRanges(value);
                 var minorUnit = parseFloat(value / 4);
                 $(configs.box.alarmRadialGauge).kendoRadialGauge({
@@ -938,7 +939,7 @@ var main = {
                         endAngle: 210,
                         max: value,
                         labels: {
-                            position: "outside"
+                            position: "outside",
                         },
                         majorTicks: {
                             size: 1,
@@ -954,6 +955,7 @@ var main = {
                     legend: {
                         position: "right",
                         // visible: true,
+
                     },
                     height: 150,
                     chartArea: {
@@ -1016,11 +1018,12 @@ var main = {
                         visible: false,
                         majorGridLines: {
                             visible: false
-                        }
+                        },
+                        max: 100
                     },
                     tooltip: {
                         visible: true,
-                        format: "NO",
+                        format: "{0}%",
                         color: "#fff"
                     }
                 });
@@ -1112,12 +1115,15 @@ var main = {
                     }, {
                         field: configs.businessSurvey.handling,
                         title: configs.businessSurvey_text.handling,
+                        width: 100
                     }, {
                         field: configs.businessSurvey.duration,
                         title: configs.businessSurvey_text.duration,
+                        width: 120
                     }, {
                         field: configs.businessSurvey.rate,
                         title: configs.businessSurvey_text.rate,
+                        width: 100
                     }]
                 });
             },
@@ -1187,7 +1193,8 @@ var main = {
                     },
                     tooltip: {
                         visible: true,
-                        format: "NO"
+                        template: " #= category #:#= value #",
+                        color: "#fff"
                     }
                 });
             },
@@ -1227,7 +1234,7 @@ var main = {
                     },
                     tooltip: {
                         visible: true,
-                        template: "<p> #= category # </p> #= series.name #: #= value #",
+                        template: "<p> #= category # </p> #= series.name #: #= value #ms",
                         color: "#fff"
                     }
                 });
@@ -1255,7 +1262,8 @@ var main = {
                     }],
                     tooltip: {
                         visible: true,
-                        format: "{0}"
+                        template: "#= category # : #= value #",
+                        color: "#fff"
                     }
                 });
             },
@@ -1275,9 +1283,11 @@ var main = {
                         }
                     },
                     valueAxis: {
+                        majorUnit: 2,
                         labels: {
                             format: "{0}%"
                         },
+                        max: 100
                         // majorGridLines: {
                         //     visible: false
                         // },
