@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="resources/css/login.css">
+    <script src="script/jquery.min.js"></script>
+    <script src="script/rsa/base64.js"></script>
+    <script src="script/rsa/jsbn.js"></script>
+    <script src="script/rsa/prng4.js"></script>
+    <script src="script/rsa/rng.js"></script>
+    <script src="script/rsa/rsa.js"></script>
+    <script src="script/rsa/md5.js"></script>
+    <script src="script/login/main.js"></script>
+</head>
+<body>
+	<div class="main-view">
+		<div class="main-view-body">
+			<!--left logo and title -->
+			<div class="main-left">
+				<div class="main-left-logo">COP</div>
+				<div class="main-left-title">
+					<div class="main-left-title-China">
+						能力开发平台
+					</div>
+					<div class="main-left-title-English">
+						Capability Open Platform
+					</div>
+				</div>	
+			</div>
+			<!-- logo and title end -->
+
+			<!--  login form -->
+			<div class="main-right">
+				<div class="main-right-title">
+					用户登录
+				</div>
+				<div class="main-right-form">
+					<div class="main-right-from-name input-wrapper">
+						<input type="text" id="username" class="input-wrapper-text" placeholder="用户名">
+					</div>
+					<div class="main-right-from-password input-wrapper">
+						<input type="password" id="password" class="input-wrapper-text" placeholder="密码">
+					</div>
+					<div class="main-right-from-domain input-wrapper">
+						<div class="radio">
+							<input id="domain1" class="domain" type="radio" name="domain" value="SYS_DOMAIN" checked="checked"><label for="domain1">系统账号</label>
+						</div>
+						<div class="radio">
+							<input id="domain2" class="domain"  type="radio" name="domain" value="COP"><label for="domain2">cop管理员</label>
+						</div>
+						
+					</div>
+					<div class="main-right-from-btn input-wrapper">
+						<button class="login-btn" id="login-btn">
+							登录
+						</button>
+					</div>
+					<div class="main-right-from-errorInfo input-wrapper">
+						<span></span>
+					</div>
+					<!-- <div class="main-right-from-more input-wrapper">
+						<div class="forget-password input-wrappe-a">
+							<a href="#">忘记密码?</a>
+						</div>
+						<div class="login-up input-wrappe-a">
+							<a href="#">注册</a>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<!-- login form end -->
+		</div>
+	<canvas id="main"></canvas>
+	</div>
+	<script src="script/godz/main.js"></script>
+	<script src="script/godz/line.js"></script>
+	<script src="script/godz/spot.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+
+.content-right {
+    background-color: #fff;
+    min-height: 700px;
+}
+
+.content-right-box {
+    background-color: #fff;
+    /*margin-top: 30px;*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #999 solid;
+}
+
+.content-right-box > div {
+    margin-top: 15px;
+    height: 30px;
+}
+
+.businessSurveyTable {
+    background-color: #fff;
+    /*margin-top: 15px;*/
+    /*margin-bottom: 15px;*/
+    min-height: 100px;
+    /*border-bottom: 1px #999 solid;*/
+}
+
+.businessSurveyTable table {
+    margin-top: 30px;
+    margin-bottom: 0;
+    /*border-bottom: 1px #999 solid;*/
+}
+
+.businessSurveyTable table tr td {
+    text-align: center;
+    border: 0;
+}
+
+.businessSurveyTable table tr td:first-child {
+    text-align: left;
+}
+
+.businessSurveyTable table tr th {
+    text-align: center;
+    max-width: 200px;
+    font-size: 18px;
+    font-weight: 400;
+    border-top: 0;
+}
+
+.businessSurveyTable table tr td img {
+    height: 20px;
+}
+
+.singleBusinessDetailsTableTbody {
+    position: relative;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.businessDetailsTable {
+    padding-top: 15px;
+    background-color: #fff;
+    border-bottom: 1px #999 solid;
+}
+
+.btn {
+    padding: 4px 6px;
+}
+
+.singleBusinessDetailsTable tr td {
+    height: 100px;
+}
+
+.businessSurveyTable table tr:nth-child(2n) {
+    background-color: #EFEFEF;
+}
+
+table tr th {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+}
+
+table tr th span {
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+
+/*table tr th:first-child span {*/
+    /*background-color: #F39801;*/
+/*}*/
+
+/*table tr th:nth-child(2) span {*/
+    /*background-color: #EA5C1D;*/
+/*}*/
+
+/*table tr th:nth-child(3) span {*/
+    /*background-color: #E9510F;*/
+/*}*/
+
+/*table tr th:nth-child(4) span {*/
+    /*background-color: #4BB6B0;*/
+/*}*/
+
+/*table tr th:nth-child(5) span {*/
+    /*background-color: #0E6EB8;*/
+/*}*/
+
+/*table tr th:nth-child(6) span {*/
+    /*background-color: #8DC21E;*/
+/*}*/
+
+/*table tr th:nth-child(7) span {*/
+    /*background-color: #66afe9;*/
+/*}*/
+
+/*table tr th:last-child span {*/
+    /*background-color: #4BB6B0;*/
+/*}*/
+
+.singleBusinessDetailsTable,
+.businessDetailsTable {
+    margin-top: 15px;
+    background-color: #fff;
+}
+
+.singleBusinessDetailsTable {
+    margin-bottom: 15px;
+}
+
+.singleBusinessDetailsTableMain,
+.businessDetailsTableMain {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0 #fff;
+}
+
+.singleBusinessDetailsTable {
+    background-color: #fff;
+}
+
+.singleBusinessDetailsTableMain table,
+.businessDetailsTableMain table {
+    border: 0 #fff;
+}
+
+.singleBusinessDetailsTableMain table tr th,
+.businessDetailsTableMain table tr th {
+    /*line-height: 40px;*/
+    /*background-color: #fff;*/
+    /*border: 0 #fff;*/
+    color: #fff;
+    border: 0 #337dff;
+    background-color: #337dff;
+    background-image: url("../img/border.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+.k-grid-header .k-header{
+    text-align: center;
+}
+.singleBusinessDetailsTableMain table tr td,
+.businessDetailsTableMain table tr td {
+    word-wrap: break-word;
+    border: 0 #fff;
+    /*border-bottom: 1px #EFEFEF solid;*/
+}
+.businessDetailsTableMain table tr td{
+    cursor:pointer;
+}
+.k-grid-header{
+    background-image: none;
+}
+.singleBusinessDetailsTableMain table tr th
+/*.singleBusinessDetailsTableMain table tr,*/
+/*.singleBusinessDetailsTableMain .k-grid-header*/
+{
+    background-color: #0BA299;
+    border: 0 #0BA299;
+    /*background-image: none;*/
+    /*background-position: 100%;*/
+}
+
+.singleBusinessDetailsTableMain table tr td:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.singleBusinessDetailsTableMain table tr td:last-child:hover {
+    white-space: inherit;
+}
+
+table tr th {
+    font-size: 1.2em;
+    color: #fff;
+
+    font-weight: 400;
+    background-color: #337dff;
+    background-image: url("../img/border.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+table tr th:last-child{
+    background-image: none;
+}

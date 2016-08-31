@@ -1,0 +1,201 @@
+/* 
+	Update to Godz 
+	time: 2016-06-15	
+*/
+
+
+/*基础配置*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+textarea, input, button {
+    font-family: inherit;
+}
+
+body {
+    color: #000;
+    line-height: 1.7;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    background-color: #F7FAFC;
+}
+
+/*设置背景*/
+.main-view{
+	height: 100%;
+	text-align: center;
+	background-image: url("../images/bg.png");
+	background-size: 100% 100%;
+	position: relative;
+
+}
+/* 
+	绝对定位， 
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;  
+	让 盒子 居中
+ */
+.main-view-body{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 800px;
+	height: 350px;
+	margin: auto;
+	z-index: 999;
+}
+/*左边 logo 的 盒子*/
+.main-left{
+	float: left;
+	width: 50%;
+	padding-top: 70px;
+	text-align: left;
+}
+
+/*设置行高可以让文字居中*/
+.main-left-logo{
+	padding: 10px;
+	padding-left: 100px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 60px;
+	color: #d8d8d8;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 90px 80px;
+}
+.main-left-title-China{
+	height: 50px;
+	line-height: 50px;
+	font-size: 40px;
+	color: #d8d8d8
+}
+.main-left-title-English{
+	height: 30px;
+	line-height: 30px;
+	font-size: 25px;
+	color: #adadad
+}
+
+/*右边表单盒子*/
+.main-right{
+	float: right;
+	width: 50%;
+}
+/*右边表单标题头  登录*/
+.main-right-title{
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 30px;
+	color: #adadad;
+	border-bottom: 1px #adadad solid;
+}
+/* 表单透明背景及圆角 */
+.main-right-form{
+	margin: 20px;
+	padding: 10px;
+	/*圆角*/
+	border-radius: 5px;
+	background-color: rgba(0,0,0,.2);
+}
+
+/* 表单元素盒子  */
+.input-wrapper{
+	padding: 1em 1.5em;
+	position: relative;
+    overflow: hidden;
+   	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/* 输入框与 输入框聚焦 的设置 */
+.input-wrapper input,
+.input-wrapper input:focus
+{
+	border: 0;
+	outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+/* 输入框的样式 */
+.input-wrapper input{
+	width: 100%;
+    padding: .8em 0.8em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #1b3544;
+    color: #ddd;
+	font-size: 14px;
+}
+/* 登录按钮 的 样式 */
+.login-btn{
+	color: #fff;
+    background-color: #3b85a2;
+    box-shadow: none;
+    border: 0;
+    display: block;
+    padding: 0;
+    width: 100%;
+    border-radius: 3px;
+    line-height: 40px;
+    font-size: 15px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    outline: 0;
+    cursor: pointer;
+}
+.login-btn:focus{
+	opacity: 0.8;
+}
+/* 表单下边 忘记密码 和 注册的统一样式 */
+.input-wrappe-a a{
+	color: #adadad;
+	text-decoration: none;
+}
+
+.main-right-from-errorInfo{
+	display: none;
+	padding: 0 1.5em;
+	color: #FF3100;
+}
+
+
+/* 忘记密码按钮外层盒子的位置 */
+.forget-password{
+	float: left;
+}
+/* 注册按钮外层盒子的位置 */
+.login-up{
+	float: right;
+}
+/* 注册按钮的位置 */
+.login-up a{
+	padding: 5px;
+	background-color: #1b3544;
+	border-radius: 5px;
+}
+/* 用户名输入框 图标背景 */
+.main-right-from-name{
+	padding-left: 60px;
+	background-image: url(../images/username.png);
+}
+/* 密码输入框 图标背景 */
+.main-right-from-password{
+	padding-left: 60px;
+	background-image: url(../images/password.png);
+}
+
+#main{
+	position: absolute;
+	top: 0;
+	left: 0;
+}

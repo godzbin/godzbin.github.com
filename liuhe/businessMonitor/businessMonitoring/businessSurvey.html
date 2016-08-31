@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>业务监控</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/kendo.common.min.css">
+    <link rel="stylesheet" href="../css/kendo.default.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/businessMonitoring.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../nav/nav.js"></script>
+    <!--<script src="js/kendo.web.min.js"></script>-->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/kendo.all.min.js"></script>
+    <script src="../js/kendo.web.min.js"></script>
+    <script src="../js/kendo.culture.zh-CN.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/extendPagination.js"></script>
+    <script src="../js/tools.js"></script>
+    <script src="../js/businessSurvey.js"></script>
+</head>
+
+<body>
+<div class="navbar-static-top header">
+    <div class="container-fluid header-top">
+        <div class="header-logo col-xs-6">
+            <p class="header-logo-text">六合业务监测系统</p>
+        </div>
+        <div class="col-xs-6  hidden-xs">
+            <div class="col-xs-8 col-xs-offset-4 header-nav-main">
+                <!--<ul class=" nav  nav-justified  header-nav">-->
+                <!--<li><a href="#" class="header-nav-bg1">大屏监控</a></li>-->
+                <!--<li><a href="failureDetect.html" class="header-nav-bg2 ">告警管理</a></li>-->
+                <!--<li><a href="#" class="header-nav-bg3">运营分析</a></li>-->
+                <!--<li><a href="#" class="header-nav-bg4">运行管理</a></li>-->
+                <!--<li><a href="management2.html" class="header-nav-bg5 action">配置管理</a></li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid header-bottom">
+        <div class="header-login-info col-xs-4">
+            欢迎 <span>【用户名】</span>
+            <a href="#">登录</a> |
+            <a href="#">退出</a>
+        </div>
+        <div class="header-time col-xs-4">
+        </div>
+    </div>
+</div>
+<div class="container-fluid content ">
+    <div class="col-xs-2 content-left clearfix">
+        <!--<ul class="nav nav-stacked text-center">-->
+        <!--<li><a class="action" href="#">告警配置管理</a></li>-->
+        <!--</ul>-->
+    </div>
+    <div class="col-xs-10  content-right ">
+        <div class="col-xs-12  content-right-box ">
+            <div class="col-xs-6">
+                开始时间 : <input type="text" id="startTime">
+            </div>
+            <div class="col-xs-6">
+                结束时间 : <input type="text" id="endTime">
+            </div>
+            <div class="col-xs-6">
+                业务渠道 : <input type="text" id="businessChannel">
+            </div>
+            <div class="col-xs-6 ">
+                <button class="btn btn-primary query">查询</button>
+            </div>
+
+        </div>
+        <div class=" col-xs-12 businessSurveyTable">
+            <table class="table">
+                <tr>
+                    <th><span>业务类型</span></th>
+                    <th><span>业务渠道</span></th>
+                    <th><span>办理量（笔）</span></th>
+                    <th><span>成功率（%）</span></th>
+                    <th><span>平均时长（秒）</span></th>
+                    <th><span>操作</span></th>
+                </tr>
+                <tbody class="businessSurveyTableTbody">
+
+                </tbody>
+            </table>
+            <div class="businessSurveyTablePageBox text-center">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/html" id="businessSurveyTableTr">
+    <tr>
+        <td>{{type}}</td>
+        <td>{{channel}}</td>
+        <td>{{handlingCapacity}}</td>
+        <td>{{successRate}}</td>
+        <td>{{averageTime}}</td>
+        <td><button class="btn btn-primary com" values="{{busiTypeId}}">查看</button></td>
+    </tr>
+</script>
+
+</body>
+</html>

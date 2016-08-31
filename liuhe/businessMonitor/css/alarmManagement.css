@@ -1,0 +1,314 @@
+
+.content-right-box {
+    background-color: #fff;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #999 solid;
+}
+
+.content-right-box > div {
+    margin-top: 5px;
+    height: 30px;
+}
+
+.content-right {
+    background-color: #fff;
+    min-height: 700px;
+
+}
+
+.content-right-health {
+    padding-top: 15px;
+}
+.busiChannelBox{
+    padding: 10px 10px;
+    border-bottom: 1px #999 solid;
+    font-size: 15px;
+}
+table tr td {
+    word-wrap: break-word;
+    width: 200px \0;
+    max-width: 200px;
+}
+
+table tr td textarea {
+    border: 0;
+    height: 100%;
+}
+
+.content-right-health-identification .identification1 {
+    background-image: url("../img/well_pic.png");
+}
+
+.content-right-health-identification .identification2 {
+    background-image: url("../img/commonly_pic.png");
+}
+
+.content-right-health-identification .identification3 {
+    background-image: url("../img/serious_pic.png");
+}
+
+.content-right-health-identification {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.content-right-health-identification > div {
+    background-color: #fff;
+    border-radius: 30px;
+    border: 1px #999 solid;
+    padding:2px 0 2px 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 20px 18px;
+}
+
+.content-right-table-operation {
+    padding: 15px;
+}
+.businessSurveyTableTbody{
+    text-align: center;
+}
+.content-right-table-main {
+    background-color: #fff;
+    padding: 15px 15px 0px 15px;
+    border-radius: 5px;
+    /*min-height: 500px;*/
+    /*height: 500px;*/
+}
+
+.btn {
+    padding: 4px 6px;
+}
+
+.closeAlert {
+    margin-right: 20px;
+}
+
+.closeAllAlert {
+    color: #fff;
+    width: 120px;
+    margin: 0;
+    padding: 15px 30px 15px 0;
+    background-image: url("../img/closeAll.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+.alertServiceDetailsClose{
+    background-color: #fff;
+}
+.pagination {
+    margin: 10px 0;
+}
+
+.btn-primary {
+    background-color: #0E6EB8;
+}
+
+.modal-header {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.modal-body {
+    padding-top: 5px;
+}
+
+.modal-footer {
+    padding: 5px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-top: 0;
+}
+
+.modal-body table,
+.content-right-table-main table {
+    /*margin-top: 15px;*/
+    margin-bottom: 0;
+    border-top: 0;
+}
+
+.content-right-table-main table tr td {
+    line-height: 30px;
+}
+
+.modal-body table tr:nth-child(2n),
+.content-right-table-main table tr:nth-child(2n) {
+    background-color: #EFEFEF;
+}
+
+
+/*table tr th span {*/
+    /*border-radius: 2px;*/
+    /*padding: 2px 5px;*/
+/*}*/
+
+/*table tr th:first-child span {*/
+    /*background-color: #F39801;*/
+/*}*/
+
+/*table tr th:nth-child(2) span {*/
+    /*background-color: #EA5C1D;*/
+/*}*/
+
+/*table tr th:nth-child(3) span {*/
+    /*background-color: #E9510F;*/
+/*}*/
+
+/*table tr th:nth-child(4) span {*/
+    /*background-color: #4BB6B0;*/
+/*}*/
+
+/*table tr th:nth-child(5) span {*/
+    /*background-color: #0E6EB8;*/
+/*}*/
+
+/*table tr th:nth-child(6) span {*/
+    /*background-color: #8DC21E;*/
+/*}*/
+
+/*table tr th:nth-child(7) span {*/
+    /*background-color: #66afe9;*/
+/*}*/
+
+/*table tr th:last-child span {*/
+    /*background-color: #4BB6B0;*/
+/*}*/
+
+.modal-body table tr th,
+.modal-body table tr td,
+.content-right-table-main table tr th {
+    text-align: center;
+    max-width: 180px;
+    border-top: 0;
+}
+
+.modal-body table tr td img,
+.content-right-table-main table tr td img {
+    height: 15px;
+}
+
+.content-right-businessPerformance {
+    margin: 30px auto;
+    min-height: 600px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.content-right-businessPerformance-main {
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.content-right-businessPerformance-header {
+    padding: 10px 0;
+    border-top: 1px #999 solid;
+}
+
+.businessPerformance-businessLink,
+.businessPerformance-businessTime div {
+    padding: 10px 15px;
+}
+.businessPerformance-businessLink{
+    background-color: #efefef;
+}
+#businessPerformance_business_chart,
+#businessPerformance_return_chart {
+    height: 400px;
+}
+
+.businessPerformance-business-right-caption {
+    padding: 15px 0;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.management-content-right-table {
+    background-color: #fff;
+    margin-top: 15px;
+}
+.businessDetailsTable{
+    border-bottom: 1px #999 solid;
+}
+.commandWordTable,
+.businessDetailsTable {
+    margin-top: 15px;
+    background-color: #fff;
+}
+
+.commandWordTable {
+    margin-bottom: 15px;
+}
+
+.commandWordTableMain,
+.businessDetailsTableMain {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0 #fff;
+
+}
+
+.commandWordTableMain table,
+.businessDetailsTableMain table {
+    border: 0 #fff;
+}
+
+.commandWordTableMain table tr th,
+.businessDetailsTableMain table tr th {
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border: 0 #337dff;
+    background-color: #337dff;
+    background-image: url("../img/border.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.commandWordTableMain table tr td,
+.businessDetailsTableMain table tr td {
+   
+    border : 0 #fff;
+}
+.k-grid-header{
+    background-image: none;
+}
+.commandWordTableMain table tr th
+/*.commandWordTableMain table tr,*/
+/*.commandWordTableMain .k-grid-header*/
+{
+    background-color: #0BA299;
+    border: 0 #0BA299;
+    /*background-image: none;*/
+    /*background-position: 100%;*/
+}
+.businessDetailsTableMain table tr td{
+    cursor:pointer;
+}
+.commandWordTableMain table tr td:last-child{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.commandWordTableMain table tr td:last-child:hover{
+    white-space: inherit;
+}
+table tr th {
+    font-size: 1.2em;
+    color: #fff;
+
+    font-weight: 400;
+    background-color: #337dff;
+    background-image: url("../img/border.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+table tr th:last-child{
+    background-image: none;
+}
+.alarmQueryMain{
+    background-color: #fff;
+}

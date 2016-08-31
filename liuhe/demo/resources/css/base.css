@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+	padding: 0;
+}
+.mask {
+	position:absolute;
+	left:-2px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:9999;
+	background-image: url(../point.gif);
+	background-repeat:no-repeat;
+}
+.loadingMask {
+	position: absolute;
+	bottom: 2px;
+	right: 10px;
+	width: 85px;
+	height: 85px;
+	text-align: center;
+	padding: 30px 0 0 0;
+	z-index: 500;
+	background-image: url(../loading.gif);
+	background-repeat:no-repeat;
+	cursor: default;
+	color: #ff0000;
+}
+.checkbox {
+	background-image: url(../checkbox.gif) !important;
+	background-repeat: no-repeat;
+}
+.uncheck {
+	background-image: url(../uncheck.gif) !important;
+	background-repeat: no-repeat;
+}
+.select {
+	background-image: url(../select.png) !important;
+}
+.expandAll {
+	background-image: url(../expand-all.gif) !important;
+}
+.collapseAll {
+	background-image: url(../collapse-all.gif) !important;
+}
+.upload {
+    background: url(../image_add.png) no-repeat 0 0 !important;
+}
+.save {
+	background-image: url(../save.gif) !important;
+}
+.delete {
+	background-image: url(../drop2.png) !important;
+}
+.edit {
+	background-image: url(../edit.png) !important;
+}
+.add {
+	background-image: url(../add3.png) !important;
+}
+.back {
+	background-image: url(../back.png) !important;
+}
+.clear {
+	background-image: url(../clear2.png) !important;
+}
+.trash {
+    background-image: url(../trash.png) !important;
+}
+.confirm {
+	background-image: url(../confirm.png) !important;
+}
+.reset {
+	background-image: url(../reset.png) !important;
+	background-repeat: no-repeat;
+}
+.backward {
+	background-image: url(../backward.png) !important;
+}
+.forward {
+	background-image: url(../forward.png) !important;
+}
+.move {
+	background-image: url(../move.png) !important;
+}
+.copy {
+	background-image: url(../copy.gif) !important;
+}
+.paste {
+	background-image: url(../paste.gif) !important;
+}
+.cut {
+	background-image: url(../cut.gif) !important;
+}
+.refresh {
+	background-image: url(../refresh.gif) !important;
+	background-repeat: no-repeat;
+}
+.upward {
+	background-image: url(../upward.png) !important;
+	background-repeat: no-repeat;
+}
+.downward {
+	background-image: url(../downward.png) !important;
+	background-repeat: no-repeat;
+}
+.checked {
+	background-image: url(../checkbox.gif) !important;
+	background-repeat: no-repeat;
+}
+.uncheck {
+	background-image: url(../uncheck.gif) !important;
+	background-repeat: no-repeat;
+}
+.find {
+    background-image: url(../find.gif) !important;
+	background-repeat: no-repeat;
+}
+.import {
+	background-image: url(../import.png) !important;
+	background-repeat: no-repeat;
+}
+.export {
+	background-image: url(../export.png) !important;
+	background-repeat: no-repeat;
+}
+.reset {
+	background-image: url(../reset.png) !important;
+	background-repeat: no-repeat;
+}
+.findLabel {
+    padding-right: 5px;
+}
+.red {
+    color: #ff0000;
+}
+.green {
+	color: #009900;
+}
+.icon-value {
+	padding: 0 0 0 20px;
+}

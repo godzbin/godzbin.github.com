@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>六合业务监测系统</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/kendo.common.min.css">
+    <link rel="stylesheet" href="../css/kendo.default.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/alarmManagement.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../nav/nav.js"></script>
+    <!--<script src="js/kendo.web.min.js"></script>-->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navbar-static-top header">
+    <div class="container-fluid header-top">
+        <div class="header-logo col-xs-6">
+            <p class="header-logo-text">六合业务监测系统</p>
+        </div>
+        <div class="col-xs-6  hidden-xs">
+            <div class="col-xs-8 col-xs-offset-4 header-nav-main">
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid header-bottom">
+        <div class="header-login-info col-xs-4">
+            欢迎 <span>【用户名】</span>
+            <a href="#">登录</a> |
+            <a href="#">退出</a>
+        </div>
+        <div class="header-time col-xs-4">
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid content ">
+    <div class="col-xs-2 content-left clearfix">
+        <!--<ul class="nav nav-stacked text-center">-->
+            <!--<li><a class="content-left-nav1" href="#">故障发现</a></li>-->
+            <!--<li><a class="content-left-nav2" href="#">故障定位</a></li>-->
+            <!--<li><a class="content-left-nav3" href="#">故障处理</a></li>-->
+        <!--</ul>-->
+    </div>
+    <div class="col-xs-10  content-right ">
+        <div class="content-right-main col-xs-12 ">
+            <div class=" content-right-table col-xs-12">
+                <div class="col-xs-12 busiChannelBox">
+                    业务渠道: <input type="text" id="busiChannel" class="business">
+                </div>
+                <div class="col-xs-4 col-xs-offset-4 text-center content-right-health-identification ">
+                    <div class="col-xs-3 identification1">优</div>
+                    <div class="col-xs-3 col-xs-offset-1 identification2">一般</div>
+                    <div class="col-xs-3 col-xs-offset-1 identification3">严重</div>
+                </div>
+                <div class="content-right-table-operation col-xs-4   text-right">
+                    <button class="btn btn-primary closeAlert">关闭告警</button>
+                    <button class="btn  closeAllAlert">一键关闭</button>
+                </div>
+                <div class="content-right-table-main col-xs-12">
+                    <table class="table table-responsive  text-center ">
+                        <tr class="text-center">
+                            <th><span>选项</span></th>
+                            <th><span>名称</span></th>
+                            <th><span>健康度</span></th>
+                            <th><span>当日办理量</span></th>
+                            <th><span>告警量</span></th>
+                            <th><span>首次告警时间</span></th>
+                            <th><span>告警持续时长(h)</span></th>
+                            <th><span>操作</span></th>
+                        </tr>
+                        <tbody class="content-right-table-main-tbody">
+
+                        </tbody>
+                    </table>
+                    <div class="content-right-table-main-page-box text-center">
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class=" content-right-businessPerformance col-xs-12">
+                <div class="content-right-businessPerformance-main col-xs-12">
+                    <div class="col-xs-12 content-right-businessPerformance-header">
+                        <div class="businessPerformance-businessName text-center col-xs-6 ">
+                            业务名称:
+                            <input class="business" type="text" id="businessName" name="business">
+                        </div>
+                        <div class="businessPerformance-businessTime text-center col-xs-6">
+                            时间:
+                            <input class="business" type="text" id="businessTime" name="business">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-8 businessPerformance_business-left text-center">
+                        <div class="businessPerformance-businessLink text-right">
+                            指标：
+                            <input class="business" type="text" id="businessLink">
+                        </div>
+                        <div>
+                            <div id="businessPerformance_business_chart">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 businessPerformance-business-right">
+                        <div class="col-xs-12 text-center businessPerformance-business-right-caption">
+                            办理结果分布
+                        </div>
+                        <div id="businessPerformance_return_chart">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade col-xs-12"
+     id="alertServiceDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <div class="modal-title" id="alertServiceDetailsTitle">业务告警信息</div>
+            </div>
+            <div class="modal-body alertServiceDetailsTable">
+                <table class="table">
+                    <tr>
+                        <th><span>选项</span></th>
+                        <th><span>告警内容</span></th>
+                        <th><span>首次告警时间</span></th>
+                        <th><span>告警持续时间(h)</span></th>
+                        <th><span>告警状态</span></th>
+                        <th><span>操作</span></th>
+                    </tr>
+                    <tbody class="alertServiceDetailsTable-tbody"></tbody>
+                </table>
+                <div class="alertServiceDetails-page-box text-center"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary closeAlert alertServiceDetailsClose">关闭告警</button>
+                <button type="button" class="btn  closeAllAlert alertServiceDetailsClose">一键关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade "
+     id="singleBusinessInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <div class="modal-title" id="singleBusinessInformationTitle">单笔业务信息</div>
+            </div>
+            <div class="modal-body singleBusinessInformationTable">
+                <table class="table ">
+                    <tr>
+                        <th><span>业务类型</span></th>
+                        <th><span>交易渠道</span></th>
+                        <th><span>用户号码</span></th>
+                        <th><span>操作工号</span></th>
+                        <th><span>办理时间</span></th>
+                        <th><span>办理时长(s)</span></th>
+                        <th><span>业务状态</span></th>
+                        <th><span>操作</span></th>
+                    </tr>
+                    <tbody class="singleBusinessInformationTable-tbody">
+
+                    </tbody>
+                </table>
+                <div class="singleBusinessInformationTable-page-box text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade  "
+     id="commandWord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <div class="modal-title" id="commandWordTitle">业务对应命令字信息</div>
+            </div>
+            <div class="modal-body commandWordTable">
+                <table class="table ">
+                    <tr>
+                        <!--<th>业务类型</th>-->
+                        <th><span>命令字</span></th>
+                        <th><span>时间</span></th>
+                        <th><span>源IP</span></th>
+                        <th><span>目标IP</span></th>
+                        <th><span>响应时长(ms)</span></th>
+                        <th><span>返回码</span></th>
+                        <th><span>返回信息</span></th>
+                    </tr>
+                    <tbody class="commandWordTable-tbody">
+
+                    </tbody>
+                </table>
+                <div class="commandWordTable-page-box text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="content-right-table-main-tr">
+    <tr>
+        <td><input type="checkbox" value="{{id}}" name="mainAlert"></td>
+        <td>{{name}}</td>
+        <td><img src="../img/{{health}}" alt=""></td>
+        <td>{{handle}}</td>
+        <td>{{alert}}</td>
+        <td>{{time}}</td>
+        <td>{{durationTime}}</td>
+        <td>
+            <button class="btn btn-primary openAlertServiceDetails" values="{{id}}" data-toggle="modal">查看</button>
+        </td>
+    </tr>
+</script>
+<script type="text/html" id="alertServiceDetailsTable-tr">
+    <tr>
+        <td><input type="checkbox" value="{{id}}" name="alertDetails"></td>
+        <td>{{name}}</td>
+        <td>{{time}}</td>
+        <td>{{durationTime}}</td>
+        <td>{{state}}</td>
+        <td>
+            <button class="btn btn-primary openSingleBusinessInformation" values="{{id}}">查看</button>
+        </td>
+    </tr>
+</script>
+<script type="text/html" id="singleBusinessInformationTable-tr">
+    <tr>
+        <td>{{name}}</td>
+        <td>{{transactionChannel}}</td>
+        <td>{{number}}</td>
+        <td>{{operatorNo}}</td>
+        <td>{{time}}</td>
+        <td>{{durationTime}}</td>
+        <td>{{state}}</td>
+        <td>
+            <button class="btn btn-primary openCommandWord" values="{{id}}">查看</button>
+        </td>
+    </tr>
+</script>
+<script type="text/html" id="commandWordTable-tr">
+    <tr>
+        <!--<td>{{name}}</td>-->
+        <td>{{commandWord}}</td>
+        <td>{{time}}</td>
+        <td>{{clientIP}}</td>
+        <td>{{serverIP}}</td>
+        <td>{{responseTime}}</td>
+        <td>{{returnCode}}</td>
+        <td><textarea>{{returnInfo}}</textarea></td>
+    </tr>
+</script>
+<script src="../js/kendo.all.min.js"></script>
+<script src="../js/kendo.web.min.js"></script>
+<script src="../js/kendo.culture.zh-CN.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/tools.js"></script>
+<script src="../js/extendPagination.js"></script>
+<script src="../js/alarmManagement/failureDetect.js"></script>
+</body>
+</html>

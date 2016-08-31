@@ -1,0 +1,407 @@
+
+.x-body,
+.x-form-text-default,
+*{
+	font-family: "Microsoft YaHei";
+	font-weight: 400;
+	font-size: 12px;
+	font: 400 12px/16px "Microsoft YaHei";
+}
+body{
+	background-image: url(images/mainBg.png);
+}
+.loading{
+	background: url(images/loading.gif) no-repeat;
+	position: fixed;
+	bottom: 20%;
+	left: 50%;
+	display: none;
+	z-index: 99999;
+}
+.x-selectable, .x-selectable * {    
+  -moz-user-select: text!important;    
+  -khtml-user-select: text!important;    
+}   
+.x-toolbar-default,
+div.x-border-layout-ct,
+.x-panel-body-default{
+	background: none;
+}
+.x-btn-over.x-btn-default-small,
+.x-btn-focus.x-btn-default-small{
+	background-color: none;
+}
+.contentChildrenTools{
+	position: fixed;
+	top: 0;
+}
+
+.viewport{
+	background-image: url(images/mainBg.png);
+	/*background-size: 100%;*/
+}
+.logo{
+	background-image: url(images/logo.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.i_title{
+	background-image: url(images/title.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.i_title_busiTrack{
+	background-image: url(images/busiTrack_icon.png);
+}
+.i_title_operationAnalysis{
+	background-image: url(images/operationAnalysis_icon.png);
+}
+.i_title_busiTopics{
+	background-image: url(images/busiTopics_icon.png);
+}
+.i_config{
+	background-image: url(images/config.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+.top-menu{
+	
+}
+.top-menu-li{
+	background-image: url(images/menuBg.png); 
+	border-radius: 0px;
+	height: 40px;
+	margin-top: 40px; 
+	border-color: #ddd;
+	border-width: 1px;
+	border-right-width: 0;
+	border-bottom-width: 0;
+}
+.top-menu-li:last-child{
+	border-width: 1px;
+	border-bottom-width: 0;
+}
+.x-btn-inner-default-small{
+	font-family: "Microsoft YaHei";
+}
+.top-menu-li .x-btn-inner-default-small{
+	font-size: 16px;
+	color: #666;
+	font-weight: 400;
+}
+.top-menu-li.x-btn-focus.x-btn-default-small,
+.top-menu-li.x-btn-menu-active.x-btn-default-small,
+.top-menu-li.x-btn-over.x-btn-default-small{
+	background-color: #fff;
+	border: 0;
+}
+.top-menu-li.action{
+	background: #fff;
+	border: 0;
+}
+.top-menu-li-buttonMenu{
+	border: 0;
+	text-align: center;
+}
+.x-menu-item-default.x-menu-item-active{
+	background-color: #CFE8C0;
+}
+.topTools .x-form-trigger-wrap-default{
+	border-width: 0;
+}
+.topTools .x-form-trigger-default{
+	background-color: #F3F9F2;
+}
+.busiConfigToolsButton,
+.busiTopicsToolsButton,
+.operationAnalysisToolsButton,
+.busiTrackToolsButton,
+.busiProfileToolsButton{
+	font-weight: 400;
+	cursor: pointer;
+}
+.busiConfigToolsButton.action,
+.busiTopicsToolsButton.action,
+.operationAnalysisToolsButton.action,
+.busiTrackToolsButton.action,
+.busiProfileToolsButton.action{
+	color: #00B751;
+}
+.busiProfileOpBtn{
+	background-color: #fff;
+	border: 1;
+	border-radius: 0;
+	background-repeat: no-repeat;
+
+}
+
+.busiProfileOpBtn.x-btn-over.x-btn-default-small,
+.busiProfileOpBtn.x-btn-focus.x-btn-default-small,
+.busiProfileOpBtn.action{
+	background-color: #fff;
+}
+.a_start{
+	background-image: url(images/start.png);
+}
+.a_stop{
+	background-image: url(images/stop.png);
+}
+.a_start.x-btn-over.x-btn-default-small,
+.a_start.x-btn-focus.x-btn-default-small,
+.a_start.action{
+	background-image: url(images/starting.png);
+}
+.a_stop.x-btn-over.x-btn-default-small,
+.a_stop.x-btn-focus.x-btn-default-small,
+.a_stop.action{
+	background-image: url(images/stoping.png);
+}
+.content{
+/*	-webkit-box-shadow: 10px 10px 20px #ccc;  
+	-moz-box-shadow: 10px 10px 20px #ccc;  
+	box-shadow: 10px 10px 20px #ccc;*/
+}
+.busiProfileMainTop{
+	background-image: url(images/border.png);
+	background-repeat: no-repeat;
+	background-position: 60% center;
+}
+.busiProfileMainTop .x-panel-body{
+	-webkit-box-shadow: 3px 3px 6px #ccc;  
+ 	-moz-box-shadow: 3px 3px 6px #ccc;  
+ 	box-shadow: 3px 3px 6px #ccc;
+}
+.mainTopLeft{
+	margin-top: 15px; 
+}
+.mainTopLeftText{
+	text-align: center;
+	font-size: 24px;
+	color: #009347;
+	font-weight: 500;
+	margin-top: 15px; 
+}
+.mainTopLeftLabel{
+	text-align: center;
+	font-size: 14px;
+	margin-top: 15px; 
+}
+.line{
+	background-color: #ccc;
+}
+
+.mainTopChart{
+	height: 120px;
+}
+.x-panel-header-default{
+	background-color: #fff;
+	border: 0;
+}
+.x-panel-header-default{
+	background-image: url(images/grid-title.png);
+	background-repeat: no-repeat;
+	background-position: -90px center;
+	padding: 5px;
+	padding-left: 10px;
+	height: 25px;
+	margin-bottom: 5px;
+	border-bottom: 1px #7DC432 solid; 
+	border-bottom-width: 1px !important;
+
+}
+.x-panel-header-default2{
+	background-image: url(images/grid-title.png);
+	background-repeat: no-repeat;
+	/*padding: 5px;*/
+	background-position: -80px center;
+	margin: 5px;
+	padding-left: 10px;
+	height: 25px;
+	margin-bottom: 5px;
+	border-bottom: 1px #7DC432 solid; 
+	border-bottom-width: 1px !important;
+}
+.x-panel-header-title-default > .x-title-text-default{
+	color: #fff;
+	font-size: 14px;
+}
+.x-column-header{
+	background-color: #D5EBE6;
+}
+.busiMoitorBtn{
+	background-color: #fff;
+	border-radius: 4px 4px;
+	color: #666;
+	border: 1px #666 solid;
+	margin-left: 20px; 
+}
+.busiMoitorBtn.x-btn-over.x-btn-default-small,
+.busiMoitorBtn.x-btn-focus.x-btn-default-small,
+.busiMoitorBtn.action{
+	background-color: #00AD44;
+	border: 0;
+}
+.busiMoitorBtn .x-btn-inner-default-small{
+	color: #000;
+	font-weight: 400;
+}
+.busiMoitorBtn.x-btn-over.x-btn-default-small .x-btn-inner-default-small,
+.busiMoitorBtn.x-btn-focus.x-btn-default-small .x-btn-inner-default-small, 
+.busiMoitorBtn.action .x-btn-inner-default-small{
+	color: #fff;
+}
+.busiMoitorBtn.x-btn-menu-active.x-btn-default-small{
+	background-color: #fff;
+}
+
+.busiProfileTopRealTime{
+	text-align: right;
+	width: 400px;
+}
+#topRealTime{
+	width: 100%;
+	height: 20px;
+	font-size: 14px;
+}
+.operationAnalysisAlarmGridBtn,
+.busiAlarmGridBtn{
+	border: 0;
+	background-color: #00AD44;
+	color: #fff;
+	cursor: pointer;
+}
+.operationAnalysisAlarmGridBtn.action,
+.busiAlarmGridBtn.action{
+	background-color: #f00;
+}
+.webBusi{
+	background-image: url(images/webBusi.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom:1px #ccc solid ;
+}
+.wasBusi{
+	background-image: url(images/wasBusi.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom:1px #ccc solid ;
+}
+.cicsBusi{
+	background-image: url(images/cicsBusi.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom:1px #ccc solid ;
+}
+.singleBusiGrid{
+	background-image: url(images/toDown.png);
+	background-repeat: no-repeat;
+	background-position: 10% bottom;
+}
+.singleBusiGrid:last-child{
+	background-image: none;
+}
+
+.stepChart{
+	background-image: url("images/stepChart.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.x-grid-with-row-lines .x-grid-item{
+	border-width: 0;
+}
+.operationAnalysisAlarmGridBtn.action{
+	background-color: #f00;
+	cursor: pointer;
+}
+.busiTopicsContentLeftBottom .x-panel-header-default{
+	background-position: -80px center;
+}
+#content-body{
+	border-width: 0
+}
+.x-grid-item-focused .x-grid-cell-inner:before{
+	border: 0;
+}
+.highcharts-tooltip {
+    z-index: 9998;
+}
+.chart{
+	height: 100%;
+	width: 100%;
+}
+#busiTopicsStepFunnel{
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#busiTopicsStepFunnel>div {
+	position: absolute;
+}
+#busiTopicsStepFunnel>div>p{
+	margin: 0;
+}
+#detailMonitorChartDataLabel{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*background-image: url(images/label.png);*/
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#detailMonitorChartDataLabel p{
+	margin: 2px;
+}
+#detailMonitorChartDataLabel .title1,
+#detailMonitorChartDataLabel .title2,
+#detailMonitorChartDataLabel .title3{
+	display: none;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#detailMonitorChartDataLabel .title2{
+	position: absolute;
+	width: 200px;
+	right: 0;
+	top: 0;
+	height: 50%;
+	background-image: url(images/label2.png);
+}
+#detailMonitorChartDataLabel .title2 .title_p{
+	position: absolute;
+	top: 0px;
+	left: 90px;
+	width: 100px;
+}
+#detailMonitorChartDataLabel .title3{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+	height: 100%;
+	background-image: url(images/label3.png);
+}
+#detailMonitorChartDataLabel .title3 .title_p{
+	position: absolute;
+	top: 150px;
+	left: 10px;
+	width: 100px;
+}
+#detailMonitorChartDataLabel .title1{
+	background-image: url(images/label1.png);
+	position: absolute;
+	top: 100px;
+	right: 0px;
+	width: 200px;
+	height: 50%;
+}
+#detailMonitorChartDataLabel .title1 .title_p{
+	position: absolute;
+	top: 40px;
+	left: 100px;
+	width: 100px;
+}

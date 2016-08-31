@@ -1,0 +1,515 @@
+
+body {
+    color: #000;
+    line-height: 1.7;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    background-color: #F7FAFC;
+}
+*{
+	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+}
+/*.x-toolbar-default,*/
+div.x-border-layout-ct,
+.x-panel-body-default{
+	background: none;
+	border: 0;
+}
+
+.x-tab-default-top{
+	background: none;
+	border: 0px;
+	/*height: 30px;*/
+
+}
+.x-tab-default-top.x-tab-focus.x-tab-over,
+.x-tab-default-top.x-tab-focus,
+.x-tab-default-top.x-tab-focus.x-tab-active{
+	border: 0px;
+	box-shadow: none;
+}
+.x-tab-default-top:hover{
+	background: none;
+}
+.x-tab-inner-default{
+	/*font-size: 24px;*/
+	color: #ddd;
+
+}
+
+/*搜索框样式*/
+.searchInput input{
+	padding-right: 20px;
+	background: url("../images/search.png") no-repeat 90% center ;
+}
+
+
+.viewport{
+	background-image: url("../images/bg.png");
+	background-repeat: repeat-y;
+	/*background-size: 100% 100%;*/
+	background:-webkit-gradient(linear ,0% 100%,100% 100%,
+	color-stop(0.1,rgb(76,118,91)),
+	color-stop(1,rgb(58,92,121)));
+	background:-moz-linear-gradient(left,rgb(76,118,91),rgb(58,92,121));
+}
+.viewport-top{
+	background: rgb(58,92,121);
+	background:-webkit-gradient(linear ,0% 100%,100% 100%,
+	color-stop(0.001,rgb(76,118,91)),
+	color-stop(1,rgb(58,92,121)));
+	background:-moz-linear-gradient(left,rgb(76,118,91),rgb(58,92,121));
+}
+.top .x-btn.x-btn-menu-active.x-btn-default-small,
+.top .x-btn-default-small,
+.top .x-btn-over.x-btn-default-small,
+.top .x-btn-focus.x-btn-default-small,
+.top .x-btn-menu-active.x-btn-default-small,
+.top .x-btn-over.x-btn-default-small{
+	background: none;
+	border: 0;
+
+	/*box-shadow: none;*/
+}
+.top .x-btn.x-btn-pressed.x-btn-default-small{
+	background: none;
+}
+.line{
+	background-color: #ccc;
+}
+.x-menu-item-text-default{
+	color: #ddd;
+}
+.childMenu{
+	background-color: rgba(0,0,0,.8);
+	
+}
+.menuClass{
+	border-width: 0;
+	padding-top: 10px; 
+	border-radius: 3px;
+}
+.menuActive{
+	background: none;
+}
+.x-menu-item-default.x-menu-item-active{
+	background-color: #21414E;
+}
+.topTrigger{
+	background-color: #ddd;
+}
+
+.logo{
+	cursor: pointer; 
+	font-size: 40px;
+	line-height: 100px;
+	color: #ddd; 
+	padding-left: 80px; 
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 60px 60px;
+}
+
+
+
+.indexPage-module{
+	cursor: pointer; 
+	border-radius: 10px;
+	-webkit-transition: background-color .15s ease-in;
+}
+.indexPage-module:hover{
+	background-color: rgba(0,0,0, 0.2);
+}
+
+
+
+/*服务目录管理*/
+/*树*/
+.serviceDirectoryTreeMenu{
+	border-radius: 3px;
+}
+.serviceDirectoryTreeMenu .x-menu-item-text-default{
+	color: #666;
+	font-size: 15px;
+}
+.serviceDirectoryTreeMenu .x-menu-item-active  .x-menu-item-text-default{
+	color: #5C9DF4;
+}
+.serviceDirectoryTreeMenu .x-menu-item-default.x-menu-item-active{
+	background-color: #EAF0FB;
+}
+
+.serviceDirectoryTreePanel .x-grid-item{
+	background: none;
+
+}
+.serviceDirectoryTreePanel .x-grid-body{
+	border-top: 0;
+}
+
+
+.serviceDirectoryMainPanel{
+	height: auto;
+	background-color: rgba(0,0,0,.3);
+	padding: 15px;
+	border-radius: 5px;
+}
+.serviceDirectoryTreePanel{
+	background-color: rgba(0,0,0,.3);
+	border-radius: 3px;
+}
+
+
+.serviceDirectoryTreeType {
+	color: #fff;
+	font-size: 16px;
+	padding: 5px;
+}
+
+.serviceDirectoryTreeScene{
+	color: #fff;
+	font-size: 14px;
+	padding: 5px;
+}
+.serviceDirectoryTreePanel .x-grid-item-selected{
+	background-color: rgba(0,0,0,.4);
+}
+
+.centerGridPanel,
+.centerFormPanel{
+	padding: 15px;
+	background-color: rgba(0,0,0,.3);
+	border-radius: 5px;
+}
+.centerFormPanelInput .x-form-trigger-wrap-default{
+	border: 0px; 
+}
+/*.centerFormPanel textarea,
+ .centerFormPanel input{
+	background-color: rgba(0,0,0,.1);
+	border-radius: 3px;
+	color: #fff;
+	padding: 5px 10px;
+}*/
+.centerFormPanelInput textarea,
+.centerFormPanelInput input{
+
+	background-color: rgba(0,0,0,.3);
+	border-radius: 3px;
+	color: #fff;
+	padding: 5px 10px;
+	font-size: 14px;
+	border: 0;
+}
+.centerFormPanelInput .x-form-text-default.x-form-textarea{
+	line-height: 25px;
+}
+.centerFormPanelInput input{
+	/*border: 1px #666 solid;*/
+}
+
+
+
+/*告警配置*/
+.alarmConfigTabPanel .x-tab-default-top{
+	background: none;
+	/*border: 0px;*/
+	height: 25px;
+	
+}
+.alarmConfigTabPanel .x-header{
+	background: none;
+	padding: 10px 0 5px;
+	/*border-top: 1px #ddd solid !important;*/
+	margin: 5px 0;
+}
+.alarmConfigTabPanel .x-tab-bar{
+	/*background-color: rgba(0,0,0,.1);*/
+}
+
+.alarmConfigTabPanel .x-tab-bar-body-default{
+	padding: 0;
+}
+.alarmConfigTabPanel .x-title-text{
+	color: #ddd;
+}
+
+.alarmConfigTabPanel .x-tab-default-top.x-tab-active,
+.alarmConfigTabPanel .x-tab-default-top.x-tab-focus,
+.alarmConfigTabPanel .x-tab-default-top.x-tab-focus.x-tab-active{
+	/*background-color: rgba(0,0,0,.3);*/
+	border-radius: 0;
+	border-top-left-radius:  3px;
+	border-top-right-radius: 3px;
+	background-color: #333;
+	background-color: rgba(0,0,0,.3);
+	border: 0;
+}
+
+.alarmConfigTabGridPanel{
+	padding: 10px;
+	background-color: #333;
+	background-color: rgba(0,0,0,.3);
+	border-radius: 2px;
+}
+.alarmConfigTabPanel .x-tab-default-top.x-tab-active .x-tab-inner-default{
+	/*color: #333;*/
+}
+
+
+
+
+
+
+
+
+
+.serviceDirectory-sub-btn{
+	width: 100px;
+	padding: 5px;
+	margin: 10px;
+	font-size: 15px;
+	 border-radius: 5px;
+}
+.serviceDirectory-sub-btn1{
+	background-color: #86AA39;
+	border: 1px #B8E93D solid;
+}
+.serviceDirectory-sub-btn2{
+	background-color: #214F5D;
+	border: 1px #18262E solid;
+}
+.serviceDirectory-sub-btn .x-btn-inner{
+	font-size: 15px;
+	font-weight: 500;
+}
+.serviceDirectory-sub-btn1:hover,
+.serviceDirectory-sub-btn1:focus{
+	background-color: #B8E93D;
+	border: 1px #86AA39 solid; 
+}
+.serviceDirectory-sub-btn2:hover,
+.serviceDirectory-sub-btn2:focus{
+	background-color: #18262E;
+	border: 1px #18262E solid; 
+}
+.serviceDirectory-addserver{
+	padding: 5px;
+	margin: 10px 0;
+	background-color: #86D14A;
+	border: 1px #86AA39 solid; 
+}
+.serviceDirectory-addserver .x-btn-inner{
+	font-size: 15px;
+	font-weight: 500;
+}
+.serviceDirectory-addserver:hover,
+.serviceDirectory-addserver:focus{
+	background-color: #86AA39;
+	border: 1px #86AA39 solid; 
+}
+.x-grid-item-focused .x-grid-cell-inner:before{
+	border: 0;
+}
+.x-grid-item-focused{
+	outline: none;
+
+}
+.alarmConfigTabGridPanel .x-grid-item-focused{
+	color: #ddd;
+}
+.alarmConfigTabGridPanel .x-grid-row .x-grid-td{
+	vertical-align: middle;
+}
+.alarmConfigTabGridPanel  .x-grid-cell-special.x-grid-td{
+    vertical-align: top;
+}
+.alarmConfigTabGridPanel .x-grid-row .x-grid-cell-selected{
+	background-color: #333;
+	background-color: rgba(0,0,0,.3);
+	color: #ddd;	
+}
+
+
+.x-grid-item-focused
+.window .x-form-trigger-wrap-default{
+	border-radius: 3px;
+}
+.x-tagfield{
+	background: none;
+	border: 1px #eee solid;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+#serviceDirectory .centerFormPanel .x-tagfield-input  input{
+	background: none;
+	border : 0;
+	padding: 5px;
+}
+
+
+#serviceDirectory .editTypeMapBtn{
+	background-color: #3892D4;
+}
+#serviceDirectory .deleteTypeMapBtn{
+	background-color: #E43331;
+}
+
+.radioLabel{
+	padding-left: 18px; 
+	line-height: 25px;
+	color: #ddd;
+	font-size: 14px;
+}
+
+
+
+
+.serviceDirectoryManageFormTag  .x-form-trigger-wrap-default ,
+.serviceDirectoryManageFormTag  .x-form-trigger-wrap-default .x-form-text-default .x-tagfield-item{
+	background: none;
+	border-width: 0px;
+	color: #ddd;
+}
+.serviceDirectoryManageFormTag .x-tagfield{
+	background: rgba(0,0,0,0.3);
+	border-width: 0px;
+	padding: 10px;
+}
+.serviceDirectoryManageFormTag .x-form-trigger-default{
+	background-color: rgba(0,0,0,0.3);
+}
+.serviceDirectoryManageFormCheckbox{
+	/*padding: 10px;*/
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+
+.ueditor .edui-editor.edui-default{
+	background-color: #ddd;
+}
+
+/*告警列表样式*/
+.alarmConfigTabGridPanel .x-grid-header-ct{
+	background: none;
+}
+.alarmConfigTabGridPanel .x-column-header{
+	border-right: 0px;
+	background: none;
+	color: #eee;
+} 
+.alarmConfigTabGridPanel .x-column-header-over{
+	background: none;
+	color: #eee;
+}
+.alarmConfigTabGridPanel .x-grid-header-ct-focus{
+	outline: 0;
+}
+.alarmConfigTabGridPanel .x-grid-item{
+	background: none;
+	color: #eee;
+}
+.alarmConfigTabGridPanel .x-grid-with-row-lines .x-grid-item{
+	border: 0px; 
+	border-top: 1px #aaa solid;
+}
+
+
+
+/*按钮样式*/
+
+.base-btn{
+	border: 0;
+	background-color: #86D14A;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 30px;
+	color: #ddd;
+}
+.base-btn .x-btn-inner-default-small{
+	font-size: 14px;
+}
+.btn-save{
+	background-color: #7DC432;
+}
+
+.btn-remove{
+	background-color: #AD0D26;
+}
+
+.btn-submit{
+	background-color: #00A8E0;
+}
+.btn-hide{
+	background-color: #ccc; 
+}
+.btn-hide .x-btn-inner-default-small{
+	color: #333;
+}
+.menuBtn{
+	background: none;
+}
+.menuBtn .x-btn-inner-default-small{
+	color: #aaa;
+}
+.menuBtn.action .x-btn-inner-default-small{
+	color: #fff;
+	
+}
+.menuBtn.action{
+	border-radius: 0px;
+	border-bottom: 2px #fff solid;
+}
+.statuBtn{
+	background: none;
+}
+.statuBtn.action{
+	background: #FFFFFF;
+
+}
+.statuBtn.action .x-btn-inner-default-small{
+	color: #333;
+}
+.allOrderBtn .x-btn-inner-default-small{
+	font-size: 20px;
+}
+.orderIcon{
+	margin: 5px;
+}
+.orderIconHide{
+	display: none;
+}
+
+
+
+.more{
+	margin-top: 5px;
+	background-size: 15px auto;
+}
+.moreHide{
+	display: none;
+}
+/* 子菜单 menuChild*/
+ 
+
+
+.orderWin{
+	padding: 15px;
+	border: 0;
+	background-color: #3C5B6F;
+	/*background-color: rgba(0,0,0,.7);*/
+	border-radius: 5px;
+}
+.orderWin .x-window-header-default{
+	background: none;
+	border: 0;
+}
+.orderWin .x-window-body-default{
+	background: none;
+	border: 0;
+}
+.x-mask{
+	background-color: rgba(0,0,0,.3);
+}
