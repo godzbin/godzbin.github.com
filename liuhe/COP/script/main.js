@@ -19,8 +19,10 @@ Ext.onReady(function() {
 	main.regContent(new MonitorHomePage(main));
 
 	main.regContent(new UserCenter(main));
+	main.regContent(new SceneMode(main));
 	main.regContent(new SecurityManage(main));
 	main.init();
+	Ext.QuickTips.init();
 });
 
 var Main = function() {

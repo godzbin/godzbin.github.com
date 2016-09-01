@@ -286,7 +286,6 @@ function UserCenter(parentNode){
 	}.bind(this)();
 
 	this.loadData = function(){
-		Ext.Msg.wait('wait');
 		tools.getData(Configes.url.view_getSelfInfo, null, this.setData.bind(this), null);
 	};
 
@@ -342,20 +341,18 @@ function UserCenter(parentNode){
 				_qqAccount   = formPanel.findField('qqAccount');
 			}
 
-			void 0 !== _data['account']  && _account.setValue(_data['account']),
-			void 0 !== _data['password'] && _password.setValue(_data['password']),
-			_realName.setValue(_data['realName']),
-			_nickName.setValue(_data['nickName']),
-			_age.setValue(_data['age']),
-			_province.setValue(_data['province']),
-			_company.setValue(_data['company']),
-			_department.setValue(_data['department']),
-			_position.setValue(_data['position']),
-			_number.setValue(_data['number']),
-			_email.setValue(_data['email']),
+			void 0 !== _data['account']  && _account.setValue(_data['account']);
+			void 0 !== _data['password'] && _password.setValue(_data['password']);
+			_realName.setValue(_data['realName']);
+			_nickName.setValue(_data['nickName']);
+			_age.setValue(_data['age']);
+			_province.setValue(_data['province']);
+			_company.setValue(_data['company']);
+			_department.setValue(_data['department']);
+			_position.setValue(_data['position']);
+			_number.setValue(_data['number']);
+			_email.setValue(_data['email']);
 			_qqAccount.setValue(_data['qqAccount']);
-
-			Ext.Msg.hide();
 		};
 	}.bind(this)();
 
@@ -405,7 +402,7 @@ function UserCenter(parentNode){
 				Ext.Msg.alert('消息', '密码修改失败..');
 				_this.win.hide();
 			}
-		})
+		});
 	}
 
 }

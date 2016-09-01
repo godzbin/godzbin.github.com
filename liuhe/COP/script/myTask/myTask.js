@@ -84,7 +84,7 @@ function MyTask(parentNode) {
 		this.myOrderDetailsMainPanel.show();
 		this.initOrderDetails();
 
-		this.getOrderInfo(orderId);
+		this.getOrderInfo(orderId,record);
 	};
 	this.initOrderDetails = function() {
 		this.myOrderDetailsPanel.getForm().reset();
@@ -362,11 +362,12 @@ function MyTask(parentNode) {
 
 
 
-	this.getOrderInfo = function(orderId) {
+	this.getOrderInfo = function(orderId, record) {
 		var params = {
 			orderId: orderId
 		}
-		tools.getData(Configes.url.getOrderInfo, params, this.setOrderInfo, this);
+		var statu = record.get("statu");
+		tools.getData(Configes.url.getOrderInfo + statu, params, this.setOrderInfo, this);
 	};
 	this.setOrderInfo = function(data, that) {
 		that.setMyOrderInfo(data);

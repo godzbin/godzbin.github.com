@@ -17,7 +17,7 @@ var Logo = function(parentNode) {
 		});
 		return panel;
 	};
-	this.openIndex = function(){
+	this.openIndex = function() {
 		this.parentNode.openContent(Configes.page.indexPage);
 	}
 };
@@ -41,6 +41,57 @@ var TopMenu = function(parentNode) {
 		if (that.mainMenuPanel) {
 			that.mainMenuPanel.setText(data["_NAME"]);
 		}
+
+		that.initMenu();
+
+
+
+	};
+
+	this.initMenu = function() {
+
+		var mainMenuPanel = this.mainMenuChildPanel;
+		var userMenu = mainMenuPanel.getComponent(2);
+		var serviceMenuPanel = this.serviceDirectoryMenuPanel;
+		var serviceMade = serviceMenuPanel.getComponent(2);
+		var serviceManagementMenu = serviceMenuPanel.getComponent(1);
+		
+		
+		userMenu.hide();
+		serviceManagementMenu.hide();
+		serviceMade.hide();
+
+		if (this.userInfo["_CONTENT"]) {
+			var province = this.getProvince();
+			if (province === "深圳中心") {
+				userMenu.show();
+				serviceManagementMenu.show();
+				serviceMade.hide();
+			} else {
+				userMenu.hide();
+				serviceManagementMenu.hide();
+				serviceMade.show();
+			}
+		}
+
+	};
+	this.getProvince = function() {
+		var contentStr = this.userInfo["_CONTENT"];
+		var content = JSON.parse(contentStr);
+		var province = content["PROVINCE"];
+		return province
+	};
+
+
+
+	this.menuChildChange = function(cmp) {
+		var pageId = cmp.pageId;
+		var parentPanel = cmp.up("panel");
+		parentPanel.items.each(function(btn) {
+			btn.removeCls("action");
+		});
+		cmp.addCls("action");
+		this.parentNode.openContent(pageId);
 	};
 
 	// view
@@ -58,8 +109,11 @@ var TopMenu = function(parentNode) {
 				this.createMenuPanel()
 			]
 		});
+
+		this.getUserInfo();
 		return panel;
 	};
+	// 
 	this.createMenuPanel = function() {
 		this.menuPanel = Ext.create("Ext.panel.Panel", {
 			border: 0,
@@ -140,62 +194,58 @@ var TopMenu = function(parentNode) {
 		});
 		return this.orderMenuPanel;
 	};
-	this.createUserCenterMenuPanel = function() {
-		var that = this;
-		this.userCenterMenuPanel = Ext.create("Ext.panel.Panel", {
-			border: 0,
-			height: 31,
-			width: "100%",
-			margin: "10 0 0 0",
-			style: "border-bottom: 1px #ddd solid",
-			height: 31,
-			defaults: {
-				xtype: "button",
-				margin: "0 20",
-				baseCls: "x-btn base-btn",
-				cls: "menuBtn",
-				handler: Ext.bind(this.menuChildChange, this)
-			},
-			items: [{
-				text: "我的订单",
-				pageId: Configes.page.myOrder,
-			}, {
-				text: "我的任务",
-				pageId: Configes.page.myTask,
-			}, {
-				text: "我的资料",
-				pageId: Configes.page.userCenter,
-			}]
-		});
-	};
-	this.createServiceDirectoryMenuPanel = function() {
-		var that = this;
-		this.serviceDirectoryMenuPanel = Ext.create("Ext.panel.Panel", {
-			border: 0,
-			layout: "hbox",
-			margin: "10 0 0 0",
-			height: 31,
-			width: "100%",
-			style: "border-bottom: 1px #ddd solid",
-			defaults: {
-				xtype: "button",
-				margin: "0 20",
-				baseCls: "x-btn base-btn",
-				cls: "menuBtn",
-				handler: Ext.bind(this.menuChildChange, this)
-			},
-			items: [{
-				text: "服务目录",
-				pageId: Configes.page.serviceDirectory,
-			}, {
-				text: "服务目录管理",
-				pageId: Configes.page.serviceDirectoryManage,
-			}, {
-				text: "服务定制",
-				pageId: Configes.page.serviceMade,
-			}]
-		});
-	};
+
+	this.userCenterMenuPanel = Ext.create("Ext.panel.Panel", {
+		border: 0,
+		height: 31,
+		width: "100%",
+		margin: "10 0 0 0",
+		style: "border-bottom: 1px #ddd solid",
+		height: 31,
+		defaults: {
+			xtype: "button",
+			margin: "0 20",
+			baseCls: "x-btn base-btn",
+			cls: "menuBtn",
+			handler: Ext.bind(this.menuChildChange, this)
+		},
+		items: [{
+			text: "我的订单",
+			pageId: Configes.page.myOrder,
+		}, {
+			text: "我的任务",
+			pageId: Configes.page.myTask,
+		}, {
+			text: "我的资料",
+			pageId: Configes.page.userCenter,
+		}]
+	});
+	this.serviceDirectoryMenuPanel = Ext.create("Ext.panel.Panel", {
+		border: 0,
+		layout: "hbox",
+		margin: "10 0 0 0",
+		height: 31,
+		width: "100%",
+		style: "border-bottom: 1px #ddd solid",
+		defaults: {
+			xtype: "button",
+			margin: "0 20",
+			baseCls: "x-btn base-btn",
+			cls: "menuBtn",
+			handler: Ext.bind(this.menuChildChange, this)
+		},
+		items: [{
+			text: "服务目录",
+			pageId: Configes.page.serviceDirectory,
+		}, {
+			text: "服务目录管理",
+
+			pageId: Configes.page.serviceDirectoryManage,
+		}, {
+			text: "服务定制",
+			pageId: Configes.page.serviceMade,
+		}]
+	});
 	this.mainMenu = function() {
 		this.mainMenuPanel = Ext.create("Ext.button.Button", {
 			width: 100,
@@ -277,6 +327,14 @@ var TopMenu = function(parentNode) {
 					that.menuChange(this)
 				}
 			}, {
+				text: "监控场景",
+				menuId: "scenePage",
+				iconCls: "more",
+				pageId: Configes.page.sceneMode,
+				handler: function() {
+					that.menuChange(this)
+				}
+			}, {
 				text: "监控首页",
 				menuId: "viewHomePage",
 				iconCls: "more",
@@ -320,15 +378,7 @@ var TopMenu = function(parentNode) {
 	this.getMainMenuPanel = function() {
 		return Ext.getCmp(this.msg.mainMenuId);
 	};
-	this.menuChildChange = function(cmp) {
-		var pageId = cmp.pageId;
-		var parentPanel = cmp.up("panel");
-		parentPanel.items.each(function(btn) {
-			btn.removeCls("action");
-		});
-		cmp.addCls("action");
-		this.parentNode.openContent(pageId);
-	};
+
 	this.menuChange = function(cmp) {
 		var pageId = cmp.pageId;
 		this.menuChildShow(pageId);
@@ -341,17 +391,17 @@ var TopMenu = function(parentNode) {
 		var p = Configes.page;
 		var menuPanel;
 		if (pageId == p.userCenter || pageId == p.myOrder || pageId == p.myTask) {
-			if (!this.userCenterMenuPanel) {
-				this.createUserCenterMenuPanel();
-				Ext.getCmp(this.panelId).add(this.userCenterMenuPanel);
-			}
+			// if (!this.userCenterMenuPanel) {
+			// this.createUserCenterMenuPanel();
+			Ext.getCmp(this.panelId).add(this.userCenterMenuPanel);
+			// }
 			menuPanel = this.userCenterMenuPanel;
 		}
 		if (pageId == p.serviceDirectory || pageId == p.serviceDirectoryManage || pageId == p.serviceMade) {
-			if (!this.serviceDirectoryMenuPanel) {
-				this.createServiceDirectoryMenuPanel();
-				Ext.getCmp(this.panelId).add(this.serviceDirectoryMenuPanel);
-			}
+			// if (!this.serviceDirectoryMenuPanel) {
+			// this.createServiceDirectoryMenuPanel();
+			Ext.getCmp(this.panelId).add(this.serviceDirectoryMenuPanel);
+			// }
 			menuPanel = this.serviceDirectoryMenuPanel;
 		}
 		menuPanel && menuPanel.show();
@@ -375,5 +425,5 @@ var TopMenu = function(parentNode) {
 	this.logoutReturn = function(data, that) {
 		window.location.href = "login.html";
 	};
-	this.getUserInfo();
+
 }

@@ -1,0 +1,892 @@
+{
+	"monitorSceneInitialize":{
+		"review":[
+			[4267,219,99,1],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,1],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0],
+			[4267,219,99,0]
+		],
+		"warningList":[
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"},
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"},
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"},
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"},
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"},
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"},
+			{"province":"甘肃省","channel":"营业厅","business":"交费","warning":"成功率","level":"严重","timing":"2016/08/12 15:30","count":"8","state":"未关闭"}
+		]
+	},
+	"applicationSceneMode":{
+		"transactionCount":{
+			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+		},
+		"transactionRate":{
+			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+		},
+		"responseTime":{
+			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+		},
+		"responseRate":{
+			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+		},
+		"ranking":{
+			"rankingList":[
+				{"type":"1", "length": 300},
+				{"type":"2", "length": 280},
+				{"type":"3", "length": 270},
+				{"type":"4", "length": 250},
+				{"type":"5", "length": 200},
+				{"type":"6", "length": 140},
+				{"type":"7", "length": 130},
+				{"type":"8", "length": 120},
+				{"type":"9", "length": 70},
+				{"type":"10","length": 40}
+			]
+		},
+		"responseCode":{
+			"items":[
+				{"fillStyle": "#62992F","percent": "10","text": "0"},
+				{"fillStyle": "#f00","percent": "20","text": "200"},
+				{"fillStyle": "#0f0","percent": "30","text": "null"},
+				{"fillStyle": "#f0f","percent": "40","text": "-1"}
+			]
+		}
+	},
+	"applicationSnapShot":{
+		"typeRanking":[
+			{"type": "tem付款查询","responTime": 2881.66},
+			{"type": "tem一键回款","responTime": 10074.824},
+			{"type": "清单查询","responTime": 960.062},
+			{"type": "CSQryEBuyHallpsProducts","responTime": 576.912},
+			{"type": "tem付款查询","responTime": 546.398},
+			{"type": "tem付款查询","responTime": 2881.66},
+			{"type": "tem一键回款","responTime": 10074.824},
+			{"type": "清单查询","responTime": 960.062},
+			{"type": "CSQryEBuyHallpsProducts","responTime": 576.912},
+			{"type": "tem付款查询","responTime": 546.398}
+		],
+		"codeRanking":[
+			{"code":"0",   "count":"10982","percent": "98.86"},
+			{"code":"200", "count":"115",  "percent": "1.04"},
+			{"code":"None","count":"12",   "percent": "0.01"},
+			{"code":"-1",  "count":"12",   "percent": "0.09"}
+		]
+	},
+	"applicationStatistics":[
+		[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
+		],[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type5","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+		],[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+		],[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type5","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+		],[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
+		],[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type5","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+		],[
+			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+		]
+	],
+	"transactionTracking": [
+		{
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "AAGGSGY245",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "AAGGSGY245",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		},{
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "AAGGSGY245",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "AAGGSGY245",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}
+	],
+	"warningCenter":[
+		{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2015-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            0,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2016-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            1,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2017-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            2,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2015-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            3,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2016-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            4,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2017-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            5,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2015-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            6,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2016-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            7,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2017-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            8,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		},{
+			"province":         "甘肃省",
+			"channel":          "营业厅",
+			"type":             "查欠",
+			"warningType":      "成功率",
+			"level":            "一般",
+			"warningTime":      "2017-06-05 09:30",
+			"threshold":        "<90%",
+			"dispatchThreshold":"<95%",
+			"state":            "未关闭",
+			"lasting":          "5分钟",
+			"operation":        "查看",
+			"index":            9,
+			"data": [
+				{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				},{
+					"type":        "营业厅",
+					"channel":     "查欠",
+					"application": "营业厅protal",
+					"count":       "5000",
+					"responseRate":"98%",
+					"successRate": "98%",
+					"responseTime":"209ms",
+					"warning":     "否",
+					"threshold":   "<95%",
+					"lasting":     "5分钟"
+				}
+			]
+		}
+	]
+}

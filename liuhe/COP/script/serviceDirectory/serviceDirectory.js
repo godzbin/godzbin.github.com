@@ -223,7 +223,10 @@ function ServiceDirectory(parentNode) {
 			that: this,
 			node: node
 		}
-		tools.getData(Configes.url.getSceneList, null, this.setSceneList, callbackParams);
+		var params = {
+			serviceId: node.data.nodeData._id
+		}
+		tools.getData(Configes.url.getSceneList + node.data.nodeData._id, params, this.setSceneList, callbackParams);
 	};
 	this.setSceneList = function(data, params) {
 		var treeData = [];
@@ -245,7 +248,7 @@ function ServiceDirectory(parentNode) {
 		node.data.isLoad = true;
 
 
-		
+
 	};
 
 	this.getScene = function(sceneId) {

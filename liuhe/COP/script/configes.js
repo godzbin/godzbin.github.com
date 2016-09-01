@@ -130,6 +130,7 @@ var Configes = {
 		myTask: "myTask",
 		myOrder: "myOrder",
 		userCenter: "userCenter",
+		sceneMode: 'sceneMode',
 
 		// 用户管理
 		securityManage: "securityManage",
