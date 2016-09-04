@@ -1,4 +1,52 @@
 {
+	"说明":{
+		"monitorSceneInitialize":{
+			"名称":"首页的关系图数据,共17个盒子,上到下,左到右;",
+			"review":"盒子数据",
+			"warningList":"下方的告警中心列表数据"
+		},
+		"applicationSceneMode":{
+			"名称":"应用层视图",
+			"transactionCount":"交易量",
+			"transactionRate": "交易成功率",
+			"responseTime":    "响应时间",
+			"responseRate":    "响应率",
+			"ranking":         "响应时间排名",
+			"responseCode":    "返回码分布"
+		},
+		"applicationSnapShot":{
+			"名称":"应用层快照",
+			"total":{
+				"名称":"总计",
+				"transactionCount":"交易量",
+				"successRate":"成功率",
+				"responseTime":"响应时间",
+				"responseRate":"响应率"
+			},
+			"typeRanking":"交易类型排名",
+			"codeRanking":"返回码排名"
+		},
+		"applicationStatistics":{
+			"名称":"多维统计,依次返回以下类型的数据",
+			"type":[
+				"交易类型",
+				"地市",
+				"子渠道",
+				"业务状态",
+				"交易返回码",
+				"服务器IP",
+				"客户端IP"
+			]
+		},
+		"transactionTracking":{
+			"名称":"交易追踪,根据请求参数返回数组即可"
+		},
+		"warningCenter":{
+			"名称":"告警中心"
+		},
+		"甘肃参考市名":"天水,白银,平凉,庆阳,陇南,定西,金昌,武威,张掖,酒泉,嘉峪关"
+	},
+
 	"monitorSceneInitialize":{
 		"review":[
 			[4267,219,99,1],
@@ -8,7 +56,7 @@
 			[4267,219,99,0],
 			[4267,219,99,0],
 			[4267,219,99,0],
-			[4267,219,99,1],
+			[4267,219,80,1],
 			[4267,219,99,0],
 			[4267,219,99,0],
 			[4267,219,99,0],
@@ -31,16 +79,16 @@
 	},
 	"applicationSceneMode":{
 		"transactionCount":{
-			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+			"pointArray":[63, 149, 55, 5, 60, 126, 39, 55, 189, 85, 59, 194, 45, 144, 90, 141, 96, 91, 169, 45, 139, 107, 107, 146, 71, 183, 17, 198, 182, 85, 2, 128, 165, 15, 1, 60, 31, 39, 88, 76, 104, 82, 5, 51, 94, 74, 100, 153, 176, 35, 12, 195, 140, 183, 41, 129, 144, 197, 150, 27, 28]
 		},
 		"transactionRate":{
-			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+			"pointArray":[34, 113, 132, 90, 5, 66, 57, 158, 77, 23, 185, 130, 15, 44, 83, 161, 96, 55, 15, 137, 139, 113, 32, 23, 85, 163, 131, 85, 174, 139, 75, 87, 99, 105, 161, 65, 94, 129, 6, 192, 32, 192, 143, 30, 105, 96, 112, 198, 47, 106, 196, 162, 77, 90, 185, 179, 32, 168, 61, 143, 186]
 		},
 		"responseTime":{
-			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+			"pointArray":[40, 40, 104, 38, 1, 178, 118, 48, 47, 29, 28, 87, 70, 52, 116, 186, 129, 114, 15, 44, 70, 103, 37, 8, 7, 106, 52, 82, 29, 84, 114, 121, 67, 182, 128, 33, 30, 87, 118, 142, 58, 54, 199, 44, 14, 55, 105, 6, 111, 184, 173, 81, 146, 199, 79, 85, 142, 31, 39, 102, 106]
 		},
 		"responseRate":{
-			"pointArray":[100,120,145,30 ,180,110,60 ,50 ,80 ,150,40,20,55]
+			"pointArray":[176, 117, 108, 147, 102, 196, 45, 138, 134, 14, 191, 74, 179, 69, 199, 8, 27, 93, 60, 29, 117, 70, 113, 153, 42, 81, 111, 56, 118, 83, 143, 95, 158, 143, 168, 193, 151, 52, 182, 53, 73, 49, 54, 120, 14, 184, 200, 9, 46, 168, 126, 66, 200, 71, 64, 122, 63, 148, 153, 19, 58]
 		},
 		"ranking":{
 			"rankingList":[
@@ -66,6 +114,12 @@
 		}
 	},
 	"applicationSnapShot":{
+		"total":{
+			"transactionCount":"6922",
+			"successRate":"97.01",
+			"responseTime":"229.12",
+			"responseRate":"98.99"
+		},
 		"typeRanking":[
 			{"type": "tem付款查询","responTime": 2881.66},
 			{"type": "tem一键回款","responTime": 10074.824},
@@ -87,53 +141,53 @@
 	},
 	"applicationStatistics":[
 		[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
 		],[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type5","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type5","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
 		],[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
 		],[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type5","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type5","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
 		],[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
 		],[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type5","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type5","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
 		],[
-			{"comType":"type1","count":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"comType":"type2","count":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"comType":"type3","count":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"comType":"type4","count":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"comType":"type4","count":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
+			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
 		]
 	],
 	"transactionTracking": [
 		{
 			"type":     "检查客户资源",
 			"channel":  "广州越秀润粤服营厅",
-			"city":     "AAGGSGY245",
+			"city":     "天水",
 			"phone":    "13691864509",
 			"reqTime":  "2016/6/6 12:00",
 			"resTime":  "2016/11/16 13:00",
@@ -144,7 +198,7 @@
 		}, {
 			"type":     "检查客户资源",
 			"channel":  "广州越秀润粤服营厅",
-			"city":     "AAGGSGY245",
+			"city":     "白银",
 			"phone":    "13691864509",
 			"reqTime":  "2016/6/6 12:00",
 			"resTime":  "2016/6/6 13:00",
@@ -152,10 +206,10 @@
 			"serverIP": "10.252.17.203",
 			"code":     "100",
 			"state":    "成功"
-		},{
+		}, {
 			"type":     "检查客户资源",
 			"channel":  "广州越秀润粤服营厅",
-			"city":     "AAGGSGY245",
+			"city":     "平凉",
 			"phone":    "13691864509",
 			"reqTime":  "2016/6/6 12:00",
 			"resTime":  "2016/11/16 13:00",
@@ -166,7 +220,139 @@
 		}, {
 			"type":     "检查客户资源",
 			"channel":  "广州越秀润粤服营厅",
-			"city":     "AAGGSGY245",
+			"city":     "庆阳",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "陇南",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "陇南",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "定西",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "金昌",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "平凉",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "庆阳",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "陇南",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "陇南",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "平凉",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "庆阳",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/6/6 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "陇南",
+			"phone":    "13691864509",
+			"reqTime":  "2016/6/6 12:00",
+			"resTime":  "2016/11/16 13:00",
+			"clientIP": "10.252.17.249",
+			"serverIP": "10.252.17.203",
+			"code":     "100",
+			"state":    "成功"
+		}, {
+			"type":     "检查客户资源",
+			"channel":  "广州越秀润粤服营厅",
+			"city":     "陇南",
 			"phone":    "13691864509",
 			"reqTime":  "2016/6/6 12:00",
 			"resTime":  "2016/6/6 13:00",

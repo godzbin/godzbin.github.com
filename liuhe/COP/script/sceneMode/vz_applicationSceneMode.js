@@ -1,10 +1,16 @@
-vz2.extend('applicationSceneMode',function (){
-	// console.log(prolongation['t']);
-	/* define storage & variable */ 
+/*
+ * 应用层视图
+ *
+ */ 
+
+
+vz2.extend('applicationSceneMode',function(){
+
+	/* define option for combobox */ 
 
 	var 
-		tools,
-		vz_comTypeStore = Ext.create('Ext.data.Store', {
+		cTools,
+		transactionTypeStore = Ext.create('Ext.data.Store', {
 			fields: ['name','value'],
 			data: [
 				{name: '全部', value: '0'},
@@ -15,7 +21,7 @@ vz2.extend('applicationSceneMode',function (){
 				{name: '交易类型5', value: '5'},
 			]
 		}),
-		vz_comChannelStore = Ext.create('Ext.data.Store', {
+		transactionChannelStore = Ext.create('Ext.data.Store', {
 			fields: ['name','value'],
 			data: [
 				{name: '全部', value: '0'},
@@ -26,7 +32,8 @@ vz2.extend('applicationSceneMode',function (){
 				{name: '交易渠道5', value: '5'},
 			]
 		}),
-		vz_comTimeRangeStore = Ext.create('Ext.data.Store', {
+		periodStore = Ext.create('Ext.data.Store', {
+			/* unit: minute */ 
 			fields: ['name','value'],
 			data: [
 				{name: '近10分钟',  value: '10'},
@@ -41,7 +48,7 @@ vz2.extend('applicationSceneMode',function (){
 	var 
 
 		mainPanel = Ext.create('Ext.panel.Panel',{
-			width: '100%',
+			style: 'width: 100%;min-width:1200px;',
 			id: 'vz_appSceneMode',
 			listeners: {
 				afterrender: function(){
@@ -54,7 +61,7 @@ vz2.extend('applicationSceneMode',function (){
 							itemList = mainPanel.query('combobox');
 							initial = true;
 						};
-						var params = tools.granularityCalculator();
+						var params = cTools.granularityCalculator();
 
 						params.statement = itemList[0].lastMutatedValue,
 						params.channel   = itemList[1].lastMutatedValue,
@@ -78,32 +85,22 @@ vz2.extend('applicationSceneMode',function (){
 					{
 						fieldLabel: '交易类型',
 						labelWidth: '75px',
-						store: vz_comTypeStore,
+						store: transactionTypeStore,
+						value: '0',
 						xtype: 'combobox',
-						listeners: {
-							afterrender: function(){
-								this.setValue(0);
-							}
-						}
 					}, {
 						fieldLabel: '交易渠道',
 						labelWidth: '75px',
-						store: vz_comChannelStore,
+						store: transactionChannelStore,
+						value: '0',
 						xtype: 'combobox',
-						listeners: {
-							afterrender: function(){
-								this.setValue(0);
-							}
-						}
 					}, {
 						fieldLabel: '时间',
 						labelWidth: '75px',
-						store: vz_comTimeRangeStore,
+						store: periodStore,
+						value: '60',
 						xtype: 'combobox',
 						listeners: {
-							afterrender: function(){
-								this.setValue(60);
-							},
 							select: function(){
 								var 
 									initial = false,
@@ -143,6 +140,7 @@ vz2.extend('applicationSceneMode',function (){
 					{ 
 						fieldLabel: '粒度',
 						labelWidth: 40,
+						value: '5分钟',
 						name: 'timeGranularity',
 						readOnly: true,
 						width: 100,
@@ -155,18 +153,22 @@ vz2.extend('applicationSceneMode',function (){
 						handler: function(){
 							var 
 								initial = false,
+								refer = {1:'1分钟',5:'5分钟',15:'15分钟',30:'30分钟',60:'1小时',240:'4小时',1440:'1天'},
+								granularity,
 								itemList;
 
 							return function(){
 								if(false === initial){
 									itemList = mainPanel.query('combobox');
+									granularity = mainPanel.query('textfield')[5];
 									initial = true;
 								};
-								var params = tools.granularityCalculator();
+								var params = cTools.granularityCalculator();
 
 								params.statement = itemList[0].lastMutatedValue,
 								params.channel   = itemList[1].lastMutatedValue,
 
+								granularity.setValue(refer[params.granularity]);
 								reload(params);
 							}
 						}()
@@ -208,11 +210,11 @@ vz2.extend('applicationSceneMode',function (){
 
 	/* define features */ 
 
-	tools = {
+	cTools = {
 		drawCoordinate:  function(ctx,opts){
 			ctx.clearRect(0,0,1180,420);
 
-			var result = tools.pointFilter({
+			var result = cTools.pointFilter({
 				startTime: opts.startTime,
 				endTime: opts.endTime,
 				granularity: opts.timeDistance,
@@ -224,14 +226,14 @@ vz2.extend('applicationSceneMode',function (){
 				fillStyle: opts.lineChartFillStyle
 			});
 
-			tools.drawTitle(ctx, opts.title);
+			cTools.drawTitle(ctx, opts.title);
 
-			tools.drawMathOrdinate(ctx, opts.rowValue, opts.rows);
+			cTools.drawMathOrdinate(ctx, opts.rowValue, opts.rows);
 
-			tools.drawTimeAbscissa(ctx, result);
+			cTools.drawTimeAbscissa(ctx, result);
 
 			opts.statement.forEach(function(item){
-				tools.drawStatement(ctx,{
+				cTools.drawStatement(ctx,{
 					x:item.x,
 					y:item.y,
 					strokeStyle: item.strokeStyle,
@@ -240,12 +242,12 @@ vz2.extend('applicationSceneMode',function (){
 				});
 			});
 
-			tools.drawLineChart(ctx, result);
+			cTools.drawLineChart(ctx, result);
 		},
 		drawBarGraph:    function(ctx,opts){
 			ctx.clearRect(0,0,1180,420);
 
-			var result = tools.pointFilter({
+			var result = cTools.pointFilter({
 				startTime: opts.startTime,
 				endTime: opts.endTime,
 				granularity: opts.timeDistance,
@@ -257,14 +259,14 @@ vz2.extend('applicationSceneMode',function (){
 				fillStyle: opts.lineChartFillStyle
 			});
 
-			tools.drawTitle(ctx, opts.title);
+			cTools.drawTitle(ctx, opts.title);
 
-			tools.drawMathOrdinate(ctx, opts.rowValue, opts.rows);
+			cTools.drawMathOrdinate(ctx, opts.rowValue, opts.rows);
 
-			tools.drawTimeAbscissa(ctx, result);
+			cTools.drawTimeAbscissa(ctx, result);
 
 			opts.statement.forEach(function(item){
-				tools.drawStatement(ctx,{
+				cTools.drawStatement(ctx,{
 					x:item.x,
 					y:item.y,
 					strokeStyle: item.strokeStyle,
@@ -291,10 +293,10 @@ vz2.extend('applicationSceneMode',function (){
 		drawRankingLisk: function(ctx,opts){
 			ctx.clearRect(0,0,1180,420);
 
-			tools.drawTitle(ctx, opts.title);
+			cTools.drawTitle(ctx, opts.title);
 
 			opts.statement.forEach(function(item){
-				tools.drawStatement(ctx,{
+				cTools.drawStatement(ctx,{
 					x:item.x,
 					y:item.y,
 					strokeStyle: item.strokeStyle,
@@ -370,12 +372,12 @@ vz2.extend('applicationSceneMode',function (){
 				startAnkle = -Math.PI / 2,
 				endAnkle;
 
-			tools.drawTitle(ctx, opts.title);
+			cTools.drawTitle(ctx, opts.title);
 
 			ctx.save();
 
 			opts.items.forEach(function(item,index){
-				tools.drawStatement(ctx,{
+				cTools.drawStatement(ctx,{
 					x:920,
 					y:130 + index * 50,
 					strokeStyle: item.strokeStyle,
@@ -716,7 +718,7 @@ vz2.extend('applicationSceneMode',function (){
 						if(maxValue < 30)maxValue = 30;
 					}();
 
-					tools.drawCoordinate(ctx1, {
+					cTools.drawCoordinate(ctx1, {
 						title: '交易量/笔',
 						rows: 5,
 						rowValue: maxValue,
@@ -725,7 +727,7 @@ vz2.extend('applicationSceneMode',function (){
 						timeDistance: params.granularity,
 						lineChartOriginX: 180,
 						lineChartOriginY: 300,
-						lineChartPointArray: transactionCount.pointArray,
+						lineChartPointArray: transactionCount.pointArray.slice(0,(params.length/params.granularity)+1),
 						lineChartStrokeStyle: '#fff',
 						lineChartWidth: 2,
 						lineChartFillStyle: 'rgba(102,180,35,0.8)',
@@ -738,7 +740,7 @@ vz2.extend('applicationSceneMode',function (){
 						}],
 					});
 
-					tools.drawCoordinate(ctx2, {
+					cTools.drawCoordinate(ctx2, {
 						title: '交易成功率',
 						rows: 5,
 						rowValue: 100,
@@ -747,7 +749,7 @@ vz2.extend('applicationSceneMode',function (){
 						timeDistance: params.granularity,
 						lineChartOriginX: 180,
 						lineChartOriginY: 300,
-						lineChartPointArray: transactionRate.pointArray,
+						lineChartPointArray: transactionRate.pointArray.slice(0,(params.length/params.granularity)+1),
 						lineChartStrokeStyle: '#f00',
 						lineChartWidth: 2,
 						statement: [{
@@ -758,7 +760,7 @@ vz2.extend('applicationSceneMode',function (){
 						}],
 					});
 
-					tools.drawCoordinate(ctx3, {
+					cTools.drawCoordinate(ctx3, {
 						title: '响应时间/ms',
 						rows: 6,
 						rowValue: 300,
@@ -767,7 +769,7 @@ vz2.extend('applicationSceneMode',function (){
 						timeDistance: params.granularity,
 						lineChartOriginX: 180,
 						lineChartOriginY: 300,
-						lineChartPointArray: responseTime.pointArray,
+						lineChartPointArray: responseTime.pointArray.slice(0,(params.length/params.granularity)+1),
 						lineChartStrokeStyle: '#fff',
 						lineChartWidth: 2,
 						lineChartFillStyle: 'rgba(195,114,27,0.8)',
@@ -780,7 +782,7 @@ vz2.extend('applicationSceneMode',function (){
 						}],
 					});
 
-					tools.drawBarGraph(ctx4, {
+					cTools.drawBarGraph(ctx4, {
 						title: '响应率%',
 						rows: 5,
 						rowValue: 100,
@@ -789,7 +791,7 @@ vz2.extend('applicationSceneMode',function (){
 						timeDistance: params.granularity,
 						lineChartOriginX: 180,
 						lineChartOriginY: 300,
-						lineChartPointArray: responseRate.pointArray,
+						lineChartPointArray: responseRate.pointArray.slice(0,(params.length/params.granularity)+1),
 						lineChartStrokeStyle: '#fff',
 						lineChartWidth: 2,
 						lineChartFillStyle: 'rgba(195,114,27,0.8)',
@@ -806,7 +808,7 @@ vz2.extend('applicationSceneMode',function (){
 						}],
 					});
 
-					tools.drawRankingLisk(ctx5, {
+					cTools.drawRankingLisk(ctx5, {
 						title: '各交易类型响应时间排名',
 						rows: 6,
 						columnValue: 300,
@@ -828,7 +830,7 @@ vz2.extend('applicationSceneMode',function (){
 						}],
 					});
 
-					tools.drawPieChart(ctx6, {
+					cTools.drawPieChart(ctx6, {
 						title: '返回码分布',
 						lineChartOriginX: 590,
 						lineChartOriginY: 210,

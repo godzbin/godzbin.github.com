@@ -214,7 +214,7 @@ function ServiceDirectoryManage(parentNode) {
 		var desc = this.editors[0].getContent();
 
 		if (this.currentSceneId) {
-			values["sceneId"] = this.currentSceneId;
+			values["sceneId"] = this.currentSceneId || 0;
 		}
 		var rateAlarmConfig = this.getAlarmConfigData(this.rateAlarmConfigGridStore);
 		var amountAlarmConfig = this.getAlarmConfigData(this.amountAlarmConfigGridStore);

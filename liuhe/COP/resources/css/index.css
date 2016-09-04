@@ -17,6 +17,18 @@ div.x-border-layout-ct,
 	border: 0;
 }
 
+.base-btn{
+	border: 0;
+	background-color: #86D14A;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 30px;
+	color: #ddd;
+}
+.base-btn .x-btn-inner-default-small{
+	font-size: 14px;
+}
+
 .x-tab-default-top{
 	background: none;
 	border: 0px;
@@ -102,17 +114,23 @@ div.x-border-layout-ct,
 
 .logo{
 	cursor: pointer; 
-	font-size: 40px;
-	line-height: 100px;
+	/*font-size: 40px;
+	line-height: 80px;*/
 	color: #ddd; 
-	padding-left: 80px; 
+	/*padding-left: 80px; */
+	background: none;
 	background-image: url(../images/logo.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 60px 60px;
 }
-
-
+.logoText{
+	background: none;
+}
+.logoText .x-btn-inner-default-small{
+	font-size: 40px;
+	line-height: 80px;
+}
 
 .indexPage-module{
 	cursor: pointer; 
@@ -247,7 +265,7 @@ div.x-border-layout-ct,
 	background-color: rgba(0,0,0,.3);
 	border: 0;
 }
-
+.gridPanel,
 .alarmConfigTabGridPanel{
 	padding: 10px;
 	background-color: #333;
@@ -392,25 +410,33 @@ div.x-border-layout-ct,
 }
 
 /*告警列表样式*/
+
+.gridPanel .x-grid-header-ct,
 .alarmConfigTabGridPanel .x-grid-header-ct{
 	background: none;
 }
+
+.gridPanel .x-column-header,
 .alarmConfigTabGridPanel .x-column-header{
 	border-right: 0px;
 	background: none;
 	color: #eee;
 } 
+.gridPanel .x-column-header-over,
 .alarmConfigTabGridPanel .x-column-header-over{
 	background: none;
 	color: #eee;
 }
+.gridPanel .x-grid-header-ct-focus,
 .alarmConfigTabGridPanel .x-grid-header-ct-focus{
 	outline: 0;
 }
+.gridPanel .x-grid-item,
 .alarmConfigTabGridPanel .x-grid-item{
 	background: none;
 	color: #eee;
 }
+.gridPanel .x-grid-with-row-lines .x-grid-item，
 .alarmConfigTabGridPanel .x-grid-with-row-lines .x-grid-item{
 	border: 0px; 
 	border-top: 1px #aaa solid;
@@ -420,17 +446,7 @@ div.x-border-layout-ct,
 
 /*按钮样式*/
 
-.base-btn{
-	border: 0;
-	background-color: #86D14A;
-	border-radius: 5px;
-	cursor: pointer;
-	height: 30px;
-	color: #ddd;
-}
-.base-btn .x-btn-inner-default-small{
-	font-size: 14px;
-}
+
 .btn-save{
 	background-color: #7DC432;
 }
@@ -481,15 +497,20 @@ div.x-border-layout-ct,
 .orderIconHide{
 	display: none;
 }
-
-
-
 .more{
 	margin-top: 5px;
 	background-size: 15px auto;
 }
 .moreHide{
 	display: none;
+}
+
+
+.index-checkMore {
+	background:none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 /* 子菜单 menuChild*/
  
@@ -512,4 +533,28 @@ div.x-border-layout-ct,
 }
 .x-mask{
 	background-color: rgba(0,0,0,.3);
+}
+
+
+.indexBottomMainPanelCenter{
+	/*background-color: #fff;*/
+	
+	background-color: rgba(0,0,0,.3);
+	border-radius: 5px;
+	padding: 5px;
+	margin: 0 10px 0 0;
+}
+.indexBottomMainPanelCenter:hover{
+	border: 1px #eee solid;
+}
+.indexBottomMainPanelCenter .index-title{
+	font-size: 20px;
+	color: #fff;
+	line-height: 30px;
+	font-weight: 500;
+}
+.indexBottomMainPanelCenter .index-desc{
+	font-size: 12px;
+	color: #ccc;
+	line-height: 15px;
 }

@@ -1,10 +1,16 @@
+/*
+ * 应用层快照
+ *
+ */ 
+
 vz2.extend('applicationSnapShot',function(){
 	'use strict';
 	
 	var 
-		vz_snapShot_typeStore = Ext.create('Ext.data.Store', {
+		transactionTypeStore = Ext.create('Ext.data.Store', {
 			fields: ['name','value'],
 			data: [
+				{name: '全部',     value: '0'},
 				{name: '交易类型1', value: '1'},
 				{name: '交易类型2', value: '2'},
 				{name: '交易类型3', value: '3'},
@@ -12,7 +18,7 @@ vz2.extend('applicationSnapShot',function(){
 				{name: '交易类型5', value: '5'}
 			]
 		}),
-		vz_snapShot_cityStore = Ext.create('Ext.data.Store', {
+		cityStore = Ext.create('Ext.data.Store', {
 			fields: ['name','value'],
 			data: [
 				{name: '广州', value: '1'},
@@ -22,9 +28,10 @@ vz2.extend('applicationSnapShot',function(){
 				{name: '佛山', value: '5'}
 			]
 		}),
-		vz_snapShot_channelStore = Ext.create('Ext.data.Store', {
+		transactionChannelStore = Ext.create('Ext.data.Store', {
 			fields: ['name','value'],
 			data: [
+				{name: '全部', value: '0'},
 				{name: '交易渠道1', value: '1'},
 				{name: '交易渠道2', value: '2'},
 				{name: '交易渠道3', value: '3'},
@@ -35,11 +42,11 @@ vz2.extend('applicationSnapShot',function(){
 		periodStore = Ext.create('Ext.data.Store', {
 			fields: ['name','value'],
 			data: [
-				{name: '近1分钟',  value: '1'},
-				{name: '近5分钟',  value: '5'},
-				{name: '近10分钟', value: '10'},
-				{name: '近1小时',  value: '60'},
-				{name: '自定义',   value: '0'}
+				{name: '近10分钟',value: '10'},
+				{name: '近1小时', value: '60'},
+				{name: '近1天',   value: '1440'},
+				{name: '近30天',  value: '43200'},
+				{name: '自定义',  value: '0'}
 			]
 		}),
 
@@ -78,20 +85,21 @@ vz2.extend('applicationSnapShot',function(){
 			},
 			items: [
 				{
-					emptyText: '所有',
 					fieldLabel: '交易类型',
-					store: vz_snapShot_typeStore,
+					store: transactionTypeStore,
+					value: '0',
 					xtype: 'combobox',
 				},{
 					fieldLabel: '地市',
-					width: 150,
 					labelWidth: 30,
-					store: vz_snapShot_cityStore,
+					store: cityStore,
+					value: '1',
+					width: 150,
 					xtype: 'combobox',
 				},{
-					emptyText: '无渠道信息',
 					fieldLabel: '子渠道',
-					store: vz_snapShot_channelStore,
+					store: transactionChannelStore,
+					value: '0',
 					xtype: 'combobox',
 				},{
 					fieldLabel: '时间',
@@ -99,6 +107,7 @@ vz2.extend('applicationSnapShot',function(){
 					width: 150,
 					labelWidth: 30,
 					store: periodStore,
+					value: '60',
 					xtype: 'combobox',
 					listeners: {
 						select: function(){
@@ -174,20 +183,19 @@ vz2.extend('applicationSnapShot',function(){
 		items: [{
 			cls: 'vz_appSnapShot_count',
 			layout: 'column',
-			width: 1200,
 			margin: '20 0 20 0',
 			defaults: {
 				columnWidth: 1/4,
-				margin: '0 20 0 0',
 				xtype: 'panel',
 				height: 140,
+				style: {
+					fontSize: '30px'
+				},
 			},
 			items: [
 				{
 					title: "交易量(笔)",
-					style: {
-						fontSize: '30px'
-					},
+					margin: '0 20 0 0',
 					items: {
 						xtype: 'box',
 						html: '11109',
@@ -200,9 +208,7 @@ vz2.extend('applicationSnapShot',function(){
 					}
 				},{
 					title: "成功率(%)",
-					style: {
-						fontSize: '30px'
-					},
+					margin: '0 10 0 0',
 					items: {
 						xtype: 'box',
 						html: '98.86',
@@ -215,9 +221,7 @@ vz2.extend('applicationSnapShot',function(){
 					}
 				},{
 					title: "响应时间(ms)",
-					style: {
-						fontSize: '30px'
-					},
+					margin: '0 0 0 10',
 					items: {
 						xtype: 'box',
 						html: '58.755',
@@ -230,9 +234,7 @@ vz2.extend('applicationSnapShot',function(){
 					}
 				},{
 					title: "响应率(%)",
-					style: {
-						fontSize: '30px'
-					},
+					margin: '0 0 0 20',
 					items: {
 						xtype: 'box',
 						html: '100',
@@ -247,87 +249,69 @@ vz2.extend('applicationSnapShot',function(){
 			]
 		}, {
 			layout: 'column',
-			width: 1200,
 			items: [{
-				xtype: 'grid',
 				columnWidth: 1 / 2,
-				margin: '0 20 0 0',
 				cls: 'vz_appSnapShot_Ranking',
-				title: '交易类型排名',
 				height: 400,
+				margin: '0 10 0 0',
 				store: typeRankingStore,
+				title: '交易类型排名',
+				xtype: 'grid',
 				columns: {
 					border: 'none',
 					defaults: {
-						menuDisabled: true,
+						align: 'left',
+						border: 'none',
 						draggable: false,
+						menuDisabled: true,
+						padding: '5 0 5 0',
 						sortable: false,
-						align: 'left'
 					},
 					items: [
 						{
-							padding: '5 0 5 0',
-							border: 'none',
 							dataIndex: 'type',
 							text: "响应类型",
-							width: 320
+							width: 300
 						}, {
-							padding: '5 0 5 0',
-							border: 'none',
 							dataIndex: 'responTime',
-							text: "交易时长(ms)"
+							text: "交易时长(ms)",
+							width: 100
 						}
 					]
 				},
-				viewConfig : {
-					forceFit : false, 
-					autoFill : false 
-				},
-				layout: 'fit',
 				forceFit: true,
-				autoRender: true
 			}, {
-				xtype: 'grid',
 				columnWidth: 1 / 2,
-				margin: '0 20 0 0',
 				cls: 'vz_appSnapShot_Ranking',
-				title: '返回码排名',
 				height: 400,
+				margin: '0 0 0 10',
 				store: codeRankingStore,
+				title: '返回码排名',
+				xtype: 'grid',
 				columns: {
 					border: 'none',
 					defaults: {
-						menuDisabled: true,
+						align: 'left',
+						border: 'none',
 						draggable: false,
+						menuDisabled: true,
+						padding: '5 0 5 0',
 						sortable: false,
-						align: 'left'
 					},
 					items: [
 						{
-							padding: '5 0 5 0',
-							border: 'none',
 							dataIndex: 'code',
 							text: "返回码"
 						}, {
-							padding: '5 0 5 0',
-							border: 'none',
 							dataIndex: 'count',
 							text: "交易量(笔)"
 						}, {
-							padding: '5 0 5 0',
-							border: 'none',
 							dataIndex: 'percent',
 							text: "百分比(%)"
 						}
 					]
 				},
-				viewConfig : {
-					forceFit : false, 
-					autoFill : false 
-				},
-				layout: 'fit',
 				forceFit: true,
-				autoRender: true
 			}]
 		}]
 	});
@@ -354,10 +338,10 @@ vz2.extend('applicationSnapShot',function(){
 					url: 'applicationSnapShot',
 					params: params,
 					success: function(res,eOpts){
-						outputItemList[0].innerHTML = parseInt(10000 * Math.random());
-						outputItemList[1].innerHTML = (100 - 5 * Math.random()).toFixed(2);
-						outputItemList[2].innerHTML = (300 * Math.random()).toFixed(2);
-						outputItemList[3].innerHTML = (90  + 10 * Math.random()).toFixed(2);
+						outputItemList[0].innerHTML = res.total.transactionCount;
+						outputItemList[1].innerHTML = res.total.successRate;
+						outputItemList[2].innerHTML = res.total.responseTime;
+						outputItemList[3].innerHTML = res.total.responseRate;
 
 						typeRankingStore.loadData(res.typeRanking);
 						codeRankingStore.loadData(res.codeRanking);

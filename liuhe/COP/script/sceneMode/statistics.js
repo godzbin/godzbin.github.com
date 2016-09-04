@@ -644,7 +644,7 @@
 
 			mainPanel = Ext.create('Ext.panel.Panel',{
 				border: 0,
-				width: 1200,
+				// width: 1200,
 				id: 'vz_monitorSceneMode',
 				listeners: {
 					afterrender: function(){
@@ -662,20 +662,22 @@
 
 			componentPanel = Ext.create('Ext.panel.Panel',{
 				border: 0,
-				width: 1200,
+				// width: 1200,
 				hidden: true,
 				listeners: {
 					show: function(){
+						setActiveTag(0);
+						menuPanel.items.get(1).setActiveTab(0);
 						var _o = menuPanel.query('combobox');
 						_o[0].setValue(_application);
-						_o[1].setValue(common.province);
+						_o[1].setValue(common._province);
 					}
 				}
 			}),
 
 			filterPanel = Ext.create('Ext.form.Panel',{
 				layout: 'column',
-				width: 1200,
+				// width: 1200,
 				border: 0,
 				padding: '0 0 10 0',
 				margin: '0 0 740 0',
@@ -790,7 +792,7 @@
 			paintPanel = tools.createPaintContainer({
 				width: 1200,
 				height: 700,
-				style: 'position: absolute;left: 0;top: 65px;'
+				style: 'position: absolute;top: 65px;'
 			}),
 
 			warningListPanel = Ext.create('Ext.grid.Panel',{
@@ -805,9 +807,6 @@
 						draggable: false,
 						sortable: false,
 						align: 'center',
-						handler: function(){
-							console.log(arguments);
-						},
 					},
 					items: [
 						{
@@ -884,7 +883,7 @@
 				style: {
 					borderBottom: '1px #fff solid'
 				},
-				width: 1200,
+				// width: 1200,
 				items: [
 					{
 						border: 0,
@@ -954,19 +953,10 @@
 							}
 						},
 						items: [
-							{
-								title: "应用层视图",
-								pageId: 0
-							}, {
-								title: "应用层快照",
-								pageId: 1
-							}, {
-								title: "多维统计",
-								pageId: 2
-							}, {
-								title: '交易追踪',
-								pageId: 3
-							}
+							{pageId: 0,title: "应用层视图",}, 
+							{pageId: 1,title: "应用层快照",}, 
+							{pageId: 2,title: "多维统计",  }, 
+							{pageId: 3,title: '交易追踪',  },
 						],
 					}
 				],

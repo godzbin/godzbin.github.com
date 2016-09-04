@@ -102,14 +102,14 @@ function UserCenter(parentNode){
 			}),
 
 			formPanel = Ext.create('Ext.form.Panel',{
-				width : 850,
+				minWidth : 850,
 				height: 400,
 				autoHeight : true,
 				frame : true,
 				layout : "form", // 整个大的表单是form布局
 				labelWidth : 65,
 				labelAlign : "right",
-				style: 'background: transparent;margin: 0 0 0 auto',
+				style: 'background: transparent;margin: 0 0 0 auto;width:70%;min-width:850px;',
 				border: 0,
 				defaults: {
 					style: 'background: transparent;',

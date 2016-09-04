@@ -24,8 +24,12 @@ function MyOrder(parentNode) {
 	};
 	this.statu = 0;
 	// 初始化页面
-	this.run = function(sceneId) {
-		this.jumpSceneId = sceneId;
+	this.run = function(params) {
+		if (params && params.record) {
+			this.orderRecord = params.record
+		} else {
+			this.jumpSceneId = params;
+		}
 		if (!this.loading) {
 			this.initView();
 			this.getSelfInfo();
@@ -39,12 +43,16 @@ function MyOrder(parentNode) {
 			var isOpen = this.selectSceneNode(this.jumpSceneId);
 			isOpen && (this.jumpSceneId = null);
 		}
+
+		this.orderRecord && this.openOrderDetails(this, null, null, null, null, this.orderRecord);
 	};
 	this.initView = function() {
 		var panel = this.getMainPanel();
 		panel.add(this.viewPanel);
 		panel.add(this.myOrderDetailsMainPanel);
 		this.serviceChange();
+
+
 	};
 
 	/**
@@ -343,7 +351,7 @@ function MyOrder(parentNode) {
 	 *
 	 * 
 	 */
-	this.getOrderInfo = function(orderId,record) {
+	this.getOrderInfo = function(orderId, record) {
 		var params = {
 			orderId: orderId
 		}
@@ -775,6 +783,7 @@ function MyOrder(parentNode) {
 		items: [{
 			margin: "5",
 			xtype: "combobox",
+			name: "province",
 			store: Ext.create("Ext.data.Store", {
 				fields: ["NAME", "VALUE"],
 				data: [{

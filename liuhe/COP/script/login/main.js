@@ -102,10 +102,17 @@ var main = {
 		};
 		// 如果是测试模板
 		if (tools.test) {
-			window.location.href = "index.html";
+			if (username == "admin" && password == "12345678") {
+				window.location.href = "index.html";
+			} else if (username == "user" && password == "12345678") {
+				window.location.href = "index2.html";
+			} else {
+				main.setError("用户名或密码错误");
+			}
+
 			return;
 		}
-		
+
 		main.getCode();
 	},
 	// 获取错误主Box

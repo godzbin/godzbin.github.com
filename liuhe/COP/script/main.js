@@ -8,16 +8,14 @@ Ext.onReady(function() {
 	main.regTop(logo);
 	main.regTop(topMenu);
 	main.regFooter(footer);
+	main.regContent(new IndexPage2(main));
+	main.regContent(new IndexPage(main));
 	main.regContent(new MyOrder(main));
 	main.regContent(new ServiceDirectory(main));
 	main.regContent(new MyTask(main));
-	
 	main.regContent(new ServiceMade(main));
-	
 	main.regContent(new ServiceDirectoryManage(main));
-	main.regContent(new IndexPage(main));
 	main.regContent(new MonitorHomePage(main));
-
 	main.regContent(new UserCenter(main));
 	main.regContent(new SceneMode(main));
 	main.regContent(new SecurityManage(main));
@@ -41,11 +39,30 @@ var Main = function() {
 	};
 	this.init = function() {
 		this.hideContents();
-		if (this._mainContents.length > 0) {
-			this.openContent(this._mainContents[0]["panelId"])
+		// 获取用户信息，判断用户身份，显示首页
+		this.getUserInfo();
+	};
+	this.getUserInfo = function() {
+		tools.getData(Configes.url.view_getSelfInfo, null, this.setUserInfo.bind(this));
+	};
+	this.setUserInfo = function(data) {
+		this.userInfo = data;
+		if (this.userInfo["_CONTENT"]) {
+			var province = this.getProvince();
+			if (province === "深圳中心") {
+				this.openContent(Configes.page.indexPage);
+			} else {
+				this.openContent(Configes.page.indexPage2);
+				
+			}
 		}
 	};
-
+	this.getProvince = function() {
+		var contentStr = this.userInfo["_CONTENT"];
+		var content = JSON.parse(contentStr);
+		var province = content["PROVINCE"];
+		return province
+	};
 	//  content ctrl
 	//  将页面加入主体
 	this.regContent = function(obj) {
@@ -120,7 +137,6 @@ var Main = function() {
 		} else {
 			tools.toast("该服务未开放");
 		}
-
 		this._mainTops[1].menuChildShow(panelId);
 	};
 
@@ -155,7 +171,7 @@ var Main = function() {
 		for (var i = 0, l = tops.length; i < l; i++) {
 			var panelId = tops[i].panelId;
 			if (!Ext.get(panelId)) {
-				mainTopPanel.add(tops[i].mainPanel());
+				mainTopPanel.add(tops[i].mainPanel);
 			}
 		}
 	};

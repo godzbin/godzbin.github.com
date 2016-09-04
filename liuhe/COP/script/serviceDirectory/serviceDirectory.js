@@ -23,7 +23,8 @@ function ServiceDirectory(parentNode) {
 	this.editors = new Array();
 
 	// 初始化页面
-	this.run = function() {
+	this.run = function(sceneId) {
+		this.jumpSceneId = sceneId;
 		if (!this.loading) {
 			this.initView();
 			this.getSelfInfo();
@@ -37,6 +38,11 @@ function ServiceDirectory(parentNode) {
 		}
 		this.loading = true;
 		this.mainPanelShow();
+
+		if (this.jumpSceneId) {
+			this.selectSceneNode(this.jumpSceneId);
+			this.jumpSceneId = null;
+		}
 	};
 	this.initView = function() {
 		this.mainTreePanel.add([this.treeTitlePanel, this.treePanel]);
@@ -247,8 +253,25 @@ function ServiceDirectory(parentNode) {
 		node.appendChild(treeData);
 		node.data.isLoad = true;
 
+		if (that.jumpSceneId) {
+			var isOpen = that.selectSceneNode(that.jumpSceneId);
+			isOpen && (that.jumpSceneId = null)
+		}
 
-
+	};
+	this.selectSceneNode = function(senceId) {
+		var root = this.treeRoot.getRoot();
+		var sceneNode;
+		root.eachChild(function(node) {
+			node.eachChild(function(childNode) {
+				if (childNode.data.nodeData["_id"] == senceId) {
+					this.treePanel.getSelectionModel().select(childNode);
+					sceneNode = childNode;
+				}
+			}, this);
+		}, this);
+		sceneNode && this.openCenterPanel(null, sceneNode);
+		return sceneNode;
 	};
 
 	this.getScene = function(sceneId) {

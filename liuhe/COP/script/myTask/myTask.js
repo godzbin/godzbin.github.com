@@ -1645,7 +1645,7 @@ function MyTask(parentNode) {
 				cls: "centerFormPanelInput",
 				fieldLabel: "注释",
 				height: 100,
-				name: "notes"
+				name: "message"
 			}, {
 				xtype: "panel",
 				style: "text-align: center;",
@@ -1727,13 +1727,14 @@ function MyTask(parentNode) {
 				xtype: "textareafield",
 				cls: "centerFormPanelInput",
 				fieldLabel: "注释",
-				name: "notes",
+				name: "message",
 				height: 100,
 			}, {
 				xtype: "filefield",
 				buttonText: '选择文件',
 				cls: "centerFormPanelInput",
-				fieldLabel: "上传文件"
+				fieldLabel: "上传文件",
+				name: "enclosure",
 			}, this.handlerBtn]
 		}]
 	});

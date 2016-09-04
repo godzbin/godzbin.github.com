@@ -2,7 +2,7 @@
 var Configes = {
 	constant: {
 		// main
-		topHeight: 91,
+		topHeight: 81,
 		contentHeight: 800,
 		footerHeight: 0,
 		// 
@@ -83,7 +83,7 @@ var Configes = {
 		getCheckerList: "getCheckerList",
 
 		getHandlerOrder: "getHandlerOrder",
-		getAssignmentOrder:"getAssignmentOrder",
+		getAssignmentOrder: "getAssignmentOrder",
 
 
 		// 用户管理
@@ -107,17 +107,15 @@ var Configes = {
 		view_listSession: "view_listSession",
 		view_removeSession: "view_removeSession",
 		view_genCode: "view_genCode",
-		view_getSysDomain: "view_getSysDomain"
+		view_getSysDomain: "view_getSysDomain",
 
-
-
-
-
-
-
+		// 获取首页数据
+		getAllSceneMap: "getAllSceneMap",
+		getClassfiyMap: "getClassfiyMap"
 	},
 	page: {
 		indexPage: "indexPage",
+		indexPage2: "indexPage2",
 		MonitorHomePage: "MonitorHomePage",
 
 

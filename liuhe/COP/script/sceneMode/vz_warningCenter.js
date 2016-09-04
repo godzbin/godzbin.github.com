@@ -13,27 +13,26 @@ vz2.extend('warningCenter',function(){
 			]
 		});
 
+	/* define panel */ 
+
 	var 
 		mainPanel = Ext.create('Ext.panel.Panel',{
 			border: 0,
 			id: 'vz_warningCenter',
-			width: 1200,
 		}),
 
 		filterPanel = Ext.create('Ext.panel.Panel',{
 			border: 0,
 			items: [
 				{
-					cls: 'warningCenter_province',
-					fieldLabel: '告警中心',
 					width: 200,
-					height: 24,
-					xtype: 'combobox',
-					editable: false,
-					style: {
-						margin: '0 auto',
-					},
-
+					style: "margin: 0 auto;",
+					layout: 'column',
+					defaults: {columnWidth: 0.5},
+					items: [
+						{xtype: 'label',    text: '告警中心',style: 'color: #fff;line-height: 24px;font-size: 24px;'}, 
+						{xtype: 'combobox', editable: false,value: '甘肃省'}
+					]
 				}, {
 					border: 0,
 					style: {
@@ -41,60 +40,48 @@ vz2.extend('warningCenter',function(){
 						marginTop: '10px',
 						paddingTop: '15px',
 					},
-					defaults: {
-						layout: 'column',
-					},
 					items: [
 						{
 							border: 0,
+							layout: 'column',
 							defaults: {
-								xtype: 'combobox',
+								displayField: 'name',
 								editable: false,
 								labelWidth: 60,
+								style: "margin-right: 15px;",
+								valueField: 'value',
 								width: 160,
-								style: {
-									marginRight: '15px',
-								},
+								xtype: 'combobox',
 							},
 							margin: '0 0 15 0',
 							items: [
-								{
-									fieldLabel: '交易渠道',
-								},{
-									fieldLabel: '交易类型',
-								},{
-									fieldLabel: '告警类型',
-								},
+								{fieldLabel: '交易渠道',},
+								{fieldLabel: '交易类型',},
+								{fieldLabel: '告警类型',},
 							]
 						},{
 							border: 0,
+							layout: 'column',
 							defaults: {
-								xtype: 'combobox',
+								displayField: 'name',
 								editable: false,
 								labelWidth: 60,
+								style: "margin-right: 15px;",
+								valueField: 'value',
 								width: 160,
-								style: {
-									marginRight: '15px',
-								},
+								xtype: 'combobox',
 							},
 							margin: '0 0 10 0',
 							padding: '0 0 10 0',
-							style: {
-								borderBottom: '1px #ccc solid',
-							},
+							style: "border-bottom: 1px #ccc solid;",
 							items: [
+								{fieldLabel: '告警级别'},
+								{fieldLabel: '告警状态'},
 								{
-									fieldLabel: '告警级别',
-								},{
-									fieldLabel: '告警状态',
-								},{
 									xtype: 'label',
 									text: '时间',
 									width: 35,
-									style: {
-										color: '#ccc',
-										lineHeight: '24px',
-									},
+									style: "color: #ccc;line-height: 24px",
 								},
 								vz2.createDateTimePicker(140,null,false,{
 									background: 'transparent',
@@ -133,13 +120,13 @@ vz2.extend('warningCenter',function(){
 
 		contentPanel = Ext.create('Ext.grid.Panel',{
 			border: 0,
-			width: 1200,
-			height: 350,
+			minHeight: 350,
 			store: warningListStore,
 			id: 'innerGrid',
 			pageSize: 2,
 			layout: 'fit',
 			padding: '0 20',
+			forceFit: true,
 			style: {
 				background: 'rgba(0,0,0,0.2)',
 				borderRadius: '5px',
@@ -158,23 +145,28 @@ vz2.extend('warningCenter',function(){
 					sortable: false,
 					align: 'center',
 					width: 100,
-					style: {
-						border: 'none',
-						color: '#fff',
-					},
+					style: "border: none;color: #fff;",
 				},
 				items: [
 					{dataIndex: 'province',         text: "省份"},
 					{dataIndex: 'channel',          text: "交易渠道"},
-					{dataIndex: 'type',             text: "交易类型",},
+					{dataIndex: 'type',             text: "交易类型"},
 					{dataIndex: 'warningType',      text: "告警类型"},
 					{dataIndex: 'level',            text: "告警级别"},
 					{dataIndex: 'warningTime',      text: "告警时间",width: 160,}, 
 					{dataIndex: 'threshold',        text: "最低触发阀值",},
 					{dataIndex: 'dispatchThreshold',text: "设置阀值"},
 					{dataIndex: 'state',            text: "告警状态"},
-					{dataIndex: 'lasting',          text: "连续时间",},
-					{dataIndex: 'operation',        text: "查看",}
+					{dataIndex: 'lasting',          text: "连续时间"},
+					{
+						text:"操作",
+						width:130,
+						align:"center",
+						renderer:function(value,cellmeta){
+							var returnStr = "<INPUT type='button' value='查看'>";
+							return returnStr;
+						}	
+  					},
 				]
 			},
 			listeners: {
@@ -185,6 +177,7 @@ vz2.extend('warningCenter',function(){
 						var container = arguments[2].getElementsByClassName('innerGridExpander')[0];
 						var data = arguments[1].data.data;
 						var grid = Ext.create('Ext.grid.Panel',{
+							border: 0,
 							store: new Ext.data.Store({
 								fields: [
 									'type','channel','application',
@@ -237,7 +230,11 @@ vz2.extend('warningCenter',function(){
 						contentStore[index].destroy();
 						delete contentStore[index];
 					});
-				}
+				},
+				rowclick: function(){
+					var i = arguments[3];
+					contentPanel.plugins[0].toggleRow(i,warningListStore.data.items[i]);
+				},
 			}
 		}),
 
@@ -265,6 +262,8 @@ vz2.extend('warningCenter',function(){
 				}
 			}
 		});
+
+	/* define features */ 
 
 	var createPagingtoolbar = function(){
 		var 
@@ -295,7 +294,6 @@ vz2.extend('warningCenter',function(){
 				selected > 4 ? label[0].show() : label[0].hide();
 				selected < pageCount - 3 ? label[1].show():label[1].hide();
 			}
-			console.time();
 			pagingPanel.hide();
 
 			var btnList = pagingPanel.query('button');
@@ -313,7 +311,6 @@ vz2.extend('warningCenter',function(){
 
 			btnList[selected + 1].addCls('select');
 			pagingPanel.show();
-			console.timeEnd();
 		}
 
 		return function(girdPanel,pagingPanel,detail){

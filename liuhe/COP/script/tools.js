@@ -117,7 +117,7 @@ var tools = {
   },
   getTestData: function(url, params, callback, callbackParams, Env, domain) {
     //  
-    var data = tools.deepClone(test2[url]);
+    var data = tools.deepClone(test[url]);
     callback(data, callbackParams);
   },
 

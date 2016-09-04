@@ -23,7 +23,7 @@ function SceneMode(parentNode){
 
 		this.monitorPanel = Ext.create('Ext.panel.Panel',{
 			border: 0,
-			width: 1200,
+			// width: 1200,
 		});
 
 		this.menuPanel = Ext.create('Ext.tab.Bar',{

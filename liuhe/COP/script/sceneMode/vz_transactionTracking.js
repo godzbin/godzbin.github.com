@@ -1,91 +1,99 @@
+/*
+ * 交易追踪
+ *
+ */ 
+
 vz2.extend('transactionTracking',function(){
 	'use strict';
 
-	/* create combobox store */ 
+	/* create option for combobox */ 
 
 	var 
 
 		clientIPStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '10.252.17.203',value: ''},
-				{name: '10.252.17.204',value: ''},
-				{name: '10.252.17.205',value: ''},
-				{name: '10.252.17.206',value: ''},
-				{name: '10.252.17.207',value: ''},
+				{name: '全部',         value: '0'},
+				{name: '10.252.17.203',value: '10.252.17.203'},
+				{name: '10.252.17.204',value: '10.252.17.204'},
+				{name: '10.252.17.205',value: '10.252.17.205'},
+				{name: '10.252.17.206',value: '10.252.17.206'},
+				{name: '10.252.17.207',value: '10.252.17.207'},
 			]
 		}),
 		serverIPStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '10.252.17.203',value: ''},
-				{name: '10.252.17.204',value: ''},
-				{name: '10.252.17.205',value: ''},
-				{name: '10.252.17.206',value: ''},
-				{name: '10.252.17.207',value: ''},
+				{name: '全部',         value: '0'},
+				{name: '10.252.18.203',value: '10.252.18.203'},
+				{name: '10.252.18.204',value: '10.252.18.204'},
+				{name: '10.252.18.205',value: '10.252.18.205'},
+				{name: '10.252.18.206',value: '10.252.18.206'},
+				{name: '10.252.18.207',value: '10.252.18.207'},
 			]
 		}),
-		typeStore = Ext.create('Ext.data.Store',{
+		transactionTypeStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '检查客户资源',value: ''},
-				{name: '支付',value: ''},
-				{name: '返回查询CUST信息',value: ''},
-				{name: '安装监测SIN密码',value: ''},
-				{name: '提交',value: ''},
+				{name: '全部',           value: '0'},
+				{name: '检查客户资源',    value: '1'},
+				{name: '支付',           value: '2'},
+				{name: '返回查询CUST信息',value: '3'},
+				{name: '安装监测SIN密码', value: '4'},
+				{name: '提交',           value: '5'},
 			]
 		}),
 		statementStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '全部',value: ''},
-				{name: '排队中',value: ''},
-				{name: '处理中',value: ''},
-				{name: '成功',value: ''},
-				{name: '失败',value: ''},
+				{name: '全部',  value: '0'},
+				{name: '排队中',value: '1'},
+				{name: '处理中',value: '2'},
+				{name: '成功',  value: '3'},
+				{name: '失败',  value: '4'},
 			]
 		}),
 		cityStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '广州',value: ''},
-				{name: '东莞',value: ''},
-				{name: '深圳',value: ''},
-				{name: '珠海',value: ''},
-				{name: '佛山',value: ''},
+				{name: '广州',value: '广州'},
+				{name: '东莞',value: '东莞'},
+				{name: '深圳',value: '深圳'},
+				{name: '珠海',value: '珠海'},
+				{name: '佛山',value: '佛山'},
 			]
 		}),
 		channelStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '广州越秀润粤服营厅',     value: ''},
-				{name: '广州越秀东湖西路服营厅',  value: ''},
-				{name: '广州中山大道西棠下营业厅',value: ''},
-				{name: '广州九佛镇营业厅',       value: ''},
-				{name: '广州良田镇营业厅',       value: ''},
+				{value:"1", name: '广州越秀润粤服营厅',     },
+				{value:"2", name: '广州越秀东湖西路服营厅',  },
+				{value:"3", name: '广州中山大道西棠下营业厅',},
+				{value:"4", name: '广州九佛镇营业厅',       },
+				{value:"5", name: '广州良田镇营业厅',       },
 			]
 		}),
 		codeStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '100',value: ''},
-				{name: '101',value: ''},
-				{name: '200',value: ''},
-				{name: '201',value: ''},
-				{name: '202',value: ''},
+				{name: '100',value: '100'},
+				{name: '101',value: '101'},
+				{name: '200',value: '200'},
+				{name: '201',value: '201'},
+				{name: '202',value: '202'},
 			]
 		}),
 		periodStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '近10分钟',value: ''},
-				{name: '近1小时', value: ''},
-				{name: '近1天',   value: ''},
-				{name: '近1月',   value: ''},
-				{name: '自定义',  value: ''},
+				{name: '近10分钟',value: '10'},
+				{name: '近1小时', value: '60'},
+				{name: '近1天',   value: '1440'},
+				{name: '近1月',   value: '43200'},
+				{name: '自定义',  value: '0'},
 			]
 		}),
-
+		/* grid panel store */ 
 		resultStore = Ext.create('Ext.data.Store',{
 			fields: [
 				{name: 'type',     type: 'string'},
@@ -96,7 +104,7 @@ vz2.extend('transactionTracking',function(){
 				{name: 'resTime',  type: 'string'},
 				{name: 'clientIP', type: 'string'},
 				{name: 'serverIP', type: 'string'},
-				{name: 'code',     type: 'int'},
+				{name: 'code',     type: 'string'},
 				{name: 'state',    type: 'string'},
 			]
 		});
@@ -116,105 +124,88 @@ vz2.extend('transactionTracking',function(){
 
 		searchPanel = Ext.create('Ext.form.Panel',{
 			layout: 'form',
+			width: 1200,
 			items: [
 				{
 					layout: 'column',
 					defaults: {
-						xtype: 'combobox',
+						columnWidth: 0.23,
+						displayField: "name",
+						editable: false,
 						labelWidth: 70,
 						labelAlign: 'right',
-						columnWidth: 0.23,
-						editable: false,
-						displayField: "name",
-						valueField: "value",
 						queryMode: "local",
+						valueField: "value",
+						xtype: 'combobox',
+						allowBlank: false,
+						blankText: '该字段不能为空',
+						msgTarget: 'under',
 					},
 					items: [
 						{
-							xtype: 'label',
+							columnWidth: 1/16,
+							style: "line-height: 24px;text-align: right;padding-right: 5px;",
 							text: '响应时长:',
-							style: {
-								lineHeight: '24px',
-								textAlign: 'right',
-								paddingRight: '5px'
-							},
-							columnWidth: 1/16
-						}, {
-							columnWidth: 1/16,
-							xtype: 'textfield',
-							editable: true,
-						}, {
 							xtype: 'label',
+						}, {
+							allowBlank: true,
+							columnWidth: 1/16,
+							editable: true,
+							xtype: 'textfield',
+						}, {
+							columnWidth: 1/46,
+							style: "line-height: 24px;text-align: center;",
 							text: '—',
-							style: {
-								lineHeight: '24px',
-								textAlign: 'center',
-							},
-							columnWidth: 1/46
-						}, {
-							columnWidth: 1/16,
-							xtype: 'textfield',
-							editable: true,
-						}, {
 							xtype: 'label',
+						}, {
+							allowBlank: true,
+							columnWidth: 1/16,
+							editable: true,
+							xtype: 'textfield',
+						}, {
+							columnWidth: 1/46,
+							style: "line-height: 24px;text-align: center;",
 							text: 'ms',
-							style: {
-								lineHeight: '24px',
-								textAlign: 'center',
-							},
-							columnWidth: 1/46
+							xtype: 'label',
 						}, {
 							fieldLabel: '客户端id',
 							store: clientIPStore,
-							name: "clientIPStore",
 						}, {
 							fieldLabel: '服务端id',
 							store: serverIPStore,
-							name: "serverIPStore",
 						}, {
 							fieldLabel: '交易类型',
-							store: typeStore,
-							name: "typeStore",
+							store: transactionTypeStore,
 						}
 					]
 				}, {
 					layout: 'column',
 					defaults: {
-						xtype: 'combobox',
+						columnWidth: 0.23,
+						displayField: "name",
+						editable: false,
 						labelWidth: 70,
 						labelAlign: 'right',
-						columnWidth: 0.23,
-						editable: false,
-						displayField: "name",
-						valueField: "value",
 						queryMode: "local",
+						valueField: "value",
+						xtype: 'combobox',
+						allowBlank: false,
+						blankText: '该字段不能为空',
+						msgTarget: 'under',
 					},
 					items: [
-						{
-							fieldLabel: '业务状态',
-							store: statementStore,
-							name: "statementStore",
-						}, {
-							fieldLabel: '地市',
-							store: cityStore,
-							name: "cityStore",
-						}, {
-							fieldLabel: '子渠道',
-							store: channelStore,
-							name: "channelStore",
-						}, {
-							fieldLabel: '返回码',
-							store: codeStore,
-							name: "codeStore",
-						}
+						{store: statementStore,fieldLabel: '业务状态'},
+						{store: cityStore,     fieldLabel: '地市'},
+						{store: channelStore,  fieldLabel: '子渠道'},
+						{store: codeStore,     fieldLabel: '返回码'},
 					]
 				}, {
 					layout: 'column',
 					defaults: {
-						xtype: 'combobox',
+						columnWidth: 0.23,
 						labelWidth: 70,
 						labelAlign: 'right',
-						columnWidth: 0.23,
+						xtype: 'combobox',
 					},
 					items: [
 						{fieldLabel: '手机号码',xtype: 'textfield'}, 
@@ -224,6 +215,7 @@ vz2.extend('transactionTracking',function(){
 							margin: '0 20 0 0',
 							store: periodStore,
 							editable: false,
+							value: '60',
 							displayField: "name",
 							valueField: "value",
 							queryMode: "local",
@@ -241,7 +233,7 @@ vz2.extend('transactionTracking',function(){
 										};
 
 										[cmp1,cmp2,cmp3].forEach(function(item){
-											combobox.lastMutatedValue === '自定义' ? item.show():item.hide();
+											combobox.value === '0' ? item.show():item.hide();
 										});
 									};
 								}()
@@ -249,14 +241,11 @@ vz2.extend('transactionTracking',function(){
 						},
 						vz2.createDateTimePicker(null,0.125,true),
 						{
-							text: '—',
-							xtype:'label',
-							style: {
-								lineHeight: '24px',
-								textAlign: 'center',
-							},
 							columnWidth: 1/46,
+							text: '—',
+							style: "line-height: 24px;text-align: center;",
 							hidden: true,
+							xtype:'label',
 						},
 						vz2.createDateTimePicker(null,0.125,true),
 						{
@@ -271,10 +260,10 @@ vz2.extend('transactionTracking',function(){
 
 								return function(){
 									if(false === initial){
-										var _o1 = searchPanel.query('textfield,combobox');
-										itemList.push(_o1[0],_o1[1],_o1[2],_o1[3],_o1[4],_o1[5],_o1[6],_o1[7],_o1[8],_o1[9],_o1[10]);
-										var _o2 = searchPanel.query('splitbutton');
-										itemList.push(_o2[0],_o2[_o2.length>2?2:1]);
+										var obj1 = searchPanel.query('textfield,combobox'),
+											obj2 = searchPanel.query('splitbutton');
+										itemList.push(obj1[0],obj1[1],obj1[2],obj1[3],obj1[4],obj1[5],obj1[6],obj1[7],obj1[8],obj1[9],obj1[10]);
+										itemList.push(obj2[0],obj2[obj2.length>2?2:1]);
 										initial = true;
 									}
 									var params = {
@@ -292,79 +281,48 @@ vz2.extend('transactionTracking',function(){
 										startTime:       itemList[11].text,
 										endTime:         itemList[12].text
 									}
-									console.log(params);
+									// for(var key in params){
+									// 	params[key] === ''
+									// }
 									reload(params);
 								}
 							}()
 						}
 					]
+				}, {
+					html: '匹配记录0笔',
+					margin: '20 0 0 0',
+					style: 'font-size: 20px;display: inline-block',
+					xtype: 'label',
 				}
 			]
 		}),
 
 		resultPanel = Ext.create('Ext.grid.Panel',{
-			title: '匹配记录105笔',
-			store: resultStore,
-			margin: '20 0 0 0',
+			cls: 'vz_gridPanel',
+			forceFit: true,
 			height: 380,
-			
+			padding: '0 20',
+			store: resultStore,
 			columns: {
 				defaults: {
 					menuDisabled: true,
 					draggable: false,
 					sortable: true,
-					align: 'center'
+					align: 'center',
 				},
 				items: [
-					{
-						text: "序号",
-						sortable: false,
-						xtype : 'rownumberer',
-						width: 50
-					}, {
-						text: "交易类型",
-						sortable: false,
-						dataIndex: 'type',
-						width: 140,
-						align: 'left',
-					}, {
-						text: "地市",
-						dataIndex: 'city',
-						width: 70
-					}, {
-						text: "子渠道",
-						dataIndex: 'channel',
-						width: 200,
-						align: 'left',
-					}, {
-						text: "手机号码",
-						dataIndex: 'phone',
-						width: 100
-					}, {
-						text: "请求时间",
-						dataIndex: 'reqTime',
-						width: 125
-					}, {
-						text: "响应时间",
-						dataIndex: 'resTime',
-						width: 125
-					}, {
-						text: "客户端IP",
-						dataIndex: 'clientIP',
-						width: 105
-					}, {
-						text: "服务端IP",
-						dataIndex: 'serverIP',
-						width: 105
-					}, {
-						text: "返回码",
-						dataIndex: 'code',
-						width: 60
-					}, {
-						text: "业务状态",
-						dataIndex: 'state',
-						width: 75
-					}
+					{width: 50, xtype : 'rownumberer',text: "序号",sortable: false,}, 
+					{width: 140,dataIndex: 'type',    text: "交易类型",align: 'left',sortable: false,}, 
+					{width: 70, dataIndex: 'city',    text: "地市",}, 
+					{width: 200,dataIndex: 'channel', text: "子渠道",  align: 'left',}, 
+					{width: 100,dataIndex: 'phone',   text: "手机号码",}, 
+					{width: 125,dataIndex: 'reqTime', text: "请求时间",}, 
+					{width: 125,dataIndex: 'resTime', text: "响应时间",}, 
+					{width: 105,dataIndex: 'clientIP',text: "客户端IP",}, 
+					{width: 105,dataIndex: 'serverIP',text: "服务端IP",}, 
+					{width: 70, dataIndex: 'code',    text: "返回码",}, 
+					{width: 75, dataIndex: 'state',   text: "业务状态",}
 				]
 			}
 		});
@@ -377,7 +335,7 @@ vz2.extend('transactionTracking',function(){
 			params: params,
 			success: function(res,eOpts){
 				resultStore.loadData(res);
-				resultPanel.setTitle('匹配记录'+res.length+'笔');
+				searchPanel.query('label')[4].setText('匹配记录'+res.length+'笔');
 			},
 			failure: function(){
 

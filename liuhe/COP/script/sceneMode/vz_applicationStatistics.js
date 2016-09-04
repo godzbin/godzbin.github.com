@@ -1,3 +1,8 @@
+/*
+ * 多维统计
+ *
+ */ 
+
 vz2.extend('applicationStatistics',function(){
 	'use strict';
 	/* define pointer & storage */ 
@@ -13,21 +18,21 @@ vz2.extend('applicationStatistics',function(){
 		periodStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
-				{name: '近10分钟',value: ''},
-				{name: '近1小时',value: ''},
-				{name: '近1天',value: ''},
-				{name: '近1月',value: ''},
-				{name: '自定义',value: ''},
+				{name: '自定义',  value: '0'},
+				{name: '近10分钟',value: '10'},
+				{name: '近1小时', value: '60'},
+				{name: '近1天',   value: '1440'},
+				{name: '近1月',   value: '43200'},
 			]
 		}),
 
-		vz_multiStatisticsStore = Ext.create('Ext.data.Store', {
+		multiStatisticsStore = Ext.create('Ext.data.Store', {
 			fields: [
-				{name: 'comType',       type: 'string'},
-				{name: 'count',         type: 'float' },
-				{name: 'successRate',   type: 'float' },
-				{name: 'responseTime',  type: 'float' },
-				{name: 'responseRate',  type: 'float' }
+				{name: 'transactionType', type: 'string'},
+				{name: 'transactionCount',type: 'int'   },
+				{name: 'successRate',     type: 'float' },
+				{name: 'responseTime',    type: 'float' },
+				{name: 'responseRate',    type: 'float' }
 			]
 		});
 
@@ -49,16 +54,17 @@ vz2.extend('applicationStatistics',function(){
 			tbar: {
 				items: [
 					{
-						xtype: 'combobox',
-						labelAlign: 'left',
+						displayField: "name",
+						editable: false,
 						fieldLabel: '时间',
+						labelAlign: 'left',
 						labelWidth: 50,
 						margin: '0 20 0 0',
-						store: periodStore,
-						editable: false,
-						displayField: "name",
-						valueField: "value",
 						queryMode: "local",
+						store: periodStore,
+						valueField: "value",
+						value: '60',
+						xtype: 'combobox',
 						listeners: {
 							select: function(){
 								var initial = false,
@@ -73,7 +79,7 @@ vz2.extend('applicationStatistics',function(){
 									};
 
 									[cmp1,cmp2,cmp3].forEach(function(item){
-										combobox.lastMutatedValue === '自定义'?item.show():item.hide();
+										combobox.value === '0'?item.show():item.hide();
 									});
 								};
 							}()
@@ -92,10 +98,10 @@ vz2.extend('applicationStatistics',function(){
 					},
 					vz2.createDateTimePicker(150,null,true),
 					{
-						xtype: 'button',
 						cls: 'vz_search_btn',
 						columnWidth: 1/25,
 						margin: '0 0 0 20',
+						xtype: 'button',
 						handler: function(){
 							var 
 								initial = false,
@@ -103,17 +109,17 @@ vz2.extend('applicationStatistics',function(){
 
 							return function(){
 								if(false === initial){
-									var _o1 = mainPanel.query('combobox'),
-										_o2 = mainPanel.query('splitbutton');
-									itemList.push(_o1[0],_o2[0],_o2[1]);
+									var obj1 = mainPanel.query('combobox'),
+										obj2 = mainPanel.query('splitbutton');
+									itemList.push(obj1[0],obj2[0],obj2[1]);
 									initial = true;
 								};
-								var params = {time: itemList[0].lastMutatedValue};
-								if(params.time === '自定义'){
+								
+								var params = {time: itemList[0].value};
+								if(params.time === '0'){
 									params.startTime = itemList[1].text;
 									params.endTime   = itemList[2].text;
 								};
-								console.log(params);
 								reload(params);
 							}
 						}()
@@ -125,45 +131,29 @@ vz2.extend('applicationStatistics',function(){
 				layout: 'column',
 				margin: '10 0',
 				defaults: {
+					boxLabelAlign: 'after',
+					labelWidth: 80,
 					padding: '0 20 0 0',
 					xtype: 'radio',
-					labelWidth: 80,
-					boxLabelAlign: 'after',
 					listeners: {
 						dirtychange: function(){
 							if(arguments[0].lastValue === false)return;
 							selector = arguments[0].inputValue;
-							void 0 !== statLibrary && vz_multiStatisticsStore.loadData(statLibrary[selector]);
+							void 0 !== statLibrary && multiStatisticsStore.loadData(statLibrary[selector]);
 						}
 					}
 				},
 				items: [
-					{
-						boxLabel: '交易类型',
-						inputValue: 0,
-						checked: true
-					},{
-						boxLabel: '地市',
-						inputValue: 1,
-					},{
-						boxLabel: '子渠道',
-						inputValue: 2,
-					},{
-						boxLabel: '业务状态',
-						inputValue: 3,
-					},{
-						boxLabel: '交易返回码',
-						inputValue: 4,
-					},{
-						boxLabel: '服务器IP',
-						inputValue: 5,
-					},{
-						boxLabel: '客户端IP',
-						inputValue: 6,
-					}
+					{inputValue: 0,boxLabel: '交易类型',checked: true},
+					{inputValue: 1,boxLabel: '地市'},
+					{inputValue: 2,boxLabel: '子渠道'},
+					{inputValue: 3,boxLabel: '业务状态'},
+					{inputValue: 4,boxLabel: '交易返回码'},
+					{inputValue: 5,boxLabel: '服务器IP'},
+					{inputValue: 6,boxLabel: '客户端IP'}
 				]
 			},{
-				store: vz_multiStatisticsStore,
+				store: multiStatisticsStore,
 				padding: '20 40',
 				height: 400,
 				xtype: 'grid',
@@ -184,13 +174,13 @@ vz2.extend('applicationStatistics',function(){
 							xtype : 'rownumberer',
 						}, {
 							align: 'left',
-							dataIndex: 'comType',
+							dataIndex: 'transactionType',
 							forceFit: true,
 							sortable: false,
 							text: "交易类型",
 							width: 400,
 						}, {
-							dataIndex: 'count',
+							dataIndex: 'transactionCount',
 							text: "交易笔数",
 						}, {
 							dataIndex: 'successRate',
@@ -204,11 +194,7 @@ vz2.extend('applicationStatistics',function(){
 						}
 					]
 				},
-				viewConfig : {
-					forceFit : false, 
-					autoFill : false 
-				},
-				layout: 'fit',
+				forceFit : true, 
 			}]
 		});
 
@@ -218,7 +204,7 @@ vz2.extend('applicationStatistics',function(){
 			params: params,
 			success: function(res,eOpts){
 				statLibrary = res;
-				vz_multiStatisticsStore.loadData(statLibrary[selector]);
+				multiStatisticsStore.loadData(statLibrary[selector]);
 			},
 			failure: function(result){
 

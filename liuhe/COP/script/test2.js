@@ -1,19 +1,25 @@
 /**
- * 深圳中心 的测试数据
- * @type {Object}
+ *	甘肃省 的测试数据
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  -------------------------------------------------------------------------------------------------------------------
  */
 var test = {
 
 	// 订单管理
 	view_genCode: "1111",
 	view_getSelfInfo: {
-		"_NICK_NAME": "深圳中心",
+		"_NICK_NAME": "甘肃省",
 		"_ID": 103,
 		"DOMAIN": "Domain=101",
 		"_PHONE": null,
 		"_GENDER": 0,
-		"_NAME": "深圳中心",
-		"_CONTENT": '{"PROVINCE":"深圳中心"}',
+		"_NAME": "甘肃省",
+		"_CONTENT": '{"PROVINCE":"甘肃省"}',
 		"_ADDRESS": null,
 		"_EMAIL": null
 	},
@@ -523,7 +529,7 @@ var test = {
 
 	// 添加场景
 	addScene: {
-		// _id: 45,
+		_id: 45,
 		name: "新添加的场景",
 		statu: 1,
 		edit: 0
@@ -1629,7 +1635,7 @@ var test = {
 	},
 	'getOrderInfo待验证配置': {
 		orderId: "1234567890-23",
-		statu: "待验证环境",
+		statu: "待验证配置",
 		province: "甘肃省",
 		processor: "甘肃省业务运维组",
 		service: "监控类服务",
@@ -1985,44 +1991,14 @@ var test = {
 		}]
 	},
 	getOrderList: {
-		total: 4,
+		total: 1,
 		list: [{
 			"_id": "0102020104-01",
 			"service": "监控类",
 			"scene": "端到端",
 			"channel": "电子渠道",
 			"probe": "主动探测",
-			"statu": "待分派",
-			"startTime": "2016-08-26 00:00:00",
-			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
-		}, {
-			"_id": "0102020104-01",
-			"service": "监控类",
-			"scene": "端到端",
-			"channel": "电子渠道",
-			"probe": "主动探测",
-			"statu": "待审批",
-			"startTime": "2016-08-26 00:00:00",
-			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
-		}, {
-			"_id": "0102020104-01",
-			"service": "监控类",
-			"scene": "端到端",
-			"channel": "电子渠道",
-			"probe": "主动探测",
-			"statu": "待验证环境",
-			"startTime": "2016-08-26 00:00:00",
-			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
-		}, {
-			"_id": "0102020104-01",
-			"service": "监控类",
-			"scene": "端到端",
-			"channel": "电子渠道",
-			"probe": "主动探测",
-			"statu": "待部署",
+			"statu": "待配置环境",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
 			"processor": "深圳中心运维中心"
@@ -2039,137 +2015,110 @@ var test = {
 	getAssignmentOrder: "",
 
 
-
 	getAllSceneMap: [{
+		name: '全国',
+		value: Math.round(Math.random() * 1000)
+	}, {
 		name: '北京',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '天津',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '上海',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '重庆',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '河北',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '河南',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '云南',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '辽宁',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '黑龙江',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '湖南',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '安徽',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '山东',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '新疆',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '江苏',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '浙江',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '江西',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '湖北',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '广西',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '甘肃',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '山西',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '内蒙古',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '陕西',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '吉林',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '福建',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '贵州',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '广东',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '青海',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '西藏',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '四川',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '宁夏',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '海南',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '台湾',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '香港',
-		value: Math.round(Math.random() * 10)
+		value: Math.round(Math.random() * 1000)
 	}, {
 		name: '澳门',
-		value: Math.round(Math.random() * 10)
-	}],
-	getClassfiyMap: {
-		service: [{
-			value: Math.round(Math.random() * 10),
-			name: '监控类服务'
-		}, {
-			value: Math.round(Math.random() * 10),
-			name: '分析类类服务'
-		}, {
-			value: Math.round(Math.random() * 10),
-			name: '展示类服务'
-		}],
-		channel: [{
-			value: Math.round(Math.random() * 10),
-			name: '电子渠道'
-		}, {
-			value: Math.round(Math.random() * 10),
-			name: '营业厅前台'
-		}],
-		probe: [{
-			value: Math.round(Math.random() * 10),
-			name: '主动探测'
-		}, {
-			value: Math.round(Math.random() * 10),
-			name: '被动探测'
-		}]
-	}
+		value: Math.round(Math.random() * 1000)
+	}]
 };
-
-
-
