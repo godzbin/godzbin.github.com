@@ -1563,7 +1563,7 @@ function MyTask(parentNode) {
 		margin: "5 0",
 		items: [{
 			xtype: "button",
-			baseCls: "base-btn x-btn",
+			baseCls: "x-btn base-btn ",
 			style: "background: none",
 			text: "我的任务",
 			handler: Ext.bind(this.openMyOrder, this)

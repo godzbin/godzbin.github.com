@@ -242,7 +242,7 @@ function IndexPage(parentNode) {
 					NAME: "全国",
 					VALUE: "全国"
 				}, {
-					NAME: "甘肃",
+					NAME: "甘肃省",
 					VALUE: "甘肃"
 				}]
 			}),
@@ -255,7 +255,7 @@ function IndexPage(parentNode) {
 			valueField: "VALUE",
 			autoSelect: true,
 			value: "甘肃",
-			cls: "centerFormPanelInput",
+			cls: "centerFormPanelCombobox",
 			listeners: {
 				change: Ext.bind(this.leftPanelProvinceChange, this)
 			}
@@ -415,7 +415,7 @@ function IndexPage(parentNode) {
 			store: Ext.create("Ext.data.Store", {
 				fields: ["NAME", "VALUE"],
 				data: [{
-					NAME: "甘肃",
+					NAME: "甘肃省",
 					VALUE: "甘肃"
 				}]
 			}),
@@ -428,7 +428,7 @@ function IndexPage(parentNode) {
 			valueField: "VALUE",
 			autoSelect: true,
 			value: "甘肃",
-			cls: "centerFormPanelInput",
+			cls: "centerFormPanelCombobox",
 			listeners: {
 				change: Ext.bind(this.leftPanelProvinceChange, this)
 			}
@@ -436,7 +436,7 @@ function IndexPage(parentNode) {
 	});
 	this.rightPanel2TopPanel = Ext.create("Ext.panel.Panel", {
 		border: 0,
-		height: 35,
+		height: 40,
 		layout: "border",
 		items: [this.rightPanel2TopPanelStatuPanel, this.rightPanel2TopPanelProvincePanel]
 	});
@@ -444,7 +444,7 @@ function IndexPage(parentNode) {
 	// 订单/任务列表 
 	this.rightPanel2MainPanel = Ext.create("Ext.grid.Panel", {
 		border: 0,
-		height: 200,
+		height: 180,
 		padding: 5,
 		cls: "gridPanel",
 		store: this.orderStore,

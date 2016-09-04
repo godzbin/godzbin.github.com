@@ -27,6 +27,7 @@ div.x-border-layout-ct,
 }
 .base-btn .x-btn-inner-default-small{
 	font-size: 14px;
+	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
 }
 
 .x-tab-default-top{
@@ -221,6 +222,22 @@ div.x-border-layout-ct,
 	font-size: 14px;
 	border: 0;
 }
+.centerFormPanelCombobox .x-form-trigger-wrap-default{
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0);
+	border: 1px #eee solid;
+}
+
+.centerFormPanelCombobox input{
+	background: none;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #fff;
+}
+.centerFormPanelCombobox .x-form-trigger-default{
+	background-color: rgba(255,255,255,0);
+}
+
 .centerFormPanelInput .x-form-text-default.x-form-textarea{
 	line-height: 25px;
 }
@@ -469,10 +486,10 @@ div.x-border-layout-ct,
 }
 .menuBtn .x-btn-inner-default-small{
 	color: #aaa;
+	font-size: 16px;
 }
 .menuBtn.action .x-btn-inner-default-small{
 	color: #fff;
-	
 }
 .menuBtn.action{
 	border-radius: 0px;
