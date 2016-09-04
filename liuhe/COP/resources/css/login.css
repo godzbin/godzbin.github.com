@@ -28,9 +28,18 @@ body {
 .main-view{
 	height: 100%;
 	text-align: center;
-	background-image: url("../images/bg.png");
-	background-size: 100% 100%;
 	position: relative;
+
+	/*background-image: url("../images/bg.png");
+	background-size: 100% 100%;*/
+	
+	background-image: url("../images/bg.png");
+	background-repeat: repeat-y;
+	/*background-size: 100% 100%;*/
+	background:-webkit-gradient(linear ,0% 100%,100% 100%,
+	color-stop(0.1,rgb(76,118,91)),
+	color-stop(1,rgb(58,92,121)));
+	background:-moz-linear-gradient(left,rgb(76,118,91),rgb(58,92,121));
 
 }
 /* 
