@@ -235,24 +235,15 @@ function IndexPage(parentNode) {
 		items: [{
 			xtype: "combobox",
 			name: "province",
-			width: 150,
+			width: 100,
 			store: Ext.create("Ext.data.Store", {
-				fields: ["NAME", "VALUE"],
-				data: [{
-					NAME: "全国",
-					VALUE: "全国"
-				}, {
-					NAME: "甘肃省",
-					VALUE: "甘肃"
-				}]
+				fields: ["name", "value"],
+				data: Configes.province
 			}),
-			// fieldLabel: "选择省份",
-			// labelWidth: 80,
-			labelStyle: "font-size: 14px; color: #fff; line-height: 30px",
 			editable: false,
 			queryMode: 'local',
-			displayField: 'NAME',
-			valueField: "VALUE",
+			displayField: 'name',
+			valueField: "value",
 			autoSelect: true,
 			value: "甘肃",
 			cls: "centerFormPanelCombobox",
@@ -320,7 +311,7 @@ function IndexPage(parentNode) {
 			margin: "0 10",
 			padding: 5,
 			border: 0,
-			height: 280,
+			height: 300,
 			columnWidth: 1 / 3,
 			cls: "centerFormPanel",
 		},
@@ -370,7 +361,7 @@ function IndexPage(parentNode) {
 			xtype: "button",
 			baseCls: "x-btn base-btn",
 			style: "background: none;",
-			text: "查看更多 >",
+			text: "查看更多 >>",
 			handler: Ext.bind(this.openOrderList, this)
 		}]
 	});
@@ -411,21 +402,15 @@ function IndexPage(parentNode) {
 		items: [{
 			xtype: "combobox",
 			name: "province",
-			width: 150,
+			width: 100,
 			store: Ext.create("Ext.data.Store", {
-				fields: ["NAME", "VALUE"],
-				data: [{
-					NAME: "甘肃省",
-					VALUE: "甘肃"
-				}]
+				fields: ["name", "value"],
+				data: Configes.province
 			}),
-			// fieldLabel: "选择省份",
-			// labelWidth: 80,
-			labelStyle: "font-size: 14px; color: #fff; line-height: 30px",
 			editable: false,
 			queryMode: 'local',
-			displayField: 'NAME',
-			valueField: "VALUE",
+			displayField: 'name',
+			valueField: "value",
 			autoSelect: true,
 			value: "甘肃",
 			cls: "centerFormPanelCombobox",
@@ -734,15 +719,19 @@ function IndexPage(parentNode) {
 						border: 0,
 					}, {
 						region: 'east',
-						xtype: 'combobox',
-						value: '甘肃省',
+						xtype: "combobox",
+						name: "province",
 						width: 100,
-						store: new Ext.data.Store({
-							fields: ['name','value'],
-							data: [
-								{name: '甘肃省',value: '甘肃省'},
-							]
-						})
+						store: Ext.create("Ext.data.Store", {
+							fields: ["name", "value"],
+							data: Configes.province
+						}),
+						editable: false,
+						queryMode: 'local',
+						displayField: 'name',
+						valueField: "value",
+						autoSelect: true,
+						value: "甘肃",
 					}
 				]
 			}, {
@@ -854,9 +843,19 @@ function IndexPage(parentNode) {
 					}, {
 						// store: null,
 						region: 'east',
-						value: '甘肃省',
-						xtype: 'combobox',
-						width: 150,
+						xtype: "combobox",
+						name: "province",
+						width: 100,
+						store: Ext.create("Ext.data.Store", {
+							fields: ["name", "value"],
+							data: Configes.province
+						}),
+						editable: false,
+						queryMode: 'local',
+						displayField: 'name',
+						valueField: "value",
+						autoSelect: true,
+						value: "甘肃",
 					}
 				]
 			}, {
@@ -870,7 +869,11 @@ function IndexPage(parentNode) {
 				store: new Ext.create('Ext.data.Store',{
 					fields: ['province','resource','scene','channel','count'],
 					data: [
-						{'province':'深圳','resource':'','scene':'','channel':'','count':''}
+						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'5'},
+						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'掌厅','count':'3'},
+						{'province':'广东省','resource':'智能分析平台','scene':'收入保障监控','channel':'掌厅','count':'3'},
+						{'province':'贵州省','resource':'智能分析平台','scene':'故障定位监控','channel':'网厅','count':'2'},
+						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'1'},
 					]
 				}),
 				columns: {

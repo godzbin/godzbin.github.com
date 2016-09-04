@@ -90,7 +90,7 @@ function ServiceDirectoryManage(parentNode) {
 		if (statu && edit) {
 			Ext.Msg.show({
 				title: "提示",
-				modal: false,
+				modal: true,
 				msg: "存在未提交的编辑服务内容，是否继续上次编辑内容?",
 				buttonText: {
 					yes: "继续编辑",
@@ -620,7 +620,7 @@ function ServiceDirectoryManage(parentNode) {
 		}
 		Ext.Msg.show({
 			title: "警告",
-			modal: false,
+			modal: true,
 			msg: "存在编辑中的服务内容，删除后，该服务下的所有内容（包括编辑中的和已存在的服务内容）都将被删除。是否继续删除？",
 			buttonText: {
 				yes: "确定",
@@ -1788,7 +1788,7 @@ function ServiceDirectoryManage(parentNode) {
 	this.removeSaveSceneWin = function() {
 		Ext.Msg.show({
 			title: "提示",
-			modal: false,
+			modal: true,
 			msg: "确定要重新编辑吗？",
 			buttonText: {
 				yes: "确定",
@@ -1938,7 +1938,7 @@ function ServiceDirectoryManage(parentNode) {
 					var record = that.treePanel.getSelectionModel().getSelection()[0];
 					Ext.Msg.show({
 						title: "警告",
-						modal: false,
+						modal: true,
 						msg: "是否删除该类型所有服务内容？",
 						buttonText: {
 							yes: "确定",

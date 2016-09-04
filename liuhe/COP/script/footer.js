@@ -32,7 +32,7 @@ var Footer = function(parentNode) {
 				color: "#fff",
 				'line-height': "30px"
 			},
-			text: "关于我们 | 联系我们 "
+			text: "关于我们 | 联系我们 | 帮助 | 意见反馈"
 		});
 		return label;
 	};

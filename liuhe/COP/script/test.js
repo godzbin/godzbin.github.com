@@ -752,7 +752,7 @@ var test = {
 	getOrderListToService: {
 		total: 20,
 		list: [{
-			"_id": "0101010101-23",
+			"_id": "0101010101-01",
 			"service": "监控类",
 			"scene": "端到端",
 			"channel": "电子渠道",
@@ -1023,7 +1023,7 @@ var test = {
 	getOrderListTo5: {
 		total: 2,
 		list: [{
-			"_id": "0102020104-01",
+			"_id": "0101010101-01",
 			"service": "监控类",
 			"scene": "端到端",
 			"channel": "电子渠道",
@@ -1047,7 +1047,7 @@ var test = {
 
 	// 订单信息
 	getOrderInfo: {
-		orderId: "1234567890-23",
+		orderId: "0101010101-01",
 		statu: "已完成",
 		province: "甘肃省",
 		processor: "甘肃省业务运维组",
@@ -1171,7 +1171,7 @@ var test = {
 	},
 
 	'getOrderInfo已完成': {
-		orderId: "1234567890-23",
+		orderId: "0101010101-01",
 		statu: "已完成",
 		province: "甘肃省",
 		processor: "甘肃省业务运维组",
@@ -2209,7 +2209,7 @@ var test = {
 			name: '监控类服务'
 		}, {
 			value: Math.round(Math.random() * 10),
-			name: '分析类类服务'
+			name: '分析类服务'
 		}, {
 			value: Math.round(Math.random() * 10),
 			name: '展示类服务'

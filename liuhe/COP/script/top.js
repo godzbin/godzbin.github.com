@@ -74,16 +74,20 @@ var TopMenu = function(parentNode) {
 		var indexPage = mainPanel.getComponent(menuId.indexPage);
 		var indexPage2 = mainPanel.getComponent(menuId.indexPage2);
 		var userManagement = mainPanel.getComponent(menuId.userManagement);
+		var serviceMade =  mainPanel.getComponent(menuId.serviceMade);
+		var serviceDirectoryManage =  mainPanel.getComponent(menuId.serviceDirectoryManage);
 		// 子菜单
-		var serviceMade = chidlMenuPanel.getComponent(menuId.child_serviceMade);
-		var serviceDirectoryManage = chidlMenuPanel.getComponent(menuId.child_serviceDirectoryManage);
+	
+		var child_serviceMade = chidlMenuPanel.getComponent(menuId.child_serviceMade);
+		var child_serviceDirectoryManage = chidlMenuPanel.getComponent(menuId.child_serviceDirectoryManage);
 
 		indexPage && indexPage.hide();
 		indexPage2 && indexPage2.hide();
 		userManagement && userManagement.hide();
 		serviceMade && serviceMade.hide();
 		serviceDirectoryManage && serviceDirectoryManage.hide();
-
+		child_serviceMade && child_serviceMade.hide();
+		child_serviceDirectoryManage && child_serviceDirectoryManage.hide();
 
 		if (this.userInfo["_CONTENT"]) {
 			var province = this.getProvince();
@@ -91,9 +95,11 @@ var TopMenu = function(parentNode) {
 				indexPage.show();
 				userManagement.show();
 				serviceDirectoryManage.show();
+				child_serviceDirectoryManage.show();
 			} else {
 				indexPage2.show();
 				serviceMade.show();
+				child_serviceMade.show();
 			}
 		}
 	};
@@ -315,8 +321,22 @@ var TopMenu = function(parentNode) {
 			text: "服务目录",
 			itemId: this.menuId.MonitorHomePage,
 			iconCls: "more",
-			icon: "resources/images/serviceManage.png",
+			icon: "resources/images/service.png",
 			pageId: Configes.page.serviceDirectory,
+			handler: Ext.bind(this.menuChange, this)
+		}, {
+			text: "服务定制",
+			itemId: this.menuId.serviceMade,
+			iconCls: "more",
+			icon: "resources/images/serviceMade.png",
+			pageId: Configes.page.serviceMade,
+			handler: Ext.bind(this.menuChange, this)
+		}, {
+			text: "服务目录管理",
+			itemId: this.menuId.serviceDirectoryManage,
+			iconCls: "more",
+			icon: "resources/images/serviceManage.png",
+			pageId: Configes.page.serviceDirectoryManage,
 			handler: Ext.bind(this.menuChange, this)
 		}, {
 			text: "退出登录",

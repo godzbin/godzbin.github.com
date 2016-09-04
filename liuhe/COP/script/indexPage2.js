@@ -13,7 +13,15 @@ function IndexPage2(parentNode) {
 		this.centerChild1Text = [{
 			text: "故障定位监控",
 			cls: "index-title",
-
+		},{
+			text: "* 实时监控业务指标性能",
+			cls: "index-desc"
+		},{
+			text: "* 单笔业务智能故障定位",
+			cls: "index-desc"
+		},{
+			text: "* 接口级、应用级、平台级故障精确定位",
+			cls: "index-desc"
 		}];
 		this.centerChild2Text = [{
 			text: "端到端监控",
@@ -702,7 +710,11 @@ function IndexPage2(parentNode) {
 				store: new Ext.create('Ext.data.Store',{
 					fields: ['province','resource','scene','channel','count'],
 					data: [
-						{'province':'深圳','resource':'','scene':'','channel':'','count':''}
+						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'5'},
+						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'掌厅','count':'3'},
+						{'province':'广东省','resource':'智能分析平台','scene':'收入保障监控','channel':'掌厅','count':'3'},
+						{'province':'贵州省','resource':'智能分析平台','scene':'故障定位监控','channel':'网厅','count':'2'},
+						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'1'},
 					]
 				}),
 				columns: {

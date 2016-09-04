@@ -116,5 +116,41 @@ Ext.onReady(function() {
 			me.callParent();
 		}
 	});
+	Ext.define("MyTreePanel3", {
+		extend: 'Ext.tree.Panel',
+		store: MyTreeStore,
+		hideHeaders: true,
+		rootVisible: true,
 
+		initComponent: function() {
+			var me = this;
+			//定义列
+			me.columns = [{
+				xtype: 'treecolumn',
+				dataIndex: 'text',
+				flex: 1,
+			}, {
+				xtype: 'actioncolumn',
+				width: 24,
+				items: [{
+					icon: "resources/images/edit.png",
+					iconCls: "more",
+					tooltip: '定制服务',
+					handler: function(gridView, rowIndex, colIndex, column, e, record) {
+						gridView.getSelectionModel().select(record);
+						me.that.sceneId = record.data.nodeData["_id"];
+						me.that.openCenterPanel(e, record);
+						// me.that.menuPanelShow(e, record);
+					},
+				}],
+				renderer: function(v, record, column) {
+					if (!column.data.leaf) {
+						record.style = "display: none;";
+					}
+					return record;
+				}
+			}];
+			me.callParent();
+		}
+	});
 });

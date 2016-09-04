@@ -81,7 +81,7 @@ function ServiceMade(parentNode) {
 		if (sceneNode.data.nodeData.edit) {
 			Ext.Msg.show({
 				title: "提示",
-				modal: false,
+				modal: true,
 				msg: "存在未提交的编辑服务内容，是否继续上次编辑内容?",
 				buttonText: {
 					yes: "继续编辑",
@@ -887,7 +887,8 @@ function ServiceMade(parentNode) {
 		}]
 	});
 	// 服务目录树
-	this.treePanel = Ext.create("Ext.tree.Panel", {
+	this.treePanel = Ext.create("MyTreePanel3", {
+		that: this,
 		store: this.treeRoot,
 		rootVisible: false,
 		border: 0,

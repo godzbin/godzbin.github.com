@@ -9,6 +9,7 @@ function EchartPie(eleId, praentNode, title) {
 		this.ele = document.getElementById(this.eleId);
 		this.myChart = echarts.init(this.ele);
 		this.option = {
+			color: ['#00A8E0', '#AED334', '#FF9000', '#FBED25', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'],
 			backgroundColor: 'none',
 			title: {
 				show: true,
@@ -26,7 +27,7 @@ function EchartPie(eleId, praentNode, title) {
 					color: "#fff",
 					fontSize: "14px"
 				},
-				position: ["5%","10%"],
+				position: ["5%", "10%"],
 				formatter: " {b} : {c} ({d}%)"
 			},
 			legend: {
@@ -37,7 +38,7 @@ function EchartPie(eleId, praentNode, title) {
 				},
 				itemWidth: 15,
 				data: []
-				// data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+					// data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
 			},
 			series: [{
 				name: this.title,

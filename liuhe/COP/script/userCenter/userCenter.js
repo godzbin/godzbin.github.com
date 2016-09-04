@@ -109,7 +109,7 @@ function UserCenter(parentNode){
 				layout : "form", // 整个大的表单是form布局
 				labelWidth : 65,
 				labelAlign : "right",
-				style: 'background: transparent;margin: 0 0 0 auto;width:70%;min-width:850px;',
+				style: 'background: transparent;margin: 0 0 0 auto;min-width:850px;',
 				border: 0,
 				defaults: {
 					style: 'background: transparent;',

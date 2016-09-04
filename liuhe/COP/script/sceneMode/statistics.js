@@ -556,6 +556,7 @@
 							mainPanel.hide();
 							componentPanel.show();
 						},false);
+						g.style.cursor = 'pointer';
 					}
 
 					[background,title,container,icon,arrowLeft,arrowRight].forEach(function(item){
