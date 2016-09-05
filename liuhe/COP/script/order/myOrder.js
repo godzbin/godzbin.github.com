@@ -27,8 +27,9 @@ function MyOrder(parentNode) {
 	this.run = function(params) {
 		if (params && params.record) {
 			this.orderRecord = params.record
-		} else {
-			this.jumpSceneId = params;
+		} else if(params) {
+			this.jumpSceneId = params.jumpSceneId;
+			this.jumpStatuId = params.jumpStatuId
 		}
 		if (!this.loading) {
 			this.initView();
@@ -51,8 +52,6 @@ function MyOrder(parentNode) {
 		panel.add(this.viewPanel);
 		panel.add(this.myOrderDetailsMainPanel);
 		this.serviceChange();
-
-
 	};
 
 	/**
@@ -430,15 +429,13 @@ function MyOrder(parentNode) {
 	};
 	this.selectSceneNode = function(senceId) {
 		var btn;
+		var statu = this.jumpStatuId;
 		this.statuPanel.items.each(function(Btn) {
-			if (Btn.statu == 1) {
+			if (Btn.statu == statu) {
 				btn = Btn;
 			}
 		});
 		this.statuChange(btn);
-
-
-
 		var root = this.treeRoot.getRoot();
 		var sceneNode;
 		root.eachChild(function(node) {
@@ -449,7 +446,8 @@ function MyOrder(parentNode) {
 				}
 			}, this);
 		}, this);
-		sceneNode && this.otherChange(sceneNode);
+		sceneNode && statu && this.otherChange(sceneNode);
+		sceneNode && !statu && this.serviceChange(sceneNode);
 		return sceneNode;
 	};
 
@@ -481,6 +479,9 @@ function MyOrder(parentNode) {
 		tools.getData(Configes.url.getOrderListTo + params.statu, params, this.setOtherOrderList, this);
 	};
 	this.setOtherOrderList = function(data, that) {
+		if(!data){
+			return ;
+		}
 		var list = data["list"];
 		var total = data["total"];
 		that.centerOtherGridPanelPageBar.setTotal(total);
@@ -554,6 +555,14 @@ function MyOrder(parentNode) {
 			return "orderIconHide";
 		}
 	};
+	//  变更 按钮的显示
+	this.orderIconShowToChange = function(){
+		if (this.statu == 0) {
+			return "orderIcon";
+		} else {
+			return "orderIconHide";
+		}
+	};
 	this.cancelOrder = function(btn) {
 		var form = this.cancelOrderWin.getComponent(0).getForm();
 		var values = form.getValues();
@@ -567,6 +576,7 @@ function MyOrder(parentNode) {
 	};
 	// 打开 取消窗口 
 	this.cancelOrderWinShow = function(gridView, rowIndex, colIndex, column, e, record) {
+		var that= this;
 		this.cancelOrderWin = Ext.create("Ext.window.Window", {
 			width: 500,
 			border: 0,
@@ -625,7 +635,7 @@ function MyOrder(parentNode) {
 						cls: "btn-hide",
 						text: "关闭窗口",
 						handler: function() {
-							this.cancelOrderWin.destroy();
+							that.cancelOrderWin.destroy();
 						}
 					}]
 				}]
@@ -681,7 +691,8 @@ function MyOrder(parentNode) {
 				handler: Ext.bind(this.openOrderDetails, this)
 			}, {
 				iconCls: "orderIcon",
-				icon: "resources/images/edit.png",
+				icon: "resources/images/change.png",
+				getClass: Ext.bind(this.orderIconShowToChange, this),
 				tooltip: '变更',
 			}, {
 				iconCls: "orderIcon",
@@ -692,6 +703,56 @@ function MyOrder(parentNode) {
 			}]
 		}]
 	};
+	this.centerGridColumns2 = {
+		defaults: {
+			menuDisabled: true,
+			draggable: false,
+			sortable: false,
+			align: "center"
+		},
+		items: [{
+			dataIndex: "_id",
+			width: 120,
+			text: "订单号",
+		}, {
+			dataIndex: "service",
+			text: "订单类型"
+		}, {
+			dataIndex: "scene",
+			text: "订单内容"
+		}, {
+			dataIndex: "channel",
+			text: "探测渠道"
+		}, {
+			dataIndex: "probe",
+			text: "探测方式"
+		}, {
+			dataIndex: "statu",
+			text: "状态"
+		}, {
+			dataIndex: "processor",
+			text: "当前处理人"
+		}, {
+			dataIndex: "startTime",
+			text: "下单时间",
+			width: 120,
+		}, {
+			dataIndex: "province",
+			text: "订单来源"
+		}, {
+			// dataIndex: "",
+			text: "操作",
+			xtype: 'actioncolumn',
+			width: 100,
+			items: [{
+				iconCls: "orderIcon",
+				icon: "resources/images/search.png",
+				tooltip: '查看',
+				handler: Ext.bind(this.openOrderDetails, this)
+			}]
+		}]
+	};
+
 	Ext.define("MyOrder.MoreGrid", {
 		extend: 'Ext.grid.Panel',
 		alias: 'widget.MainGrid',
@@ -920,7 +981,7 @@ function MyOrder(parentNode) {
 			selModel: {
 				selType: 'cellmodel'
 			},
-			columns: tools.deepClone(this.centerGridColumns),
+			columns: tools.deepClone(this.centerGridColumns2),
 			border: 0,
 			autoRender: true,
 			autoShow: false,

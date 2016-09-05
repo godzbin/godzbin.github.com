@@ -13,12 +13,12 @@ var test = {
 	// 订单管理
 	view_genCode: "1111",
 	view_getSelfInfo: {
-		"_NICK_NAME": "甘肃省",
+		"_NICK_NAME": "甘肃省业务运维组",
 		"_ID": 103,
 		"DOMAIN": "Domain=101",
 		"_PHONE": null,
 		"_GENDER": 0,
-		"_NAME": "甘肃省",
+		"_NAME": "甘肃省业务运维组",
 		"_CONTENT": '{"PROVINCE":"甘肃省"}',
 		"_ADDRESS": null,
 		"_EMAIL": null
@@ -331,8 +331,28 @@ var test = {
 		statu: 1,
 		edit: 0
 	}],
-	getSceneList2: [],
-	getSceneList3: [],
+	getSceneList2: [{
+		name: "数据分析模型",
+		_id: 7,
+		statu: 1,
+		edit: 0
+	},{
+		name: "自主分析",
+		_id: 8,
+		statu: 1,
+		edit: 0
+	}],
+	getSceneList3: [{
+		name: "APP展示",
+		_id: 9,
+		statu: 1,
+		edit: 0
+	},{
+		name: "大屏展示",
+		_id: 10,
+		statu: 1,
+		edit: 0
+	}],
 	// 获取渠道
 	getChannel: [{
 		NAME: "营业厅前台",
@@ -407,7 +427,7 @@ var test = {
 	getScene: {
 		id: 1,
 		name: "场景标题（demo）",
-		desc: "场景描述（demo）",
+		desc: "实时监控业务指标性能,单笔业务智能故障定位,接口级、应用级、平台级故障精确定位",
 		channel: ["营业厅前台", "电子渠道"],
 		target: ["成功率", "交易量"],
 		probe: ["主动探测", "被动探测"],

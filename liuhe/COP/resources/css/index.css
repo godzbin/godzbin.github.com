@@ -486,7 +486,8 @@ div.x-border-layout-ct,
 }
 .menuBtn .x-btn-inner-default-small{
 	color: #aaa;
-	font-size: 16px;
+	font-size: 20px;
+	line-height: 22px;
 }
 .menuBtn.action .x-btn-inner-default-small{
 	color: #fff;
@@ -516,6 +517,7 @@ div.x-border-layout-ct,
 }
 .more{
 	margin-top: 5px;
+	margin-right: 5px; 
 	background-size: 15px auto;
 }
 .moreHide{

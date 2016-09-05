@@ -23,6 +23,7 @@
 		vz2.ajax = function(opts){
 			var _u = opts.url,
 				_f = opts.success;
+			opts.method = 'GET',
 			opts.success = function(res,eOpts){
 				var result = JSON.parse(res.responseText);
 				_f(true === test ? result[_u] : result,eOpts);
@@ -645,7 +646,6 @@
 
 			mainPanel = Ext.create('Ext.panel.Panel',{
 				border: 0,
-				// width: 1200,
 				id: 'vz_monitorSceneMode',
 				listeners: {
 					afterrender: function(){
@@ -663,7 +663,6 @@
 
 			componentPanel = Ext.create('Ext.panel.Panel',{
 				border: 0,
-				// width: 1200,
 				hidden: true,
 				listeners: {
 					show: function(){
@@ -678,7 +677,6 @@
 
 			filterPanel = Ext.create('Ext.form.Panel',{
 				layout: 'column',
-				// width: 1200,
 				border: 0,
 				padding: '0 0 10 0',
 				margin: '0 0 740 0',
@@ -884,7 +882,6 @@
 				style: {
 					borderBottom: '1px #fff solid'
 				},
-				// width: 1200,
 				items: [
 					{
 						border: 0,
@@ -894,7 +891,7 @@
 							displayField: 'name',
 							valueField: 'value'
 						},
-						width: 300,
+						width: 350,
 						layout: 'column',
 						style: {
 							margin: '0 auto'
@@ -902,6 +899,7 @@
 						items: [
 							{
 								cls: 'vz_combobox_large',
+								width: 220,
 								height: 37,
 								style: {
 									fontSize: '24px',
@@ -1021,6 +1019,15 @@
 				warningCenterPanel = prolongation['warningCenter']();
 				mainPanel.up('panel').add(warningCenterPanel);
 			};
+
+			vz2.changeModel = function(){
+				var initial = false;
+				return function(){
+					false === initial && (initial = true) && void 0 === warningCenterPanel && warningCenterInitial();
+					mainPanel.hide();
+					warningCenterPanel.show();
+				}
+			}();
 
 		/* initialize */ 
 

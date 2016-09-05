@@ -170,17 +170,15 @@ function UserCenter(parentNode){
 						title: '基本信息',
 						layout: 'form',
 						style: 'margin-right: 10px;',
+						defaults: {xtype: 'textfield'},
 						items: [{
 							fieldLabel: '真实姓名',
-							xtype: 'textfield',
 							name: 'realName'
 						}, {
 							fieldLabel: '姓名',
-							xtype: 'textfield',
 							name: 'nickName'
 						}, {
 							fieldLabel: '年龄',
-							xtype: 'textfield',
 							name: 'age'
 						}]
 					}, {
@@ -188,38 +186,45 @@ function UserCenter(parentNode){
 						title: '企业信息',
 						layout: 'form',
 						style: 'margin-right: 10px;',
+						defaults: {xtype: 'textfield'},
 						items: [{
 							fieldLabel: '所属省份',
-							xtype: 'textfield',
 							name: 'province'
 						}, {
 							fieldLabel: '所属公司',
-							xtype: 'textfield',
-							name: 'company'
+							name: 'company',
+							xtype: 'combobox',
+							displayField: 'name',
+							valueField: 'value',
+							store: new Ext.data.Store({
+								fields: ['name','value'],
+								data: [
+									{name: '中国移动(深圳)有限公司',value:'深圳'},
+									{name: '甘肃移动有限公司',value:'甘肃'},
+									{name: '广东移动有限公司',value:'广东'},
+									{name: '贵州移动有限公司',value:'贵州'},
+								]
+							}),
 						}, {
 							fieldLabel: '部门',
-							xtype: 'textfield',
 							name: 'department'
 						}, {
 							fieldLabel: '职位',
-							xtype: 'textfield',
 							name: 'position'
 						}]
 					}, {
 						columnWidth: 0.31,
 						title: '联系方式',
 						layout: 'form',
+						defaults: {xtype: 'textfield'},
 						items: [{
 							fieldLabel: '手机号码',
-							xtype: 'textfield',
 							name: 'number'
 						}, {
 							fieldLabel: '邮箱',
-							xtype: 'textfield',
 							name: 'email'
 						}, {
 							fieldLabel: 'QQ',
-							xtype: 'textfield',
 							name: 'qqAccount'
 						}]
 					}]
@@ -297,7 +302,7 @@ function UserCenter(parentNode){
 			nickName: 'kk',
 			age: '39',
 			province: 'shandong',
-			company: 'china mobile',
+			company: '深圳',
 			department: 'business',
 			position: 'cleankeeper',
 			number: '13566660099',

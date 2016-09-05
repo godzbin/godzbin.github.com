@@ -135,17 +135,11 @@ var TopMenu = function(parentNode) {
 		var p = Configes.page;
 		var menuPanel;
 		if (pageId == p.userCenter || pageId == p.myOrder || pageId == p.myTask) {
-			// if (!this.userCenterMenuPanel) {
-			// this.createUserCenterMenuPanel();
 			Ext.getCmp(this.panelId).add(this.userCenterMenuPanel);
-			// }
 			menuPanel = this.userCenterMenuPanel;
 		}
 		if (pageId == p.serviceDirectory || pageId == p.serviceDirectoryManage || pageId == p.serviceMade) {
-			// if (!this.serviceDirectoryMenuPanel) {
-			// this.createServiceDirectoryMenuPanel();
 			Ext.getCmp(this.panelId).add(this.serviceDirectoryMenuPanel);
-			// }
 			menuPanel = this.serviceDirectoryMenuPanel;
 		}
 		menuPanel && menuPanel.show();
@@ -176,6 +170,7 @@ var TopMenu = function(parentNode) {
 		this.userInfo = data;
 		if (this.mainMenuPanel) {
 			this.mainMenuPanel.setText(data["_NAME"]);
+			this.mainMenuPanel.setTooltip(data["_NAME"]);
 		}
 		this.initMenu();
 	};
@@ -217,11 +212,10 @@ var TopMenu = function(parentNode) {
 
 	this.userCenterMenuPanel = Ext.create("Ext.panel.Panel", {
 		border: 0,
-		height: 31,
 		width: "100%",
-		margin: "10 0 0 0",
+		margin: "5 0 0 0",
 		style: "border-bottom: 1px #ddd solid",
-		height: 31,
+		height: 36,
 		defaults: {
 			xtype: "button",
 			margin: "0 20",
@@ -246,8 +240,8 @@ var TopMenu = function(parentNode) {
 	this.serviceDirectoryMenuPanel = Ext.create("Ext.panel.Panel", {
 		border: 0,
 		layout: "hbox",
-		margin: "10 0 0 0",
-		height: 31,
+		margin: "5 0 0 0",
+		height: 36,
 		width: "100%",
 		style: "border-bottom: 1px #ddd solid",
 		defaults: {
@@ -255,6 +249,7 @@ var TopMenu = function(parentNode) {
 			margin: "0 20",
 			baseCls: "x-btn base-btn",
 			cls: "menuBtn",
+			height: "100%",
 			handler: Ext.bind(this.menuChildChange, this)
 		},
 		items: [{
@@ -321,14 +316,14 @@ var TopMenu = function(parentNode) {
 			text: "服务目录",
 			itemId: this.menuId.MonitorHomePage,
 			iconCls: "more",
-			icon: "resources/images/service.png",
+			icon: "resources/images/serviceMade.png",
 			pageId: Configes.page.serviceDirectory,
 			handler: Ext.bind(this.menuChange, this)
 		}, {
 			text: "服务定制",
 			itemId: this.menuId.serviceMade,
 			iconCls: "more",
-			icon: "resources/images/serviceMade.png",
+			icon: "resources/images/service.png",
 			pageId: Configes.page.serviceMade,
 			handler: Ext.bind(this.menuChange, this)
 		}, {
@@ -422,6 +417,7 @@ var TopMenu = function(parentNode) {
 		height: 30,
 		width: "100%",
 		// region: "center",
+		
 		layout: "border",
 		defaults: {
 			region: 'east',
@@ -440,7 +436,7 @@ var TopMenu = function(parentNode) {
 		// columnWidth: 2 / 3,
 		region: "center",
 		padding: 0,
-		margin: "10 10 0 10",
+		margin: "5 10 0 10",
 		height: 71,
 		layout: "vbox",
 		items: [

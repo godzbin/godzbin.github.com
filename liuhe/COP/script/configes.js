@@ -10,6 +10,8 @@ var Configes = {
 		logoHeight: 70,
 		// logoWidth: 120,
 	},
+	color: ['#00A8E0', '#AED334', '#FF9000', '#FBED25', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'],
+	source: ["被动业务探测系统","智能分析平台"],
 	orderModel: {
 		$EX_CONTENT: "$EX_CONTENT",
 		$EX_CHECKER: "$EX_CHECKER",
@@ -133,10 +135,10 @@ var Configes = {
 		// 用户管理
 		securityManage: "securityManage",
 	},
-	province:  [{
+	province: [{
 		name: '全国',
 		value: '全国'
-	},{
+	}, {
 		name: '北京市',
 		value: '北京'
 	}, {

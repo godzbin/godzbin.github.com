@@ -62,8 +62,19 @@ Ext.onReady(function() {
 				flex: 1,
 			}, {
 				xtype: 'actioncolumn',
-				width: 24,
+				width: 50,
 				items: [{
+					icon: "resources/images/search.png",
+					iconCls: "more",
+					tooltip: '查看服务',
+					margin: "5 5",
+					handler: function(gridView, rowIndex, colIndex, column, e, record) {
+						gridView.getSelectionModel().select(record);
+						me.that.sceneId = record.data.nodeData["_id"];
+						me.that.openCenterPanel(e, record);
+						// me.that.menuPanelShow(e, record);
+					},
+				},{
 					icon: "resources/images/edit.png",
 					iconCls: "more",
 					tooltip: '定制服务',

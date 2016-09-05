@@ -66,6 +66,7 @@ vz2.extend('transactionTracking',function(){
 		channelStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
+				{value:"0", name: '全部',     },
 				{value:"1", name: '广州越秀润粤服营厅',     },
 				{value:"2", name: '广州越秀东湖西路服营厅',  },
 				{value:"3", name: '广州中山大道西棠下营业厅',},
@@ -76,6 +77,7 @@ vz2.extend('transactionTracking',function(){
 		codeStore = Ext.create('Ext.data.Store',{
 			fields: ['name','value'],
 			data: [
+				{name: '全部',value: '0'},
 				{name: '100',value: '100'},
 				{name: '101',value: '101'},
 				{name: '200',value: '200'},
@@ -137,9 +139,6 @@ vz2.extend('transactionTracking',function(){
 						queryMode: "local",
 						valueField: "value",
 						xtype: 'combobox',
-						allowBlank: false,
-						blankText: '该字段不能为空',
-						msgTarget: 'under',
 					},
 					items: [
 						{
@@ -148,7 +147,6 @@ vz2.extend('transactionTracking',function(){
 							text: '响应时长:',
 							xtype: 'label',
 						}, {
-							allowBlank: true,
 							columnWidth: 1/16,
 							editable: true,
 							xtype: 'textfield',
@@ -158,7 +156,6 @@ vz2.extend('transactionTracking',function(){
 							text: '—',
 							xtype: 'label',
 						}, {
-							allowBlank: true,
 							columnWidth: 1/16,
 							editable: true,
 							xtype: 'textfield',
@@ -170,12 +167,15 @@ vz2.extend('transactionTracking',function(){
 						}, {
 							fieldLabel: '客户端id',
 							store: clientIPStore,
+							value: '0',
 						}, {
 							fieldLabel: '服务端id',
 							store: serverIPStore,
+							value: '0',
 						}, {
 							fieldLabel: '交易类型',
 							store: transactionTypeStore,
+							value: '0',
 						}
 					]
 				}, {
@@ -194,10 +194,10 @@ vz2.extend('transactionTracking',function(){
 						msgTarget: 'under',
 					},
 					items: [
-						{store: statementStore,fieldLabel: '业务状态'},
-						{store: cityStore,     fieldLabel: '地市'},
-						{store: channelStore,  fieldLabel: '子渠道'},
-						{store: codeStore,     fieldLabel: '返回码'},
+						{store: statementStore,fieldLabel: '业务状态',value: '0'},
+						{store: cityStore,     fieldLabel: '地市',value: '深圳'},
+						{store: channelStore,  fieldLabel: '子渠道',value: '0'},
+						{store: codeStore,     fieldLabel: '返回码',value: '0'},
 					]
 				}, {
 					layout: 'column',

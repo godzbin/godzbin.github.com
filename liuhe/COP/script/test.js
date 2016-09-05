@@ -7,12 +7,12 @@ var test = {
 	// 订单管理
 	view_genCode: "1111",
 	view_getSelfInfo: {
-		"_NICK_NAME": "深圳中心",
+		"_NICK_NAME": "深圳中心运维中心",
 		"_ID": 103,
 		"DOMAIN": "Domain=101",
 		"_PHONE": null,
 		"_GENDER": 0,
-		"_NAME": "深圳中心",
+		"_NAME": "深圳中心运维中心",
 		"_CONTENT": '{"PROVINCE":"深圳中心"}',
 		"_ADDRESS": null,
 		"_EMAIL": null
@@ -325,8 +325,28 @@ var test = {
 		statu: 1,
 		edit: 0
 	}],
-	getSceneList2: [],
-	getSceneList3: [],
+	getSceneList2: [{
+		name: "数据分析模型",
+		_id: 7,
+		statu: 1,
+		edit: 0
+	},{
+		name: "自主分析",
+		_id: 8,
+		statu: 1,
+		edit: 0
+	}],
+	getSceneList3: [{
+		name: "APP展示",
+		_id: 9,
+		statu: 1,
+		edit: 0
+	},{
+		name: "大屏展示",
+		_id: 10,
+		statu: 1,
+		edit: 0
+	}],
 	// 获取渠道
 	getChannel: [{
 		NAME: "营业厅前台",
@@ -401,7 +421,7 @@ var test = {
 	getScene: {
 		id: 1,
 		name: "场景标题（demo）",
-		desc: "场景描述（demo）",
+		desc: "实时监控业务指标性能,单笔业务智能故障定位,接口级、应用级、平台级故障精确定位",
 		channel: ["营业厅前台", "电子渠道"],
 		target: ["成功率", "交易量"],
 		probe: ["主动探测", "被动探测"],
@@ -760,7 +780,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0101010101-01",
 			"service": "监控类",
@@ -770,7 +790,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -780,7 +800,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -790,7 +810,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -800,7 +820,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -810,7 +830,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -820,7 +840,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -830,7 +850,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -840,7 +860,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -850,7 +870,7 @@ var test = {
 			"statu": "已完成",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": ""
 		}]
 	},
 	getOrderListToHistory: [{
@@ -862,7 +882,7 @@ var test = {
 		"statu": "已完成",
 		"startTime": "2016-08-26 00:00:00",
 		"province": "甘肃省",
-		"processor": "深圳中心运维中心"
+		"processor": ""
 	}],
 	getOrderListTo1: {
 		total: 8,
@@ -959,7 +979,7 @@ var test = {
 			"statu": "审批未通过",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "无"
+			"processor": ""
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -969,7 +989,7 @@ var test = {
 			"statu": "审批未通过",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "无"
+			"processor": ""
 		}]
 	},
 	getOrderListTo3: {
@@ -2055,7 +2075,7 @@ var test = {
 			"statu": "待分派",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": "admin"
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -2065,7 +2085,7 @@ var test = {
 			"statu": "待审批",
 			"startTime": "2016-08-26 00:00:00",
 			"province": "甘肃省",
-			"processor": "深圳中心运维中心"
+			"processor": "admin"
 		}, {
 			"_id": "0102020104-01",
 			"service": "监控类",
@@ -2230,6 +2250,3 @@ var test = {
 		}]
 	}
 };
-
-
-

@@ -141,46 +141,75 @@
 	},
 	"applicationStatistics":[
 		[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
+			{"transactionType":"充值","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"购机","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"}
 		],[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type5","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"}
 		],[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
 		],[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type5","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"充值","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"购机","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"}
 		],[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"}
 		],[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type5","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"}
 		],[
-			{"transactionType":"type1","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
-			{"transactionType":"type2","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
-			{"transactionType":"type3","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
-			{"transactionType":"type4","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"},
-			{"transactionType":"type4","transactionCount":"2121","successRate":"3.00","responseTime":"336.65","responseRate":"95.01"}
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"},
+			{"transactionType":"客户信息查询","transactionCount":"5213","successRate":"2.00","responseTime":"286.65","responseRate":"80.00"},
+			{"transactionType":"月结账单查询","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"转套餐办产品","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"查欠","transactionCount":"5212","successRate":"3.00","responseTime":"336.65","responseRate":"90.00"},
+			{"transactionType":"积分查询","transactionCount":"1111","successRate":"3.00","responseTime":"336.65","responseRate":"95.00"},
+			{"transactionType":"用户订购产品查询","transactionCount":"5214","successRate":"1.00","responseTime":"236.65","responseRate":"100.00"}
 		]
 	],
 	"transactionTracking": [

@@ -82,7 +82,7 @@ function ServiceMade(parentNode) {
 			Ext.Msg.show({
 				title: "提示",
 				modal: true,
-				msg: "存在未提交的编辑服务内容，是否继续上次编辑内容?",
+				msg: "存在未提交的订制服务内容，是否继续上次服务定制?",
 				buttonText: {
 					yes: "继续编辑",
 					no: "重新编辑"
@@ -121,9 +121,9 @@ function ServiceMade(parentNode) {
 		this.faultServiceBtnPanel.getComponent(0).setIcon("resources/images/-.png");
 		this.dataServiceBtnPanel.getComponent(0).setIcon("resources/images/-.png");
 		this.monitorFormPanel.show();
-		this.alarmServiceFormPanel.show();
-		this.faultServiceFormPanel.show();
-		this.dataServiceFormPanel.show();
+		this.alarmServiceFormPanel.hide();
+		this.faultServiceFormPanel.hide();
+		this.dataServiceFormPanel.hide();
 
 		this.initAlarmConfigPanel();
 	};
@@ -617,6 +617,13 @@ function ServiceMade(parentNode) {
 		})
 
 	};
+	this.openOrderList = function() {
+		var sceneId = this.sceneId;
+		this._parentNode.openContent(Configes.page.myOrder, {
+			jumpSceneId: sceneId,
+			jumpStatuId: 0
+		});
+	};
 	this.submitOver = function() {
 		var sceneId = this.sceneId;
 		var sceneNode = this.getSceneNodeById(sceneId);
@@ -625,7 +632,10 @@ function ServiceMade(parentNode) {
 		if (values["submitOver"]) {
 			this.openCenterPanel(this, sceneNode);
 		} else {
-			this._parentNode.openContent(Configes.page.myOrder, sceneId);
+			this._parentNode.openContent(Configes.page.myOrder, {
+				jumpSceneId: sceneId,
+				jumpStatuId: 1
+			});
 		}
 	};
 	// 保存订单
@@ -751,7 +761,7 @@ function ServiceMade(parentNode) {
 				}
 			}, this);
 		}, this);
-		sceneNode && this.openCenterPanel(null,sceneNode);
+		sceneNode && this.openCenterPanel(null, sceneNode);
 		return sceneNode;
 	};
 
@@ -974,8 +984,9 @@ function ServiceMade(parentNode) {
 					xtype: "button",
 					// baseCls: "x-btn base-btn",
 					// width: 100,
-					text: "查看服务",
-					height: 25
+					text: "查看已有服务",
+					height: 25,
+					handler: Ext.bind(this.openOrderList, this)
 				}],
 			}]
 		}, {
@@ -1917,12 +1928,18 @@ function ServiceMade(parentNode) {
 		margin: "10 0",
 		padding: "10 0",
 		items: [{
+			xtype: "label",
+			text: "提交后:",
+			width: 60,
+			margin: "0 10",
+			style: "color: #fff; font-size: 14px; line-height: 40px; "
+		}, {
 			xtype: 'fieldcontainer',
 			defaultType: "radiofield",
-			fieldLabel: "提交后将要",
-			labelWidth: 100,
-			labelAlign: "right",
-			labelStyle: "color: #fff; font-size: 14px; line-height: 40px;",
+			// fieldLabel: "提交后",
+			// labelWidth: 100,
+			// labelAlign: "right",
+			// labelStyle: "color: #fff; font-size: 14px; line-height: 40px;",
 			// padding: 5,
 			cls: "serviceDirectoryManageFormCheckbox",
 			width: "100%",
@@ -1938,7 +1955,7 @@ function ServiceMade(parentNode) {
 				value: true,
 				boxLabelCls: "radioLabel",
 			}, {
-				boxLabel: "返回我的菜单",
+				boxLabel: "返回我的订单",
 				inputValue: false,
 				boxLabelCls: "radioLabel",
 			}]

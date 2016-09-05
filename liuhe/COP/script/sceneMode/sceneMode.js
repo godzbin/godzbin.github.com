@@ -30,7 +30,7 @@ function SceneMode(parentNode){
 			border: 0,
 			width: '500px',
 			style: {
-				'left': '200px',
+				'left': '280px',
 				'top': '25px',
 				'position': 'fixed',
 				'z-index': '9999'

@@ -21,6 +21,8 @@ Ext.onReady(function() {
 	main.regContent(new SecurityManage(main));
 	main.init();
 	Ext.QuickTips.init();
+	var loading = document.getElementById("loading");
+	loading.style = loading.style + ";display: none";
 });
 
 var Main = function() {
@@ -53,7 +55,6 @@ var Main = function() {
 				this.openContent(Configes.page.indexPage);
 			} else {
 				this.openContent(Configes.page.indexPage2);
-				
 			}
 		}
 	};
