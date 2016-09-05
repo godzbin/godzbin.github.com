@@ -22,7 +22,7 @@ Ext.onReady(function() {
 	main.init();
 	Ext.QuickTips.init();
 	var loading = document.getElementById("loading");
-	loading.style = loading.style + ";display: none";
+	loading.style.display = "none";
 });
 
 var Main = function() {
