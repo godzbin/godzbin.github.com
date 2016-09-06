@@ -1,5 +1,11 @@
 // Ext.ns("main");
 Ext.onReady(function() {
+
+	var loading = document.getElementById("loading");
+	loading.style.display = "none";
+
+
+
 	window.main = new Main();
 	main.run();
 	var logo = new Logo(main);
@@ -21,8 +27,7 @@ Ext.onReady(function() {
 	main.regContent(new SecurityManage(main));
 	main.init();
 	Ext.QuickTips.init();
-	var loading = document.getElementById("loading");
-	loading.style.display = "none";
+
 });
 
 var Main = function() {

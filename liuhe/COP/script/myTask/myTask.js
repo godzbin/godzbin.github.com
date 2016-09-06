@@ -632,10 +632,6 @@ function MyTask(parentNode) {
 				handler: Ext.bind(this.openOrderDetails, this)
 			}, {
 				iconCls: "orderIcon",
-				icon: "resources/images/change.png",
-				tooltip: '变更',
-			}, {
-				iconCls: "orderIcon",
 				icon: "resources/images/edit.png",
 				tooltip: '审批',
 				handler: Ext.bind(this.handlerOrderBefor, this),

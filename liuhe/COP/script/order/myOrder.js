@@ -27,7 +27,7 @@ function MyOrder(parentNode) {
 	this.run = function(params) {
 		if (params && params.record) {
 			this.orderRecord = params.record
-		} else if(params) {
+		} else if (params) {
 			this.jumpSceneId = params.jumpSceneId;
 			this.jumpStatuId = params.jumpStatuId
 		}
@@ -51,7 +51,7 @@ function MyOrder(parentNode) {
 		var panel = this.getMainPanel();
 		panel.add(this.viewPanel);
 		panel.add(this.myOrderDetailsMainPanel);
-		this.serviceChange();
+		
 	};
 
 	/**
@@ -392,6 +392,7 @@ function MyOrder(parentNode) {
 			var node = root.appendChild(treeNode);
 			that.getSceneList(node);
 		}
+		that.serviceChange();
 	};
 	this.getSceneList = function(node) {
 		var callbackParams = {
@@ -479,8 +480,8 @@ function MyOrder(parentNode) {
 		tools.getData(Configes.url.getOrderListTo + params.statu, params, this.setOtherOrderList, this);
 	};
 	this.setOtherOrderList = function(data, that) {
-		if(!data){
-			return ;
+		if (!data) {
+			return;
 		}
 		var list = data["list"];
 		var total = data["total"];
@@ -549,6 +550,12 @@ function MyOrder(parentNode) {
 	});
 	// 取消 按钮的显示
 	this.orderIconShow = function() {
+		if (this.userInfo["_CONTENT"]) {
+			var province = this.getProvince();
+			if (province == "深圳中心") {
+				return "orderIconHide";
+			}
+		}
 		if (this.statu == 1) {
 			return "orderIcon";
 		} else {
@@ -556,12 +563,24 @@ function MyOrder(parentNode) {
 		}
 	};
 	//  变更 按钮的显示
-	this.orderIconShowToChange = function(){
+	this.orderIconShowToChange = function() {
+		if (this.userInfo["_CONTENT"]) {
+			var province = this.getProvince();
+			if (province == "深圳中心") {
+				return "orderIconHide";
+			}
+		}
 		if (this.statu == 0) {
 			return "orderIcon";
 		} else {
 			return "orderIconHide";
 		}
+	};
+	this.getProvince = function() {
+		var contentStr = this.userInfo["_CONTENT"];
+		var content = JSON.parse(contentStr);
+		var province = content["PROVINCE"];
+		return province
 	};
 	this.cancelOrder = function(btn) {
 		var form = this.cancelOrderWin.getComponent(0).getForm();
@@ -576,7 +595,7 @@ function MyOrder(parentNode) {
 	};
 	// 打开 取消窗口 
 	this.cancelOrderWinShow = function(gridView, rowIndex, colIndex, column, e, record) {
-		var that= this;
+		var that = this;
 		this.cancelOrderWin = Ext.create("Ext.window.Window", {
 			width: 500,
 			border: 0,
