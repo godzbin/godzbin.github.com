@@ -11,11 +11,22 @@ vz2.extend('applicationSnapShot',function(){
 			fields: ['name','value'],
 			data: [
 				{name: '全部',     value: '0'},
-				{name: '交易类型1', value: '1'},
-				{name: '交易类型2', value: '2'},
-				{name: '交易类型3', value: '3'},
-				{name: '交易类型4', value: '4'},
-				{name: '交易类型5', value: '5'}
+				{name: '充值',          value:'2'},
+				{name: '购机',          value:'3'},
+				{name: '查欠',          value:'4'},
+				{name: '换卡',          value:'5'},
+				{name: '活动受理',      value:'6'},
+				{name: '积分查询',      value:'7'},
+				{name: '交费',          value:'8'},
+				{name: '客户信息查询',   value:'9'},
+				{name: '免费资源查询',   value:'10'},
+				{name: '实时话费查询',   value:'11'},
+				{name: '详单查询',       value:'12'},
+				{name: '业务变更',       value:'13'},
+				{name: '用户订购产品查询',value:'14'},
+				{name: '月结账单查询',   value:'15'},
+				{name: '中心业务受理',   value:'16'},
+				{name: '转套餐办产品',   value:'17'}
 			]
 		}),
 		cityStore = Ext.create('Ext.data.Store', {

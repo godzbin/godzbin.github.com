@@ -57,18 +57,18 @@ div.x-border-layout-ct,
 	background: url("../images/search.png") no-repeat 90% center ;
 }
 
-
 .viewport{
-	background-image: url("../images/bg.png");
-	background-repeat: repeat-y;
+	/*background-image: url("../images/bg.png");*/
+	/*background-repeat: repeat-y;*/
 	/*background-size: 100% 100%;*/
+	background-color:  rgb(76,118,91);
 	background:-webkit-gradient(linear ,0% 100%,100% 100%,
 	color-stop(0.1,rgb(76,118,91)),
 	color-stop(1,rgb(58,92,121)));
 	background:-moz-linear-gradient(left,rgb(76,118,91),rgb(58,92,121));
 }
 .viewport-top{
-	background: rgb(58,92,121);
+	background-color:  rgb(76,118,91);
 	background:-webkit-gradient(linear ,0% 100%,100% 100%,
 	color-stop(0.001,rgb(76,118,91)),
 	color-stop(1,rgb(58,92,121)));

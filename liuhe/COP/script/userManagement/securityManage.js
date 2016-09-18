@@ -1533,3 +1533,4 @@ function SecurityManage(parentObj) {
 	// this.initView();
 }
 SecurityManage.prototype = new Page(Configes.page.SecurityManage);
+main.regContent(new SecurityManage(main));

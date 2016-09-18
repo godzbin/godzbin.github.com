@@ -25,6 +25,7 @@ function MyOrder(parentNode) {
 	this.statu = 0;
 	// 初始化页面
 	this.run = function(params) {
+		var that = this;
 		if (params && params.record) {
 			this.orderRecord = params.record
 		} else if (params) {
@@ -33,12 +34,14 @@ function MyOrder(parentNode) {
 		}
 		if (!this.loading) {
 			this.initView();
-			this.getSelfInfo();
+			setTimeout(function() {
+				that.getSelfInfo();
+			}, 200);
 		}
 		this.loading = true;
 		this.mainPanelShow();
 		this.viewPanel.show();
-		this.myOrderDetailsMainPanel.hide();
+		// this.myOrderDetailsMainPanel.hide();
 
 		if (this.jumpSceneId) {
 			var isOpen = this.selectSceneNode(this.jumpSceneId);
@@ -50,8 +53,8 @@ function MyOrder(parentNode) {
 	this.initView = function() {
 		var panel = this.getMainPanel();
 		panel.add(this.viewPanel);
-		panel.add(this.myOrderDetailsMainPanel);
-		
+		// panel.add(this.myOrderDetailsMainPanel);
+
 	};
 
 	/**
@@ -139,7 +142,7 @@ function MyOrder(parentNode) {
 			params.searchValue = searchValue;
 			params.searchType = searchType;
 		}
-		console.log(params);
+		// console.log(params);
 		return params;
 	};
 	// 服务中的订单的查询值的变更
@@ -170,9 +173,13 @@ function MyOrder(parentNode) {
 	};
 	//  打开订单详情
 	this.openOrderDetails = function(e, line, row, btn, e2, record, el) {
-		// console.log(arguments);
+		var panel = this.getMainPanel();
+		if (!panel.getComponent(this.myOrderDetailsMainPanel)) {
+			panel.add(this.myOrderDetailsMainPanel);
+		}
 		var orderId = record.get("_id");
 		this.viewPanel.hide();
+
 		this.myOrderDetailsMainPanel.show();
 		this.initOrderDetails();
 
@@ -2043,7 +2050,6 @@ function MyOrder(parentNode) {
 		items: [this.myOrderDetailsTitlePanel, this.myOrderDetailsPanel]
 	})
 
-
-
 }
 MyOrder.prototype = new Page(Configes.page.myOrder);
+main.regContent(new MyOrder(main));

@@ -1034,8 +1034,6 @@ function ServiceDirectory(parentNode) {
 			this.centerFormPanel
 		]
 	});
-
-
-
 }
 ServiceDirectory.prototype = new Page(Configes.page.serviceDirectory);
+main.regContent(new ServiceDirectory(main));

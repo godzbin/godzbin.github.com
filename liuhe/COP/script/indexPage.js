@@ -29,10 +29,13 @@ function IndexPage(parentNode) {
 	this.initView = function() {
 		var mainPanel = this.getMainPanel();
 		mainPanel.add(this.viewPanel);
-		this.initPieChart();
-		this.initMapChart();
-		this.statu = 1;
-		this.getOrderList();
+		var that = this;
+		setTimeout(function() {
+			that.initPieChart();
+			that.initMapChart();
+			that.statu = 1;
+			that.getOrderList();
+		}, 300);
 	};
 
 
@@ -128,7 +131,7 @@ function IndexPage(parentNode) {
 			record: record
 		});
 	};
-	this.openOrderList = function(){
+	this.openOrderList = function() {
 		this._parentNode.openContent(Configes.page.myOrder);
 	};
 	/**
@@ -436,7 +439,7 @@ function IndexPage(parentNode) {
 		autoRender: true,
 		autoShow: false,
 		forceFit: true,
-		autoScroll:true,
+		autoScroll: true,
 		columns: {
 			defaults: {
 				menuDisabled: true,
@@ -502,391 +505,420 @@ function IndexPage(parentNode) {
 
 	//==============================================================
 	var cTools = {
-		drawBG: function(ctx,opts){
-			ctx.beginPath();
-			ctx.moveTo(10,0);
-			ctx.lineTo(255,0);
-			ctx.quadraticCurveTo(265,0,265,10);
-			ctx.lineTo(265,300);
-			ctx.quadraticCurveTo(265,310,255,310);
-			ctx.lineTo(10,310);
-			ctx.quadraticCurveTo(0,310,0,300);
-			ctx.lineTo(0,10);
-			ctx.quadraticCurveTo(0,0,10,0);
-			ctx.closePath();
-			ctx.fillStyle = 'rgba(0,0,0,0.2)';
-			ctx.fill();
-		},
-		drawStatement: function(ctx,opts){
-			ctx.save();
+			drawBG: function(ctx, opts) {
+				ctx.beginPath();
+				ctx.moveTo(10, 0);
+				ctx.lineTo(255, 0);
+				ctx.quadraticCurveTo(265, 0, 265, 10);
+				ctx.lineTo(265, 300);
+				ctx.quadraticCurveTo(265, 310, 255, 310);
+				ctx.lineTo(10, 310);
+				ctx.quadraticCurveTo(0, 310, 0, 300);
+				ctx.lineTo(0, 10);
+				ctx.quadraticCurveTo(0, 0, 10, 0);
+				ctx.closePath();
+				ctx.fillStyle = 'rgba(0,0,0,0.2)';
+				ctx.fill();
+			},
+			drawStatement: function(ctx, opts) {
+				ctx.save();
 
-			ctx.translate(400,340);
-			ctx.textBaseLine = 'middle';
-			opts.items.forEach(function(item,index){
-				ctx.fillStyle = item.fillStyle;
-				ctx.fillRect(index*120,1,18,18);
+				ctx.translate(400, 340);
+				ctx.textBaseLine = 'middle';
+				opts.items.forEach(function(item, index) {
+					ctx.fillStyle = item.fillStyle;
+					ctx.fillRect(index * 120, 1, 18, 18);
+					ctx.fillStyle = '#fff';
+					ctx.font = '100 20px/1 arial';
+					ctx.fillText(item.text, index * 120 + 30, 18);
+				});
+
+				ctx.restore();
+			},
+			drawTitle: function(ctx, text) {
+				ctx.save();
+				ctx.translate(132.5, 20);
+				ctx.font = '100 24px/1 arial';
+				ctx.lineWidth = 2;
+				ctx.textBaseline = 'top';
+				ctx.textAlign = 'center';
 				ctx.fillStyle = '#fff';
-				ctx.font = '100 20px/1 arial';
-				ctx.fillText(item.text,index*120+30,18);
-			});
+				ctx.fillText(text, 0, 0);
+				ctx.restore();
+			},
+			drawPieChart: function(ctx, opts) {
+				ctx.save();
 
-			ctx.restore();
-		},
-		drawTitle: function(ctx,text){
-			ctx.save();
-			ctx.translate(132.5,20);
-			ctx.font = '100 24px/1 arial';
-			ctx.lineWidth = 2;
-			ctx.textBaseline = 'top';
-			ctx.textAlign = 'center';
-			ctx.fillStyle = '#fff';
-			ctx.fillText(text,0,0);
-			ctx.restore();
-		},
-		drawPieChart: function(ctx,opts){
-			ctx.save();
-
-			ctx.translate(opts.x,opts.y);
-			cTools.drawBG(ctx,opts);
-			cTools.drawTitle(ctx,opts.title);
-			var 
-				startAnkle = -Math.PI / 2,
-				endAnkle,
-				total = 0;
-
-			ctx.save();
-
-			ctx.textAlign = 'center';
-			ctx.textBaseline = 'middle';
-			ctx.font = '100 24px/1 arial';
-			opts.items.forEach(function(item,index){
-				total += item.goal;
-			});
-			opts.items.forEach(function(item,index){
-				var percent = 100 * item.goal / total;
-				ctx.beginPath();
-				endAnkle = startAnkle + Math.PI * percent / 50;
-				ctx.arc(
-					opts.lineChartOriginX,
-					opts.lineChartOriginY,
-					100,
-					startAnkle,
+				ctx.translate(opts.x, opts.y);
+				cTools.drawBG(ctx, opts);
+				cTools.drawTitle(ctx, opts.title);
+				var
+					startAnkle = -Math.PI / 2,
 					endAnkle,
-					false
-				);
-				ctx.lineTo(opts.lineChartOriginX,opts.lineChartOriginY);
+					total = 0;
+
+				ctx.save();
+
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.font = '100 24px/1 arial';
+				opts.items.forEach(function(item, index) {
+					total += item.goal;
+				});
+				opts.items.forEach(function(item, index) {
+					var percent = 100 * item.goal / total;
+					ctx.beginPath();
+					endAnkle = startAnkle + Math.PI * percent / 50;
+					ctx.arc(
+						opts.lineChartOriginX,
+						opts.lineChartOriginY,
+						100,
+						startAnkle,
+						endAnkle,
+						false
+					);
+					ctx.lineTo(opts.lineChartOriginX, opts.lineChartOriginY);
+					ctx.closePath();
+					ctx.fillStyle = item.fillStyle;
+					ctx.fill();
+					startAnkle = endAnkle;
+					if (ctx.isPointInPath(cTools.animate.overpoint[0] * 2, cTools.animate.overpoint[1] * 2)) {
+						ctx.fillStyle = '#fff'
+						ctx.fillText(item.type + ':' + item.goal + '(' + percent.toFixed(2) + '%)', 135, 70);
+					}
+				});
 				ctx.closePath();
-				ctx.fillStyle = item.fillStyle;
-				ctx.fill();
-				startAnkle = endAnkle;
-				if(ctx.isPointInPath(cTools.animate.overpoint[0]*2,cTools.animate.overpoint[1]*2)){
-					ctx.fillStyle = '#fff'
-					ctx.fillText(item.type+':'+item.goal+'('+percent.toFixed(2)+'%)', 135, 70);
+
+				ctx.restore();
+
+				ctx.restore();
+			},
+			drawVerticalBarChart: function(ctx, opts) {
+				ctx.save();
+
+				ctx.translate(opts.x, opts.y);
+				cTools.drawBG(ctx, opts);
+				cTools.drawTitle(ctx, opts.title);
+
+				ctx.save();
+				ctx.translate(40, 280);
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.font = '100 24px/1 arial';
+				opts.items.forEach(function(item, index) {
+					ctx.beginPath();
+					ctx.moveTo(80 * index, 0);
+					ctx.lineTo(80 * index, -2 * item.goal);
+					ctx.lineTo(80 * index + 30, -2 * item.goal);
+					ctx.lineTo(80 * index + 30, 0);
+					ctx.closePath();
+					ctx.fillStyle = item.fillStyle;
+					ctx.fill();
+					if (ctx.isPointInPath(cTools.animate.overpoint[0] * 2, cTools.animate.overpoint[1] * 2)) {
+						ctx.fillStyle = '#fff'
+						ctx.fillText(item.type + ':' + item.goal, 90, -210);
+					}
+				});
+
+				ctx.fillStyle = '#fff';
+				ctx.fillRect(0, 0, 190, 2);
+
+				ctx.restore();
+
+				ctx.restore();
+			},
+			drawHorizontalBarChart: function(ctx, opts) {
+				ctx.save();
+				ctx.translate(opts.x, opts.y);
+				cTools.drawBG(ctx, opts);
+				cTools.drawTitle(ctx, opts.title);
+
+				ctx.save();
+				ctx.translate(30, 100);
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.font = '100 24px/1 arial';
+				opts.items.forEach(function(item, index) {
+					ctx.beginPath();
+					ctx.moveTo(0, 70 * index);
+					ctx.lineTo(0.175 * item.goal, 70 * index);
+					ctx.lineTo(0.175 * item.goal, 70 * index + 30);
+					ctx.lineTo(0, 70 * index + 30);
+					ctx.closePath();
+					ctx.fillStyle = item.fillStyle;
+					ctx.fill();
+					if (ctx.isPointInPath(cTools.animate.overpoint[0] * 2, cTools.animate.overpoint[1] * 2)) {
+						ctx.fillStyle = '#fff'
+						ctx.fillText(item.type + ':' + item.goal, 100, -30);
+					}
+				});
+
+				ctx.fillStyle = '#fff';
+				ctx.fillRect(0, 0, -2, 170);
+
+				ctx.restore();
+
+				ctx.restore();
+			},
+			animate: function() {
+				var
+					list = [],
+					_id = '';
+
+				return {
+					run: function() {
+						cTools.animate.context.clearRect(0, 0, 1120, 380);
+						cTools.drawStatement(cTools.animate.context, {
+							items: [{
+								text: '营业厅',
+								fillStyle: 'rgb(162,203,32)'
+							}, {
+								text: '掌厅',
+								fillStyle: 'rgb(35,151,217)'
+							}, {
+								text: '网厅',
+								fillStyle: 'rgb(237,135,9)'
+							}]
+						});
+						list.forEach(function(item) {
+							item.factory.apply(item.factory, item.params);
+						});
+						_id = window.requestAnimationFrame(cTools.animate.run);
+					},
+					cancel: function() {
+						var id = arguments[0] || _id;
+						if (void 0 !== id) window.cancelAnimationFrame(id);
+					},
+					add: function() {
+						[].forEach.call(arguments, function(item) {
+							list.push(item);
+						});
+					},
+					clear: function() {
+						list = [];
+					},
+					context: '',
+					overpoint: [0, 0],
+					handlemousemove: function(e) {
+						cTools.animate.overpoint = [e.offsetX, e.offsetY];
+					},
+					handlemouseleave: function() {
+						cTools.animate.overpoint = [0, 0];
+					}
 				}
-			});
-			ctx.closePath();
-
-			ctx.restore();
-
-			ctx.restore();
-		},
-		drawVerticalBarChart: function(ctx,opts){
-			ctx.save();
-
-			ctx.translate(opts.x,opts.y);
-			cTools.drawBG(ctx,opts);
-			cTools.drawTitle(ctx,opts.title);
-
-			ctx.save();
-			ctx.translate(40,280);
-			ctx.textAlign = 'center';
-			ctx.textBaseline = 'middle';
-			ctx.font = '100 24px/1 arial';
-			opts.items.forEach(function(item,index){
-				ctx.beginPath();
-				ctx.moveTo(80*index, 0);
-				ctx.lineTo(80*index, -2*item.goal);
-				ctx.lineTo(80*index+30, -2*item.goal);
-				ctx.lineTo(80*index+30, 0);
-				ctx.closePath();
-				ctx.fillStyle = item.fillStyle;
-				ctx.fill();
-				if(ctx.isPointInPath(cTools.animate.overpoint[0]*2,cTools.animate.overpoint[1]*2)){
-					ctx.fillStyle = '#fff'
-					ctx.fillText(item.type+':'+item.goal, 90, -210);
-				}
-			});
-
-			ctx.fillStyle = '#fff';
-			ctx.fillRect(0,0,190,2);
-
-			ctx.restore();
-
-			ctx.restore();
-		},
-		drawHorizontalBarChart: function(ctx,opts){
-			ctx.save();
-			ctx.translate(opts.x,opts.y);
-			cTools.drawBG(ctx,opts);
-			cTools.drawTitle(ctx,opts.title);
-
-			ctx.save();
-			ctx.translate(30,100);
-			ctx.textAlign = 'center';
-			ctx.textBaseline = 'middle';
-			ctx.font = '100 24px/1 arial';
-			opts.items.forEach(function(item,index){
-				ctx.beginPath();
-				ctx.moveTo(0, 70*index);
-				ctx.lineTo(0.175*item.goal, 70*index);
-				ctx.lineTo(0.175*item.goal, 70*index+30);
-				ctx.lineTo(0, 70*index+30);
-				ctx.closePath();
-				ctx.fillStyle = item.fillStyle;
-				ctx.fill();
-				if(ctx.isPointInPath(cTools.animate.overpoint[0]*2,cTools.animate.overpoint[1]*2)){
-					ctx.fillStyle = '#fff'
-					ctx.fillText(item.type+':'+item.goal, 100, -30);
-				}
-			});
-
-			ctx.fillStyle = '#fff';
-			ctx.fillRect(0,0,-2,170);
-
-			ctx.restore();
-
-			ctx.restore();
-		},
-		animate: function(){
-			var 
-				list = [],
-				_id = '';
-
-			return {
-				run:function(){
-					cTools.animate.context.clearRect(0,0,1120,380);
-					cTools.drawStatement(cTools.animate.context,{
-						items: [
-							{text: '营业厅',fillStyle: 'rgb(162,203,32)'},
-							{text: '掌厅',  fillStyle: 'rgb(35,151,217)'},
-							{text: '网厅',  fillStyle: 'rgb(237,135,9)'}
-						]
-					});
-					list.forEach(function(item){
-						item.factory.apply(item.factory,item.params);
-					});
-					_id = window.requestAnimationFrame(cTools.animate.run);
-				},
-				cancel:function(){
-					var id = arguments[0] || _id;
-					if(void 0!==id)window.cancelAnimationFrame(id);
-				},
-				add:function(){
-					[].forEach.call(arguments,function(item){
-						list.push(item);
-					});
-				},
-				clear:function(){
-					list = [];
-				},
-				context: '',
-				overpoint: [0,0],
-				handlemousemove: function(e){
-					cTools.animate.overpoint = [e.offsetX, e.offsetY];
-				},
-				handlemouseleave: function(){
-					cTools.animate.overpoint = [0,0];
-				}
-			}
-		}()
-	}
-	// 监控数据概况
+			}()
+		}
+		// 监控数据概况
 	var _this = this;
 	this.rightPanel1 = Ext.create("Ext.panel.Panel", {
 		height: 280,
 		margin: "0 0 20 0",
 		cls: "centerFormPanel vz_cform",
-		items: [
-			{
-				layout: 'border',
-				style: 'border-bottom: 1px #fff solid',
-				height: 35,
-				items: [
-					{
-						xtype: 'button',
-						region: 'west',
-						border: 0,
-						style: {
-							backgroundImage: 'url(resources/images/monitordata.png)',
-							backgroundSize: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundColor: 'transparent',
-							marginTop: '5px',
-						},
-						width: 25
-					}, {
-						region: 'west',
-						xtype: 'label',
-						style: {
-							fontSize: '18px',
-							lineHeight: '34px',
-							color: '#fff',
-						},
-						text: '监控数据概况',
-					}, {
-						xtype: 'tabbar',
-						width: 250,
-						region: 'east',
-						cls: 'vz_monitorSceneMenu',
-						defaults: {
-							width: 25,
-							height: 25,
-							border: 0,
-							margin: '0 15 0 0',
-							xtype: 'button',
-							listeners: {
-								
-							}
-						},
-						items: [
-							{
-								tooltip: '故障定位监控',
-								cls: 'vz-icon-i14 vz-icon',
-								pageId: 0,
-								style: 'opacity: 1',
-							},{
-								xtype: 'box',
-								cls: 'vz-icon-i15 vz-icon',
-								pageId: 1,
-								disabled: true,
-							},{
-								xtype: 'box',
-								cls: 'vz-icon-i16 vz-icon',
-								pageId: 2,
-								disabled: true,
-							},{
-								xtype: 'box',
-								cls: 'vz-icon-i17 vz-icon',
-								pageId: 3,
-								disabled: true,
-							},{
-								xtype: 'box',
-								cls: 'vz-icon-i18 vz-icon',
-								pageId: 4,
-								disabled: true,
-							},{
-								xtype: 'box',
-								cls: 'vz-icon-i19 vz-icon',
-								pageId: 5,
-								disabled: true,
-								margin: '0',
-							}
-						]
-					}
-				]
-			}, {
-				layout: 'border',
-				margin: '5 0',
-				height: 25,
-				items: [
-					{
-						region: 'west',
-						xtype: 'button',
-						text: '进入监控场景',
-						border: 0,
-						handler: function(){
-							_this._parentNode.openContent(Configes.page.sceneMode);
-						}
-					}, {
-						region: 'east',
-						xtype: "combobox",
-						name: "province",
-						width: 100,
-						store: Ext.create("Ext.data.Store", {
-							fields: ["name", "value"],
-							data: Configes.province
-						}),
-						editable: false,
-						queryMode: 'local',
-						displayField: 'name',
-						valueField: "value",
-						autoSelect: true,
-						value: "甘肃",
-					}
-				]
-			}, {
-				xtype: 'panel',
-				html: '<canvas class="vz_homePage_canvas" width="1120" height="380"></canvas>',
-				listeners: {
-					afterrender: function(){
-						var 
-							canvas = this.getEl().dom.querySelector('canvas'),
-							ctx = canvas.getContext('2d');
-
-						cTools.animate.context = ctx;
-
-						cTools.animate.add({
-							factory: cTools.drawPieChart,
-							params: [ctx, {
-								x:0,  
-								y:10,
-								title:'交易量/笔',
-								lineChartOriginX: 132.5,
-								lineChartOriginY: 190,
-								items: [
-									{goal: 35,fillStyle: 'rgb(162,203,32)',type: '营业厅'},
-									{goal: 30,fillStyle: 'rgb(35,151,217)',type: '掌厅'},
-									{goal: 35,fillStyle: 'rgb(237,135,9)',type: '网厅'}
-								],
-							}]
-						},{
-							factory: cTools.drawVerticalBarChart,
-							params: [ctx, {
-								x:285,  
-								y:10,
-								title:'成功率％',
-								items: [
-									{goal: 99.5,fillStyle: 'rgb(162,203,32)',type: '营业厅'},
-									{goal: 65.2,fillStyle: 'rgb(35,151,217)',type: '掌厅'},
-									{goal: 87.3,fillStyle: 'rgb(237,135,9)',type: '网厅'}
-								],
-							}]
-						},{
-							factory: cTools.drawPieChart,
-							params: [ctx, {
-								x:855,  
-								y:10,
-								title:'告警数/次',
-								lineChartOriginX: 132.5,
-								lineChartOriginY: 190,
-								items: [
-									{goal: 125,fillStyle: 'rgb(162,203,32)',type: '营业厅'},
-									{goal: 250,fillStyle: 'rgb(35,151,217)',type: '掌厅'},
-									{goal: 90,fillStyle: 'rgb(237,135,9)',type: '网厅'}
-								]
-							}]
-						},{
-							factory: cTools.drawHorizontalBarChart,
-							params: [ctx, {
-								x:570,
-								y:10,
-								title:'响应时间ms',
-								items: [
-									{goal: 1135.4,fillStyle: 'rgb(162,203,32)',type: '营业厅'},
-									{goal: 905.2, fillStyle: 'rgb(35,151,217)',type: '掌厅'},
-									{goal: 971.3, fillStyle: 'rgb(237,135,9)',type: '网厅'}
-								]
-							}]
-						});
-
-						canvas.addEventListener('mousemove',cTools.animate.handlemousemove);
-						canvas.addEventListener('mouseleave',cTools.animate.handlemouseleave);
-
-						window.requestAnimationFrame(cTools.animate.run);
-					},
+		items: [{
+			layout: 'border',
+			style: 'border-bottom: 1px #fff solid',
+			height: 35,
+			items: [{
+				xtype: 'button',
+				region: 'west',
+				border: 0,
+				style: {
+					backgroundImage: 'url(resources/images/monitordata.png)',
+					backgroundSize: '100%',
+					backgroundRepeat: 'no-repeat',
+					backgroundColor: 'transparent',
+					marginTop: '5px',
 				},
-			}
-		]
+				width: 25
+			}, {
+				region: 'west',
+				xtype: 'label',
+				style: {
+					fontSize: '18px',
+					lineHeight: '34px',
+					color: '#fff',
+				},
+				text: '监控数据概况',
+			}, {
+				xtype: 'tabbar',
+				width: 250,
+				region: 'east',
+				cls: 'vz_monitorSceneMenu',
+				defaults: {
+					width: 25,
+					height: 25,
+					border: 0,
+					margin: '0 15 0 0',
+					xtype: 'button',
+					listeners: {
+
+					}
+				},
+				items: [{
+					tooltip: '故障定位监控',
+					cls: 'vz-icon-i14 vz-icon',
+					pageId: 0,
+					style: 'opacity: 1',
+				}, {
+					xtype: 'box',
+					cls: 'vz-icon-i15 vz-icon',
+					pageId: 1,
+					disabled: true,
+				}, {
+					xtype: 'box',
+					cls: 'vz-icon-i16 vz-icon',
+					pageId: 2,
+					disabled: true,
+				}, {
+					xtype: 'box',
+					cls: 'vz-icon-i17 vz-icon',
+					pageId: 3,
+					disabled: true,
+				}, {
+					xtype: 'box',
+					cls: 'vz-icon-i18 vz-icon',
+					pageId: 4,
+					disabled: true,
+				}, {
+					xtype: 'box',
+					cls: 'vz-icon-i19 vz-icon',
+					pageId: 5,
+					disabled: true,
+					margin: '0',
+				}]
+			}]
+		}, {
+			layout: 'border',
+			margin: '5 0',
+			height: 25,
+			items: [{
+				region: 'west',
+				xtype: 'button',
+				text: '进入监控场景',
+				border: 0,
+				handler: function() {
+					_this._parentNode.openContent(Configes.page.sceneMode);
+				}
+			}, {
+				region: 'east',
+				xtype: "combobox",
+				name: "province",
+				width: 100,
+				store: Ext.create("Ext.data.Store", {
+					fields: ["name", "value"],
+					data: Configes.province
+				}),
+				editable: false,
+				queryMode: 'local',
+				displayField: 'name',
+				valueField: "value",
+				autoSelect: true,
+				value: "甘肃",
+			}]
+		}, {
+			xtype: 'panel',
+			html: '<canvas class="vz_homePage_canvas" width="1120" height="380"></canvas>',
+			listeners: {
+				afterrender: function() {
+					var
+						canvas = this.getEl().dom.querySelector('canvas'),
+						ctx = canvas.getContext('2d');
+
+					cTools.animate.context = ctx;
+
+					cTools.animate.add({
+						factory: cTools.drawPieChart,
+						params: [ctx, {
+							x: 0,
+							y: 10,
+							title: '交易量/笔',
+							lineChartOriginX: 132.5,
+							lineChartOriginY: 190,
+							items: [{
+								goal: 35,
+								fillStyle: 'rgb(162,203,32)',
+								type: '营业厅'
+							}, {
+								goal: 30,
+								fillStyle: 'rgb(35,151,217)',
+								type: '掌厅'
+							}, {
+								goal: 35,
+								fillStyle: 'rgb(237,135,9)',
+								type: '网厅'
+							}],
+						}]
+					}, {
+						factory: cTools.drawVerticalBarChart,
+						params: [ctx, {
+							x: 285,
+							y: 10,
+							title: '成功率％',
+							items: [{
+								goal: 99.5,
+								fillStyle: 'rgb(162,203,32)',
+								type: '营业厅'
+							}, {
+								goal: 65.2,
+								fillStyle: 'rgb(35,151,217)',
+								type: '掌厅'
+							}, {
+								goal: 87.3,
+								fillStyle: 'rgb(237,135,9)',
+								type: '网厅'
+							}],
+						}]
+					}, {
+						factory: cTools.drawPieChart,
+						params: [ctx, {
+							x: 855,
+							y: 10,
+							title: '告警数/次',
+							lineChartOriginX: 132.5,
+							lineChartOriginY: 190,
+							items: [{
+								goal: 125,
+								fillStyle: 'rgb(162,203,32)',
+								type: '营业厅'
+							}, {
+								goal: 250,
+								fillStyle: 'rgb(35,151,217)',
+								type: '掌厅'
+							}, {
+								goal: 90,
+								fillStyle: 'rgb(237,135,9)',
+								type: '网厅'
+							}]
+						}]
+					}, {
+						factory: cTools.drawHorizontalBarChart,
+						params: [ctx, {
+							x: 570,
+							y: 10,
+							title: '响应时间ms',
+							items: [{
+								goal: 1135.4,
+								fillStyle: 'rgb(162,203,32)',
+								type: '营业厅'
+							}, {
+								goal: 905.2,
+								fillStyle: 'rgb(35,151,217)',
+								type: '掌厅'
+							}, {
+								goal: 971.3,
+								fillStyle: 'rgb(237,135,9)',
+								type: '网厅'
+							}]
+						}]
+					});
+
+					canvas.addEventListener('mousemove', cTools.animate.handlemousemove);
+					canvas.addEventListener('mouseleave', cTools.animate.handlemouseleave);
+
+					window.requestAnimationFrame(cTools.animate.run);
+				},
+			},
+		}]
 	});
 
 
@@ -895,130 +927,173 @@ function IndexPage(parentNode) {
 		height: 280,
 		margin: "0",
 		cls: "centerFormPanel vz_cform",
-		items: [
-			{
-				layout: 'border',
-				height: 35,
-				padding: '5 0',
-				style: 'border-bottom: 1px #fff solid',
-				items: [
-					{
-						xtype: 'button',
-						region: 'west',
-						cls: 'vz-icon vz-icon-i1',
-						width: 31,
-						handler: function(){
-							_this._parentNode.openContent(Configes.page.sceneMode);
-							vz2.changeModel();
-						}
-					}, {
-						region: 'west',
-						style: {
-							color: '#fff',
-							fontSize: '18px',
-							lineHeight: '24px',
-						},
-						text: '告警概况',
-						xtype: 'label',
-					}, {
-						region: 'west',
-						style: {
-							color: '#fff',
-							fontSize: '14px',
-							lineHeight: '28px',
-						},
-						text: '（未关闭）',
-						xtype: 'label',
-					}, {
-						region: 'east',
-						xtype: "combobox",
-						name: "province",
-						width: 100,
-						store: Ext.create("Ext.data.Store", {
-							fields: ["name", "value"],
-							data: Configes.province
-						}),
-						editable: false,
-						queryMode: 'local',
-						displayField: 'name',
-						valueField: "value",
-						autoSelect: true,
-						value: "甘肃",
-					}
-				]
+		items: [{
+			layout: 'border',
+			height: 35,
+			padding: '5 0',
+			style: 'border-bottom: 1px #fff solid',
+			items: [{
+				xtype: 'button',
+				region: 'west',
+				cls: 'vz-icon vz-icon-i1',
+				width: 31,
+				handler: function() {
+					_this._parentNode.openContent(Configes.page.sceneMode);
+					vz2.changeModel();
+				}
 			}, {
-				xtype: 'grid',
-				margin: '10 0 0 0',
-				height: 200,
-				padding: '5',
-				forceFit: true,
-				cls: 'gridPanel',
-				border: 0,
-				store: new Ext.create('Ext.data.Store',{
-					fields: ['province','resource','scene','channel','count'],
-					data: [
-						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'5'},
-						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'掌厅','count':'3'},
-						{'province':'广东省','resource':'智能分析平台','scene':'收入保障监控','channel':'掌厅','count':'3'},
-						{'province':'贵州省','resource':'智能分析平台','scene':'故障定位监控','channel':'网厅','count':'2'},
-						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'1'},
-						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'5'},
-						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'掌厅','count':'3'},
-						{'province':'广东省','resource':'智能分析平台','scene':'收入保障监控','channel':'掌厅','count':'3'},
-						{'province':'贵州省','resource':'智能分析平台','scene':'故障定位监控','channel':'网厅','count':'2'},
-						{'province':'甘肃省','resource':'被动业务探测系统','scene':'故障定位监控','channel':'营业厅','count':'1'},
-					]
+				region: 'west',
+				style: {
+					color: '#fff',
+					fontSize: '18px',
+					lineHeight: '24px',
+				},
+				text: '告警概况',
+				xtype: 'label',
+			}, {
+				region: 'west',
+				style: {
+					color: '#fff',
+					fontSize: '14px',
+					lineHeight: '28px',
+				},
+				text: '（未关闭）',
+				xtype: 'label',
+			}, {
+				region: 'east',
+				xtype: "combobox",
+				name: "province",
+				width: 100,
+				store: Ext.create("Ext.data.Store", {
+					fields: ["name", "value"],
+					data: Configes.province
 				}),
-				columns: {
-					defaults: {
-						sortable: false,
-						menuDisabled: true,
-						draggable: false,
-						align: 'center',
-					},
-					items: [
-						{
-							dataIndex: 'province',
-							text: '省份',
-						}, {
-							dataIndex: 'resource',
-							text: '告警来源',
-							renderer: function(value, record){
-								var source = Configes.source;
-								for(var i=0,l = source.length; i<l; i++){
-									if(value == source[i]){
-										var color = Configes.color[i];
-										record.style = "background-color:" + color + "; margin: 5px; border-radius: 5px;";
-										return value;
-									}
-								}
+				editable: false,
+				queryMode: 'local',
+				displayField: 'name',
+				valueField: "value",
+				autoSelect: true,
+				value: "甘肃",
+			}]
+		}, {
+			xtype: 'grid',
+			margin: '10 0 0 0',
+			height: 200,
+			padding: '5',
+			forceFit: true,
+			cls: 'gridPanel',
+			border: 0,
+			store: new Ext.create('Ext.data.Store', {
+				fields: ['province', 'resource', 'scene', 'channel', 'count'],
+				data: [{
+					'province': '甘肃省',
+					'resource': '被动业务探测系统',
+					'scene': '故障定位监控',
+					'channel': '营业厅',
+					'count': '5'
+				}, {
+					'province': '甘肃省',
+					'resource': '被动业务探测系统',
+					'scene': '故障定位监控',
+					'channel': '掌厅',
+					'count': '3'
+				}, {
+					'province': '广东省',
+					'resource': '智能分析平台',
+					'scene': '收入保障监控',
+					'channel': '掌厅',
+					'count': '3'
+				}, {
+					'province': '贵州省',
+					'resource': '智能分析平台',
+					'scene': '故障定位监控',
+					'channel': '网厅',
+					'count': '2'
+				}, {
+					'province': '甘肃省',
+					'resource': '被动业务探测系统',
+					'scene': '故障定位监控',
+					'channel': '营业厅',
+					'count': '1'
+				}, {
+					'province': '甘肃省',
+					'resource': '被动业务探测系统',
+					'scene': '故障定位监控',
+					'channel': '营业厅',
+					'count': '5'
+				}, {
+					'province': '甘肃省',
+					'resource': '被动业务探测系统',
+					'scene': '故障定位监控',
+					'channel': '掌厅',
+					'count': '3'
+				}, {
+					'province': '广东省',
+					'resource': '智能分析平台',
+					'scene': '收入保障监控',
+					'channel': '掌厅',
+					'count': '3'
+				}, {
+					'province': '贵州省',
+					'resource': '智能分析平台',
+					'scene': '故障定位监控',
+					'channel': '网厅',
+					'count': '2'
+				}, {
+					'province': '甘肃省',
+					'resource': '被动业务探测系统',
+					'scene': '故障定位监控',
+					'channel': '营业厅',
+					'count': '1'
+				}, ]
+			}),
+			columns: {
+				defaults: {
+					sortable: false,
+					menuDisabled: true,
+					draggable: false,
+					align: 'center',
+				},
+				items: [{
+					dataIndex: 'province',
+					text: '省份',
+				}, {
+					dataIndex: 'resource',
+					text: '告警来源',
+					renderer: function(value, record) {
+						var source = Configes.source;
+						for (var i = 0, l = source.length; i < l; i++) {
+							if (value == source[i]) {
+								var color = Configes.color[i];
+								record.style = "background-color:" + color + "; margin: 5px; border-radius: 5px;";
 								return value;
 							}
-						}, {
-							dataIndex: 'scene',
-							text: '监控场景',
-						}, {
-							dataIndex: 'channel',
-							text: '探测渠道',
-						}, {
-							dataIndex: 'count',
-							text: '告警条数',
-						}, {
-							text: '操作',
-							renderer: function(){
-								return '<input type="button" value="查看" style="background-color: transparent;color: #fff;border-radius: 5px;box-shadow: none;border-width: 1px;cursor: pointer;">'
-							}
 						}
-					]
-				},
-				listeners: {
-					itemclick: function(){
-						_this._parentNode.openContent(Configes.page.sceneMode);
-						vz2.changeModel();
+						return value;
 					}
+				}, {
+					dataIndex: 'scene',
+					text: '监控场景',
+				}, {
+					dataIndex: 'channel',
+					text: '探测渠道',
+				}, {
+					dataIndex: 'count',
+					text: '告警条数',
+				}, {
+					text: '操作',
+					renderer: function() {
+						return '<input type="button" value="查看" style="background-color: transparent;color: #fff;border-radius: 5px;box-shadow: none;border-width: 1px;cursor: pointer;">'
+					}
+				}]
+			},
+			listeners: {
+				itemclick: function() {
+					_this._parentNode.openContent(Configes.page.sceneMode);
+					vz2.changeModel();
 				}
 			}
-		]
+		}]
 	});
 
 

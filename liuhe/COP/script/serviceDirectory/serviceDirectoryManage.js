@@ -1984,3 +1984,4 @@ function ServiceDirectoryManage(parentNode) {
 	this.createMenuPanel();
 }
 ServiceDirectoryManage.prototype = new Page(Configes.page.serviceDirectoryManage);
+main.regContent(new ServiceDirectoryManage(main));

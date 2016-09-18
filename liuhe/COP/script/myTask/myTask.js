@@ -20,12 +20,12 @@ function MyTask(parentNode) {
 		this.loading = true;
 		this.mainPanelShow();
 		this.viewPanel.show();
-		this.myOrderDetailsMainPanel.hide();
+		// this.myOrderDetailsMainPanel.hide();
 	};
 	this.initView = function() {
 		var mainPanel = this.getMainPanel();
 		mainPanel.add(this.viewPanel);
-		mainPanel.add(this.myOrderDetailsMainPanel);
+		// mainPanel.add(this.myOrderDetailsMainPanel);
 		var btn = this.statuPanel.getComponent(0);
 		btn.addCls("action");
 		this.statu = 0;
@@ -72,19 +72,23 @@ function MyTask(parentNode) {
 
 
 	this.openMyOrder = function() {
+
 		this.viewPanel.show();
 		this.myOrderDetailsMainPanel.hide();
 	};
 	//  打开订单详情
 	this.openOrderDetails = function(e, line, row, btn, e2, record, el) {
 		// console.log(arguments);
+		var mainPanel = this.getMainPanel();
+		if (!mainPanel.getComponent(this.myOrderDetailsMainPanel)) {
+			mainPanel.add(this.myOrderDetailsMainPanel);
+		}
 		this.currentOrder = record;
 		var orderId = record.get("_id");
 		this.viewPanel.hide();
 		this.myOrderDetailsMainPanel.show();
 		this.initOrderDetails();
-
-		this.getOrderInfo(orderId,record);
+		this.getOrderInfo(orderId, record);
 	};
 	this.initOrderDetails = function() {
 		this.myOrderDetailsPanel.getForm().reset();
@@ -1734,7 +1738,6 @@ function MyTask(parentNode) {
 			}, this.handlerBtn]
 		}]
 	});
-
-
-
 }
+MyTask.prototype = new Page(Configes.page.myTask);
+main.regContent(new MyTask(main));

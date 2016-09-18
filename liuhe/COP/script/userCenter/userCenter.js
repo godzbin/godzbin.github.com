@@ -409,5 +409,6 @@ function UserCenter(parentNode){
 			}
 		});
 	}
-
 }
+
+main.regContent(new UserCenter(main));

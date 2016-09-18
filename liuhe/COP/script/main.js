@@ -10,23 +10,62 @@ Ext.onReady(function() {
 	main.run();
 	var logo = new Logo(main);
 	var topMenu = new TopMenu(main);
-	var footer = new Footer(main);
+
 	main.regTop(logo);
 	main.regTop(topMenu);
-	main.regFooter(footer);
 	main.regContent(new IndexPage2(main));
 	main.regContent(new IndexPage(main));
-	main.regContent(new MyOrder(main));
-	main.regContent(new ServiceDirectory(main));
-	main.regContent(new MyTask(main));
-	main.regContent(new ServiceMade(main));
-	main.regContent(new ServiceDirectoryManage(main));
-	main.regContent(new MonitorHomePage(main));
-	main.regContent(new UserCenter(main));
-	main.regContent(new SceneMode(main));
-	main.regContent(new SecurityManage(main));
+
+
+	// main.regContent(new MyOrder(main));
+	// main.regContent(new ServiceDirectory(main));
+	// main.regContent(new MyTask(main));
+	// main.regContent(new ServiceMade(main));
+	// main.regContent(new ServiceDirectoryManage(main));
+	// main.regContent(new MonitorHomePage(main));
+	// main.regContent(new UserCenter(main));
+	// main.regContent(new SceneMode(main));
+	// main.regContent(new SecurityManage(main));
+
+
 	main.init();
 	Ext.QuickTips.init();
+
+	In.add("footer", {
+		path: "script/footer.js",
+		tyep: "js",
+		charset: 'utf-8'
+	});
+	In("footer", function() {
+		var footer = new Footer(main);
+		main.regFooter(footer);
+	});
+
+	var scriptUrl = [
+		"script/serviceDirectory/serviceDirectoryManage.js",
+		"script/serviceDirectory/serviceDirectory.js",
+		"script/serviceDirectory/serviceMade.js",
+		"script/userManagement/securityManage.js",
+		"script/order/myOrder.js",
+		"script/serviceDirectory/editor.js",
+		"script/myTask/myTask.js",
+		"script/userCenter/userCenter.js",
+		"script/sceneMode/statistics.js",
+		"script/sceneMode/vz_warningCenter.js",
+		"script/sceneMode/vz_applicationSceneMode.js",
+		"script/sceneMode/vz_applicationSnapShot.js",
+		"script/sceneMode/vz_applicationStatistics.js",
+		"script/sceneMode/vz_transactionTracking.js",
+		"script/sceneMode/sceneMode.js"
+	];
+	for (var i = 0, l = scriptUrl.length; i < l; i++) {
+		In.add("mod" + i, {
+			path: scriptUrl[i],
+			tyep: "js",
+			charset: 'utf-8'
+		});
+		In("mod" + i, function() {})
+	}
 
 });
 

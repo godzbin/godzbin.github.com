@@ -2012,3 +2012,4 @@ function ServiceMade(parentNode) {
 }
 
 ServiceDirectory.prototype = new Page(Configes.page.serviceDirectory);
+main.regContent(new ServiceMade(main));

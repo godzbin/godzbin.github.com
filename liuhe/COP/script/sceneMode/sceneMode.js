@@ -127,3 +127,4 @@ function SceneMode(parentNode){
 		this.mainPanel.add([this.menuPanel,this.monitorPanel]);
 	};
 }
+main.regContent(new SceneMode(main));

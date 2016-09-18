@@ -827,7 +827,7 @@ function IndexPage2(parentNode) {
 							dataIndex: 'resource',
 							text: '告警来源',
 							renderer: function(value, record){
-								console.log(arguments);
+								
 								var source = Configes.source;
 								for(var i=0,l = source.length; i<l; i++){
 									if(value == source[i]){
