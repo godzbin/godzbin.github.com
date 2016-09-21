@@ -1,0 +1,522 @@
+* {
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+}
+
+/*header top*/
+header .top {
+    height: 35px;
+    background: #F5F5F5;
+    color: #929292;
+    padding: 0 8%;
+}
+
+header .top > div{
+    line-height: 35px;
+}
+header .top .top-welcome {
+    float: left;
+}
+
+header .top .top-language {
+    float: right;
+    padding-left: 80px;
+    background: url("../images/top-language.png") no-repeat left center;
+}
+
+/*header logo and nav*/
+header .header-main {
+
+}
+
+header .header-main .header-main-logo {
+    background: #fff;
+    height: 95px;
+    padding: 0 8%;
+}
+
+header .header-main .header-main-logo .header-main-logo-box {
+    float: left;
+    background: url("../images/logo.png") no-repeat left center;
+    padding: 25px 0 25px 230px;
+}
+
+header .header-main .header-main-logo .header-main-logo-box h2 {
+    font-size: 25px;
+    /*line-height: 45px;*/
+    padding: 5px 10px;
+    border-left: 1px #666 solid;
+    color: #53200F;
+    font-weight: 600;
+}
+
+/*热线电话*/
+header .header-main .header-main-logo .header-main-logo-phone {
+    float: right;
+    padding: 5px 50px 5px 80px;
+    background: url("../images/phone.png") no-repeat left bottom;
+}
+
+header .header-main .header-main-logo .header-main-logo-phone .header-main-logo-phone-top {
+    font-size: 14px;
+}
+
+header .header-main .header-main-logo .header-main-logo-phone .header-main-logo-phone-center {
+    font-size: 22px;
+    color: #E66514;
+    font-weight: 600;
+}
+
+header .header-main-nav {
+    height: 50px;
+    position: relative;
+}
+
+header .header-main-nav .header-main-nav-bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 15px;
+    background: #53200F;
+    width: 100%;
+    z-index: 1;
+}
+
+header .header-main-nav ul {
+    position: relative;
+    list-style: none;
+    /*height: 50px;*/
+    background: #53200F;
+    float: right;
+    padding-right: 8%;
+    padding-left: 15px;
+    z-index: 2;
+
+}
+
+/*斜角块*/
+header .bevel {
+    float: right;
+    border-left: 50px transparent dotted;
+    border-bottom: 50px #53200F solid;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+header .header-main-nav li {
+    float: left;
+    /*width: 80px;*/
+    text-align: center;
+    padding: 0 15px;
+}
+
+header .header-main-nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 28px;
+    display: block;
+    padding: 10px 0;
+}
+
+header .header-main-nav li a:hover,
+header .header-main-nav li a.action {
+    border-bottom: 2px #fff solid;
+}
+
+/*slide 幻灯片*/
+section .slide img {
+    width: 100%;
+}
+
+section .model {
+    padding: 0 102px;
+    position: relative;
+    margin-top: -105px;
+    height: 100px;
+}
+
+section .model-box {
+    float: left;
+    display: flex;
+    width: 25%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+    border-right: 2px rgba(255, 255, 255, 0) solid;
+    /*background-color: rgba(117,56,29,.5);*/
+}
+
+section .model-box:last-child {
+    border-right: 0;
+}
+
+section .model-box .model-box-top {
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+section .model-box .model-box-top-bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(117, 56, 29, .8);
+    z-index: 1;
+}
+
+section .model-box .model-box-top-main {
+    position: relative;
+    z-index: 2;
+}
+
+section .model-box .model-box-top-main img {
+    height: 50px;
+    padding-bottom: 20px;
+}
+
+section .model-box .model-box-top-main p {
+    color: #fff;
+    font-size: 14px;
+}
+
+section .model-table {
+    margin: 0 102px;
+    /*position: relative;*/
+    border: 2px #ddd solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 340px;
+}
+
+section .model-table .model-table-box {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+    width: 25%;
+    padding: 15px;
+    /*border: 1px #53200F solid;*/
+    float: left;
+}
+
+section .model-table .model-table-box img {
+    width: 100%;
+}
+
+section .model-table .model-table-box .model-table-form {
+    margin-top: 15px;
+}
+
+/*多行文本框*/
+section .model-table .model-table-box1 .model-table-form .model-table-form-textarea-main {
+    position: relative;
+}
+
+section .model-table .model-table-box1 .model-table-form .model-table-form-textarea {
+    height: 90px;
+    resize: none;
+    width: 94%;
+    padding: 3%;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+}
+
+section .model-table .model-table-box1 .model-table-form .model-table-form-textarea-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 94%;
+    height: 90px;
+    color: #aaa;
+    margin: 4%;
+    pointer-events: none;
+}
+
+section .model-table .model-table-box1 .model-table-form .model-table-form-textarea-placeholder p:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*查询按钮*/
+button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+section .model-table .model-table-box1 .model-table-form .model-table-form-button-main {
+    padding-top: 10px;
+}
+
+section .model-table .model-table-box1 .model-table-form .model-table-form-button-main button {
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    width: 100px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+section .model-table .model-table-box1 .model-table-form .model-table-form-button-main a {
+    font-size: 14px;
+    float: right;
+    line-height: 30px;
+    padding-right: 25px;
+    text-decoration: none;
+    color: #aaa;
+}
+
+/*模块2*/
+section .model-table .model-table-box2 .model-table-form .model-table-form-input {
+    margin-bottom: 15px;
+}
+
+section .model-table .model-table-box2 .model-table-form .model-table-form-input label {
+    font-size: 14px;
+    line-height: 25px;
+    width: 30%;
+    float: left;
+    text-align: right;
+    color: #333;
+}
+
+section .model-table .model-table-box2 .model-table-form .model-table-form-input select {
+    width: 70%;
+    padding: 3px;
+    font-size: 14px;
+}
+
+section .model-table .model-table-box2 .model-table-form .model-table-form-input input {
+    width: 30%;
+    padding: 3px;
+    border: 1px #aaa solid;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+section .model-table .model-table-box2 .model-table-form .model-table-form-input span {
+    color: #aaa;
+    padding-left: 5px;
+}
+
+section .model-table .model-table-box2 .model-table-form .model-table-form-input button {
+    background: #ff0709;
+    color: #fff;
+    padding: 3px;
+    font-size: 14px;
+    width: 20%;
+    float: right;
+    border-radius: 3px;
+}
+
+/*模块3*/
+section .model-table .model-table-box3 .model-table-form p,
+section .model-table .model-table-box3 .model-table-form .model-table-form-input {
+    margin-bottom: 15px;
+}
+
+section .model-table .model-table-box3 .model-table-form p {
+    line-height: 30px;
+}
+
+section .model-table .model-table-box3 .model-table-form p {
+    color: #666;
+}
+
+section .model-table .model-table-box3 .model-table-form span {
+    font-size: 14px;
+    line-height: 30px;
+    padding-right: 35px;
+    background: url("../images/hot.png") no-repeat right center;
+}
+
+section .model-table .model-table-box3 .model-table-form .model-table-form-input select {
+    width: 70%;
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+section .model-table .model-table-box3 .model-table-form .model-table-form-input button {
+    border: 1px #aaa solid;
+    border-radius: 3px;
+    width: 25%;
+    font-size: 14px;
+    margin-left: 2%;
+    height: 30px;
+}
+
+/*模块4*/
+section .model-table .model-table-box4 .model-table-form .model-table-form-phone {
+    text-align: center;
+}
+
+section .model-table .model-table-box4 .model-table-form .model-table-form-phone p {
+    font-size: 16px;
+    color: #E66514;
+}
+
+section .model-table .model-table-box4 .model-table-form .model-table-form-box {
+    background: #666666;
+    width: 40%;
+    height: 80px;
+    margin: 5%;
+    float: left;
+}
+
+section .service {
+    padding: 20px 120px;
+}
+
+section .service .service-title p {
+    color: #666;
+    font-size: 50px;
+}
+
+section .service .service-title span {
+    font-size: 20px;
+}
+
+section .service .service-table .service-table-row {
+    height: 125px;
+    margin: 20px 0;
+}
+
+section .service .service-table .service-table-row .service-table-box {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+    margin-right: 5%;
+    border: 5px #ddd solid;
+    border-radius: 3px;
+    /*padding: 15px;*/
+}
+
+section .service .service-table .service-table-row .service-table-box:last-child {
+    margin-right: 0;
+}
+
+section .service .service-table .service-table-row .service-table-box .service-table-box-center {
+    /*width: 70%;*/
+    padding-right: 20%;
+    margin: 15px;
+}
+
+section .service .service-table .service-table-row .service-table-box .service-table-box-center p:first-child {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+section .service .service-table .service-table-row .service-table-box .service-table-box-center p:last-child {
+    color: #999;
+}
+/*鼠标经过 服务1时*/
+section .service .service-table .service-table-row .service-table-box1 .service-table-box-center {
+    background: url("../images/service_icon1.png") no-repeat right center;
+}
+section .service .service-table .service-table-row .service-table-box1 .service-table-box-center:hover {
+    background: url("../images/service_icon1_action.png") no-repeat right center;
+}
+/*鼠标经过 服务1时*/
+section .service .service-table .service-table-row .service-table-box2 .service-table-box-center {
+    background: url("../images/service_icon1.png") no-repeat right center;
+}
+section .service .service-table .service-table-row .service-table-box2 .service-table-box-center:hover {
+    background: url("../images/service_icon1_action.png") no-repeat right center;
+}
+/*鼠标经过 服务1时*/
+section .service .service-table .service-table-row .service-table-box3 .service-table-box-center {
+    background: url("../images/service_icon1.png") no-repeat right center;
+}
+section .service .service-table .service-table-row .service-table-box3 .service-table-box-center:hover {
+    background: url("../images/service_icon1_action.png") no-repeat right center;
+}
+/*鼠标经过 服务1时*/
+section .service .service-table .service-table-row .service-table-box4 .service-table-box-center {
+    background: url("../images/service_icon1.png") no-repeat right center;
+}
+section .service .service-table .service-table-row .service-table-box4 .service-table-box-center:hover {
+    background: url("../images/service_icon1_action.png") no-repeat right center;
+}
+/*鼠标经过 服务1时*/
+section .service .service-table .service-table-row .service-table-box5 .service-table-box-center {
+    background: url("../images/service_icon1.png") no-repeat right center;
+}
+section .service .service-table .service-table-row .service-table-box5 .service-table-box-center:hover {
+    background: url("../images/service_icon1_action.png") no-repeat right center;
+}
+/*鼠标经过 服务1时*/
+section .service .service-table .service-table-row .service-table-box6 .service-table-box-center {
+    background: url("../images/service_icon1.png") no-repeat right center;
+}
+section .service .service-table .service-table-row .service-table-box6 .service-table-box-center:hover {
+    background: url("../images/service_icon1_action.png") no-repeat right center;
+}
+
+/* 鼠标经过服务时 */
+section .service .service-table .service-table-row .service-table-box:hover{
+    border-bottom-color: #53200F;
+}
+
+section .amount{
+    height: 350px;
+    background: url("../images/amount_bg.png") no-repeat ;
+}
+section .amount .amount-main{
+    background-color: rgba(50,50,50,.9);
+    height:350px;
+    color: #fff;
+    text-align: center;
+}
+section .amount .amount-main .amount-main-top{
+    font-size: 40px;
+    padding: 15px;
+}
+section .amount .amount-main .amount-main-bottom{
+    font-size: 28px;
+    padding: 15px;
+}
+section .amount .amount-main .amount-main-center-box{
+    width: 25%;
+    padding-top: 60px;
+    margin: 40px 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+    float: left;
+}
+section .amount .amount-main .amount-main-center-box p:first-child{
+    font-size: 40px;
+}
+section .amount .amount-main .amount-main-center-box p:last-child{
+    font-size: 18px;
+}
+section .amount .amount-main .amount-main-center-box1{
+    background: url("../images/amount_icon.png") no-repeat center top;
+}
+
+
+/*页脚*/
+footer {
+    width: 100%;
+    height: 50px;
+}
+
+
+
+
+
+
