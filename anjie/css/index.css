@@ -536,7 +536,7 @@ section .model-table .model-table-box4 .model-table-form .model-table-form-box {
 section .service {
     height: 350px;
     margin-top: 30px;
-    background: url("../images/service_bg.png") no-repeat center center;
+    background: url("../images/service_bg.jpg") no-repeat center center;
 }
 
 section .service .service-main {
