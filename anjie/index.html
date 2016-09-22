@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>安捷</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
 </head>
 <body>
@@ -29,16 +30,47 @@
         <!--菜单-->
         <div class="header-main-nav">
 
-            <ul>
-                <li><a href="#" class="action">首页</a></li>
-                <li><a href="#">我要寄件</a></li>
-                <li><a href="#">安捷服务</a></li>
-                <li><a href="#">加盟安捷</a></li>
-                <li><a href="#">客户服务</a></li>
-                <li><a href="#">关于安捷</a></li>
-                <li><a href="#">资讯动态</a></li>
-                <li><a href="#">联系安捷</a></li>
-                <li><a href="#">功能选择</a></li>
+            <ul class="nav">
+                <li class="nav-li"><a href="#" class="action">首页</a></li>
+                <li class="nav-li nav-root">
+                    我要寄件
+                    <ul class="nav-root-child">
+                        <li><a href="#">在线下单</a></li>
+                        <li><a href="#">运费查询</a></li>
+                        <li><a href="#">运单查询</a></li>
+                    </ul>
+                </li>
+                <li class="nav-li"><a href="#">安捷服务</a></li>
+                <li class="nav-li nav-root">
+                    加盟安捷
+                    <ul class="nav-root-child">
+                        <li><a href="#">加盟优势</a></li>
+                        <li><a href="#">加盟流程</a></li>
+                        <li><a href="#">加盟支持</a></li>
+                        <li><a href="#">加盟问答</a></li>
+                    </ul>
+                </li>
+                <li class="nav-li nav-root">
+                    客户服务
+                    <ul class="nav-root-child">
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">查询问题</a></li>
+                        <li><a href="#">业务流程</a></li>
+                        <li><a href="#">售后服务</a></li>
+                    </ul>
+                </li>
+                <li class="nav-li nav-root">
+                    关于安捷
+                    <ul class="nav-root-child">
+                        <li><a href="#">企业介绍</a></li>
+                        <li><a href="#">品牌历程</a></li>
+                        <li><a href="#">企业荣誉</a></li>
+                        <li><a href="#">企业文化</a></li>
+                    </ul>
+                </li>
+                <li class="nav-li"><a href="#">资讯动态</a></li>
+                <li class="nav-li"><a href="#">联系安捷</a></li>
+                <li class="nav-li"><a href="#">功能选择</a></li>
             </ul>
             <!--斜角块-->
             <div class="bevel">
@@ -52,43 +84,64 @@
 <!--主体-->
 <section>
     <!--幻灯片-->
-    <div clss="slide">
-        <img src="images/silde.png" width="100%" alt="">
+    <div class="slide">
+        <div class="slide-main">
+            <img class="slide-img-model" src="images/slide1.png" alt="">
+            <div class="slide-img-box slide-img-box-1 action">
+                <img src="images/slide1.png" alt="">
+            </div>
+            <div class="slide-img-box slide-img-box-2 ">
+                <img src="images/slide1.png" alt="">
+            </div>
+            <div class="slide-img-box slide-img-box-3 ">
+                <img src="images/slide1.png" alt="">
+            </div>
+        </div>
+        <div class="slide-ctrl">
+            <div class="slide-ctrl-before slide-ctrl-box">
+                <
+            </div>
+            <div class="slide-ctrl-next slide-ctrl-box">
+                >
+            </div>
+        </div>
     </div>
     <!--模块-->
     <div class="model">
-        <div class="model-box">
+        <div class="model-box model-box1">
             <div class="model-box-top">
                 <div class="model-box-top-main">
-                    <img src="" alt="">
-                    <p>运单查询</p>
+                    <a href="#">
+                        运单查询
+                    </a>
                 </div>
                 <div class="model-box-top-bg"></div>
             </div>
         </div>
-        <div class="model-box">
+        <div class="model-box model-box2">
             <div class="model-box-top">
                 <div class="model-box-top-main">
-                    <img src="" alt="">
-                    <p>运费查询</p>
+                    <a href="#">
+                        运费查询
+                    </a>
                 </div>
                 <div class="model-box-top-bg"></div>
             </div>
         </div>
-        <div class="model-box">
+        <div class="model-box model-box3">
             <div class="model-box-top">
                 <div class="model-box-top-main">
-                    <img src="" alt="">
-                    <p>网店查询</p>
+                    <a href="#">
+                        网店查询
+                    </a>
                 </div>
                 <div class="model-box-top-bg"></div>
             </div>
         </div>
-        <div class="model-box">
+        <div class="model-box model-box4">
             <div class="model-box-top">
                 <div class="model-box-top-main">
-                    <img src="" alt="">
-                    <p>在线下单</p>
+                    <a href="#">在线下单</a>
                 </div>
                 <div class="model-box-top-bg"></div>
             </div>
@@ -111,26 +164,32 @@
                 </div>
                 <div class="model-table-form-button-main">
                     <button>查询</button>
-                    <!--<div class="model-table-form-button-main-other">-->
-                    <a href="#">按照手机号码查询</a>
-                    <!--</div>-->
+                    <!--<a href="#">按照手机号码查询</a>-->
                 </div>
             </div>
         </div>
         <!--模块2 运费查询-->
         <div class="model-table-box model-table-box2">
-            <img src="images/model1.png" alt="">
+            <img src="images/model2.png" alt="">
             <div class="model-table-form ">
                 <div class="model-table-form-input  ">
                     <label>始发地：</label>
                     <select name="start">
-                        <option value="">请选择省市区</option>
+                        <option value="">请选择省份</option>
+                    </select>
+                    -
+                    <select name="start">
+                        <option value="">请选择市区</option>
                     </select>
                 </div>
                 <div class="model-table-form-input">
                     <label>目的地：</label>
-                    <select name="start">
-                        <option value="">请选择省市区</option>
+                    <select name="end">
+                        <option value="">请选择省份</option>
+                    </select>
+                    -
+                    <select name="end">
+                        <option value="">请选择市区</option>
                     </select>
                 </div>
                 <div class="model-table-form-input">
@@ -142,21 +201,25 @@
         </div>
         <!--模块3 网店查询-->
         <div class="model-table-box model-table-box3">
-            <img src="images/model1.png" alt="">
+            <img src="images/model3.png" alt="">
             <div class="model-table-form ">
                 <p>请选择需要查询省、市，点击查询按钮进行查询</p>
                 <div class="model-table-form-input">
-                    <select name="start">
-                        <option value="">请选择省市区</option>
+                    <select>
+                        <option value="">请选择省份</option>
+                    </select>
+                    -
+                    <select>
+                        <option value="">请选择市区</option>
                     </select>
                     <button>查询</button>
                 </div>
-                <span>GIS地图网点查询</span>
+                <p>GIS地图网点查询 <span>hot</span></p>
             </div>
         </div>
         <!--模块4 在线下单-->
         <div class="model-table-box model-table-box4">
-            <img src="images/model1.png" alt="">
+            <img src="images/model4.png" alt="">
             <div class="model-table-form ">
                 <div class="model-table-form-phone">
                     <p class="">400-0589-872</p>
@@ -169,94 +232,251 @@
             </div>
         </div>
     </div>
+
+
     <!--服务介绍-->
     <div class="service">
-        <div class="service-title">
-            <p>我们的服务<span>Our service</span></p>
-        </div>
-        <div class="service-table">
-            <div class="service-table-row">
-                <div class="service-table-box service-table-box1">
-                    <div class="service-table-box-center">
-                        <p>国内快件</p>
-                        <p>IONIC 是目前最有潜力的一款 HTML5 手机应用开发框架。
-                            通过 SASS 构建应用程序，它提供了很多 UI 组件来帮助开发者开发强大的应用。</p>
-                    </div>
-                </div>
-                <div class="service-table-box service-table-box2">
-                    <div class="service-table-box-center">
-                        <p>国内快件</p>
-                        <p>IONIC 是目前最有潜力的一款 HTML5 手机应用开发框架。
-                            通过 SASS 构建应用程序，它提供了很多 UI 组件来帮助开发者开发强大的应用。</p>
-                    </div>
-                </div>
-                <div class="service-table-box service-table-box3">
-                    <div class="service-table-box-center">
-                        <p>国内快件</p>
-                        <p>IONIC 是目前最有潜力的一款 HTML5 手机应用开发框架。
-                            通过 SASS 构建应用程序，它提供了很多 UI 组件来帮助开发者开发强大的应用。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-table-row">
-                <div class="service-table-box service-table-box4">
-                    <div class="service-table-box-center">
-                        <p>国内快件</p>
-                        <p>IONIC 是目前最有潜力的一款 HTML5 手机应用开发框架。
-                            通过 SASS 构建应用程序，它提供了很多 UI 组件来帮助开发者开发强大的应用。</p>
-                    </div>
-                </div>
-                <div class="service-table-box service-table-box5">
-                    <div class="service-table-box-center">
-                        <p>国内快件</p>
-                        <p>IONIC 是目前最有潜力的一款 HTML5 手机应用开发框架。
-                            通过 SASS 构建应用程序，它提供了很多 UI 组件来帮助开发者开发强大的应用。</p>
-                    </div>
-                </div>
-                <div class="service-table-box service-table-box6">
-                    <div class="service-table-box-center">
-                        <p>国内快件</p>
-                        <p>IONIC 是目前最有潜力的一款 HTML5 手机应用开发框架。
-                            通过 SASS 构建应用程序，它提供了很多 UI 组件来帮助开发者开发强大的应用。</p>
-                    </div>
-                </div>
+        <div class="service-main">
+            <p class="title">我们的服务</p>
+            <p class="title2">Our service</p>
+            <div class="service-main-box">
+                <a href="#" class="service-main-box1">
+                    国内快件
+                </a>
+                <a href="#" class="service-main-box2">
+                    国际快件
+                </a>
+                <a href="#" class="service-main-box3">
+                    时效快件
+                </a>
+                <a href="#" class="service-main-box4">
+                    保价服务
+                </a>
+                <a href="#" class="service-main-box5">
+                    仓储托管
+                </a>
+                <a href="#" class="service-main-box6">
+                    代收货款
+                </a>
             </div>
         </div>
     </div>
-    <!--数量-->
-    <div class="amount">
-        <div class="amount-main">
-            <p class="amount-main-top">我们每年运货量达到</p>
-            <div class="amount-main-center">
-                <div class="amount-main-center-box amount-main-center-box1">
-                    <p>10,000</p>
-                    <p>loginstc services</p>
-                </div>
-                <div class="amount-main-center-box amount-main-center-box1">
-                    <p>10,000</p>
-                    <p>loginstc services</p>
-                </div>
-                <div class="amount-main-center-box amount-main-center-box1">
-                    <p>10,000</p>
-                    <p>loginstc services</p>
-                </div>
-                <div class="amount-main-center-box amount-main-center-box1">
-                    <p>10,000</p>
-                    <p>loginstc services</p>
-                </div>
-            </div>
-            <p class="amount-main-bottom">并且数量还在不停增长</p>
-        </div>
-    </div>
+
     <!--关于我们-->
     <div class="about">
+        <div class="about-left about-box">
+            <img src="images/about.png" alt="关于我们">
+        </div>
+        <div class="about-right about-box">
+            <div class="about-right-box-1">
+                <p class="title">中国物流快运连锁加盟领导品牌</p>
+                <p class="more">安全、快捷、真情服务每一天</p>
+                <p class="hr">————</p>
+            </div>
+            <div class="about-right-box-2">
+                <p>About us</p>
+                <p>Mature model, close helping, packaged to home</p>
+            </div>
+            <div class="about-right-box-center">
+                <p>桂兴安捷物流有限公司</p>
+                <p>安捷快运是桂兴安捷物流（北京）有限公司新的业务板块，
+                    公司成立于上世纪90年代，是与德邦、天地华宇、
+                    中铁快运并称为中国的四大物流,公司集公路运输、铁路运输、
+                    航空运输代理、同城配送、快运、互联网交易平台于一体的
+                    大型物流服务企业。经过十多年的发展，目前在北京、上海、天津
+                    南京、合肥、杭州、重庆、成都、昆明、济南、太原、乌鲁木齐....</p>
+            </div>
+            <a href="#">查看更多</a>
+        </div>
+        <div class="clear"></div>
+    </div>
 
+    <!--运货量 和 新闻 -->
+    <div class="new">
+        <div class="new-box new-left">
+            <p>我们每年运货量达到</p>
+            <div class="amount-main">
+                <div class="amount-main-box amount-main-box1">
+                    <div class="amount-main-box-value">
+                        <p>1300</p>
+                    </div>
+                </div>
+                <div class="amount-main-box amount-main-box2">
+                    <div class="amount-main-box-value">
+                        <p>1000</p>
+                    </div>
+                </div>
+                <div class="amount-main-box amount-main-box3">
+                    <div class="amount-main-box-value">
+                        <p>1300</p>
+                    </div>
+                </div>
+                <div class="amount-main-box amount-main-box4">
+                    <div class="amount-main-box-value">
+                        <p>1400</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-box new-right">
+            <div class="new-right-tab">
+                <div class="new-right-tab-header">
+                    <div class="new-right-tab-header-box anJie-new-header action"><p>安捷新闻</p>
+                        <div class="bevel"></div>
+                    </div>
+                    <div class="new-right-tab-header-box hangNeiDongTai-header"><p>行内动态</p>
+                        <div class="bevel"></div>
+                    </div>
+                </div>
+                <a href="#">更多+</a>
+            </div>
+            <div class="new-right-tab-center">
+                <!--安捷新闻列表-->
+                <div class="new-right-tab-center-box anJie-new">
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                </div>
+                <!--行内动态列表-->
+                <div class="new-right-tab-center-box hangNeiDongTai">
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            行内动态这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            行内动态这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            行内动态这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                    <div class="new-right-tab-center-box-row">
+                        <a href="#" title="这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻">
+                            这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻这是新闻</a>
+                        <p>2016-09-01</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </section>
 
 <!--页脚-->
 <footer>
-    footer
+    <!--页脚上部分斜体-->
+    <div class="footer-top">
+        <div class="footer-top-main">
+        </div>
+        <div class="bevel">
+        </div>
+    </div>
+    <div class="footer-center">
+        <div class="footer-center-left">
+            <div class="footer-center-left-logo"></div>
+            <div class="footer-center-left-main">
+                <div class="footer-center-left-main-phone">
+                    <p class="footer-center-left-main-phone-title">24小时服务热线:</p>
+                    <p class="footer-center-left-main-phone-center">400-0589-872</p>
+                    <p class="footer-center-left-main-phone-center">400-6689-566</p>
+                    <div class="footer-center-left-main-phone-online">
+                        <p>在线客服</p>
+                        <a href="#">加入在线客服</a>
+                    </div>
+                </div>
+                <div class="footer-center-left-weiXin">
+                    <p>微信客服</p>
+                    <img src="images/weixin.png" alt="">
+
+                </div>
+            </div>
+        </div>
+        <!--页脚菜单-->
+        <div class="footer-center-right">
+            <div class="footer-center-right-box">
+                <p>我要寄件</p>
+                <a href="#">在线下单</a>
+                <a href="#">运费查询</a>
+                <a href="#">运单查询</a>
+            </div>
+            <div class="footer-center-right-box">
+                <p>客户服务</p>
+                <a href="#">常见问题</a>
+                <a href="#">查询问题</a>
+                <a href="#">业务流程</a>
+                <a href="#">售后服务</a>
+            </div>
+            <div class="footer-center-right-box">
+                <p>加盟安捷</p>
+                <a href="#">加盟优势</a>
+                <a href="#">加盟流程</a>
+                <a href="#">加盟支持</a>
+                <a href="#">加盟问答</a>
+            </div>
+            <div class="footer-center-right-box">
+                <p>关于安捷</p>
+                <a href="#">企业介绍</a>
+                <a href="#">品牌历程</a>
+                <a href="#">企业荣誉</a>
+                <a href="#">企业文化</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <!--页脚下部斜体-->
+        <div class="footer-bottom-bevel-main">
+            <div class="footer-bottom-bevel">
+
+            </div>
+            <div class="footer-bottom-bevel-bottom">
+
+            </div>
+        </div>
+        <div class="footer-bottom-center-main">
+            <p>©Copyright 2013-2015.安捷快运 All Rights Reserved.粤ICP备111111111号</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
