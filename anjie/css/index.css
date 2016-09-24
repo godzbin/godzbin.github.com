@@ -1,179 +1,8 @@
-* {
-    font-family: "Microsoft YaHei";
-    font-size: 12px;
-    padding: 0;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-}
-
-body {
-    padding: 0;
-    margin: 0 auto;
-}
-
-/*header top*/
-header .top {
-    height: 35px;
-    background: #F5F5F5;
-    color: #929292;
-    padding: 0 8%;
-
-}
-
-header .top > div {
-    line-height: 35px;
-}
-
-header .top .top-welcome {
-    float: left;
-}
-
-header .top .top-language {
-    float: right;
-    padding-left: 80px;
-    background: url("../images/top-language.png") no-repeat left center;
-}
-
-/*header logo and nav*/
-
-header .header-main .header-main-logo {
-    background: #fff;
-    height: 95px;
-    padding: 0 8%;
-}
-
-header .header-main .header-main-logo .header-main-logo-box {
-    float: left;
-    background: url("../images/logo.png") no-repeat left center;
-    padding: 25px 0 25px 230px;
-}
-
-header .header-main .header-main-logo .header-main-logo-box h2 {
-    font-size: 25px;
-    /*line-height: 45px;*/
-    padding: 5px 10px;
-    border-left: 1px #666 solid;
-    color: #53200F;
-    font-weight: 600;
-}
-
-/*热线电话*/
-header .header-main .header-main-logo .header-main-logo-phone {
-    float: right;
-    padding: 5px 50px 5px 65px;
-    background: url("../images/phone.png") no-repeat left bottom;
-}
-
-header .header-main .header-main-logo .header-main-logo-phone .header-main-logo-phone-top {
-    font-size: 14px;
-}
-
-header .header-main .header-main-logo .header-main-logo-phone .header-main-logo-phone-center {
-    font-size: 22px;
-    color: #E66514;
-    font-weight: 600;
-}
-
-header .header-main-nav {
-    height: 50px;
-    position: relative;
-}
-
-header .header-main-nav .header-main-nav-bg {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 15px;
-    background: #53200F;
-    width: 100%;
-    z-index: 1;
-}
-
-header .header-main-nav ul.nav {
-    position: relative;
-    list-style: none;
-    /*height: 50px;*/
-    background: #53200F;
-    float: right;
-    padding-right: 8%;
-    padding-left: 15px;
-    z-index: 10;
-
-}
-
-/*斜角块*/
-header .bevel {
-    float: right;
-    border-left: 50px transparent dotted;
-    border-bottom: 50px #53200F solid;
-    width: 0px;
-    height: 0px;
-    overflow: hidden;
-}
-
-header .header-main-nav li.nav-li {
-    float: left;
-    /*width: 80px;*/
-    text-align: center;
-    padding: 0 20px 0 15px;
-    color: #fff;
-    font-size: 16px;
-    line-height: 50px;
-    cursor: pointer;
-}
 
 
-header .header-main-nav li.nav-li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    line-height: 28px;
-    display: block;
-    padding: 10px 0;
-}
 
-header .header-main-nav li.nav-li a:hover,
-header .header-main-nav li.nav-li a.action {
-    border-bottom: 2px #fff solid;
-}
 
-header .header-main-nav li.nav-root {
-    position: relative;
-    background: url("../images/nav-more.png") no-repeat right center;
-}
-header .header-main-nav ul.nav-root-child {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 120px;
-    z-index: 11;
-    list-style: none;
-    background-color: #fff;
-    display: none;
-}
-header .header-main-nav ul.nav-root-child li{
-    border-bottom: 1px #ddd solid;
-}
-header .header-main-nav ul.nav-root-child a{
-    color: #4f1809;
-}
-header .header-main-nav ul.nav-root-child a:hover{
-    border: 0;
-    color: #e65116;
-}
-header .header-main-nav li.nav-root:hover{
-    background-color: #fff;
-    color: #5B220B;
-    background-image: url("../images/nav-more-hover.png");
-}
-header .header-main-nav li.nav-root ul.nav-root-child:hover,
-header .header-main-nav li.nav-root:hover ul.nav-root-child{
-     display: block;
- }
+
 
 /*slide 幻灯片*/
 section .slide {
@@ -339,9 +168,10 @@ section .model-table {
     margin: 0 102px;
     /*position: relative;*/
     border: 2px #ddd solid;
+    border-top: 0;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 340px;
+    /*height: 340px;*/
 }
 
 section .model-table .model-table-box {
@@ -352,6 +182,8 @@ section .model-table .model-table-box {
     padding: 15px;
     /*border: 1px #53200F solid;*/
     float: left;
+    position: relative;
+    text-align: left;
 }
 
 section .model-table .model-table-box img {
@@ -363,6 +195,7 @@ section .model-table .model-table-box .model-table-form {
     margin-top: 15px;
 }
 
+/*模块1*/
 /*多行文本框*/
 section .model-table .model-table-box1 .model-table-form .model-table-form-textarea-main {
     position: relative;
@@ -393,42 +226,44 @@ section .model-table .model-table-box1 .model-table-form .model-table-form-texta
     bottom: 0;
     left: 0;
 }
-
-/*查询按钮*/
-button {
-    background: none;
-    border: 0;
-    cursor: pointer;
-    color: #000;
-}
-
-section .model-table .model-table-box .model-table-form button:hover {
-    background: #ff0709;
-    border: 0;
+section .model-table .model-table-box1 .more{
+    position: absolute;
+    top: 0;
+    right: 3px;
+    background-color: #000;
     color: #fff;
+    padding: 3px;
 }
+/*查询按钮*/
+
+section .model-table .model-table-box .model-table-form a{
+    display: block;
+}
+
 
 section .model-table .model-table-box1 .model-table-form .model-table-form-button-main {
     padding-top: 10px;
 }
 
-section .model-table .model-table-box1 .model-table-form .model-table-form-button-main button {
+section .model-table .model-table-box1 .model-table-form .model-table-form-button-main a {
     border: 1px #aaa solid;
     border-radius: 5px;
     width: 100px;
     padding: 5px;
     font-size: 14px;
+    text-align: center;
+    margin: 0;
 }
 
-section .model-table .model-table-box1 .model-table-form .model-table-form-button-main a {
-    font-size: 14px;
-    float: right;
-    line-height: 30px;
-    padding-right: 25px;
-    text-decoration: none;
-    color: #aaa;
-    background: url("../images/model-phone.png") no-repeat right center;
-}
+/*section .model-table .model-table-box1 .model-table-form .model-table-form-button-main a {*/
+    /*font-size: 14px;*/
+    /*float: right;*/
+    /*line-height: 30px;*/
+    /*padding-right: 25px;*/
+    /*text-decoration: none;*/
+    /*color: #aaa;*/
+    /*background: url("../images/model-phone.png") no-repeat right center;*/
+/*}*/
 
 /*模块2*/
 section .model-table .model-table-box2 .model-table-form .model-table-form-input {
@@ -445,7 +280,7 @@ section .model-table .model-table-box2 .model-table-form .model-table-form-input
 }
 
 section .model-table .model-table-box2 .model-table-form .model-table-form-input select {
-    width: 35%;
+    width: 34%;
     padding: 3px;
     /*font-size: 12px;*/
 }
@@ -463,14 +298,15 @@ section .model-table .model-table-box2 .model-table-form .model-table-form-input
     padding-left: 5px;
 }
 
-section .model-table .model-table-box2 .model-table-form .model-table-form-input button {
-    /*background: #ff0709;*/
+section .model-table .model-table-box2 .model-table-form .model-table-form-input a {
     width: 20%;
     float: right;
     border: 1px #aaa solid;
     border-radius: 5px;
-    padding: 5px;
     font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    margin: 0;
 }
 
 /*模块3*/
@@ -498,18 +334,21 @@ section .model-table .model-table-box3 .model-table-form p:last-child span {
 }
 
 section .model-table .model-table-box3 .model-table-form .model-table-form-input select {
-    width: 33%;
+    width: 32%;
     padding: 3px 0;
     font-size: 12px;
 }
 
-section .model-table .model-table-box3 .model-table-form .model-table-form-input button {
+section .model-table .model-table-box3 .model-table-form .model-table-form-input a {
     border: 1px #aaa solid;
+    float: right;
     border-radius: 3px;
     width: 25%;
     font-size: 14px;
     margin-left: 2%;
-    height: 30px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
 }
 
 /*模块4*/
@@ -531,12 +370,18 @@ section .model-table .model-table-box4 .model-table-form .model-table-form-box {
     margin: 5%;
     float: left;
 }
-
+section .model-table .model-table-box .model-table-form a:hover {
+    background: #ff0709;
+    border: 1px #ff0709 solid;
+    color: #fff;
+}
 /* 我们的服务 ----------------------------------------------*/
 section .service {
     height: 350px;
+    width: 100%;
     margin-top: 30px;
     background: url("../images/service_bg.jpg") no-repeat center center;
+    background-size: 100% 100%;
 }
 
 section .service .service-main {
@@ -619,9 +464,7 @@ section .about-box.about-left img {
     width: 100%;
 }
 
-.clear {
-    clear: both;
-}
+
 
 section .about .about-right {
     padding-top: 30px;
@@ -678,7 +521,11 @@ section .about .about-right a {
     border: 1px #333 solid;
     padding: 10px;
 }
-
+section .about .about-right a:hover{
+    background-color: #ff0709;
+    color: #fff;
+    border: 0;
+}
 /*运货量 与 新闻 --------------------------------------------*/
 section .new {
     padding: 30px 100px;
@@ -694,7 +541,6 @@ section .new .new-box {
 }
 
 section .new .new-left {
-    /*border: 1px #ddd solid;*/
     border-radius: 5px;
     padding: 15px;
     margin-right: 4%;
@@ -789,15 +635,15 @@ section .new .new-right .new-right-tab .new-right-tab-header {
 section .new .new-right .new-right-tab .new-right-tab-header .new-right-tab-header-box {
     float: left;
     cursor: pointer;
-    width: 135px;
+    width: 110px;
 }
 
 section .new .new-right .new-right-tab .new-right-tab-header .new-right-tab-header-box p {
     float: left;
-    padding: 0 10px;
+    padding: 0 5px;
     font-size: 16px;
     line-height: 35px;
-    width: 80px;
+    width: 65px;
 }
 
 section .new .new-right .new-right-tab .new-right-tab-header .new-right-tab-header-box.action p {
@@ -810,8 +656,8 @@ section .new .new-right .new-right-tab .new-right-tab-header .new-right-tab-head
     border-right: 35px transparent dotted;
     border-bottom: 35px #53200F solid;
     overflow: hidden;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
 }
 
 /*新闻列表主体*/
@@ -853,174 +699,7 @@ section .new .new-right .new-right-tab-center .hangNeiDongTai {
     display: none;
 }
 
-/*页脚*/
-footer {
-    width: 100%;
-    height: 455px;
-}
 
-footer .footer-top {
-    height: 35px;
-}
-
-footer .footer-top .footer-top-main {
-    float: right;
-    width: 35px;
-    height: 35px;
-    background-color: #5B220B;
-}
-
-footer .footer-top .bevel {
-    float: right;
-    border-left: 35px transparent dotted;
-    border-bottom: 35px #5B220B solid;
-    overflow: hidden;
-    width: 0px;
-    height: 0px;
-}
-
-footer .footer-center {
-    background-color: #5B220B;
-    height: 350px;
-}
-
-/*页脚左边框*/
-footer .footer-center .footer-center-left {
-    width: 45%;
-    float: left;
-    padding: 30px 30px 30px 100px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box; /* Firefox */
-    -webkit-box-sizing: border-box; /* Safari */
-}
-
-footer .footer-center .footer-center-left-logo {
-    height: 70px;
-    background: url("../images/footer-logo.png") no-repeat left center;
-}
-
-footer .footer-center .footer-center-left-main {
-
-}
-
-footer .footer-center .footer-center-left-main .footer-center-left-weiXin,
-footer .footer-center .footer-center-left-main .footer-center-left-main-phone {
-    float: left;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box; /* Firefox */
-    -webkit-box-sizing: border-box; /* Safari */
-    width: 50%;
-}
-
-footer .footer-center .footer-center-left-main .footer-center-left-main-phone .footer-center-left-main-phone-title {
-    color: #fff;
-    font-size: 14px;
-    padding: 10px 0;
-}
-
-footer .footer-center .footer-center-left-main .footer-center-left-main-phone .footer-center-left-main-phone-center {
-    font-size: 22px;
-    color: #E66514;
-    font-weight: 600;
-    padding: 5px 0;
-}
-
-footer .footer-center .footer-center-left-main .footer-center-left-main-phone-online p:first-child {
-    color: #fff;
-    padding: 10px 0;
-    font-size: 14px;
-}
-
-footer .footer-center .footer-center-left-main .footer-center-left-main-phone-online a {
-    color: #aaa;
-    display: block;
-    margin: 10px 0;
-    padding: 15px 0 15px 60px;
-    background: url("../images/online.png") no-repeat left center;
-}
-
-footer .footer-center .footer-center-left-main .footer-center-left-weiXin p {
-    color: #fff;
-    padding: 10px 0;
-    font-size: 14px;
-}
-
-footer .footer-center .footer-center-right {
-    float: right;
-    width: 55%;
-    padding: 30px 100px 30px 30px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box; /* Firefox */
-    -webkit-box-sizing: border-box; /* Safari */
-}
-
-footer .footer-center .footer-center-right .footer-center-right-box {
-    float: left;
-    width: 25%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box; /* Firefox */
-    -webkit-box-sizing: border-box; /* Safari */
-    text-align: center;
-}
-
-footer .footer-center .footer-center-right .footer-center-right-box p {
-    font-size: 22px;
-    color: #fff;
-    font-weight: 500;
-    padding: 10px 0;
-}
-
-footer .footer-center .footer-center-right .footer-center-right-box a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: #999;
-    font-size: 16px;
-    padding: 5px 0;
-}
-
-footer .footer-bottom {
-    background-color: #5B220B;
-    height: 70px;
-    position: relative;
-}
-
-footer .footer-bottom .footer-bottom-center-main {
-    background-color: #42190A;
-    line-height: 70px;
-    text-align: right;
-    margin-left: 70px;
-}
-
-footer .footer-bottom .footer-bottom-center-main p {
-    padding-right: 100px;
-    color: #aaa;
-    font-size: 14px;
-}
-
-.footer-bottom-bevel-main {
-    width: 70px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-footer .footer-bottom .footer-bottom-bevel {
-    text-align: right;
-    float: right;
-    border-left: 35px transparent dotted;
-    border-bottom: 35px #42190A solid;
-    overflow: hidden;
-    width: 0px;
-    height: 0px;
-}
-
-footer .footer-bottom .footer-bottom-bevel-bottom {
-    float: right;
-    height: 35px;
-    width: 100%;
-    background-color: #42190A;
-}
 
 
 
