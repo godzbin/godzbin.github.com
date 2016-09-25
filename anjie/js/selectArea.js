@@ -24,6 +24,19 @@ $(document).ready(function () {
     });
     $(".selectAreaShow-main-box2 .province").click(setProvince);
     $(".selectAreaShow-main-box2 .city").click(setCity);
+
+    $(".selectArea button").click(function(){
+        var area = $(".selectAreaInput input").val();
+        if(area){
+            $(".networkQueryContent-result").show();
+            $(".selectArea .error").text("");
+        }else{
+            $(".selectArea .error").text("请选择地区");
+        }
+    });
+    $(".networkQueryContent-result .close").click(function(){
+        $(".networkQueryContent-result").hide();
+    });
 });
 function initProvince(){
     $(".selectAreaShow-main-box2 a").removeClass("action");

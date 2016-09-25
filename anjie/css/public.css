@@ -570,7 +570,11 @@ section.content .networkQueryContent.content-main .selectArea button {
     color: #fff;
     margin-top: 20px;
 }
-
+section.content .networkQueryContent.content-main .selectArea .error{
+    font-size: 14px;
+    line-height: 30px;
+    color: #ff0709;
+}
 section.content .networkQueryContent.content-main a.comeDoor {
     display: block;
     color: #fff;
@@ -649,6 +653,7 @@ section.content .networkQueryContent.content-main .selectAreaShow .selectAreaSho
     background-color: #ddd;
 }
 section.content .networkQueryContent.content-main .networkQueryContent-result{
+    display: none;
     width: 100%;
     border: 1px #dddddd solid;
     padding: 20px;
