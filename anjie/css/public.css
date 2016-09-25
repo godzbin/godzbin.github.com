@@ -536,17 +536,20 @@ section.content .networkQueryContent.content-main .selectArea {
     padding: 20px;
     margin: 30px 0;
 }
-
+section.content .networkQueryContent.content-main .selectAreaInput:hover{
+    border-color: #aaa;
+}
 section.content .networkQueryContent.content-main .selectArea p {
     margin-bottom: 20px;
     font-size: 16px;
 }
 
 section.content .networkQueryContent.content-main .selectAreaInput {
-    margin: 30px 0;
+    /*margin: 30px 0;*/
     padding-left: 50px;
     padding-right: 10px;
     border: 1px #ddd solid;
+    cursor: pointer;
     background: url("../images/selectAreaInput.png") no-repeat 10px center;
 }
 
@@ -556,6 +559,7 @@ section.content .networkQueryContent.content-main .selectAreaInput input {
     font-size: 16px;
     padding: 10px 0;
     outline: none;
+    cursor: pointer;
 }
 
 section.content .networkQueryContent.content-main .selectArea button {
@@ -564,6 +568,7 @@ section.content .networkQueryContent.content-main .selectArea button {
     height: 40px;
     font-size: 16px;
     color: #fff;
+    margin-top: 20px;
 }
 
 section.content .networkQueryContent.content-main a.comeDoor {
@@ -583,10 +588,11 @@ section.content .networkQueryContent.content-main a.comeDoor p {
 }
 
 section.content .networkQueryContent.content-main .selectAreaShow {
-    width: 600px;
-    border: 1px #dddddd solid;
+    display: none;
+    border: 1px  #dddddd solid;
+    border-top: 0;
     padding: 10px;
-    margin: 30px 0;
+    /*margin: 30px 0;*/
     font-size: 14px;
 }
 
@@ -626,6 +632,7 @@ section.content .networkQueryContent.content-main .selectAreaShow .selectAreaSho
     font-size: 16px;
     border-bottom: 1px #313131 solid;
     margin-bottom: 10px;
+    line-height: 20px;
 }
 
 section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box2 a,
@@ -638,7 +645,9 @@ section.content .networkQueryContent.content-main .selectAreaShow .selectAreaSho
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box3 a:hover{
+    background-color: #ddd;
+}
 section.content .networkQueryContent.content-main .networkQueryContent-result{
     width: 100%;
     border: 1px #dddddd solid;
@@ -680,4 +689,78 @@ section.content .networkQueryContent.content-main .networkQueryContent-result ta
     background-color: #eee;
 }
 
+/*在线下单*/
+section.content .onlineOrder.content-main {
+    padding-right: 100px;
+}
+section.content .onlineOrder.content-main .schedule{
+    border-bottom: 1px #ddd solid;
+    padding: 10px 0;
 
+}
+section.content .onlineOrder.content-main .schedule .title{
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px;
+}
+section.content .onlineOrder.content-main .schedule img{
+    width: 100%;
+}
+section.content .onlineOrder.content-main .schedule-main-text{
+    position: relative;
+    height: 30px;
+}
+section.content .onlineOrder.content-main .schedule .schedule-box{
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    top: 0;
+}
+section.content .onlineOrder.content-main .schedule .schedule-box2{
+    left: 30%;
+}
+section.content .onlineOrder.content-main .schedule .schedule-box3{
+    left: 60%;
+}
+section.content .onlineOrder.content-main .schedule .schedule-box4{
+    left: 93%;
+}
+section.content .onlineOrder.content-main .comeDoor {
+    border-bottom: 1px #ddd solid;
+    padding: 20px 15px;
+}
+section.content .onlineOrder.content-main .comeDoor .title{
+    font-size: 22px;
+    line-height: 40px;
+}
+section.content .onlineOrder.content-main .comeDoor .title-decs{
+    font-size: 14px;
+    line-height: 30px;
+}
+section.content .onlineOrder.content-main .comeDoor .hotCity{
+    padding: 15px 0;
+}
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-title{
+    font-size: 18px;
+    color: #f4a515;
+    font-weight: 600;
+    float: left;
+    width: 20%;
+}
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main{
+    width: 80%;
+    font-size: 14px;
+    float: left;
+}
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a{
+    width: 15%;
+    padding: 5px 0;
+    line-height: 20px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a.hot{
+    color: #f4a515;
+}

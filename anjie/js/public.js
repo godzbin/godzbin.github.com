@@ -76,7 +76,6 @@ $(document).ready(function () {
                 opacity: 1
             });
     }
-
     function scrollTopHide() {
         var box = $(".scrollTop");
             box.css({
