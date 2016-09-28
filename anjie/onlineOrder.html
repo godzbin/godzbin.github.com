@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="css/public.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/public.js"></script>
-
+    <script src="js/province.js"></script>
+    <script src="js/selectInput.js"></script>
+    <script src="js/selectArea.js"></script>
+    <script src="js/onlineOrder.js"></script>
 </head>
 <body>
 <!--页头-->
@@ -159,10 +162,145 @@
                 <div class="clear"></div>
             </div>
         </div>
+        <div class="order-form">
+            <div>
+                <p>寄件人信息：</p>
+                <div class="order-form-input">
+                    <label ><span>*</span>发件省份：</label>
+                    <div id="returnAddressProvince" class="selectInput">
+                        <input type="text" placeholder="请输入或者选择省份"><div class="select-icon"></div>
+                        <div class="selectList"></div>
+                    </div>
+                </div>
+                <div class="order-form-input">
+                    <label ><span>*</span>发件市区：</label>
+                    <div id="returnAddressCity" class="selectInput">
+                        <input type="text" placeholder="请输入或者选择市县"><div class="select-icon"></div>
+                        <div class="selectList"></div>
+                    </div>
+                </div>
+                <div class="order-form-selectArea" id="returnAddress">
+                    <label ><span>*</span>收件地址：</label>
+                    <div class="selectAreaInput selectAreaShow-main">
+                        <input type="text"  placeholder="请选择地区，例如北京市，东城区，东直门">
+                        <div class="selectAreaShow">
+                            <!--<p class="title">广西-崇左-江州区</p>-->
+                            <div class="selectAreaShow-main">
+                                <div class="selectAreaShow-main-box selectAreaShow-main-box1">
+                                    <a href="javascript:void(0)" class="action" value="1">大陆</a>
+                                    <a href="javascript:void(0)" value="2">港澳台</a>
+                                </div>
+                                <div class="selectAreaShow-main-box selectAreaShow-main-box2">
+                                    <a href="javascript:void(0)" class="all action">常住省</a>
+                                    <a href="javascript:void(0)" class="province"></a>
+                                    <a href="javascript:void(0)" class="city"></a>
+                                    <a href="javascript:void(0)" class="area"></a>
+                                </div>
+                                <div class="selectAreaShow-main-box selectAreaShow-main-box3">
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-form-input">
+                    <label ><span>*</span>寄件人姓名：</label>
+
+                    <input type="text" placeholder="请输入寄件人姓名">
+                </div>
+                <div class="order-form-input">
+                    <label ><span>*</span>手机号码：</label>
+                    <input type="text" placeholder="寄件人手机号码">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div>
+                <p>收件人及物品信息：</p>
+                <div class="order-form-input">
+                    <label ><span>*</span>收件人姓名：</label>
+                    <input type="text" placeholder="请输入收件人姓名">
+                </div>
+                <div class="order-form-input">
+                    <label ><span>*</span>手机号码：</label>
+                    <input type="text" placeholder="收件人手机号码">
+                </div>
+                <div class="order-form-input">
+                    <label ><span>*</span>收件省份：</label>
+                    <div id="recipientAddressProvince" class="selectInput">
+                        <input type="text" placeholder="请输入或者选择省份"><div class="select-icon"></div>
+                        <div class="selectList"></div>
+                    </div>
+                </div>
+                <div class="order-form-input">
+                    <label ><span>*</span>收件市区：</label>
+                    <div id="recipientAddressCity" class="selectInput">
+                        <input type="text" placeholder="请输入或者选择市县"><div class="select-icon"></div>
+                        <div class="selectList"></div>
+                    </div>
+                </div>
+                <div class="order-form-selectArea" id="recipientAddress">
+                    <label ><span>*</span>上门地址：</label>
+                    <div class="selectAreaInput selectAreaShow-main">
+                        <input type="text"  placeholder="请选择地区，例如北京市，东城区，东直门">
+                        <div class="selectAreaShow">
+                            <!--<p class="title">广西-崇左-江州区</p>-->
+                            <div class="selectAreaShow-main">
+                                <div class="selectAreaShow-main-box selectAreaShow-main-box1">
+                                    <a href="javascript:void(0)" class="action" value="1">大陆</a>
+                                    <a href="javascript:void(0)" value="2">港澳台</a>
+                                </div>
+                                <div class="selectAreaShow-main-box selectAreaShow-main-box2">
+                                    <a href="javascript:void(0)" class="all action">常住省</a>
+                                    <a href="javascript:void(0)" class="province"></a>
+                                    <a href="javascript:void(0)" class="city"></a>
+                                    <a href="javascript:void(0)" class="area"></a>
+                                </div>
+                                <div class="selectAreaShow-main-box selectAreaShow-main-box3">
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-form-select">
+                    <label >重量：</label>
+                    <input type="text" placeholder="请输入物品的大概重量">
+                    <span>kg</span>
+                </div>
+                <div class="order-form-select order-form-textarea">
+                    <label >备注：</label>
+                    <textarea placeholder="在这里您可以输入物品类型、大小，取件时间等要求，便于业务员上门佩带相应是工具收取快件，最多可输入100个字"></textarea>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div>
+                <p>其他信息:</p>
+                <div class="order-form-time">
+                    <label >上门取件时间：</label>
+                    <input type="date">
+                    <span>:</span>
+                    <input type="time">
+                    <span>-</span>
+                    <input type="time">
+                    <span class="prompt">下午16:30 以后下单，第二日取件</span>
+                </div>
+                <div class="order-form-select order-form-textarea ">
+                    <label >备注信息：</label>
+                    <textarea placeholder="您可以在此备注您的需求，例如：请带文件袋，来前电话，需要胶带等需求！"></textarea>
+                </div>
+                <div class="clear">
+
+                </div>
+            </div>
+            <div class="submit">
+                <button >提交订单</button>
+            </div>
+
+        </div>
     </div>
     <div class="clear"></div>
-
-
 </section>
 
 <!--页脚-->

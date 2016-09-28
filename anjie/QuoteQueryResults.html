@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>安捷-网点查询</title>
+    <title>报价查询结果</title>
     <link rel="stylesheet" href="css/public.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/public.js"></script>
     <script src="js/province.js"></script>
+    <script src="js/selectInput.js"></script>
     <script src="js/selectArea.js"></script>
-    <script src="js/networkQuery.js"></script>
+    <script src="js/QuoteQueryResults.js"></script>
 </head>
 <body>
+
 <!--页头-->
 <header>
     <!--最上部介绍-->
@@ -34,7 +36,7 @@
         <nav class="header-main-nav">
 
             <ul class="nav">
-                <li class="nav-li"><a href="index.html" >首页</a></li>
+                <li class="nav-li"><a href="index.html">首页</a></li>
                 <li class="nav-li nav-root">
                     我要寄件
                     <ul class="nav-root-child">
@@ -88,16 +90,19 @@
 <section class="section-top">
     <div class="section-top-bg">
         <img src="images/section-top.jpg" alt="">
-        <h1>网点查询</h1>
+        <h1>在线下单</h1>
     </div>
     <div class="section-top-crumbs">
         <a href="index.html">首页</a>
         <span> > </span>
-        <a href="#">网点查询</a>
+        <a href="#">在线下单</a>
     </div>
 </section>
 
 <section class="content">
+
+
+    <!--二级菜单-->
     <div class="content-nav">
         <h2>安捷服务__________</h2>
         <nav>
@@ -113,100 +118,117 @@
             </ul>
         </nav>
     </div>
-    <div class="content-main networkQueryContent">
-        <div id="networkQuerySelectArea" class="selectArea">
-            <p>选择收寄件区域</p>
-            <div  class="selectAreaInput selectAreaShow-main" >
-                <input type="text" readonly  placeholder="请选择收寄件地区">
-                <div class="selectAreaShow">
-                    <!--<p class="title">广西-崇左-江州区</p>-->
-                    <div class="selectAreaShow-main">
-                        <div class="selectAreaShow-main-box selectAreaShow-main-box1">
-                            <a href="javascript:void(0)" class="action" value="1">大陆</a>
-                            <a href="javascript:void(0)" value="2">港澳台</a>
-                        </div>
-                        <div class="selectAreaShow-main-box selectAreaShow-main-box2">
-                            <a href="javascript:void(0)" class="all action">常住省</a>
-                            <a href="javascript:void(0)" class="province"></a>
-                            <a href="javascript:void(0)" class="city"></a>
-                            <a href="javascript:void(0)" class="area"></a>
-                        </div>
-                        <div class="selectAreaShow-main-box selectAreaShow-main-box3">
-
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+    <div class="content-main QuoteQueryResults">
+        <div class="content-form">
+            <p>报价时效查询</p>
+            <div class="form-input">
+                <label>始发地：</label>
+                <div id="returnAddressProvince" class="selectInput">
+                    <input type="text" placeholder="请输入或者选择省份"><div class="select-icon"></div>
+                    <div class="selectList"></div>
+                </div>
+                <div id="returnAddressCity" class="selectInput">
+                    <input type="text" placeholder="请输入或者选择市县"><div class="select-icon"></div>
+                    <div class="selectList"></div>
                 </div>
             </div>
-
-            <button>查询</button>
-            <p class="error"></p>
+            <div class="form-input">
+                <label>目的地：</label>
+                <div id="recipientAddressProvince" class="selectInput">
+                    <input type="text" placeholder="请输入或者选择省份"><div class="select-icon"></div>
+                    <div class="selectList"></div>
+                </div>
+                <div id="recipientAddressCity" class="selectInput">
+                    <input type="text" placeholder="请输入或者选择市县"><div class="select-icon"></div>
+                    <div class="selectList"></div>
+                </div>
+            </div>
+            <div class="form-input">
+                <label>物品重量：</label>
+                <input type="text">
+                <span>公斤</span>
+            </div>
+            <div class="form-input">
+                <label>物品体积：</label>
+                <input type="text">
+                <span>长（cm）</span>
+                <input type="text">
+                <span>宽（cm）</span>
+                <input type="text">
+                <span>高（cm）</span>
+            </div>
+            <button>确定</button>
         </div>
-        <div class="networkQueryContent-result">
-            <a class="close" href="javascript:void(0)">点击关闭</a>
-            <table border="0">
+        <div class="table-results">
+            <table>
                 <tr>
-                    <td>所在地区：</td>
-                    <td>广东省</td>
-                </tr>
-                <tr>
-                    <td>经理：</td>
-                    <td>黎世强</td>
-                </tr>
-                <tr>
-                    <td>联系电话：</td>
-                    <td>0758-6683113</td>
-                </tr>
-                <tr>
-                    <td>E-mail：</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>在线客服：</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>查询电话：</td>
-                    <td>封开县查询电话：0758-6683113;客服电话:0758-6683113;取件电话：0758-6683113;投诉电话:15813976810</td>
-                </tr>
-                <tr>
-                    <td>正常派送区域：</td>
-                    <td>县城〔江口镇〕</td>
-                </tr>
-                <tr>
-                    <td>特殊派送区域：</td>
                     <td>
-                        <p>1、南丰镇（仅派送镇区，其他村组不派送）</p>
-                        <p> 2​、长岗镇​（仅派送镇区，其他村组不派送，加1个工作日，有偿收费标准：5KG以内1元，续重1元/KG）</p>
-                       </td>
+                        体积重量
+                    </td>
+                    <td>
+                        0Kg(国际航协规定：体积重量即根据最长+最宽+最高(CM)/6000=重量(Kg))
+                    </td>
                 </tr>
                 <tr>
-                    <td>可自提区域：</td>
-                    <td></td>
+                    <td>
+                        实际重量
+                    </td>
+                    <td>
+                        2Kg
+                    </td>
                 </tr>
                 <tr>
-                    <td>不派送范围：</td>
-                    <td>其它乡镇不派送</td>
+                    <td>
+                        计费重量
+                    </td>
+                    <td>
+                        2Kg(体积重量大于实际重量时，根据体积重量结算)
+                    </td>
                 </tr>
                 <tr>
-                    <td>特殊服务：</td>
-                    <td>暂未开通夜间服务</td>
+                    <td>
+                        报价
+                    </td>
+                    <td class="red-font">
+                        28元
+                    </td>
                 </tr>
                 <tr>
-                    <td>备注：</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>修改时间：</td>
-                    <td>2016-03-18 09:52:51</td>
-                </tr>
-                <tr>
-                    <td>网点地图：</td>
-                    <td><img src="images/map.png" alt=""></td>
+                    <td>预计运输时长</td>
+                    <td class="red-font">
+                        164.36小时
+                    </td>
                 </tr>
             </table>
         </div>
-        <a href="#" class="comeDoor"><p>免费预约上门取件</p></a>
+        <div class="text">
+            <div class="text-p">
+                <p>体积重量是一种反映包裹密度的计算方式。低密度的包裹，与实际重量比较，占用的空间通常较大。计算出来的体积重量与实际重量比较，取大者作为计费重量，用以计算运费。</p>
+            </div>
+            <div class="text-p">
+                <p>一、中国大陆地区内业务</p>
+                <p>1. 同城、省内及经济区域内互寄：体积重量(KG)的计算方法为：长度(CM)x宽度(CM)x高度(CM)÷12000。</p>
+                <p>2. 省外非经济区域内互寄，体积重量(KG)的计算方法为：【即日/次晨/次日】长度(CM)x宽度(CM)x高度(CM)÷6000；【隔日】长度(CM)x宽度(CM)x高度(CM)÷12000。
+                    备注：经济区域为：京津冀区域、江浙沪皖区域、黑吉辽区域、川渝区域。其他服务(产  品)体积重量计算方法详情请致电大陆客户服务热线xxxxxx。</p>
+
+            </div>
+            <div class="text-p">
+                <p>二、港澳台及国际业务</p>
+                <p>1、始发地或目的地任一方为港澳台地区或其他海外国家，体积重量(KG)的计算方法为：长度(CM)x宽度(CM)x高度(CM)÷6000；</p>
+                <p>2、台湾岛内件体积重量(KG)的计算方法为：长度(CM)x宽度(CM)x高度(CM)÷12000；港澳地区及海外国家的本地件体积重量(KG)的计算方法为：长度(CM)x宽度(CM)x高度(CM)÷6000；
+                    备注：体积重量的计算方法参考各地区及当地市场惯例, 当中可能略有差异。以上涉及的具体产品范围请致电95338或与当地收派员进行咨询。
+                </p>
+            </div>
+            <div class="text-p">
+                <p class="red-font">温馨提醒：</p>
+                <p>1.此价格供参考。更多收费和服务详情，详情请致电大陆客户服务热线 xxxxxx。</p>
+                <p>2.对于约定由收件人（或第三方）付费（含运费及增值服务费）的快件，在快件签收之前，可提出对费用付款方式变更为寄方付。对于需要更改付款方式的快件，寄件人除需要支付运费外，每票需另外支付更改付款方式服务费。（<a href="#" class="red-font">收费标准</a>）</p>
+                <p>3.如收派件地址为 <span class="red-font">香港非工商地区</span> 或 <span class="red-font">香港偏远地区</span>，上门收派每票另收港币$30，附加费可与运费绑定(寄付或到付)，收派件时效需加0.5-1个工作日。</p>
+                <p>4.台湾部分地区收派时效需加0.5-1工作日，可 <a href="#" class="red-font">按此</a> 查阅详情。</p>
+                <p>5.以上由香港、澳门及台湾寄件至中港澳台之运费包含燃油附加费，请<a href="#" class="red-font">按此</a>了解更多燃油附加费的资料。</p>
+                <p>6.以上运费未包含海外进口可能发生的清关附加费用，请<a href="#" class="red-font">按此</a>了解更多关于进口清关附加费的相关资料。</p>
+            </div>
+        </div>
     </div>
     <div class="clear"></div>
 </section>
@@ -286,5 +308,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>

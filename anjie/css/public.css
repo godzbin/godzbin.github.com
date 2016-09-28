@@ -536,9 +536,11 @@ section.content .networkQueryContent.content-main .selectArea {
     padding: 20px;
     margin: 30px 0;
 }
-section.content .networkQueryContent.content-main .selectAreaInput:hover{
+
+section.content .networkQueryContent.content-main .selectAreaInput:hover {
     border-color: #aaa;
 }
+
 section.content .networkQueryContent.content-main .selectArea p {
     margin-bottom: 20px;
     font-size: 16px;
@@ -570,11 +572,13 @@ section.content .networkQueryContent.content-main .selectArea button {
     color: #fff;
     margin-top: 20px;
 }
-section.content .networkQueryContent.content-main .selectArea .error{
+
+section.content .networkQueryContent.content-main .selectArea .error {
     font-size: 14px;
     line-height: 30px;
     color: #ff0709;
 }
+
 section.content .networkQueryContent.content-main a.comeDoor {
     display: block;
     color: #fff;
@@ -591,68 +595,7 @@ section.content .networkQueryContent.content-main a.comeDoor p {
     background: url("../images/comeDoor.png") no-repeat 10px center;
 }
 
-section.content .networkQueryContent.content-main .selectAreaShow {
-    display: none;
-    border: 1px  #dddddd solid;
-    border-top: 0;
-    padding: 10px;
-    /*margin: 30px 0;*/
-    font-size: 14px;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow .title {
-    padding-left: 25px;
-    height: 25px;
-    line-height: 25px;
-    background: url("../images/selectArea-title.png") no-repeat left center;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow-main {
-    margin-top: 10px;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box {
-    text-align: center;
-    width: 80%;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box1 {
-    height: 30px;
-    margin-bottom: 10px;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow a {
-    padding: 5px 20px;
-    height: 20px;
-
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow a.action {
-    background-color: #313131;
-    color: #fff;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box2 a {
-    font-size: 16px;
-    border-bottom: 1px #313131 solid;
-    margin-bottom: 10px;
-    line-height: 20px;
-}
-
-section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box2 a,
-section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box3 a {
-    display: block;
-    width: 25%;
-    float: left;
-    height: 30px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-section.content .networkQueryContent.content-main .selectAreaShow .selectAreaShow-main-box3 a:hover{
-    background-color: #ddd;
-}
-section.content .networkQueryContent.content-main .networkQueryContent-result{
+section.content .networkQueryContent.content-main .networkQueryContent-result {
     display: none;
     width: 100%;
     border: 1px #dddddd solid;
@@ -661,7 +604,8 @@ section.content .networkQueryContent.content-main .networkQueryContent-result{
     border-radius: 2px;
     position: relative;
 }
-section.content .networkQueryContent.content-main .networkQueryContent-result .close{
+
+section.content .networkQueryContent.content-main .networkQueryContent-result .close {
     font-size: 14px;
     padding-right: 30px;
     float: right;
@@ -672,25 +616,28 @@ section.content .networkQueryContent.content-main .networkQueryContent-result .c
     right: 20px;
     background: url("../images/close.png") no-repeat right center;
 }
-section.content .networkQueryContent.content-main .networkQueryContent-result table{
+
+section.content .networkQueryContent.content-main .networkQueryContent-result table {
     width: 100%;
     margin-top: 30px;
     text-align: left;
-    border:solid #aaa;
-    border-width:1px 0px 0px 1px;
-    border-collapse:collapse;
+    border: solid #aaa;
+    border-width: 1px 0px 0px 1px;
+    border-collapse: collapse;
 }
 
-section.content .networkQueryContent.content-main .networkQueryContent-result table td{
-    border:solid #aaa;
-    border-width:0px 1px 1px 0px;
+section.content .networkQueryContent.content-main .networkQueryContent-result table td {
+    border: solid #aaa;
+    border-width: 0px 1px 1px 0px;
     padding: 5px 5px;
     font-size: 14px;
 }
-section.content .networkQueryContent.content-main .networkQueryContent-result table td:first-child{
+
+section.content .networkQueryContent.content-main .networkQueryContent-result table td:first-child {
     text-align: right;
 }
-section.content .networkQueryContent.content-main .networkQueryContent-result table tr:nth-child(2n){
+
+section.content .networkQueryContent.content-main .networkQueryContent-result table tr:nth-child(2n) {
     background-color: #eee;
 }
 
@@ -698,67 +645,82 @@ section.content .networkQueryContent.content-main .networkQueryContent-result ta
 section.content .onlineOrder.content-main {
     padding-right: 100px;
 }
-section.content .onlineOrder.content-main .schedule{
+
+section.content .onlineOrder.content-main .schedule {
     border-bottom: 1px #ddd solid;
     padding: 10px 0;
 
 }
-section.content .onlineOrder.content-main .schedule .title{
+
+section.content .onlineOrder.content-main .schedule .title {
     text-align: center;
     font-size: 14px;
     line-height: 20px;
     padding: 5px;
 }
-section.content .onlineOrder.content-main .schedule img{
+
+section.content .onlineOrder.content-main .schedule img {
     width: 100%;
 }
-section.content .onlineOrder.content-main .schedule-main-text{
+
+section.content .onlineOrder.content-main .schedule-main-text {
     position: relative;
     height: 30px;
 }
-section.content .onlineOrder.content-main .schedule .schedule-box{
+
+section.content .onlineOrder.content-main .schedule .schedule-box {
     font-size: 14px;
     color: #666;
     position: absolute;
     top: 0;
 }
-section.content .onlineOrder.content-main .schedule .schedule-box2{
+
+section.content .onlineOrder.content-main .schedule .schedule-box2 {
     left: 30%;
 }
-section.content .onlineOrder.content-main .schedule .schedule-box3{
+
+section.content .onlineOrder.content-main .schedule .schedule-box3 {
     left: 60%;
 }
-section.content .onlineOrder.content-main .schedule .schedule-box4{
+
+section.content .onlineOrder.content-main .schedule .schedule-box4 {
     left: 93%;
 }
+
 section.content .onlineOrder.content-main .comeDoor {
     border-bottom: 1px #ddd solid;
     padding: 20px 15px;
 }
-section.content .onlineOrder.content-main .comeDoor .title{
+
+section.content .onlineOrder.content-main .comeDoor .title {
     font-size: 22px;
     line-height: 40px;
 }
-section.content .onlineOrder.content-main .comeDoor .title-decs{
+
+section.content .onlineOrder.content-main .comeDoor .title-decs {
     font-size: 14px;
     line-height: 30px;
 }
-section.content .onlineOrder.content-main .comeDoor .hotCity{
+
+section.content .onlineOrder.content-main .comeDoor .hotCity {
     padding: 15px 0;
 }
-section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-title{
+
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-title {
     font-size: 18px;
     color: #f4a515;
     font-weight: 600;
     float: left;
     width: 20%;
 }
-section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main{
+
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main {
     width: 80%;
     font-size: 14px;
     float: left;
 }
-section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a{
+
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a {
     width: 15%;
     padding: 5px 0;
     line-height: 20px;
@@ -766,6 +728,281 @@ section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a{
     float: left;
     text-align: center;
 }
-section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a.hot{
+
+section.content .onlineOrder.content-main .comeDoor .hotCity .hotCity-main a.hot {
     color: #f4a515;
 }
+
+section.content .onlineOrder.content-main .order-form p {
+    font-size: 16px;
+    padding: 20px 0;
+}
+
+section.content .onlineOrder.content-main .order-form .order-form-select,
+section.content .onlineOrder.content-main .order-form .order-form-input {
+    float: left;
+    margin: 10px 0;
+    width: 50%;
+}
+
+section.content .onlineOrder.content-main .order-form .order-form-select {
+    width: 100%;
+}
+
+section.content .onlineOrder.content-main .order-form .order-form-textarea label {
+    display: block;
+    float: left;
+}
+
+section.content .onlineOrder.content-main .order-form label {
+    font-size: 14px;
+    width: 120px;
+    text-align: right;
+    display: block;
+    float: left;
+    line-height: 30px;
+}
+
+section.content .onlineOrder.content-main .order-form input {
+    padding: 5px;
+}
+
+section.content .onlineOrder.content-main .order-form .order-form-select input {
+    width: 300px;
+}
+
+section.content .onlineOrder.content-main .order-form textarea {
+    width: 500px;
+    height: 150px;
+    padding: 10px;
+    resize: none;
+}
+
+section.content .onlineOrder.content-main .order-form .order-form-time .prompt {
+    color: #ff0709;
+}
+
+section.content .onlineOrder.content-main .order-form label span {
+    color: #ff0709;
+}
+
+section.content .onlineOrder.content-main .order-form .submit {
+    text-align: center;
+}
+
+section.content .onlineOrder.content-main .order-form .submit button {
+    background-color: #f4a515;
+    padding: 10px;
+    width: 120px;
+    color: #fff;
+    font-size: 16px;
+
+}
+
+/* 选择省市*/
+section.content .content-main  .selectAreaShow-main{
+    position: relative;
+}
+section.content .content-main .selectAreaShow {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+    border: 1px #dddddd solid;
+    border-top: 0;
+    padding: 10px;
+    /*margin: 30px 0;*/
+    font-size: 14px;
+    z-index: 999;
+}
+section.content .onlineOrder.content-main .order-form .order-form-selectArea{
+    float: left;
+    width: 100%;
+    margin: 10px 0;
+}
+section.content .onlineOrder.content-main .order-form .order-form-selectArea input{
+    width: 300px;
+    cursor: pointer;
+}
+section.content .onlineOrder.content-main .order-form .order-form-selectArea .selectAreaShow-main{
+    width: 450px;
+    float: left;
+}
+section.content .content-main .selectAreaShow .title {
+    padding-left: 25px;
+    height: 25px;
+    line-height: 25px;
+    background: url("../images/selectArea-title.png") no-repeat left center;
+}
+
+section.content .content-main .selectAreaShow-main {
+    /*margin-top: 10px;*/
+}
+
+section.content .content-main .selectAreaShow .selectAreaShow-main-box {
+    text-align: center;
+    width: 80%;
+}
+
+section.content .content-main .selectAreaShow .selectAreaShow-main-box1 {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+section.content .content-main .selectAreaShow a {
+    padding: 5px 20px;
+    height: 20px;
+
+}
+
+section.content .content-main .selectAreaShow a.action {
+    background-color: #313131;
+    color: #fff;
+}
+
+section.content .content-main .selectAreaShow .selectAreaShow-main-box2 a {
+    font-size: 16px;
+    border-bottom: 1px #313131 solid;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+section.content .content-main .selectAreaShow .selectAreaShow-main-box2 a,
+section.content .content-main .selectAreaShow .selectAreaShow-main-box3 a {
+    display: block;
+    width: 25%;
+    float: left;
+    height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+section.content .content-main .selectAreaShow .selectAreaShow-main-box3 a:hover {
+    background-color: #ddd;
+}
+
+/*报价查询结果*/
+section.content .content-main.QuoteQueryResults .content-form{
+    padding: 30px 0;
+    border-bottom: 1px #aaa solid;
+}
+section.content .content-main.QuoteQueryResults .content-form p{
+    font-size: 16px;
+    margin-bottom: 30px;
+
+}
+section.content .content-main.QuoteQueryResults .content-form label{
+    float: left;
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    width: 100px;
+    text-align: right;
+    color: #666;
+}
+section.content .content-main.QuoteQueryResults .content-form button{
+    margin-left: 100px;
+    width: 80px;
+    background-color: #f39800;
+    color: #fff;
+    padding: 10px;
+}
+section.content .content-main.QuoteQueryResults .content-form .form-input .selectInput{
+    margin-right: 20px;
+}
+section.content .content-main.QuoteQueryResults .content-form .form-input input{
+    padding: 5px;
+}
+section.content .content-main.QuoteQueryResults .content-form .form-input{
+    width: 100%;
+    height: 40px;
+    padding: 5px 0;
+
+}
+section.content .content-main.QuoteQueryResults .content-form .form-input span{
+    font-size: 14px;
+    color: #666;
+}
+
+section.content .QuoteQueryResults.content-main .table-results table {
+    width: 80%;
+    margin-top: 30px;
+    text-align: left;
+    border: solid #aaa;
+    border-width: 1px 0px 0px 1px;
+    border-collapse: collapse;
+}
+
+section.content .QuoteQueryResults.content-main .table-results table td {
+    border: solid #bbb;
+    border-width: 0 1px 1px 0;
+    padding: 10px 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+section.content .QuoteQueryResults.content-main .table-results table td:first-child {
+    background-color: #dcdcdc;
+}
+section.content .content-main.QuoteQueryResults .text{
+    margin: 30px 0;
+    color: #666;
+}
+section.content .content-main.QuoteQueryResults .text-p {
+    margin-bottom: 15px;
+}
+section.content .content-main.QuoteQueryResults .text-p p{
+    line-height: 20px;
+}
+
+
+.red-font{
+    color: #ff0709;
+}
+/*下拉组件*/
+.selectInput{
+    float: left;
+    position: relative;
+}
+.selectInput input{
+    float: left;
+}
+.selectInput .select-icon{
+    width: 20px;
+    height: 29px;
+    border: 1px #aaa solid;
+    border-left: 0;
+    background: url("../images/select.png") no-repeat right center;
+    float: left;
+    cursor: pointer;
+}
+.selectInput .selectList{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    height: 200px;
+    border: 1px #ddd solid;
+    overflow-y: scroll;
+}
+.selectInput .selectList .selectNode{
+    padding: 8px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px #ddd solid;
+}
+.selectInput .selectList .selectNode.action{
+    background-color: #999;
+    color: #fff;
+}
+.selectInput .selectList .selectNode:hover{
+    background-color: #999;
+    color: #fff;
+}
+
