@@ -113,10 +113,7 @@ section .model-box .model-box-top-main {
     z-index: 5;
 }
 
-/*section .model-box .model-box-top-main img {*/
-/*height: 50px;*/
-/*padding-bottom: 20px;*/
-/*}*/
+
 
 section .model-box .model-box-top-main a {
     color: #fff;
@@ -180,7 +177,6 @@ section .model-table .model-table-box {
     -webkit-box-sizing: border-box; /* Safari */
     width: 25%;
     padding: 15px;
-    /*border: 1px #53200F solid;*/
     float: left;
     position: relative;
     text-align: left;
@@ -698,6 +694,8 @@ section .new .new-right .new-right-tab-center .new-right-tab-center-box-row p {
 section .new .new-right .new-right-tab-center .hangNeiDongTai {
     display: none;
 }
+
+
 
 
 

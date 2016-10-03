@@ -8,6 +8,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/public.js"></script>
+    <script src="js/province.js"></script>
 </head>
 <body>
 <!--页头-->
@@ -176,21 +177,21 @@
             <div class="model-table-form ">
                 <div class="model-table-form-input  ">
                     <label>始发地：</label>
-                    <select name="start">
+                    <select name="start" id="startProvince">
                         <option value="">请选择省份</option>
                     </select>
                     -
-                    <select name="start">
+                    <select name="start" id="startCity">
                         <option value="">请选择市区</option>
                     </select>
                 </div>
                 <div class="model-table-form-input">
                     <label>目的地：</label>
-                    <select name="end">
+                    <select name="start" id="endProvince">
                         <option value="">请选择省份</option>
                     </select>
                     -
-                    <select name="end">
+                    <select name="end" id="endCity">
                         <option value="">请选择市区</option>
                     </select>
                 </div>
@@ -207,11 +208,11 @@
             <div class="model-table-form ">
                 <p>请选择需要查询省、市，点击查询按钮进行查询</p>
                 <div class="model-table-form-input">
-                    <select>
+                    <select id="networkProvince">
                         <option value="">请选择省份</option>
                     </select>
                     -
-                    <select>
+                    <select id="networkCity">
                         <option value="">请选择市区</option>
                     </select>
                     <a>查询</a>

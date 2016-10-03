@@ -25,7 +25,7 @@ a {
 .clear {
     clear: both;
 }
-
+/*页头菜单-----------------------------------------*/
 /*header top*/
 header .top {
     height: 35px;
@@ -64,7 +64,7 @@ header .header-main .header-main-logo .header-main-logo-box {
 }
 
 header .header-main .header-main-logo .header-main-logo-box h2 {
-    font-size: 25px;
+    font-size: 22px;
     /*line-height: 45px;*/
     padding: 5px 10px;
     border-left: 1px #666 solid;
@@ -75,7 +75,7 @@ header .header-main .header-main-logo .header-main-logo-box h2 {
 /*热线电话*/
 header .header-main .header-main-logo .header-main-logo-phone {
     float: right;
-    padding: 5px 50px 5px 65px;
+    padding: 5px 5px 5px 65px;
     background: url("../images/phone.png") no-repeat left bottom;
 }
 
@@ -87,7 +87,6 @@ header .header-main .header-main-logo .header-main-logo-phone .header-main-logo-
     font-size: 22px;
     color: #E66514;
     font-weight: 600;
-
 }
 
 header .header-main-nav {
@@ -122,8 +121,8 @@ header .bevel {
     float: right;
     border-left: 50px transparent dotted;
     border-bottom: 50px #53200F solid;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     overflow: hidden;
 }
 
@@ -136,7 +135,6 @@ header .header-main-nav li.nav-li {
     font-size: 16px;
     line-height: 40px;
     cursor: pointer;
-
 }
 
 header .header-main-nav li.nav-li a {
@@ -158,6 +156,8 @@ header .header-main-nav li.nav-root {
     border-top-right-radius: 3px;
     position: relative;
     background: url("../images/nav-more.png") no-repeat right center;
+    line-height: 38px;
+    height: 40px;
 }
 
 header .header-main-nav ul.nav-root-child {
@@ -628,7 +628,7 @@ section.content .networkQueryContent.content-main .networkQueryContent-result ta
 
 section.content .networkQueryContent.content-main .networkQueryContent-result table td {
     border: solid #aaa;
-    border-width: 0px 1px 1px 0px;
+    border-width: 0 1px 1px 0;
     padding: 5px 5px;
     font-size: 14px;
 }
@@ -800,9 +800,10 @@ section.content .onlineOrder.content-main .order-form .submit button {
 }
 
 /* 选择省市*/
-section.content .content-main  .selectAreaShow-main{
+section.content .content-main .selectAreaShow-main {
     position: relative;
 }
+
 section.content .content-main .selectAreaShow {
     position: absolute;
     top: 40px;
@@ -817,19 +818,23 @@ section.content .content-main .selectAreaShow {
     font-size: 14px;
     z-index: 999;
 }
-section.content .onlineOrder.content-main .order-form .order-form-selectArea{
+
+section.content .onlineOrder.content-main .order-form .order-form-selectArea {
     float: left;
     width: 100%;
     margin: 10px 0;
 }
-section.content .onlineOrder.content-main .order-form .order-form-selectArea input{
+
+section.content .onlineOrder.content-main .order-form .order-form-selectArea input {
     width: 300px;
     cursor: pointer;
 }
-section.content .onlineOrder.content-main .order-form .order-form-selectArea .selectAreaShow-main{
+
+section.content .onlineOrder.content-main .order-form .order-form-selectArea .selectAreaShow-main {
     width: 450px;
     float: left;
 }
+
 section.content .content-main .selectAreaShow .title {
     padding-left: 25px;
     height: 25px;
@@ -885,16 +890,18 @@ section.content .content-main .selectAreaShow .selectAreaShow-main-box3 a:hover 
 }
 
 /*报价查询结果*/
-section.content .content-main.QuoteQueryResults .content-form{
+section.content .content-main.QuoteQueryResults .content-form {
     padding: 30px 0;
     border-bottom: 1px #aaa solid;
 }
-section.content .content-main.QuoteQueryResults .content-form p{
+
+section.content .content-main.QuoteQueryResults .content-form p {
     font-size: 16px;
     margin-bottom: 30px;
 
 }
-section.content .content-main.QuoteQueryResults .content-form label{
+
+section.content .content-main.QuoteQueryResults .content-form label {
     float: left;
     display: block;
     font-size: 14px;
@@ -903,26 +910,31 @@ section.content .content-main.QuoteQueryResults .content-form label{
     text-align: right;
     color: #666;
 }
-section.content .content-main.QuoteQueryResults .content-form button{
+
+section.content .content-main.QuoteQueryResults .content-form button {
     margin-left: 100px;
     width: 80px;
     background-color: #f39800;
     color: #fff;
     padding: 10px;
 }
-section.content .content-main.QuoteQueryResults .content-form .form-input .selectInput{
+
+section.content .content-main.QuoteQueryResults .content-form .form-input .selectInput {
     margin-right: 20px;
 }
-section.content .content-main.QuoteQueryResults .content-form .form-input input{
+
+section.content .content-main.QuoteQueryResults .content-form .form-input input {
     padding: 5px;
 }
-section.content .content-main.QuoteQueryResults .content-form .form-input{
+
+section.content .content-main.QuoteQueryResults .content-form .form-input {
     width: 100%;
     height: 40px;
     padding: 5px 0;
 
 }
-section.content .content-main.QuoteQueryResults .content-form .form-input span{
+
+section.content .content-main.QuoteQueryResults .content-form .form-input span {
     font-size: 14px;
     color: #666;
 }
@@ -947,30 +959,35 @@ section.content .QuoteQueryResults.content-main .table-results table td {
 section.content .QuoteQueryResults.content-main .table-results table td:first-child {
     background-color: #dcdcdc;
 }
-section.content .content-main.QuoteQueryResults .text{
+
+section.content .content-main.QuoteQueryResults .text {
     margin: 30px 0;
     color: #666;
 }
+
 section.content .content-main.QuoteQueryResults .text-p {
     margin-bottom: 15px;
 }
-section.content .content-main.QuoteQueryResults .text-p p{
+
+section.content .content-main.QuoteQueryResults .text-p p {
     line-height: 20px;
 }
 
-
-.red-font{
+.red-font {
     color: #ff0709;
 }
+
 /*下拉组件*/
-.selectInput{
+.selectInput {
     float: left;
     position: relative;
 }
-.selectInput input{
+
+.selectInput input {
     float: left;
 }
-.selectInput .select-icon{
+
+.selectInput .select-icon {
     width: 20px;
     height: 29px;
     border: 1px #aaa solid;
@@ -979,7 +996,8 @@ section.content .content-main.QuoteQueryResults .text-p p{
     float: left;
     cursor: pointer;
 }
-.selectInput .selectList{
+
+.selectInput .selectList {
     display: none;
     position: absolute;
     top: 30px;
@@ -991,17 +1009,20 @@ section.content .content-main.QuoteQueryResults .text-p p{
     border: 1px #ddd solid;
     overflow-y: scroll;
 }
-.selectInput .selectList .selectNode{
+
+.selectInput .selectList .selectNode {
     padding: 8px 5px;
     font-size: 14px;
     cursor: pointer;
     border-bottom: 1px #ddd solid;
 }
-.selectInput .selectList .selectNode.action{
+
+.selectInput .selectList .selectNode.action {
     background-color: #999;
     color: #fff;
 }
-.selectInput .selectList .selectNode:hover{
+
+.selectInput .selectList .selectNode:hover {
     background-color: #999;
     color: #fff;
 }

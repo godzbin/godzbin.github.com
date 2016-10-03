@@ -5,6 +5,18 @@ $(document).ready(function () {
     setInterval(function () {
         main.nextSlide();
     }, 5000);
+
+    new selectComponent("startProvince", provinceListMain, function (){
+        var cityId = "startCity";
+        var province = $("#startProvince").val();
+        selectComponentChange(cityId, province);
+    }).init();
+    new selectComponent("endProvince", provinceListMain, function(){
+        selectComponentChange("endCity", $("#endProvince").val());
+    }).init();
+    new selectComponent("networkProvince", provinceListMain, function(){
+        selectComponentChange("networkCity", $("#endProvince").val());
+    }).init();
 });
 var main = {
     isLoadAmount: false,
@@ -46,9 +58,9 @@ var main = {
             max < value && (max = value);
         }
         var maxHeight = 160;
-        for(var i = 0; i < length; i++){
+        for (var i = 0; i < length; i++) {
             var value = parseInt($(values[i]).find("p").text());
-            var rate =  value/max;
+            var rate = value / max;
             var height = maxHeight * rate;
             // $(values[i]).height(height);
             $(values[i]).animate({height: height}, 1000);
@@ -119,3 +131,46 @@ var main = {
         }
     }
 };
+function selectComponent(id, data, changeFn) {
+    this.id = id || "";
+    this.data = data || [];
+    this.changeFn = changeFn || new Function();
+    this.getSelect = function () {
+        return $("#" + id);
+    };
+    this.init = function () {
+        var selectEl = this.getSelect();
+        var length = this.data.length;
+        var firstOption =  selectEl.find("option:first-child");
+        selectEl.html("");
+        selectEl.append(firstOption);
+        for (var i = 0; i < length; i++) {
+            var option = this.createOption(data[i]["name"] || data[i],data[i]["name"] || data[i]);
+            selectEl.append(option);
+        }
+        selectEl.change(this.changeFn);
+    };
+    this.createOption = function (name, value) {
+        var optionEl = $("<option></option>");
+        optionEl.attr("value", value);
+        optionEl.text(name);
+        return optionEl;
+    };
+    return this;
+}
+function selectComponentChange(cityId, province){
+    var i = 0;
+    while (provinceListMain[i]){
+        if(provinceListMain[i]["name"] == province ){
+            var cityList = [];
+            if(province == "北京" || province == "天津" || province == "上海" || province == "重庆"){
+                cityList = provinceListMain[i].cityList[0].areaList.concat(provinceListMain[i].cityList[1].areaList);
+            }else{
+                cityList =  provinceListMain[i]["cityList"];
+            }
+            new selectComponent(cityId,cityList).init();
+            return;
+        }
+        i++;
+    }
+}

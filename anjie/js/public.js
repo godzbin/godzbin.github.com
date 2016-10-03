@@ -1,6 +1,7 @@
 /**
  * Created by GodzBin on 2016/9/23.
  */
+// 回到页面顶部
 $(document).ready(function () {
     $(document).scroll(function () {
         // var height = $(window).height();
