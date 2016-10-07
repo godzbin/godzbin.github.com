@@ -92,24 +92,24 @@ var main = {
 		mainBox.hide();
 		var username = $("#username").val();
 		var password = $("#password").val();
-		if (!username) {
-			main.setError("用户名不能为空");
-			return;
-		}
-		if (!password) {
-			main.setError("密码不能为空");
-			return;
-		};
+		// if (!username) {
+		// 	main.setError("用户名不能为空");
+		// 	return;
+		// }
+		// if (!password) {
+		// 	main.setError("密码不能为空");
+		// 	return;
+		// };
 		// 如果是测试模板
 		if (tools.test) {
-			if (username == "admin" && password == "12345678") {
-				window.location.href = "index.html";
-			} else if (username == "user" && password == "12345678") {
-				window.location.href = "index2.html";
-			} else {
-				main.setError("用户名或密码错误");
-			}
-
+			// if (username == "admin" && password == "12345678") {
+			// 	window.location.href = "index.html";
+			// } else if (username == "user" && password == "12345678") {
+			// 	window.location.href = "index2.html";
+			// } else {
+			// 	main.setError("用户名或密码错误");
+			// }
+			window.location.href = "index.html";
 			return;
 		}
 
