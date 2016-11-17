@@ -1,0 +1,49 @@
+
+#app{
+	position: absolute;	
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	.app-content{
+		width: 100%;
+		height: 100%;
+		overflow: scroll;
+		.app-content-main{
+			margin-bottom: 1rem;
+		}
+	}
+	.app-nav{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		list-style: none;
+		overflow: auto;
+		zoom:1;
+		border-top: 1px #ddd solid;
+		z-index: 99;
+		background-color: #fff;
+		li{
+			float: left;
+			box-sizing: box-sizing;
+			width: 25%;
+			text-align: center;
+			font-size: .25rem;
+			padding: .1rem 0;
+			a{	
+				display: block;
+				width: 100%;
+				text-decoration: none;
+				color: #999;
+				padding-top: 0.4rem; 
+			}
+			a:active{
+				outline: none;
+				background-color: rgba(0,0,0,0);
+			}
+			a.active{
+				color: #f00;
+			}
+		}
+
+	}
+}

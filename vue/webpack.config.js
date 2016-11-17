@@ -27,6 +27,11 @@ module.exports = {
           loader: "style!css"
       },
       {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          loaders: ["style", "css", "sass"]
+      },
+      {
           test: /\\.(eot|woff|woff2|ttf)([\\?]?.*)$/,
           loader: "file"
       },
@@ -38,37 +43,16 @@ module.exports = {
         }
       },
 
-    ],
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/
-      },
-      {
-          test: /\.css$/,
-          loader: "style!css"
-      },
-      {
-        test: /\.(eot|woff|woff2|ttf)([\\?]?.*)$/,
-        loader: "file"
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
-        query: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue','.scss'],
     alias: {
-      'vue': 'vue/dist/vue.js'
+        'vue$': 'vue/dist/vue.js',
+        'vuex$': 'vuex/dist/vuex.js',
+        'vueRouter$': 'vue-router/dist/vue-router.js',
+        'vueResource$': 'vue-resource/dist/vue-resource.js',
+        'axios$': 'axios/dist/axios.min.js'
     }
   },
   devServer: {

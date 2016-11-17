@@ -11,22 +11,22 @@
 </template>
 <script>
   export default {
-  	data() {
-  			return {
-  				author: "godz",
-  				articles: []
-  			}
-  		},
-  		mounted: function() {
-  			this.$http.jsonp("https://api.douban.com/v2/movie/top250?count=10", {}, {
-  				headers: {},
-  				emulateJSON: true
-  			}).then(function(response){
-  				this.articles = response.data.subjects
-  			},function(response){
-  				console.log(response);
-  			});
-  		}
+    data() {
+        return {
+          author: "godz",
+          articles: []
+        }
+      },
+      mounted: function() {
+        this.$http.jsonp("https://api.douban.com/v2/movie/top250?count=10", {}, {
+          headers: {},
+          emulateJSON: true
+        }).then(function(response) {
+          this.articles = response.data.subjects
+        }, function(response) {
+          console.log(response);
+        });
+      }
   }
 </script>
 <style>
