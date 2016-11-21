@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="width=device-width, height=device-height ,initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" id="metaViewPort" />
+	<meta charset="UTF-8">
+	<title>星奈吉</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="main">
+		<!-- 头部  -->
+		<header>
+			<div class="info">
+				<div class="logo">
+				</div>	
+				<div class="info-num">
+					余币： <span> 133枚</span>
+				</div>
+			</div>
+			<div class="btn-main">
+				<a class="btn">
+					<p>*<span>1</span>元/币</p>
+				</a>
+			</div>
+		</header>
+		<!-- 头部end -->
+		<!-- 设备列表 -->
+		<div class="list">
+			<div class="list-title">
+				<img src="images/Credit_card.png" alt="">
+				选择设备编号，并点击“投币”
+			</div>
+			<div class="list-content">
+				<div class="list-btn list-btn-left"></div>
+				<div class="list-btn list-btn-right"></div>
+				<div class="list-main">
+					<div class="list-main-box">
+						<div class="list-box active">
+							<img src="images/Gold_coin.png" alt="">
+							<p class="list-box-name">A</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">B</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">C</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">A</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">A</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">A</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">A</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+						<div class="list-box">
+							<p class="list-box-name">A</p>
+							<p class="list-box-num"><span>1</span>币/次</p>
+						</div>
+					</div>
+					<div class="list-main-now">
+						<div class="list-main-now-main">
+							<div class="spot active"></div>
+							<div class="spot"></div>
+							<div class="spot"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 设备列表end -->
+	</div>
+	<div class="coin-num">
+		<div class="coin-num-main">
+			<div class="coin-num-box">
+				<div class="num-btn minus"></div>
+				<div class="num-text">1币</div>
+				<div class="num-btn plus"></div>
+			</div>
+			<div class="coin-num-btn">
+				<a></a>
+			</div>
+		</div>
+		<p class="coin-num-text">
+			*若1分钟内启动设备失效，系统将于15分钟内自动退币
+		</p>
+	</div>
+	<footer>
+		<div class="about-box">
+			关于星星奈吉&奥付云
+		</div>
+		<div class="btn-box btn-box-first">
+			消费记录
+		</div>
+		<div class="btn-box">
+			客服申诉
+		</div>
+	</footer>
+	<div class="bottom-push-win buy-coin-win">
+		<div class="bottom-push-win-main">
+			<div class="win-title">
+				请选择购币金额
+				<p class="win-title-info">*<span>1</span>元/币</p>
+			</div>
+			<div class="win-content">
+				<div class="fee-list">
+					<div class="fee-list-box ">
+						<div class="fee-info">
+							<p class="fee"><span>1</span>元</p>
+							<p class="coin">1币</p>
+						</div>
+						<p class="fee-give">送1币</p>
+					</div>
+					<div class="fee-list-box">
+						<div class="fee-info">
+							<p class="fee"><span>1</span>元</p>
+							<p class="coin">1币</p>
+						</div>
+						<p class="fee-give">送1币</p>
+					</div>
+					<div class="fee-list-box">
+						<div class="fee-info">
+							<p class="fee"><span>1</span>元</p>
+							<p class="coin">1币</p>
+						</div>
+						<p class="fee-give">送1币</p>
+					</div>
+					<div class="fee-list-box">
+						<div class="fee-info">
+							<p class="fee"><span>1</span>元</p>
+							<p class="coin">1币</p>
+						</div>
+						<p class="fee-give">送1币</p>
+					</div>
+				</div>
+			</div>
+			<div class="win-btns">
+				<a class="win-btn-close">取消</a>
+				<a class="win-btn-buy">购币</a>
+			</div>
+		</div>
+	</div>
+	<script>
+	function setWidth() {
+		var width = document.documentElement.clientWidth;
+		var height = document.documentElement.clientHeight;
+		var new_width =0 ;
+		if(width < height){
+			new_width = width * (1 - (width / height - 375 / 590));
+		}else{
+			new_width = width;
+		}	
+		var fontSize = new_width / 6.4;
+		document.documentElement.style.fontSize = fontSize + "px";
+	}
+	setWidth();
+	window.onresize = function() {
+		setWidth();
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+*{
+	padding: 0;
+	margin: 0 auto;
+}
+body{
+	font-family: "微软雅黑";
+	font-size: .3rem;
+	background-color: #FFE3EB;
+}
+.main{
+	padding: .2rem 4%;
+}
+header{
+	overflow: auto;
+	zoom: 1;
+}	
+.info, .btn-main{
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+}
+.info .logo{
+	background: url("../images/logo.png") no-repeat left center;
+	background-size: 2.3rem .66rem;
+	height: .7rem;
+}
+.info .info-num{
+	font-size: .4rem;
+	color: #A56A35;
+	border-bottom: 1px #A56A35 solid;
+	line-height: .7rem;
+}
+.info .info-num span{
+	font-weight: 600;
+	font-size: .45rem;
+}
+.btn-main{
+	text-align: center;
+	position: relative;
+	height: 1.4rem;
+}
+.btn-main .btn{
+	position: absolute;
+	display: absolute;
+	bottom: 0;
+	right: 0;
+	width: 90%;
+	height: 1rem;
+	background: url("../images/buy_Electric_coin.png") no-repeat center;
+	background-size: 100%;
+	color: #FFE8A2;
+}
+.btn-main .btn p{
+	position: absolute;
+	bottom: .1rem;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: .15rem;
+}
+.list{
+	padding-top: .4rem;
+}
+.list-title{
+	border-top-left-radius: .2rem;
+	border-top-right-radius: .2rem;
+	background-color: #ECAAAB;
+	text-align: center;
+	line-height: .6rem;
+	padding-left: 1rem; 
+	color: #A15910;
+	position: relative;
+}	
+.list-title img{
+	position: absolute;
+	width: .7rem;
+	top: -0.1rem;
+	left: .3rem;
+}
+.list-content{
+	height: 4.5rem;
+	background-color: #8F5554;
+	border-bottom-left-radius: .2rem;
+	border-bottom-right-radius: .2rem;
+	overflow: auto;
+	zoom: 1;
+	padding: 0 .1rem;
+}
+.list-btn{
+	width: .4rem;
+	height: 4.5rem;
+	text-align: center;
+	background: url("../images/left_right_button.png") no-repeat center;
+	background-size: .33rem;
+}
+.list-btn-left{
+	float: left;
+}
+.list-btn-right{
+	transform: rotate(180deg);
+	float: right;
+}
+.list-main{
+ 	overflow: auto;
+ 	zoom: 1;
+ 	padding: .3rem .2rem 0 .2rem;
+}
+.list-main-box{
+}
+.list-box{
+	position: relative;
+	float: left;
+	width: 28%;
+	color: #FFEEEE;
+	background-color:  #E5A8A6;
+	text-align: center;
+	border-radius: .1rem;
+	margin-right: 7%;
+	margin-bottom: .3rem;
+	box-sizing: border-box;
+	padding: .08rem;
+	height: 1rem;
+	box-shadow: 2px 2px 2px #814A49;
+}
+.list-box.active{
+	background-color:  #FCC829;
+	color: #A15910;
+}
+.list-box img{
+	display: none;
+}
+.list-box.active img{
+	display: block;
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	top: -0.15rem;
+	right: -0.15rem;
+}
+.list-box:nth-child(3n){
+	margin-right: 0;
+}
+.list-box:nth-child(7), 
+.list-box:nth-child(8),
+.list-box:nth-child(9){
+	margin-bottom: 0;
+}
+.list-box-name{
+	font-size: .45rem;
+	padding-bottom: .05rem;
+	font-weight: 600;
+}
+.list-box-num{
+	font-size: .18rem;
+}
+.list-main-now{
+	text-align: center;
+	padding-top: .2rem;
+	position: relative;
+	overflow: auto;
+	zoom: 1;
+	height: .15rem;
+}
+.list-main-now-main{
+	position: absolute;
+	/*width: 100%;*/
+	left: 40%;
+}
+.list-main-now .spot{
+	padding: 0.05rem;
+	background-color: #E5A8A6;
+	border-radius: .05rem;
+	float: left;
+	margin: 0 .1rem;	
+}
+.list-main-now .spot.active{
+	background-color: #FFE3EB;
+}
+
+
+.coin-num{
+	position: absolute;
+	bottom: .6rem;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 5%; 
+}
+.coin-num-main{
+	border-radius: .3rem;
+	/*overflow: auto;*/
+	zoom: 1;
+	padding: .2rem;
+	box-sizing: border-box;
+	border: 2px #FF7597 dashed; 
+	height: 1.2rem;
+	position: relative;
+}
+.coin-num-box{
+	float: left;
+	overflow: auto;
+	zoom: 1;
+	width: 50%;
+	
+}
+.coin-num-box .num-btn ,.coin-num-box .num-text{
+	float: left;
+	text-align: center;
+	font-size: .4rem;
+}
+.coin-num-box .num-btn{
+	border-radius: .1rem;
+	width: .5rem;
+	height: .5rem;
+	margin: .1rem;
+	background-color: #FFD8E3;
+	background: no-repeat center;
+	background-size: 100%;
+}
+.coin-num-box .num-btn.minus{
+	background-image: url(../images/Minus.png);
+}
+.coin-num-box .num-btn.plus{
+	background-image: url(../images/Plus.png);
+}
+.coin-num-box .num-text{
+	width: 1rem;
+	line-height: .7rem;
+	color: #FF4573;
+}
+.coin-num-btn{
+	float: left;
+	width: 50%;
+	text-align: center;
+	/*position: relative;*/
+}
+.coin-num-btn a{
+	position: absolute;
+	top: -0.1rem;
+	right: -0.1rem;
+	width: 50%;
+	height: 1.3rem;
+	display: block;
+	background:url(../images/Coin_in.png) no-repeat center;
+	background-size: 100%;
+}
+.coin-num-text{
+	font-size: .15rem;
+	text-align: center;
+	line-height: .6rem;
+	color: #8F5554;
+}
+
+
+
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: auto;
+	zoom: 1;
+}
+footer .about-box, footer .btn-box{
+	float: left;
+	text-align: center;
+	line-height: .6rem;
+	font-size: .25rem;
+	background-color: #ECAAAB;
+	color: #8F5554;
+}
+footer .about-box{
+	width: 50%;
+}
+footer .btn-box{
+	width: 25%;
+}
+footer .btn-box-first{
+	background-color: #DD999A;
+}
+
+
+/*下弹窗*/
+.bottom-push-win{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.5);
+}
+.bottom-push-win-main{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.win-title{
+	background-color: #ECAAAB;
+	text-align: center;
+	padding: .15rem;
+	position: relative;
+	font-size: .35rem;
+}
+.win-title-info{
+	position: absolute;
+	right: .2rem;
+	top: .2rem;
+	font-size: .25rem;
+}
+.win-content{
+	background-color: #8F5554;
+	padding: .4rem; 
+}
+.win-btns{
+	overflow: auto;
+}
+.win-btns a{
+	float: left;
+	box-sizing: border-box;
+	display: block;
+	padding: .2rem 0;
+	font-size: .35rem; 
+	text-align: center;
+}
+.win-btn-close{
+	width: 40%;
+	background-color: #9EB5C5;
+	color: #777777;
+}
+.win-btn-buy{
+	width: 60%;
+	background-color: #FCC829;
+	color: #A15910;
+}
+.buy-coin-win .fee-list{
+	overflow: auto;
+}
+.buy-coin-win .fee-list-box{
+	float: left;
+	width: 
+}
+.buy-coin-win .fee-list-box{
+	float: left;
+	width: 28%;
+	margin-right: 7%;
+	margin-bottom: .3rem;
+	text-align: center;
+}
+.buy-coin-win .fee-list-box .fee-info{
+	width: 100%;
+	color: #FFEEEE;
+	background-color:  #E5A8A6;
+	text-align: center;
+	border-radius: .1rem;
+	
+	box-sizing: border-box;
+	padding: .08rem;
+	height: 1rem;
+	box-shadow: 2px 2px 2px #814A49;
+}
+.buy-coin-win .fee-list-box .fee-give{
+	line-height: .35rem;
+	font-size: .15rem;
+	color: #FFEEEE;
+}
+.buy-coin-win .fee-list-box .coin{
+	font-size: .18rem;
+}
+.buy-coin-win .fee-list-box .fee span{
+	font-size: .4rem;
+}
+.buy-coin-win .fee-list-box:nth-child(3n){
+	margin-right: 0;
+}
