@@ -103,9 +103,14 @@ header{
 .list-main{
  	overflow: auto;
  	zoom: 1;
- 	padding: .3rem .2rem 0 .2rem;
+ 	height: 4.5rem;
+ 	position: relative;
 }
 .list-main-box{
+	padding: .3rem .2rem 0 .2rem;
+}
+.list-main-content{
+	overflow: auto;
 }
 .list-box{
 	position: relative;
@@ -121,6 +126,10 @@ header{
 	padding: .08rem;
 	height: 1rem;
 	box-shadow: 2px 2px 2px #814A49;
+}
+.list-box.disable{
+	background-color: #B6B6B6;
+	color: #9B9B9B;
 }
 .list-box.active{
 	background-color:  #FCC829;
@@ -149,14 +158,19 @@ header{
 	font-size: .45rem;
 	padding-bottom: .05rem;
 	font-weight: 600;
+	pointer-events: none;
 }
 .list-box-num{
 	font-size: .18rem;
+	pointer-events: none;
 }
 .list-main-now{
+	position: absolute;
+	bottom: .1rem;
+	left: 0;
+	width: 100%;
 	text-align: center;
 	padding-top: .2rem;
-	position: relative;
 	overflow: auto;
 	zoom: 1;
 	height: .15rem;
@@ -168,7 +182,7 @@ header{
 }
 .list-main-now .spot{
 	padding: 0.05rem;
-	background-color: #E5A8A6;
+	background-color: #C47976;
 	border-radius: .05rem;
 	float: left;
 	margin: 0 .1rem;	
@@ -281,7 +295,7 @@ footer .btn-box-first{
 
 /*下弹窗*/
 .bottom-push-win{
-	/*display: none;*/
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -295,27 +309,34 @@ footer .btn-box-first{
 	left: 0;
 	width: 100%;
 }
-.win-title{
-	background-color: #ECAAAB;
+.buy-coin-win .win-title{
+	background: url(../images/Credit_card.png) #ECAAAB no-repeat .3rem center;
+	background-size: .7rem;
+}
+.bottom-push-win .win-title{
 	text-align: center;
 	padding: .15rem;
 	position: relative;
 	font-size: .35rem;
+	color: #754241;
+	background-color: #ECAAAB;
 }
-.win-title-info{
+
+.bottom-push-win .win-title-info{
 	position: absolute;
 	right: .2rem;
 	top: .2rem;
 	font-size: .25rem;
 }
-.win-content{
-	background-color: #8F5554;
-	padding: .4rem; 
+.buy-coin-win .win-content{
+	overflow: auto;
+	background-color: #FFE3EB;
+	padding: .4rem .4rem 0 .4rem; 
 }
-.win-btns{
+.bottom-push-win .win-btns{
 	overflow: auto;
 }
-.win-btns a{
+.bottom-push-win .win-btns a{
 	float: left;
 	box-sizing: border-box;
 	display: block;
@@ -323,23 +344,20 @@ footer .btn-box-first{
 	font-size: .35rem; 
 	text-align: center;
 }
-.win-btn-close{
+ .bottom-push-win .win-btn-close{
 	width: 40%;
-	background-color: #9EB5C5;
+	background-color: #C6BBBE;
 	color: #777777;
 }
-.win-btn-buy{
+ .bottom-push-win .win-btn-buy{
 	width: 60%;
 	background-color: #FCC829;
 	color: #A15910;
 }
-.buy-coin-win .fee-list{
-	overflow: auto;
+.bottom-push-win .buy-coin-win .fee-list{
+	padding: 0 .2rem;
 }
-.buy-coin-win .fee-list-box{
-	float: left;
-	width: 
-}
+
 .buy-coin-win .fee-list-box{
 	float: left;
 	width: 28%;
@@ -350,26 +368,230 @@ footer .btn-box-first{
 .buy-coin-win .fee-list-box .fee-info{
 	width: 100%;
 	color: #FFEEEE;
-	background-color:  #E5A8A6;
+	background-color:  #C8817E;
 	text-align: center;
 	border-radius: .1rem;
-	
 	box-sizing: border-box;
 	padding: .08rem;
-	height: 1rem;
 	box-shadow: 2px 2px 2px #814A49;
+	position: relative;
+}
+.buy-coin-win .fee-list-box .fee-info img{
+	display: none;
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	top: -0.15rem;
+	right: -0.15rem;
+}
+.buy-coin-win .fee-list-box.active .fee-info{
+	background-color: #FCC829;
+	color: #A15910;
+}
+.buy-coin-win .fee-list-box.active .fee-info img{
+	display: block;
 }
 .buy-coin-win .fee-list-box .fee-give{
-	line-height: .35rem;
-	font-size: .15rem;
-	color: #FFEEEE;
+	line-height: .5rem;
+	font-size: .2rem;
+	color: #DF4860;
+	padding-left: .45rem;
+	background: url(../images/send.png) no-repeat left center;
+	background-size: .4rem; 
 }
 .buy-coin-win .fee-list-box .coin{
-	font-size: .18rem;
+	font-size: .25rem;
 }
 .buy-coin-win .fee-list-box .fee span{
 	font-size: .4rem;
 }
 .buy-coin-win .fee-list-box:nth-child(3n){
 	margin-right: 0;
+}
+
+/*提示窗口*/
+.prompt-win{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.prompt-win-main{
+	position: absolute;
+	top: 25%;
+	left: 0;
+	right: 0;
+	width: 55%;
+	margin: 0 auto;
+	background-color: rgba(0,0,0,.9);
+	border-radius: .1rem;
+	padding: .2rem;
+	box-sizing: border-box;
+	color: #ECAAAB;
+	text-align: center;
+}
+.success-buy-icon{
+	height: .6rem;
+	width: 100%;
+	background: url(../images/tick.png) no-repeat center;
+	background-size: .6rem ;
+}
+.prompt-win-content-text{
+	font-size: .38rem;
+	padding: .05rem 0;
+}
+.prompt-win-content-text .heightlight{
+	color: #FFEDF2;
+}
+.prompt-win-content-prompt-text{
+	font-size: .2rem;
+}
+
+.success-coin{
+}
+.success-coin-icon{
+	height: .6rem;
+	padding-left: .6rem;
+	background: url(../images/tick.png) no-repeat left center;
+	background-size: .6rem;
+
+}
+.coin-insufficient{
+}
+
+/*中部弹窗*/
+.center-push-win{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+}
+.center-push-win-main{
+	position: absolute;
+	top: 25%;
+	left: 0;
+	right: 0;
+	width: 80%;
+}
+.center-push-win-main .win-title{
+	background-color: #ECAAAB;
+	color: #8F5554;
+	text-align: center;
+	padding: .2rem;
+	font-size: .35rem;
+	border-top-left-radius: .2rem;
+	border-top-right-radius: .2rem;
+	position: relative;
+}
+.center-push-win-main .win-title .win-close{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: .1rem;
+	margin: auto;
+	width: .8rem;
+	height: .7rem;
+	background: url(../images/cross.png) no-repeat center;
+	background-size: .3rem;
+}
+.center-push-win-main  .win-content{
+	background-color: #FFE3EB;
+	border-bottom-left-radius: .2rem;
+	border-bottom-right-radius: .2rem;
+	padding: .2rem;
+	color: #8F5554;
+}
+.center-push-win-main  .win-content .win-content-box{
+	padding: .1rem .2rem;
+	overflow: auto;
+	zoom:1;
+	font-size: .35rem;
+}
+.center-push-win-main  .win-content .win-content-box .box-name{
+	float: left;
+
+}
+.center-push-win-main  .win-content .win-content-box .box-value{
+	float: right;
+}
+.center-push-win-main  .win-content .win-content-text{
+	border-top: 1px #8F5554 solid;
+	margin: .1rem 0; 
+	padding: .2rem 0;
+	font-size: .25rem;
+	text-align: center;
+}
+.center-push-win-main  .win-content .btn{
+	display: block;
+	text-align: center;
+	font-size: .35rem;
+	background-color: #FFC44D;
+	border-radius: .15rem;
+	border-bottom: 2px #B65708 solid; 
+	padding: .15rem;
+}
+.center-push-win-main  .win-content .big-font{
+	font-weight: 600;
+	font-size: .3rem;
+}
+
+/*消费记录*/
+.record-win{
+	/*display: block;*/
+}
+.record-win .retrun-btn{
+	display: block;
+	width: 100%;
+	background-color: #F5B8B9;
+	color: #B37474;
+	text-align: center;
+	font-size: .32rem;
+}
+.record-win .win-content{
+	background-color: #FFE3EB;
+}
+.record-list{
+	max-height: 5rem;
+	overflow: scroll;
+	position: relative;
+}
+.record-list table{
+	width: 100%;
+	text-align: center;
+	color: #B37474;
+	table-layout:fixed;
+	border-collapse:collapse;
+	
+}
+.record-list table th{
+	font-weight: 400;
+	padding: .1rem;
+	font-size: .22rem;
+}
+
+.record-list table tbody tr:nth-child(2n-1){
+	background-color: #FBD8DE;
+}
+.record-list table td{
+	padding: .1rem .05rem;
+	font-size: .22rem;
+	max-width: 1.2rem;
+	vertical-align:text-top;
+}
+.record-list table td:nth-child(1),
+.record-list table td:nth-child(2)
+{
+	text-align: left;
+}
+.record-list .error-text{
+	position: absolute;
+	color: #2D638F;
+	font-size: .15rem;
+	padding-left: .1rem;
+	padding-top: .1rem; 
 }
