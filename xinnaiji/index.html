@@ -4,9 +4,10 @@
 	<meta content="width=device-width, height=device-height ,initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" id="metaViewPort" />
 	<meta charset="UTF-8">
 	<title>星奈吉</title>
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/index.css?v-1">
 </head>
 <body>
+<!-- <div class="img"></div> -->
 	<div class="main">
 		<!-- 头部  -->
 		<header>
@@ -14,12 +15,12 @@
 				<div class="logo">
 				</div>	
 				<div class="info-num">
-					余币： <span id="remainCoin"> 133枚</span>
+					余币： <span id="remainCoin"></span><span class='big-font'>币</span>
 				</div>
 			</div>
 			<div class="btn-main">
-				<a class="btn">
-					<p>*<span id="btnCoinPrice">1</span>元/币</p>
+				<a class="btn" id="buy-coin-win-show">
+					<p>*<span id="btnCoinPrice">-</span>元/币</p>
 				</a>
 			</div>
 		</header>
@@ -37,7 +38,9 @@
 					<div class="list-main-content" id="deviceListMain">
 					<!-- 设备列表 -->
 						<div class="list-main-box" id="deviceList">
-							
+							<div class="list-main-box-child list-main-box-child0"></div>
+							<div class="list-main-box-child list-main-box-child1"></div>
+							<div class="list-main-box-child list-main-box-child2"></div>
 						</div>
 					</div>
 					<!-- 设备列表分页显示圆点 -->
@@ -54,80 +57,74 @@
 	<div class="coin-num">
 		<div class="coin-num-main">
 			<div class="coin-num-box">
-				<div class="num-btn minus"></div>
-				<div class="num-text">1币</div>
-				<div class="num-btn plus"></div>
+				<div class="num-btn minus" id="minus"></div>
+				<div class="num-text" id="currCoinNum">?</div>
+				<div class="num-btn plus" id="plus"></div>
 			</div>
 			<div class="coin-num-btn">
-				<a></a>
+				<a id="coinNumBtn"></a>
 			</div>
 		</div>
 		<p class="coin-num-text">
-			*若1分钟内启动设备失效，系统将于15分钟内自动退币
+			*若1分钟内启动设备失效，系统将于30分钟内自动退币
 		</p>
 	</div>
 	<footer>
 		<div class="about-box">
-			关于星星奈吉&奥付云
+			<a href="http://url.cn/41MHGW9">关于星奈吉&奥付云</a>
 		</div>
-		<div class="btn-box btn-box-first">
+		<div class="btn-box btn-box-first" id="record-win-show">
 			消费记录
 		</div>
 		<div class="btn-box">
-			客服申诉
+			<a href="tel:18022312150">客服申诉</a>
 		</div>
 	</footer>
-	<div class="bottom-push-win buy-coin-win">
+	<!-- 购币 -->
+	<div class="bottom-push-win buy-coin-win" id="buy-coin-win">
 		<div class="bottom-push-win-main">
 			<div class="win-title">
 				请选择购币金额
-				<p class="win-title-info">*<span>1</span>元/币</p>
+				<p class="win-title-info">*<span id="buy-coin-win-coin-price">1</span>元/币</p>
 			</div>
 			<div class="win-content">
-				<div class="fee-list">
-					<div class="fee-list-box active">
-						<div class="fee-info">
-							<img src="images/Gold_coin.png" alt="">
-							<p class="fee"><span>1</span>元</p>
-							<p class="coin">1币</p>
-						</div>
-						<span class="fee-give">1币</span>
-					</div>
+				<div class="fee-list" id="feeList">
+					
 				</div>
 			</div>
 			<div class="win-btns">
-				<a class="win-btn-close">取消</a>
-				<a class="win-btn-buy">购币</a>
+				<a class="win-btn-close" id="buy-coin-win-close">取消</a>
+				<a class="win-btn-buy" id="confirm-buy-win-show">购币</a>
 			</div>
 		</div>
 	</div>
 	<!-- 购币成功 -->
-	<div class="prompt-win success-buy">
+	<div class="prompt-win success-buy" id="success-buy">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<div class="success-buy-icon"></div>
-				<p class="prompt-win-content-text">成功购买<span class="heightlight">20</span>币</p>
-				<p class="prompt-win-content-text">有效期<span>三个月</span></p>
-				<p class="prompt-win-content-prompt-text">（至<span>XXXX年XX月XX日</span>）</p>
-				<p class="prompt-win-content-prompt-text">3s</p>
+				<p class="prompt-win-content-text">成功购买<span class="heightlight coin">20</span>币</p>
+				<p class="prompt-win-content-text">有效期<span class="time">三个月</span></p>
+				<p class="prompt-win-content-prompt-text">（至<span class="date">XXXX年XX月XX日</span>）</p>
+				<p class="prompt-win-content-prompt-text countDown" >3s</p>
 			</div>
 		</div>
 	</div>
 	<!-- 投币成功 -->
-	<div class="prompt-win success-coin">
+	<div class="prompt-win success-coin" id="success-put-coin">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<span class="success-coin-icon">成功</span>
-				<p class="prompt-win-content-text"><span class="heightlight">G</span>设备 投<span class="heightlight">1</span>币</p>
-				<p class="prompt-win-content-text">
+				<p class="prompt-win-content-text"><span class="heightlight device">G</span>设备 投<span class="heightlight coin">1</span>币</p>
+				<p class="prompt-win-content-text pleaseBuyCoin">
 					余币减至0,请购币
 				</p>
-				<p class="prompt-win-content-prompt-text">3s</p>
+				<p class="prompt-win-content-prompt-text countDown">3s</p>
 			</div>
 		</div>
 	</div>
 	<!-- 余币不足 -->
-	<div class="prompt-win coin-insufficient">
+	<div class="prompt-win coin-insufficient" id="coin-insufficient">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<p class="prompt-win-content-text">
@@ -136,12 +133,12 @@
 				<p class="prompt-win-content-text">
 					"购买电子币"购币
 				</p>
-				<p class="prompt-win-content-prompt-text">3s</p>
+				<p class="prompt-win-content-prompt-text countDown">3s</p>
 			</div>
 		</div>
 	</div>
 	<!-- 确认购币 -->
-	<div class="center-push-win confirm-buy-win">
+	<div class="center-push-win confirm-buy-win" id="confirm-buy-win">
 		<div class="center-push-win-main">
 			<div class="win-title">
 				<div class="win-close"></div>
@@ -150,108 +147,48 @@
 			<div class="win-content">
 				<div class="win-content-box">
 					<p class="box-name">支付金额：</p>
-					<p class="box-value"><span>20</span>元</p>
+					<p class="box-value"><span class="feeNum"></span>元</p>
 				</div>
 				<div class="win-content-box">
 					<p class="box-name">购币数量：</p>
-					<p class="box-value"><span>20</span>币</p>
+					<p class="box-value"><span class="coinNum"></span>币</p>
 				</div>
 				<p class="win-content-text">支付成功后，请点击右上角<span class="big-font">"完成"</span>按钮</p>
-				<a class="btn">确认支付</a>
+				<a class="btn confirm-btn">确认支付</a>
 			</div>
 		</div>
 	</div>
 	<!-- 消费记录 -->
-	<div class="bottom-push-win record-win">
+	<div class="bottom-push-win record-win" id="record-win">
 		<div class="bottom-push-win-main">
 			<div class="win-title">
 				消费记录
 			</div>
 			<div class="win-content">
-				<div class="record-list">
+				<div class="record-list-header">
 					<table>
 						<thead>
-							<tr>
-								<th>时间</th>
-								<th>场地/设备</th>
-								<th>类型/数量</th>
-								<th>余币数</th>
-								<th>结果</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
-							<tr>
-								<td>2016-11-20 21:28:45</td>
-								<td>谁说的是是HXXXXX</td>
-								<td>
-								购币 23枚
-								<p class="error-text">若设备启动失败，系统稍后自动退币</p>
-								</td>
-								<td>139枚</td>
-								<td>成功</td>
-							</tr>
+								<tr>
+									<th>时间</th>
+									<th>场地/设备</th>
+									<th>类型/数量</th>
+									<th>余币数</th>
+									<th>结果</th>
+								</tr>
+							</thead>
+					</table>
+				</div>
+				
+				<div class="record-list">
+					<table>
+						
+						<tbody class="record-list-box">
+							
 						</tbody>
 					</table>
+					<div class="loadingMore loading-text">加载更多</div>
+					<div class="loading loading-text">加载中...</div>
+					<div class="last loading-text">已经是最后一条了</div>
 				</div>
 			</div>
 			<div class="win-btns">
@@ -259,12 +196,66 @@
 			</div>
 		</div>
 	</div>
+	<!-- 购币成功 -->
+	<div class="prompt-win error-win" id="error-win">
+		<div class="prompt-win-main">
+			<div class="prompt-win-content">
+				<p class="prompt-win-content-text msg"></p>
+				<p class="prompt-win-content-prompt-text countDown" >3s</p>
+			</div>
+		</div>
+	</div>
+	<!-- loading -->
+	<div id="DialogLoading" class="loadingWrap">
+	    <div id="MaskLoading" class="dialogMask"></div>
+	    <div id="loadingWrap" class="loadingDia">
+	        <div id="ContentLoading" class="contentFullScreen">
+	            <div class="txt">
+	                <div class="loadingDiv loadingDiv_0"></div>
+	                <div class="loadingDiv loadingDiv_1"></div>
+	                <div class="loadingDiv loadingDiv_2"></div>
+	                <div class="loadingDiv loadingDiv_3"></div>
+	                <div class="loadingDiv loadingDiv_4"></div>
+	                <div class="loadingDiv loadingDiv_5"></div>
+	                <div class="loadingDiv loadingDiv_6"></div>
+	                <div class="loadingDiv loadingDiv_7"></div>
+	                <div class="loadingDiv loadingDiv_8"></div>
+	                <div class="loadingDiv loadingDiv_9"></div>
+	                <div class="loadingDiv loadingDiv_10"></div>
+	                <div class="loadingDiv loadingDiv_11"></div>
+	            </div>
+	            <p class="loadingText">加载中...</p>
+	        </div>
+	    </div>
+	</div>
 	<script type="text/html" id="deviceListDemo">
 		<div class="list-box {{disable}}" index="{{index}}">
 			<img src="images/Gold_coin.png" alt="">
 			<p class="list-box-name">{{deviceName}}</p>
 			<p class="list-box-num">{{coinNum}}币/次</p>
 		</div>
+	</script>
+	<script type="text/html" id="feeListDemo">
+		<div class="fee-list-box" >
+			<div class="fee-info" index="{{index}}">
+				<img src="images/Gold_coin.png" alt="">
+				<p class="fee"><span>{{fee}}</span>元</p>
+				<p class="coin">{{pulseNum}}币</p>
+			</div>
+			<span class="fee-give" style="display: {{display}}">{{giveNum}}币</span>
+		</div>
+	</script>
+	<script type="text/html" id="recordListDemo">
+		<tr>
+			<td>{{time}}</td>
+			<td>{{address}}{{device}}</td>
+			<td>
+			{{type}} {{coin}}枚
+			<p class="error-text" style="display: {{display_error}}">若设备启动失败，系统稍后自动退币</p>
+			</td>
+			<td>{{remainCoin}}枚</td>
+			<td>{{status}}</td>
+		</tr>
 	</script>
 	<script>
 	function setWidth() {
@@ -284,6 +275,6 @@
 		setWidth();
 	}
 	</script>
-	<script src="js/index.js"></script>
+	<script src="js/index.js?v-1"></script>
 </body>
 </html>
