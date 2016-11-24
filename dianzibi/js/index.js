@@ -30,7 +30,7 @@
 				fee: arr[j],
 				pulseNum: arr[j] / 100 + 1
 			})
-		}		
+		}	
 	})();
 	function getRandomTest(){
 		var recordListTest = [];
@@ -48,6 +48,8 @@
 		}
 		return recordListTest;
 	}
+
+
 	function App(){
 		var dom = document;
 		var touch = "touchstart";
@@ -76,6 +78,7 @@
 			}
 		}
 	}
+
 
 	function AllPay() {
 		var that = this;
@@ -173,13 +176,13 @@
 
 		},
 		setDeviceListBox: function() {
-			var width = this.deviceListMainEl.offsetWidth;
+			var width = this.deviceListMainEl.parentNode.offsetWidth;
 			var pages = Math.ceil(userData.deviceList.length / 9);
 			for (var i = 0; i < pages; i++) {
 				var box = document.createElement("div");
 				box.className = "list-main-box-child list-main-box-child" + i;
-				box.style.width = width;
-				this.deviceListEl.appendChild(box);
+				box.style.width = width+ "px";
+				var new_box=this.deviceListEl.appendChild(box);
 			}
 		},
 		setRemainCoin: function() {
@@ -410,7 +413,7 @@
 		// 当手指滑动时，计算滑动值;
 		// 手势滑动或者点击
 		deviceListTouchStart: function(e) {
-			e.preventDefault();
+			// e.preventDefault();
 			var point = e.touches ? e.touches[0] : e;
 			this.sPos.x = point.screenX;
 			this.mPos.x = point.screenX;
@@ -737,8 +740,9 @@
 		}
 	}
 	document.addEventListener("DOMContentLoaded", function() {
-		var app  = new App();
-		var dizhibi = new AllPay();
-		dizhibi.init();
+		var app = new App();
+		var dianzibi = new AllPay();
+		dianzibi.init();
 	}, false);
 })()
+

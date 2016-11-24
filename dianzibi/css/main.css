@@ -11,7 +11,7 @@
 }
 
 .dianzibi-app .main {
-    padding: .2rem .2rem;
+    padding: .2rem;
 }
 
 .dianzibi-app header {
@@ -53,7 +53,7 @@
 .dianzibi-app .btn-main {
     text-align: center;
     position: relative;
-    height: 1.4rem;
+    height: 1rem;
 }
 
 .dianzibi-app .btn-main .btn {
@@ -78,7 +78,7 @@
 }
 
 .dianzibi-app .list {
-    padding-top: .4rem;
+    padding-top: .2rem;
 }
 
 .dianzibi-app .list-title {

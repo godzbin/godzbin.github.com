@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: .3rem;
+    background-color: #FFE3EB;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+button,
+a {
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+button:active,
+a:active {
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.tab{
+    width: 100%;
+    height: .8rem;
+}
+.tab-box{
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    text-align: center;
+    background: #ddd;
+    height: .8rem;
+}
+.tab-box p{
+    pointer-events: none;
+}
+.tab-box-title{
+    font-size: .25rem;
+    line-height: .4rem;
+}
+.tab-box-bottom{
+    font-size: .2rem;
+    line-height: .3rem;
+}
+.tab-box1.active{
+    background-color: #FFE3EB; 
+    color: #A56A35;
+}
+.tab-box2.active{
+    background-color: #1d8cd9; 
+    color: #22457f;
+}

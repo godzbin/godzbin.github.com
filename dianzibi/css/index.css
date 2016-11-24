@@ -1,3 +1,5 @@
+﻿
+/***<jscompress sourcefile="base.css" />*/
 * {
     padding: 0;
     margin: 0 auto;
@@ -28,17 +30,7 @@ a:active {
     outline: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    background: url(../images/2016-11-21-A套餐开始高亮-星奈吉会员充值界面.png) no-repeat ;
-    background-size: 100% 100%;
-    z-index: 99;
-}
+
 .tab{
     width: 100%;
     height: .8rem;
@@ -70,66 +62,79 @@ a:active {
     background-color: #1d8cd9; 
     color: #22457f;
 }
-#dianzibi{
-    /*display: none;*/
-}
-#dianzibi .main {
-    padding: .2rem .2rem;
+
+/***<jscompress sourcefile="main.css" />*/
+.dianzibi-app .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: url(../images/2016-11-21-A套餐开始高亮-星奈吉会员充值界面.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 99;
 }
 
- #dianzibi header {
+.dianzibi-app .main {
+    padding: .2rem;
+}
+
+.dianzibi-app header {
     overflow: auto;
     zoom: 1;
 }
 
-#dianzibi .info,
-#dianzibi .btn-main {
+.dianzibi-app .info,
+.dianzibi-app .btn-main {
     width: 50%;
     box-sizing: border-box;
     float: left;
 }
 
-/*.info .logo {
+.dianzibi-app .info .logo {
     background: url("../images/logo.png") no-repeat left center;
     background-size: 2rem .6rem;
     height: .6rem;
-}*/
+}
 
-#dianzibi .info .info-num {
+.dianzibi-app .info .info-num {
     font-size: .4rem;
     color: #A56A35;
     border-bottom: 1px #A56A35 solid;
     line-height: .7rem;
 }
 
-#dianzibi .info .info-num span {
+.dianzibi-app .info .info-num span {
     font-weight: 600;
     font-size: .6rem;
     padding-right: .15rem;
 }
-#dianzibi .info .info-num .big-font{
+
+.dianzibi-app .info .info-num .big-font {
     font-size: .42rem;
     font-weight: 700;
 }
-#dianzibi .btn-main {
+
+.dianzibi-app .btn-main {
     text-align: center;
     position: relative;
     height: 1rem;
 }
 
-#dianzibi .btn-main .btn {
+.dianzibi-app .btn-main .btn {
     position: absolute;
     display: absolute;
     bottom: 0;
     right: 0;
-    width: 80%;
+    width: 90%;
     height: 1rem;
     background: url("../images/buy_Electric_coin.png") no-repeat center;
     background-size: 100% 100%;
     color: #FFE8A2;
 }
 
-#dianzibi .btn-main .btn p {
+.dianzibi-app .btn-main .btn p {
     position: absolute;
     bottom: .1rem;
     left: 0;
@@ -138,11 +143,11 @@ a:active {
     font-size: .15rem;
 }
 
-#dianzibi .list {
+.dianzibi-app .list {
     padding-top: .2rem;
 }
 
-#dianzibi .list-title {
+.dianzibi-app .list-title {
     border-top-left-radius: .2rem;
     border-top-right-radius: .2rem;
     background-color: #ECAAAB;
@@ -153,14 +158,14 @@ a:active {
     position: relative;
 }
 
-#dianzibi .list-title img {
+.dianzibi-app .list-title img {
     position: absolute;
     width: .7rem;
     top: -0.1rem;
     left: .3rem;
 }
 
-#dianzibi .list-content {
+.dianzibi-app .list-content {
     height: 4.5rem;
     background-color: #8F5554;
     border-bottom-left-radius: .2rem;
@@ -170,46 +175,54 @@ a:active {
     padding: 0 .1rem;
 }
 
-#dianzibi .list-btn {
+.dianzibi-app .list-btn {
     width: .4rem;
     height: 4.5rem;
     text-align: center;
     background: url("../images/left_right_button.png") no-repeat center;
     background-size: .38rem;
+    z-index: 77;
 }
 
-#dianzibi .list-btn-left {
+.dianzibi-app .list-btn-left {
     float: left;
 }
 
-#dianzibi .list-btn-right {
+.dianzibi-app .list-btn-right {
     transform: rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -moz-transform:rotate(180deg); 
+    -webkit-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
     float: right;
 }
 
-#dianzibi .list-main {
-    overflow: auto;
+.dianzibi-app .list-main {
+    overflow: hidden;
     zoom: 1;
     height: 4.5rem;
     position: relative;
+    z-index: 66;
 }
 
-#dianzibi .list-main-box {
-}
+.dianzibi-app .list-main-box {}
 
-#dianzibi .list-main-content {
+.dianzibi-app .list-main-content {
     overflow: auto;
 }
-#dianzibi .list-main-box{
+
+.dianzibi-app .list-main-box {
     position: absolute;
     overflow: hidden;
     left: 0;
     right: 0;
-    transform: translateZ(0); 
+    transform: translateZ(0);
     transition: left 1.5s ease-out;
     width: 30rem;
+     z-index: 66;
 }
-#dianzibi .list-main-box-child{
+
+.dianzibi-app .list-main-box-child {
     float: left;
     width: 5rem;
     overflow: auto;
@@ -217,7 +230,7 @@ a:active {
     padding: .3rem .2rem;
 }
 
-#dianzibi .list-box {
+.dianzibi-app .list-box {
     position: relative;
     float: left;
     width: 28%;
@@ -233,21 +246,21 @@ a:active {
     box-shadow: 2px 2px 2px #814A49;
 }
 
-#dianzibi .list-box.disable {
+.dianzibi-app .list-box.disable {
     background-color: #B6B6B6;
     color: #9B9B9B;
 }
 
-#dianzibi .list-box.active {
+.dianzibi-app .list-box.active {
     background-color: #FCC829;
     color: #A15910;
 }
 
-#dianzibi .list-box img {
+.dianzibi-app .list-box img {
     display: none;
 }
 
-#dianzibi .list-box.active img {
+.dianzibi-app .list-box.active img {
     display: block;
     position: absolute;
     width: .4rem;
@@ -256,29 +269,29 @@ a:active {
     right: -0.15rem;
 }
 
-#dianzibi .list-box:nth-child(3n) {
+.dianzibi-app .list-box:nth-child(3n) {
     margin-right: 0;
 }
 
-#dianzibi .list-box:nth-child(7),
-#dianzibi .list-box:nth-child(8),
-#dianzibi .list-box:nth-child(9) {
+.dianzibi-app .list-box:nth-child(7),
+.dianzibi-app .list-box:nth-child(8),
+.dianzibi-app .list-box:nth-child(9) {
     margin-bottom: 0;
 }
 
-#dianzibi .list-box-name {
+.dianzibi-app .list-box-name {
     font-size: .45rem;
     padding-bottom: .05rem;
     font-weight: 600;
     pointer-events: none;
 }
 
-#dianzibi .list-box-num {
+.dianzibi-app .list-box-num {
     font-size: .18rem;
     pointer-events: none;
 }
 
-#dianzibi .list-main-now {
+.dianzibi-app .list-main-now {
     position: absolute;
     bottom: .1rem;
     left: 0;
@@ -290,13 +303,12 @@ a:active {
     height: .2rem;
 }
 
-#dianzibi .list-main-now-main {
+.dianzibi-app .list-main-now-main {
     position: absolute;
-    /*width: 100%;*/
     left: 38%;
 }
 
-#dianzibi .list-main-now .spot {
+.dianzibi-app .list-main-now .spot {
     height: .15rem;
     width: .15rem;
     background-color: #C47976;
@@ -305,14 +317,14 @@ a:active {
     margin: .02rem .1rem;
 }
 
-#dianzibi .list-main-now .spot.active {
+.dianzibi-app .list-main-now .spot.active {
     background-color: #FFE3EB;
     height: .19rem;
     width: .19rem;
     margin: 0 .1rem;
 }
 
-#dianzibi .coin-num {
+.dianzibi-app .coin-num {
     position: absolute;
     bottom: .6rem;
     width: 100%;
@@ -320,7 +332,7 @@ a:active {
     padding: 0 5%;
 }
 
-#dianzibi .coin-num-main {
+.dianzibi-app .coin-num-main {
     border-radius: .3rem;
     zoom: 1;
     box-sizing: border-box;
@@ -329,56 +341,55 @@ a:active {
     position: relative;
 }
 
-#dianzibi .coin-num-box {
+.dianzibi-app .coin-num-box {
     float: left;
     overflow: auto;
     zoom: 1;
     width: 50%;
 }
 
-#dianzibi .coin-num-box .num-btn,
-#dianzibi .coin-num-box .num-text {
+.dianzibi-app .coin-num-box .num-btn,
+.dianzibi-app .coin-num-box .num-text {
     float: left;
     text-align: center;
     font-size: .4rem;
     padding: .2rem 0;
 }
 
-#dianzibi .coin-num-box .num-btn {
+.dianzibi-app .coin-num-box .num-btn {
+    padding: .3rem 0;
     border-radius: .1rem;
     width: .5rem;
     height: .5rem;
-    margin: .1rem;
     background-color: #FFD8E3;
 }
 
-#dianzibi .coin-num-box .num-btn.minus {
+.dianzibi-app .coin-num-box .num-btn.minus {
     padding-left: .2rem;
     background: url(../images/Minus.png) no-repeat right center;
     background-size: .5rem;
 }
 
-#dianzibi .coin-num-box .num-btn.plus {
+.dianzibi-app .coin-num-box .num-btn.plus {
     padding-right: .2rem;
     background: url(../images/Plus.png) no-repeat left center;
     background-size: .5rem;
 }
 
-#dianzibi .coin-num-box .num-text {
+.dianzibi-app .coin-num-box .num-text {
     width: 1rem;
     line-height: .7rem;
     font-size: .46rem;
     color: #FF4573;
 }
 
-#dianzibi .coin-num-btn {
+.dianzibi-app .coin-num-btn {
     float: left;
     width: 50%;
     text-align: center;
-    /*position: relative;*/
 }
 
-#dianzibi .coin-num-btn a {
+.dianzibi-app .coin-num-btn a {
     position: absolute;
     top: -0.1rem;
     right: -0.1rem;
@@ -389,14 +400,14 @@ a:active {
     background-size: 100% 100%;
 }
 
-#dianzibi .coin-num-text {
+.dianzibi-app .coin-num-text {
     font-size: .15rem;
     text-align: center;
     line-height: .6rem;
     color: #8F5554;
 }
 
-#dianzibi footer {
+.dianzibi-app footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -405,8 +416,8 @@ a:active {
     zoom: 1;
 }
 
-#dianzibi footer .about-box,
-#dianzibi footer .btn-box {
+.dianzibi-app footer .about-box,
+.dianzibi-app footer .btn-box {
     float: left;
     text-align: center;
     line-height: .6rem;
@@ -415,25 +426,20 @@ a:active {
     color: #8F5554;
 }
 
-#dianzibi footer .about-box {
+.dianzibi-app footer .about-box {
     width: 50%;
 }
 
-#dianzibi footer .btn-box {
+.dianzibi-app footer .btn-box {
     width: 25%;
 }
 
-#dianzibi footer .btn-box-first {
+.dianzibi-app footer .btn-box-first {
     background-color: #DD999A;
 }
 
 
-
-
-
-
-
-/*------------------------微信支付----------------------- */
+/***<jscompress sourcefile="page_wechat.css" />*/
 #wechatPay{
     display: none;
 }
@@ -795,18 +801,7 @@ a:active {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*----------------------------下弹窗--------------------------------*/
-
+/***<jscompress sourcefile="win.css" />*/
 .bottom-push-win {
     display: none;
     position: absolute;
@@ -1184,9 +1179,7 @@ a:active {
 }
 
 
-
-
-/*-----------------loading--------------------------------*/
+/***<jscompress sourcefile="loading.css" />*/
 .loading-main {
     position: absolute;
     top: 0;
@@ -1610,4 +1603,6 @@ a:active {
         opacity: .895958333333333;
     }
 }
+
+
 

@@ -274,7 +274,6 @@ a:active {
 
 .dianzibi-app .list-main-now-main {
     position: absolute;
-    /*width: 100%;*/
     left: 38%;
 }
 
@@ -316,7 +315,6 @@ a:active {
     overflow: auto;
     zoom: 1;
     width: 50%;
-    .dianzibi-app
 }
 
 .dianzibi-app .coin-num-box .num-btn,
@@ -328,10 +326,10 @@ a:active {
 }
 
 .dianzibi-app .coin-num-box .num-btn {
+    padding: .3rem 0;
     border-radius: .1rem;
     width: .5rem;
     height: .5rem;
-    margin: .1rem;
     background-color: #FFD8E3;
 }
 
@@ -358,7 +356,6 @@ a:active {
     float: left;
     width: 50%;
     text-align: center;
-    /*position: relative;*/
 }
 
 .dianzibi-app .coin-num-btn a {

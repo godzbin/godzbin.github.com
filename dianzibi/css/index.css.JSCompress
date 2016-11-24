@@ -1,0 +1,11 @@
+﻿<jscompress public="http://www.jscompress.cn/" command="import-combineset">
+<combinefile path="index.css">
+    <css_fixedrelativeurl value="1" />
+    <auto value="0" />
+    <sourcefile path=".\base.css" />
+    <sourcefile path=".\main.css" />
+    <sourcefile path=".\page_wechat.css" />
+    <sourcefile path=".\win.css" />
+    <sourcefile path=".\loading.css" />
+</combinefile>
+</jscompress>
