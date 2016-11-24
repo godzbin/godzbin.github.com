@@ -132,7 +132,7 @@
 }
 
 .dianzibi-app .list-main {
-    overflow: auto;
+    overflow: hidden;
     zoom: 1;
     height: 4.5rem;
     position: relative;
