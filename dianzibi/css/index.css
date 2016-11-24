@@ -51,6 +51,9 @@ a:active {
     background: #ddd;
     height: .8rem;
 }
+.tab-box p{
+    pointer-events: none;
+}
 .tab-box-title{
     font-size: .25rem;
     line-height: .4rem;
@@ -59,21 +62,28 @@ a:active {
     font-size: .2rem;
     line-height: .3rem;
 }
-.tab-box.active{
+.tab-box1.active{
     background-color: #FFE3EB; 
     color: #A56A35;
 }
-.main {
+.tab-box2.active{
+    background-color: #1d8cd9; 
+    color: #22457f;
+}
+#dianzibi{
+    /*display: none;*/
+}
+#dianzibi .main {
     padding: .2rem .2rem;
 }
 
-header {
+ #dianzibi header {
     overflow: auto;
     zoom: 1;
 }
 
-.info,
-.btn-main {
+#dianzibi .info,
+#dianzibi .btn-main {
     width: 50%;
     box-sizing: border-box;
     float: left;
@@ -85,29 +95,29 @@ header {
     height: .6rem;
 }*/
 
-.info .info-num {
+#dianzibi .info .info-num {
     font-size: .4rem;
     color: #A56A35;
     border-bottom: 1px #A56A35 solid;
     line-height: .7rem;
 }
 
-.info .info-num span {
+#dianzibi .info .info-num span {
     font-weight: 600;
     font-size: .6rem;
     padding-right: .15rem;
 }
-.info .info-num .big-font{
+#dianzibi .info .info-num .big-font{
     font-size: .42rem;
     font-weight: 700;
 }
-.btn-main {
+#dianzibi .btn-main {
     text-align: center;
     position: relative;
     height: 1rem;
 }
 
-.btn-main .btn {
+#dianzibi .btn-main .btn {
     position: absolute;
     display: absolute;
     bottom: 0;
@@ -119,7 +129,7 @@ header {
     color: #FFE8A2;
 }
 
-.btn-main .btn p {
+#dianzibi .btn-main .btn p {
     position: absolute;
     bottom: .1rem;
     left: 0;
@@ -128,11 +138,11 @@ header {
     font-size: .15rem;
 }
 
-.list {
+#dianzibi .list {
     padding-top: .2rem;
 }
 
-.list-title {
+#dianzibi .list-title {
     border-top-left-radius: .2rem;
     border-top-right-radius: .2rem;
     background-color: #ECAAAB;
@@ -143,14 +153,14 @@ header {
     position: relative;
 }
 
-.list-title img {
+#dianzibi .list-title img {
     position: absolute;
     width: .7rem;
     top: -0.1rem;
     left: .3rem;
 }
 
-.list-content {
+#dianzibi .list-content {
     height: 4.5rem;
     background-color: #8F5554;
     border-bottom-left-radius: .2rem;
@@ -160,7 +170,7 @@ header {
     padding: 0 .1rem;
 }
 
-.list-btn {
+#dianzibi .list-btn {
     width: .4rem;
     height: 4.5rem;
     text-align: center;
@@ -168,29 +178,29 @@ header {
     background-size: .38rem;
 }
 
-.list-btn-left {
+#dianzibi .list-btn-left {
     float: left;
 }
 
-.list-btn-right {
+#dianzibi .list-btn-right {
     transform: rotate(180deg);
     float: right;
 }
 
-.list-main {
+#dianzibi .list-main {
     overflow: auto;
     zoom: 1;
     height: 4.5rem;
     position: relative;
 }
 
-.list-main-box {
+#dianzibi .list-main-box {
 }
 
-.list-main-content {
+#dianzibi .list-main-content {
     overflow: auto;
 }
-.list-main-box{
+#dianzibi .list-main-box{
     position: absolute;
     overflow: hidden;
     left: 0;
@@ -199,7 +209,7 @@ header {
     transition: left 1.5s ease-out;
     width: 30rem;
 }
-.list-main-box-child{
+#dianzibi .list-main-box-child{
     float: left;
     width: 5rem;
     overflow: auto;
@@ -207,7 +217,7 @@ header {
     padding: .3rem .2rem;
 }
 
-.list-box {
+#dianzibi .list-box {
     position: relative;
     float: left;
     width: 28%;
@@ -223,21 +233,21 @@ header {
     box-shadow: 2px 2px 2px #814A49;
 }
 
-.list-box.disable {
+#dianzibi .list-box.disable {
     background-color: #B6B6B6;
     color: #9B9B9B;
 }
 
-.list-box.active {
+#dianzibi .list-box.active {
     background-color: #FCC829;
     color: #A15910;
 }
 
-.list-box img {
+#dianzibi .list-box img {
     display: none;
 }
 
-.list-box.active img {
+#dianzibi .list-box.active img {
     display: block;
     position: absolute;
     width: .4rem;
@@ -246,29 +256,29 @@ header {
     right: -0.15rem;
 }
 
-.list-box:nth-child(3n) {
+#dianzibi .list-box:nth-child(3n) {
     margin-right: 0;
 }
 
-.list-box:nth-child(7),
-.list-box:nth-child(8),
-.list-box:nth-child(9) {
+#dianzibi .list-box:nth-child(7),
+#dianzibi .list-box:nth-child(8),
+#dianzibi .list-box:nth-child(9) {
     margin-bottom: 0;
 }
 
-.list-box-name {
+#dianzibi .list-box-name {
     font-size: .45rem;
     padding-bottom: .05rem;
     font-weight: 600;
     pointer-events: none;
 }
 
-.list-box-num {
+#dianzibi .list-box-num {
     font-size: .18rem;
     pointer-events: none;
 }
 
-.list-main-now {
+#dianzibi .list-main-now {
     position: absolute;
     bottom: .1rem;
     left: 0;
@@ -280,13 +290,13 @@ header {
     height: .2rem;
 }
 
-.list-main-now-main {
+#dianzibi .list-main-now-main {
     position: absolute;
     /*width: 100%;*/
     left: 38%;
 }
 
-.list-main-now .spot {
+#dianzibi .list-main-now .spot {
     height: .15rem;
     width: .15rem;
     background-color: #C47976;
@@ -295,14 +305,14 @@ header {
     margin: .02rem .1rem;
 }
 
-.list-main-now .spot.active {
+#dianzibi .list-main-now .spot.active {
     background-color: #FFE3EB;
     height: .19rem;
     width: .19rem;
     margin: 0 .1rem;
 }
 
-.coin-num {
+#dianzibi .coin-num {
     position: absolute;
     bottom: .6rem;
     width: 100%;
@@ -310,7 +320,7 @@ header {
     padding: 0 5%;
 }
 
-.coin-num-main {
+#dianzibi .coin-num-main {
     border-radius: .3rem;
     zoom: 1;
     box-sizing: border-box;
@@ -319,22 +329,22 @@ header {
     position: relative;
 }
 
-.coin-num-box {
+#dianzibi .coin-num-box {
     float: left;
     overflow: auto;
     zoom: 1;
     width: 50%;
 }
 
-.coin-num-box .num-btn,
-.coin-num-box .num-text {
+#dianzibi .coin-num-box .num-btn,
+#dianzibi .coin-num-box .num-text {
     float: left;
     text-align: center;
     font-size: .4rem;
     padding: .2rem 0;
 }
 
-.coin-num-box .num-btn {
+#dianzibi .coin-num-box .num-btn {
     border-radius: .1rem;
     width: .5rem;
     height: .5rem;
@@ -342,33 +352,33 @@ header {
     background-color: #FFD8E3;
 }
 
-.coin-num-box .num-btn.minus {
+#dianzibi .coin-num-box .num-btn.minus {
     padding-left: .2rem;
     background: url(../images/Minus.png) no-repeat right center;
     background-size: .5rem;
 }
 
-.coin-num-box .num-btn.plus {
+#dianzibi .coin-num-box .num-btn.plus {
     padding-right: .2rem;
     background: url(../images/Plus.png) no-repeat left center;
     background-size: .5rem;
 }
 
-.coin-num-box .num-text {
+#dianzibi .coin-num-box .num-text {
     width: 1rem;
     line-height: .7rem;
     font-size: .46rem;
     color: #FF4573;
 }
 
-.coin-num-btn {
+#dianzibi .coin-num-btn {
     float: left;
     width: 50%;
     text-align: center;
     /*position: relative;*/
 }
 
-.coin-num-btn a {
+#dianzibi .coin-num-btn a {
     position: absolute;
     top: -0.1rem;
     right: -0.1rem;
@@ -379,14 +389,14 @@ header {
     background-size: 100% 100%;
 }
 
-.coin-num-text {
+#dianzibi .coin-num-text {
     font-size: .15rem;
     text-align: center;
     line-height: .6rem;
     color: #8F5554;
 }
 
-footer {
+#dianzibi footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -395,8 +405,8 @@ footer {
     zoom: 1;
 }
 
-footer .about-box,
-footer .btn-box {
+#dianzibi footer .about-box,
+#dianzibi footer .btn-box {
     float: left;
     text-align: center;
     line-height: .6rem;
@@ -405,20 +415,397 @@ footer .btn-box {
     color: #8F5554;
 }
 
-footer .about-box {
+#dianzibi footer .about-box {
     width: 50%;
 }
 
-footer .btn-box {
+#dianzibi footer .btn-box {
     width: 25%;
 }
 
-footer .btn-box-first {
+#dianzibi footer .btn-box-first {
     background-color: #DD999A;
 }
 
 
-/*下弹窗*/
+
+
+
+
+
+/*------------------------微信支付----------------------- */
+#wechatPay{
+    display: none;
+}
+#wechatPay .main {
+    background-color: #1d8cd9;
+    padding: .2rem;
+    
+}
+
+#wechatPay .main-box {
+    height: 100%;
+    margin-bottom: 3rem;
+}
+
+#wechatPay header {
+    padding: .2rem;
+    text-align: center;
+    color: #952f00;
+}
+
+#wechatPay header .logo {
+    width: 1.4rem;
+    height: .4rem;
+    margin: 0;
+    background: url('../images/blue_logo.png') no-repeat left center;
+    background-size: 1.4rem .4rem;
+}
+
+#wechatPayheader .title {
+    font-size: .45rem;
+    color: #fff;
+}
+
+#wechatPayheader .device {
+    font-size: .2rem;
+    color: #fff;
+}
+
+#wechatPay.packages {
+    position: relative;
+    top: -0.4rem;
+    padding: .3rem .15rem .15rem .15rem;
+    margin-bottom: -0.4rem;
+}
+
+#wechatPay.yellow_exchange_machine {
+    position: absolute;
+    top: -0.4rem;
+    left: .2rem;
+    width: .8rem;
+}
+
+#wechatPay  .packages-box-title {
+   line-height: .5rem;
+    position: relative;
+    padding: .06rem .1rem;
+    text-align: center;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    background-color: #1da5f6;
+}
+
+#wechatPay  .packages-box-title-main {
+    font-size: .3rem;
+    color: #22457f;
+}
+
+#wechatPay  .packages-box-title-main span {
+    color: #ffb900;
+}
+
+#wechatPay  .packages-box-title-p {
+    font-size: .2rem;
+    position: absolute;
+    top: .1rem;
+    right: 15px;
+    color: #0f59a6;
+}
+
+#wechatPay  .packages-box-main {
+    overflow: auto;
+    zoom: 1;
+    height: 3.2rem;
+    padding: .1rem 0;
+    border-bottom-right-radius: .2rem;
+    border-bottom-left-radius: .2rem;
+    background-color: #62c7fc;
+}
+
+#wechatPay  .packages-box-main-package {
+    float: left;
+    box-sizing: border-box;
+    width: 25%;
+    height: 1.2rem;
+    margin: .15rem 4%;
+    text-align: center;
+}
+
+#wechatPay  .packages-box-main-package-content {
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px;
+    pointer-events: none;
+    color: #a08337;
+    border: 1px #005e8a solid;
+    border-radius: 5px;
+    background-color: #005e8a;
+}
+
+#wechatPay  .packages-box-main-package-content .packages-box-main-package-content-price {
+    font-size: .35rem;
+}
+
+#wechatPay  .packages-box-main-package-content .packages-box-main-package-content-bi {
+    font-size: .3rem;
+}
+
+#wechatPay  .packages-box-main-package-add {
+    font-size: .22rem;
+    line-height: .3rem;
+    height: .3rem;
+    padding: 3px 0;
+    pointer-events: none;
+    color: #9d4b43;
+}
+
+#wechatPay  .packages-box-main-select {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: none;
+    width: .4rem;
+    height: .4rem;
+}
+
+#wechatPay  .packages-box-main-package.active .packages-box-main-package-content {
+    color: #ffe051;
+    border: 1px #ffe051 solid;
+    background-color: #009bf0;
+}
+
+#wechatPay  .packages-box-main-package.active .packages-box-main-select {
+    display: block;
+}
+
+#wechatPay  .packages-explain {
+    font-size: .2rem;
+    line-height: .25rem;
+    margin: .2rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+#wechatPay  .pay {
+    position: absolute;
+    bottom: .6rem;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+#wechatPay .pay .pay-main {
+    height: 1.4rem;
+    margin: 0 .2rem;
+    padding: .1rem 0;
+    border: .1rem #39c0e4 solid;
+    border-radius: .5rem;
+    background: linear-gradient(#fcfcfc, #dedbd7);
+    background-color: #eae9e6;
+}
+
+#wechatPay .pay-left,
+#wechatPay .pay-right {
+    /*width: 50%;*/
+    position: relative;
+    float: left;
+    text-align: left;
+}
+
+#wechatPay .pay-left {
+    width: 55%;
+}
+
+#wechatPay .pay-right {
+    width: 45%;
+}
+
+#wechatPay .pay-left .duibi-number {
+    /*padding-top: .1rem;*/
+}
+
+#wechatPay .pay-left .pay-money,
+#wechatPay .pay-left .duibi-number {
+    font-size: .25rem;
+    line-height: .65rem;
+    overflow: auto;
+    zoom: 1;
+    padding-left: .15rem;
+    color: #005b9e;
+}
+
+#wechatPay .pay-left .pay-money span,
+#wechatPay .pay-left .duibi-number span#duibiNumber {
+    font-size: .35rem;
+    font-weight: 600;
+    color: #00a7de;
+}
+
+#wechatPay .pay-left .duibi-number span#duibiNumber {
+    line-height: .35rem;
+    display: inline-block;
+    margin: 0 .1rem;
+    text-align: center;
+}
+
+#wechatPay  .pay-left .duibi-number-box {
+    margin-top: .1rem;
+}
+
+#wechatPay  .pay-left .duibi-number p > span {
+    letter-spacing: .3rem;
+}
+
+#wechatPay  .pay-left .duibi-number.other p > span {
+    letter-spacing: 0;
+}
+
+#wechatPay  .pay-left .duibi-number.other span#duibiNumber {
+    display: inline-block;
+    float: left;
+    width: .6rem;
+    height: .4rem;
+    margin: 0;
+    border-bottom: 1px #00a7de solid;
+}
+
+#wechatPay  .pay-left .duibi-number p,
+#wechatPay  .pay-left .duibi-number .duibi-number-box {
+    float: left;
+}
+
+#wechatPay  .pay-left .duibi-number .duibi-number-box .puls,
+#wechatPay  .pay-left .duibi-number .duibi-number-box .minus {
+    font-size: .4rem;
+    line-height: .4rem;
+    display: none;
+    float: left;
+    width: .4rem;
+    height: .4rem;
+    margin-right: .05rem;
+    margin-left: .05rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background: no-repeat center center;
+    background-size: .4rem .4rem;
+    background-color: #1b7fc7;
+}
+
+#wechatPay  .pay-left .duibi-number.other .duibi-number-box .puls,
+#wechatPay  .pay-left .duibi-number.other .duibi-number-box .minus {
+    display: block;
+}
+
+#wechatPay  .pay-left .duibi-number .duibi-number-box .puls {
+    background-image: url(../images/blue_plus.png);
+}
+
+#wechatPay  .pay-left .duibi-number .duibi-number-box .minus {
+    background-image: url(../images/blue_minus.png);
+}
+
+#wechatPay  .pay-left .duibi-number .duibiNumberToMore {
+    font-size: .24rem;
+    float: left;
+}
+
+#wechatPay  .pay-right a {
+    position: absolute;
+    top: -.35rem;
+    left: -.05rem;
+    display: block;
+    width: 110%;
+    height: 2.2rem;
+    border: 0;
+    outline: none;
+    background: url('../images/blue_confirm_button.png') no-repeat center;
+    background-size: 100%;
+}
+
+@font-face {
+    font-family: DS_DIGIB;
+    /*这里是说明调用来的字体名字*/
+    src: url('../font/DS-DIGIB.ttf');
+    /*这里是字体文件路径*/
+}
+
+#wechatPay  .pay-right a p {
+    font-family: DS_DIGIB;
+    font-size: .3rem;
+    position: absolute;
+    top: .4rem;
+    right: 0;
+    display: block;
+    width: 1.4rem;
+    text-align: center;
+    color: #ff4c4c;
+    transform: skew(-20deg) rotateX(30deg);
+}
+
+#wechatPay  .pay-bottom {
+    font-size: .2rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    text-align: center;
+    /*height: .4rem;*/
+    color: #fff;
+}
+
+#wechatPay  footer {
+    font-size: .3rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    /*height: .6rem;*/
+}
+
+#wechatPay  footer a {
+    text-decoration: none;
+    color: #ffba00;
+}
+
+#wechatPay .footer-left,
+#wechatPay .footer-right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: .1rem 0;
+    color: #ffba00;
+    /*line-height: .6rem;*/
+}
+
+#wechatPay .footer-left {
+    background-color: #007fc3;
+}
+
+#wechatPay .footer-left a {
+    color: #64e8ff;
+}
+
+#wechatPay .footer-right {
+    background-color: #00a6dc;
+}
+
+#wechatPay .footer-right a {
+    color: #fffffd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------下弹窗--------------------------------*/
 
 .bottom-push-win {
     display: none;

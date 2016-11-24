@@ -3,91 +3,160 @@
 <head>
 	<meta content="width=device-width, height=device-height ,initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" id="metaViewPort" />
 	<meta charset="UTF-8">
-	<title>星奈吉</title>
+	<title>奥付云</title>
 	<link rel="stylesheet" href="css/index.css?v-3">
 </head>
 <body>
 <!-- <div class="img"></div> -->
 	<div class="tab">
-		<div class="tab-box active">
+		<div class="tab-box tab-box1 active" bindId="dianzibi">
 			<p class="tab-box-title">购买电子币</p>
 			<p class="tab-box-bottom">(可多机用)</p>
 		</div>
-		<div class="tab-box">
+		<div class="tab-box tab-box2 " bindId="wechatPay">
 			<p class="tab-box-title">本机直接支付</p>
 			<p class="tab-box-bottom">(限本机用)</p>
 		</div>
 	</div>
-	<div class="main">
-		<!-- 头部  -->
-		<header>
-			<div class="info">
-				<div class="logo">
-				</div>	
-				<div class="info-num">
-					余币： <span id="remainCoin"></span><span class='big-font'>币</span>
+	<div id="dianzibi" class="app-box">
+		<div class="main">
+			<!-- 头部  -->
+			<header>
+				<div class="info">
+					<div class="logo">
+					</div>	
+					<div class="info-num">
+						余币： <span id="remainCoin"></span><span class='big-font'>币</span>
+					</div>
 				</div>
-			</div>
-			<div class="btn-main">
-				<a class="btn" id="buy-coin-win-show">
-					<p>*<span id="btnCoinPrice">-</span>元/币</p>
-				</a>
-			</div>
-		</header>
-		<!-- 头部end -->
-		<!-- 设备列表 -->
-		<div class="list">
-			<div class="list-title">
-				<img src="images/Credit_card.png" alt="">
-				选择设备编号，并点击“投币”
-			</div>
-			<div class="list-content">
-				<div class="list-btn list-btn-left" id="deviceListUp"></div>
-				<div class="list-btn list-btn-right" id="deviceListDown"></div>
-				<div class="list-main">
-					<div class="list-main-content" id="deviceListMain">
-					<!-- 设备列表 -->
-						<div class="list-main-box" id="deviceList">
+				<div class="btn-main">
+					<a class="btn" id="buy-coin-win-show">
+						<p>*<span id="btnCoinPrice">-</span>元/币</p>
+					</a>
+				</div>
+			</header>
+			<!-- 头部end -->
+			<!-- 设备列表 -->
+			<div class="list">
+				<div class="list-title">
+					<img src="images/Credit_card.png" alt="">
+					选择设备编号，并点击“投币”
+				</div>
+				<div class="list-content">
+					<div class="list-btn list-btn-left" id="deviceListUp"></div>
+					<div class="list-btn list-btn-right" id="deviceListDown"></div>
+					<div class="list-main">
+						<div class="list-main-content" id="deviceListMain">
+						<!-- 设备列表 -->
+							<div class="list-main-box" id="deviceList">
 
+							</div>
 						</div>
-					</div>
-					<!-- 设备列表分页显示圆点 -->
-					<div class="list-main-now">
-						<div class="list-main-now-main" id="deviceListSpot">
-							
+						<!-- 设备列表分页显示圆点 -->
+						<div class="list-main-now">
+							<div class="list-main-now-main" id="deviceListSpot">
+								
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- 设备列表end -->
 		</div>
-		<!-- 设备列表end -->
-	</div>
-	<div class="coin-num">
-		<div class="coin-num-main">
-			<div class="coin-num-box">
-				<div class="num-btn minus" id="minus"></div>
-				<div class="num-text" id="currCoinNum">?</div>
-				<div class="num-btn plus" id="plus"></div>
+		<div class="coin-num">
+			<div class="coin-num-main">
+				<div class="coin-num-box">
+					<div class="num-btn minus" id="minus"></div>
+					<div class="num-text" id="currCoinNum">?</div>
+					<div class="num-btn plus" id="plus"></div>
+				</div>
+				<div class="coin-num-btn">
+					<a id="coinNumBtn"></a>
+				</div>
 			</div>
-			<div class="coin-num-btn">
-				<a id="coinNumBtn"></a>
+			<p class="coin-num-text">
+				*若1分钟内启动设备失效，系统将于30分钟内自动退币
+			</p>
+		</div>
+		<footer>
+			<div class="about-box">
+				<a href="http://url.cn/41MHGW9">关于星奈吉&奥付云</a>
 			</div>
-		</div>
-		<p class="coin-num-text">
-			*若1分钟内启动设备失效，系统将于30分钟内自动退币
-		</p>
+			<div class="btn-box btn-box-first" id="record-win-show">
+				消费记录
+			</div>
+			<div class="btn-box">
+				<a href="tel:18022312150">客服申诉</a>
+			</div>
+		</footer>
 	</div>
-	<footer>
-		<div class="about-box">
-			<a href="http://url.cn/41MHGW9">关于星奈吉&奥付云</a>
+	<div id="wechatPay" class="app-box">
+		<div class="main">
+		    <div class="main-box">
+		       <header>
+		            <!-- <div class="logo"></div> -->
+		            <div>
+		                <!-- <p class="title">微信支付</p> -->
+		                <p class="device">设备编号：<span id="mac"></span></p>
+		            </div>
+		        </header>
+		        <div class="packages">
+		            <div class="packages-box">
+		                <div class="packages-box-title">
+		                    <!-- <img class="yellow_exchange_machine" src="./doll/images/blue_coin_machine.png" alt=""> -->
+		                    <div class="packages-box-title-main">
+		                        请选择 <span>本机上币</span> 套餐
+		                    </div>
+		                    <div class="packages-box-title-p">*<span id="coinPrice"></span>元/<span id="coinNum"></span>币/次</div>
+		                </div>
+		                <div class="packages-box-main" id="packagesBoxMain">
+		                    
+		                </div>
+		            </div>
+		            <p class="packages-explain">*仅在本机使用 直接上币</p>
+		        </div>
+		    </div>
 		</div>
-		<div class="btn-box btn-box-first" id="record-win-show">
-			消费记录
-		</div>
-		<div class="btn-box">
-			<a href="tel:18022312150">客服申诉</a>
-		</div>
-	</footer>
+	    <div class="pay">
+	        <div class="pay-box">
+	            <div class="pay-main">
+	                <div class="pay-left">
+	                    <div class="duibi-number other">
+	                        <p> <span id="duibiNumberText">币数</span>:  </p>  
+	                        <div class="duibi-number-box ">
+	                            
+	                           
+	                            <div class="minus" id="minus"></div> 
+	                             <span id="duibiNumber"> 0 </span>
+	                            <div class="puls" id="puls"></div>
+	                            <span class="duibiNumberToMore" id="duibiNumberToMore">币</span>      
+	                        </div>
+	                    </div>
+	                    <div class="pay-money">
+	                        支付金额：<span id="payMoney"></span>
+	                    </div>
+	                </div>
+	                <div class="pay-right">
+	                    <a id="showConfirmPay" >
+	                        <p><span id="buttonDuibiNumber"></span></p>
+	                    </a>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="pay-bottom">
+	            *若支付成功1分钟内无上币，系统将于5分钟内自动退款
+	        </div>
+	    </div>
+		<footer>
+		    <div class="footer-left">
+		        <a href="http://url.cn/41MHGW9">关于奥付云</a>
+		    </div>
+		    <div class="footer-right">
+		        <a href="tel:18022312150">客服申诉</a>
+		    </div>
+		</footer>
+	</div>
+	
 	<!-- 购币 -->
 	<div class="bottom-push-win buy-coin-win" id="buy-coin-win">
 		<div class="bottom-push-win-main">

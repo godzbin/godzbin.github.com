@@ -30,9 +30,7 @@
 				fee: arr[j],
 				pulseNum: arr[j] / 100 + 1
 			})
-		}
-
-		
+		}		
 	})();
 	function getRandomTest(){
 		var recordListTest = [];
@@ -50,6 +48,35 @@
 		}
 		return recordListTest;
 	}
+	function App(){
+		var dom = document;
+		var touch = "touchstart";
+		this.tabEl = dom.getElementsByClassName("tab")[0];
+		this.tabEl.addEventListener(touch,this.showTabBox.bind(this));
+	}
+	App.prototype = {
+		showTabBox: function(e){
+			e.preventDefault();
+			var target = e.target;
+			console.log(e);
+			var childrens = this.tabEl.children;
+			childrens[0].className = childrens[0].className.replace("active", "");
+			childrens[1].className = childrens[1].className.replace("active", "");
+			target.className +=  " active";
+			this.hideAllTabBox();
+			var app_box_id = target.getAttribute("bindId");
+			console.log(app_box_id);
+			var box = document.getElementById(app_box_id);
+			box.style.display = "block";
+		},
+		hideAllTabBox: function(){
+			var boxs= document.getElementsByClassName("app-box");
+			for(var i=0; i<boxs.length; i++){
+				boxs[i].style.display = "none";
+			}
+		}
+	}
+
 	function AllPay() {
 		var that = this;
 		var dom = document;
@@ -710,7 +737,8 @@
 		}
 	}
 	document.addEventListener("DOMContentLoaded", function() {
-		var app = new AllPay();
-		app.init();
+		var app  = new App();
+		var dizhibi = new AllPay();
+		dizhibi.init();
 	}, false);
 })()
