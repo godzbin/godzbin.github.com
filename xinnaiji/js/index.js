@@ -144,13 +144,13 @@
 
 		},
 		setDeviceListBox: function() {
-			var width = this.deviceListMainEl.offsetWidth;
+			var width = this.deviceListMainEl.parentNode.offsetWidth;
 			var pages = Math.ceil(userData.deviceList.length / 9);
 			for (var i = 0; i < pages; i++) {
 				var box = document.createElement("div");
 				box.className = "list-main-box-child list-main-box-child" + i;
-				box.style.width = width;
-				this.deviceListEl.appendChild(box);
+				box.style.width = width+ "px";
+				var new_box=this.deviceListEl.appendChild(box);
 			}
 		},
 		setRemainCoin: function() {
