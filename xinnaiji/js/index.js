@@ -30,9 +30,7 @@
 				fee: arr[j],
 				pulseNum: arr[j] / 100 + 1
 			})
-		}
-
-		
+		}	
 	})();
 	function getRandomTest(){
 		var recordListTest = [];
@@ -222,7 +220,6 @@
 		touchFeeList: function(e) {
 			e.preventDefault();
 			var target = e.target;
-			console.log(target.className);
 			if (target.className.indexOf("fee-info") > -1) {
 				var index = target.getAttribute("index");
 				this.initFeeListSelect();
@@ -245,7 +242,6 @@
 					.replace(/{{disable}}/g, list[i].status ? "" : "disable");
 				html_arr.push(new_html);
 			};
-			console.log();
 			var box = this.deviceListEl.getElementsByClassName("list-main-box-child" + this.currPage)[0];
 			box.innerHTML = html_arr.join("");
 			if (!type) {
@@ -400,7 +396,6 @@
 		deviceListTouchEnd: function(e) {
 			e.preventDefault();
 			var move = this.sPos.x - this.mPos.x;
-			console.log(move);
 			if (Math.abs(move) > 50) {
 				if (move > 0) {
 					this.deviceListDown();
@@ -452,7 +447,6 @@
 		// 投币
 		putCoin: function(e) {
 			e && e.preventDefault();
-			console.log(this.selectDevice.deviceId);
 			if (!this.selectDevice.deviceId) {
 				// 请选择设备
 				this.countDown = 1.5;
