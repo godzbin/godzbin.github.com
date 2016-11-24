@@ -381,7 +381,7 @@
 		// 当手指滑动时，计算滑动值;
 		// 手势滑动或者点击
 		deviceListTouchStart: function(e) {
-			e.preventDefault();
+			// e.preventDefault();
 			var point = e.touches ? e.touches[0] : e;
 			this.sPos.x = point.screenX;
 			this.mPos.x = point.screenX;
