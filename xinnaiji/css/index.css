@@ -187,6 +187,7 @@ a:active {
     transform: translateZ(0);
     transition: left 1.5s ease-out;
     width: 30rem;
+     z-index: 66;
 }
 
 .dianzibi-app .list-main-box-child {
