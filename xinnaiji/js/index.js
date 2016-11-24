@@ -13,8 +13,7 @@
 	var userData = userData || defaultUserData;
 	// var recordListTest = [];
 	(function test() {
-
-		for (var i = 1; i < 50; i++) {
+		for (var i = 1; i < 22; i++) {
 			userData.deviceList.push({
 				deviceId: i,
 				deviceName: String.fromCharCode(64 + parseInt(i)),

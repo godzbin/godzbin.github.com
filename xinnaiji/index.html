@@ -4,7 +4,7 @@
 	<meta content="width=device-width, height=device-height ,initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" id="metaViewPort" />
 	<meta charset="UTF-8">
 	<title>星奈吉</title>
-	<link rel="stylesheet" href="css/index.css?v-2">
+	<link rel="stylesheet" href="css/index.css?v-3">
 </head>
 <body>
 <!-- <div class="img"></div> -->
@@ -255,23 +255,23 @@
 		</tr>
 	</script>
 	<script>
-	function setWidth() {
-		var width = document.documentElement.clientWidth;
-		var height = document.documentElement.clientHeight;
-		var new_width =0 ;
-		if(width < height){
-			new_width = width * (1 - (width / height - 375 / 590));
-		}else{
-			new_width = width;
-		}	
-		var fontSize = new_width / 6.4;
-		document.documentElement.style.fontSize = fontSize + "px";
-	}
-	setWidth();
-	window.onresize = function() {
+		function setWidth() {
+			var width = document.documentElement.clientWidth;
+			var height = document.documentElement.clientHeight;
+			var new_width =0 ;
+			if(width < height){
+				new_width = width * (1 - (width / height - 375 / 590));
+			}else{
+				new_width = width;
+			}	
+			var fontSize = new_width / 6.4;
+			document.documentElement.style.fontSize = fontSize + "px";
+		}
 		setWidth();
-	}
+		window.onresize = function() {
+			setWidth();
+		}
 	</script>
-	<script src="js/index.js?v-2"></script>
+	<script src="js/index.js?v-3"></script>
 </body>
 </html>
