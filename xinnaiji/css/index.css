@@ -167,6 +167,7 @@ header {
     position: absolute;
     left: 0;
     right: 0;
+    transform: translateZ(0); 
     transition: left 1.5s ease-out;
     width: 18rem;
 }

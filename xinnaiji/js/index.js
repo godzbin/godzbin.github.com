@@ -130,11 +130,12 @@
 		init: function() {
 			this.setBoxWidth();
 			this.closeLoading();
+			this.initFeeList();
 			this.setRemainCoin();
 			this.btnCoinPriceEl.innerText = this.parseFee(userData.coinPrice);
 			this.initDeviceList();
 			this.setDeviceListActive(userData.deviceId);
-			this.initFeeList();
+			
 		},
 		setBoxWidth: function(){
 			var width = this.deviceListMainEl.offsetWidth;
@@ -147,6 +148,9 @@
 		},
 		setRemainCoin: function() {
 			this.remainCoinEl.innerText = (userData.remainCoin || 0);
+			if(!userData.remainCoin){
+				this.showBuyCoinWin();
+			}
 		},
 		// 初始化设备列表
 		initDeviceList: function() {
@@ -474,6 +478,8 @@
 			this.successPutCoinEl.style.display = "block";
 			this.countDown = 3;
 			this.hideWin(this.successPutCoinEl);
+			this.currCoinNum = this.selectDevice.coinNum;
+			this.setCoinNum();
 		},
 		// 倒计时隐藏窗口
 		hideWin: function(win) {
