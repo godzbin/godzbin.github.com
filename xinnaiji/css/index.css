@@ -7,6 +7,9 @@ body {
     font-family: "微软雅黑";
     font-size: .3rem;
     background-color: #FFE3EB;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 button,
@@ -88,7 +91,7 @@ header {
     width: 90%;
     height: 1rem;
     background: url("../images/buy_Electric_coin.png") no-repeat center;
-    background-size: 100%;
+    background-size: 100% 100%;
     color: #FFE8A2;
 }
 
@@ -165,11 +168,12 @@ header {
 }
 .list-main-box{
     position: absolute;
+    overflow: hidden;
     left: 0;
     right: 0;
     transform: translateZ(0); 
     transition: left 1.5s ease-out;
-    width: 18rem;
+    width: 30rem;
 }
 .list-main-box-child{
     float: left;
@@ -400,6 +404,7 @@ footer .btn-box-first {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, .5);
+    z-index: 88;
 }
 
 .bottom-push-win-main {
@@ -539,6 +544,9 @@ footer .btn-box-first {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 99;
+    opacity: 1;
+    transition: opacity .2s;
 }
 
 .prompt-win-main {
@@ -602,6 +610,7 @@ footer .btn-box-first {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
+    z-index: 88;
 }
 
 .center-push-win-main {
@@ -687,14 +696,22 @@ footer .btn-box-first {
 .record-win {
     /*display: block;*/
 }
-
-.record-win .retrun-btn {
+.record-win .win-btns a{
     display: block;
-    width: 100%;
+    float: left;
+    width: 33.3%;
     background-color: #F5B8B9;
-    color: #B37474;
-    text-align: center;
+    box-sizing: border-box;
     font-size: .32rem;
+    color: #B37474;
+}
+.record-win .win-btns a.disable{
+     background-color: #aaa;
+     color: #ddd;
+}
+.record-win .win-btns .retrun-btn {
+    border-left: 1px #ddd solid;    
+    border-right: 1px #ddd solid;    
 }
 
 .record-win .win-content {
@@ -702,7 +719,7 @@ footer .btn-box-first {
 }
 
 .record-list {
-    height: 4.2rem;
+    min-height: 3.8rem;
     overflow: scroll;
     position: relative;
 }

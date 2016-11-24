@@ -11,10 +11,10 @@
 		"feeList": []
 	}
 	var userData = userData || defaultUserData;
-	var recordListTest = [];
+	// var recordListTest = [];
 	(function test() {
 
-		for (var i = 1; i < 21; i++) {
+		for (var i = 1; i < 50; i++) {
 			userData.deviceList.push({
 				deviceId: i,
 				deviceName: String.fromCharCode(64 + parseInt(i)),
@@ -33,19 +33,24 @@
 			})
 		}
 
+		
+	})();
+	function getRandomTest(){
+		var recordListTest = [];
 		for (var k = 0; k < 5; k++) {
+			var i = parseInt(Math.random() * 24);
 			recordListTest.push({
 				time: "2016-11-20 21:28:45",
-				address: "这是测试",
-				device: "abc",
-				type: 0,
-				coin: 3,
-				remainCoin: 100,
-				status: true
+				address: "这是测试"+String.fromCharCode(64 + parseInt(i)),
+				device: String.fromCharCode(64 + parseInt(i)),
+				type: Math.random() > 0.5 ? 0 : 1,
+				coin:  parseInt(Math.random() * 30),
+				remainCoin: parseInt(Math.random() * 100),
+				status: Math.random() > 0.9 ? false : true
 			})
 		}
-	})();
-
+		return recordListTest;
+	}
 	function AllPay() {
 		var that = this;
 		var dom = document;
@@ -110,7 +115,10 @@
 		this.showRecordWinBtn = dom.getElementById("record-win-show");
 		this.showRecordWinBtn.addEventListener(touch, this.showRecordWinEl.bind(this));
 		this.recordWinEl.getElementsByClassName("retrun-btn")[0].addEventListener(touch, this.hideRecordWinEl.bind(this));
-		this.recordWinEl.getElementsByClassName("loadingMore")[0].addEventListener(touch, this.scrollRecordList.bind(this));
+		this.recordUpBtn = this.recordWinEl.getElementsByClassName("up-btn")[0];
+		this.recordDownBtn = this.recordWinEl.getElementsByClassName("down-btn")[0];
+		this.recordUpBtn.addEventListener(touch, this.recordUp.bind(this));
+		this.recordDownBtn.addEventListener(touch, this.recordDown.bind(this));
 		// DialogLoading
 		this.DialogLoading = dom.getElementById("DialogLoading");
 	}
@@ -128,27 +136,29 @@
 		},
 		// 初始化
 		init: function() {
-			this.setBoxWidth();
+			this.setDeviceListBox();
+			this.setDeviceListSpotList();
 			this.closeLoading();
 			this.initFeeList();
 			this.setRemainCoin();
 			this.btnCoinPriceEl.innerText = this.parseFee(userData.coinPrice);
 			this.initDeviceList();
 			this.setDeviceListActive(userData.deviceId);
-			
+
 		},
-		setBoxWidth: function(){
+		setDeviceListBox: function() {
 			var width = this.deviceListMainEl.offsetWidth;
-			var box1 = this.deviceListEl.getElementsByClassName("list-main-box-child"+0)[0];
-			var box2 = this.deviceListEl.getElementsByClassName("list-main-box-child"+ 1)[0];
-			var box3 = this.deviceListEl.getElementsByClassName("list-main-box-child"+ 2)[0];
-			box1.style.width = width+ "px";
-			box2.style.width = width+ "px";
-			box3.style.width = width+ "px";
+			var pages = Math.ceil(userData.deviceList.length / 9);
+			for (var i = 0; i < pages; i++) {
+				var box = document.createElement("div");
+				box.className = "list-main-box-child list-main-box-child" + i;
+				box.style.width = width;
+				this.deviceListEl.appendChild(box);
+			}
 		},
 		setRemainCoin: function() {
 			this.remainCoinEl.innerText = (userData.remainCoin || 0);
-			if(!userData.remainCoin){
+			if (!userData.remainCoin) {
 				this.showBuyCoinWin();
 			}
 		},
@@ -172,7 +182,7 @@
 			} else {
 				this.setDeviceList(list);
 			}
-			this.setDeviceListSpotList();
+
 			this.setDeviceListSpotActive(this.currPage);
 		},
 		// 初始化套餐列表
@@ -237,14 +247,14 @@
 				html_arr.push(new_html);
 			};
 			console.log();
-			var box = this.deviceListEl.getElementsByClassName("list-main-box-child"+ this.currPage)[0];
+			var box = this.deviceListEl.getElementsByClassName("list-main-box-child" + this.currPage)[0];
 			box.innerHTML = html_arr.join("");
-			if(!type){
+			if (!type) {
 				this.deviceListEl.style.transition = "none";
-			}else{
+			} else {
 				this.deviceListEl.style.transition = "left .5s";
 			}
-			this.deviceListEl.style.left = -( parseInt(box.offsetWidth) * this.currPage) + "px";
+			this.deviceListEl.style.left = -(parseInt(box.offsetWidth) * this.currPage) + "px";
 			this.selectDevice = {};
 			this.currCoinNum = 0;
 			this.setCoinNum();
@@ -258,6 +268,9 @@
 				html_arr.push(html);
 			}
 			this.deviceListSpotEl.innerHTML = html_arr.join("");
+			var parentNodeWidth = this.deviceListSpotEl.parentNode.offsetWidth;
+			var spotListWidth = this.deviceListSpotEl.offsetWidth;
+			this.deviceListSpotEl.style.left = (parentNodeWidth - spotListWidth) / 2 + "px";
 		},
 		setDeviceListSpotActive: function(index) {
 			var childrens = this.deviceListSpotEl.children;
@@ -278,12 +291,12 @@
 			}
 		},
 		setDeviceListActive: function(deviceId) {
-			var childrens = this.deviceListEl.getElementsByClassName("list-main-box-child"+ this.currPage)[0].children;
+			var childrens = this.deviceListEl.getElementsByClassName("list-main-box-child" + this.currPage)[0].children;
 			var length = childrens.length;
 			for (var i = 0; i < length; i++) {
 				childrens[i].className = childrens[i].className.replace(/active/g, "");
 				if (childrens[i].getAttribute("index") == deviceId) {
-					if(!this.getDevice(deviceId).status){
+					if (!this.getDevice(deviceId).status) {
 						return;
 					}
 					this.selectDevice = this.getDevice(deviceId);
@@ -316,22 +329,22 @@
 		// 下一页
 		deviceListDown: function(e) {
 			e && e.preventDefault();
-			if (this.currPage == Math.ceil(userData.deviceList.length / 9)-1 ) {
+			if (this.currPage == Math.ceil(userData.deviceList.length / 9) - 1) {
 				return;
 			}
 			this.currPage++;
 			this.isBtnShow();
 			this.changeDeviceListDown();
 		},
-		isBtnShow: function(){
-			if(this.currPage == 0){
+		isBtnShow: function() {
+			if (this.currPage == 0) {
 				this.deviceListUpEl.style.opacity = 0.2;
-			}else{
+			} else {
 				this.deviceListUpEl.style.opacity = 1;
 			}
-			if(this.currPage == Math.ceil(userData.deviceList.length / 9)-1){
+			if (this.currPage == Math.ceil(userData.deviceList.length / 9) - 1) {
 				this.deviceListDownEl.style.opacity = 0.2;
-			}else{
+			} else {
 				this.deviceListDownEl.style.opacity = 1;
 			}
 		},
@@ -339,7 +352,7 @@
 		changeDeviceListUp: function() {
 			var list = userData.deviceList;
 			if (list.length === 0) return;
-			var box = this.deviceListEl.getElementsByClassName("list-main-box-child"+ (this.currPage +1) )[0];
+			var box = this.deviceListEl.getElementsByClassName("list-main-box-child" + (this.currPage + 1))[0];
 			var firstChild = box.children[0];
 			var deviceId = firstChild.getAttribute("index");
 			var deviceIndex = this.findDeviceIndexInList(deviceId);
@@ -356,7 +369,7 @@
 		changeDeviceListDown: function() {
 			var list = userData.deviceList;
 			if (list.length === 0) return;
-			var box = this.deviceListEl.getElementsByClassName("list-main-box-child"+ (this.currPage -1) )[0];
+			var box = this.deviceListEl.getElementsByClassName("list-main-box-child" + (this.currPage - 1))[0];
 			var length = box.children.length;
 			var lastChild = box.children[length - 1];
 			var deviceId = lastChild.getAttribute("index");
@@ -441,16 +454,16 @@
 		putCoin: function(e) {
 			e && e.preventDefault();
 			console.log(this.selectDevice.deviceId);
-			if(!this.selectDevice.deviceId){
+			if (!this.selectDevice.deviceId) {
 				// 请选择设备
+				this.countDown = 1.5;
 				this.showEorreWin("请选择设备");
 				return;
 			}
 			if (userData.remainCoin < this.currCoinNum) {
 				//余币不足
 				this.coinInsufficientEl.style.display = "block";
-				this.countDown = 3;
-				this.hideWin(this.coinInsufficientEl);
+				this.hideWin(this.coinInsufficientEl,3);
 				return;
 			}
 			// 调用投币接口
@@ -476,22 +489,24 @@
 			coin.innerText = this.currCoinNum;
 			this.setRemainCoin();
 			this.successPutCoinEl.style.display = "block";
-			this.countDown = 3;
-			this.hideWin(this.successPutCoinEl);
+			this.hideWin(this.successPutCoinEl,3);
 			this.currCoinNum = this.selectDevice.coinNum;
 			this.setCoinNum();
 		},
 		// 倒计时隐藏窗口
-		hideWin: function(win) {
+		hideWin: function(win,countDown) {
 			var countDownEl = win.getElementsByClassName("countDown")[0];
-			countDownEl.innerText = this.countDown + "s";
+			countDownEl.innerText = countDown + "s";
+			win.style.opacity = 1;
 			setTimeout(function() {
-				if (this.countDown == 1) {
-					this.countDown = 3;
-					win.style.display = "none";
+				if (countDown <= 1) {
+					win.style.opacity = 0;
+					setTimeout(function() {
+						win.style.display = "none";
+					}, 200);
 				} else {
-					this.countDown--;
-					this.hideWin(win);
+					countDown--;
+					this.hideWin(win,countDown);
 				}
 			}.bind(this), 1000);
 		},
@@ -594,17 +609,22 @@
 			timeEl.innerText = "三个月";
 			dateEl.innerText = "2016年12月12日";
 			this.successBuyEl.style.display = "block";
-			this.hideWin(this.successBuyEl);
+			this.hideWin(this.successBuyEl, 3);
 		},
 		// 消费记录
 		_recordLoadingStart: 0,
 		_recordLoadingCount: 5,
+		_currPageRecord: 0,
 		_recordLoading: false,
 		_recordLoadingLast: false,
+		_isLoading: false,
 		showRecordWinEl: function(e) {
 			e.preventDefault();
 			this.recordWinEl.style.display = "block";
-			this._recordLoading || this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
+			if(!this._recordLoading){
+				this._currPageRecord = 1;
+				this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
+			}
 		},
 		hideRecordWinEl: function(e) {
 			e.preventDefault();
@@ -612,23 +632,26 @@
 		},
 		loadRecordList: function(start, count) {
 			// 请求接口
+			this.showLoading();
+			this._isLoading= true;
 			var loading = this.recordWinEl.getElementsByClassName("loading")[0];
 			var loadingMore = this.recordWinEl.getElementsByClassName("loadingMore")[0];
 			var last = this.recordWinEl.getElementsByClassName("last")[0];
-			loading.style.display = "block";
-			var data = recordListTest;
+			// loading.style.display = "block";
+			var data = getRandomTest();
 			setTimeout(function() {
 				this.setRecordList(data);
 				var total = 20;
 				this._recordLoading = true;
-				this._recordLoadingStart += this._recordLoadingCount;
+				// this._recordLoadingStart += this._recordLoadingCount;
 				if (this._recordLoadingStart > total) {
 					this._recordLoadingLast = true;
-					last.style.display = "block";
-				} else {
-					loadingMore.style.display = "block";
+				}else{
+					this._recordLoadingLast = false;
 				}
-				loading.style.display = "none";
+				this.setBtnStaus();
+				this._isLoading= false;
+				this.closeLoading();
 			}.bind(this), 1000);
 		},
 		setRecordList: function(data) {
@@ -651,20 +674,44 @@
 					.replace(/{{status}}/g, data[i].status ? "成功" : "待处理");
 				html_arr.push(html)
 			}
-			html_list.innerHTML += html_arr.join("");
+			html_list.innerHTML = html_arr.join("");
 		},
-		scrollRecordList: function(e) {
-			console.log(e);
-			this.recordWinEl.getElementsByClassName("loadingMore")[0].style.display = "none";
+		recordUp: function(e) {
+			e.preventDefault();
+			if(this._currPageRecord == 1 || this._isLoading){
+				return;
+			}
+			this._currPageRecord --;
+			this._recordLoadingStart = this._recordLoadingStart-this._recordLoadingCount;
 			this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
 		},
-		showEorreWin: function(msg){
+		recordDown: function(e) {
+			e.preventDefault();
+			if(this._recordLoadingLast || this._isLoading){
+				return;
+			}
+			this._currPageRecord ++;
+			this._recordLoadingStart = this._recordLoadingStart+this._recordLoadingCount;
+			this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
+		},
+		setBtnStaus: function(){
+			if(this._currPageRecord == 1){
+				this.recordUpBtn.className += " disable";
+			}else{
+				this.recordUpBtn.className = this.recordUpBtn.className.replace("disable", "");
+			}
+			if(this._recordLoadingLast){
+				this.recordDownBtn.className += " disable";
+			}else{
+				this.recordDownBtn.className = this.recordUpBtn.className.replace("disable", "");
+			}
+		},
+		showEorreWin: function(msg) {
 			var errorWin = document.getElementById("error-win");
 			var errorMsgEl = errorWin.getElementsByClassName("msg")[0];
 			errorMsgEl.innerText = msg || "";
 			errorWin.style.display = "block";
-			this.countDown = 3;
-			this.hideWin(errorWin);
+			this.hideWin(errorWin, 1.5);
 		}
 	}
 	document.addEventListener("DOMContentLoaded", function() {
