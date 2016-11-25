@@ -1,4 +1,5 @@
-(function() {
+var App = App || {};
+App.dianzibi_app = function() {
 	var defaultUserData = {
 		'deviceList': [],
 		"coinNum": 1, //单次币数
@@ -8,8 +9,7 @@
 		// 余币
 		"remainCoin": 10,
 		"deviceId": 10,
-		"feeList": [],
-		'auth_token': "11111"
+		"feeList": []
 	}
 	var userData = userData || defaultUserData;
 	(function test() {
@@ -26,7 +26,6 @@
 			// var arr = []
 		for (var j = 0; j < arr.length; j++) {
 			userData.feeList.push({
-				feeId: j+1,
 				count: arr[j] / 100,
 				fee: arr[j],
 				pulseNum: arr[j] / 100 + 1
@@ -50,37 +49,7 @@
 		}
 		return recordListTest;
 	}
-	var configs = {
-		deviceList: {
-			deviceId: "deviceId",
-			deviceName: "deviceName",
-			coinNum: "coinNum",
-			status: "status",
-			maxCoinCount: "maxCoinCount"
-		},
-		feeList: {
-			feeId: "feeId",
-			count: "count",
-			fee: "fee",
-			pulseNum: "pulseNum"
-		},
-		recordList: {
-			time: "time",
-			address: "address",
-			device: "device",
-			type: "type",
-			coin: "coin",
-			remainCoin: "remainCoin",
-			status: "status",
-		},
-		url: {
-			putCoin: "putCoin",
-			toPay: "./payment/buyEcByWechat",
-			getRecordList: "getRecordList"
-		}
-	};
-
-
+	var configs = App.configs.dianzibi;
 
 	function AllPay() {
 		var that = this,
@@ -88,6 +57,7 @@
 			touch = "touchstart",
 			touchMove = "touchmove",
 			touchEnd = "touchend";
+
 		this.currPage = 0;
 		this.sPos = {};
 		this.mPos = {};
@@ -95,55 +65,55 @@
 		this.currCoinNum = 0;
 		this.countDown = 3;
 		//头部  余币/单币价格
-		this.remainCoinEl = dom.getElementById("remainCoin");
-		this.btnCoinPriceEl = dom.getElementById("btnCoinPrice");
+		this.remainCoinEl = dom.getElementById("dianzibi-remainCoin");
+		this.btnCoinPriceEl = dom.getElementById("dianzibi-btnCoinPrice");
 		// 设备列表
-		this.deviceListDemoText = dom.getElementById("deviceListDemo").innerHTML;
-		this.deviceListEl = dom.getElementById("deviceList");
-		this.deviceListMainEl = dom.getElementById("deviceListMain");
+		this.deviceListDemoText = dom.getElementById("dianzibi-deviceListDemo").innerHTML;
+		this.deviceListEl = dom.getElementById("dianzibi-deviceList");
+		this.deviceListMainEl = dom.getElementById("dianzibi-deviceListMain");
 		this.deviceListMainEl.addEventListener(touch, this.deviceListTouchStart.bind(this));
 		this.deviceListMainEl.addEventListener(touchMove, this.deviceListTouchMove.bind(this));
 		this.deviceListMainEl.addEventListener(touchEnd, this.deviceListTouchEnd.bind(this));
-		this.deviceListSpotEl = dom.getElementById("deviceListSpot");
-		this.deviceListUpEl = dom.getElementById("deviceListUp");
-		this.deviceListDownEl = dom.getElementById("deviceListDown");
+		this.deviceListSpotEl = dom.getElementById("dianzibi-deviceListSpot");
+		this.deviceListUpEl = dom.getElementById("dianzibi-deviceListUp");
+		this.deviceListDownEl = dom.getElementById("dianzibi-deviceListDown");
 		this.deviceListUpEl.addEventListener(touch, this.deviceListUp.bind(this));
 		this.deviceListDownEl.addEventListener(touch, this.deviceListDown.bind(this));
 
 		// 投币盒子
-		this.currCoinNumEl = dom.getElementById("currCoinNum");
-		this.minusEl = dom.getElementById("minus");
-		this.plusEl = dom.getElementById("plus");
+		this.currCoinNumEl = dom.getElementById("dianzibi-currCoinNum");
+		this.minusEl = dom.getElementById("dianzibi-minus");
+		this.plusEl = dom.getElementById("dianzibi-plus");
 		this.minusEl.addEventListener(touch, this.minusCoinNum.bind(this));
 		this.plusEl.addEventListener(touch, this.plusCoinNum.bind(this));
 
-		this.coinNumBtnEl = dom.getElementById("coinNumBtn");
+		this.coinNumBtnEl = dom.getElementById("dianzibi-coinNumBtn");
 		this.coinNumBtnEl.addEventListener(touch, this.putCoin.bind(this));
 
 
 		// 电子币套餐
-		this.feeListDemoText = dom.getElementById("feeListDemo").innerHTML;
-		this.buyCoinWinCoinPriceEl = dom.getElementById("buy-coin-win-coin-price");
-		this.feeListEl = dom.getElementById("feeList");
+		this.feeListDemoText = dom.getElementById("dianzibi-feeListDemo").innerHTML;
+		this.buyCoinWinCoinPriceEl = dom.getElementById("dianzibi-buy-coin-win-coin-price");
+		this.feeListEl = dom.getElementById("dianzibi-feeList");
 		this.feeListEl.addEventListener(touch, this.touchFeeList.bind(this));
 
-		this.confirmBuyWinShowBtn = dom.getElementById("confirm-buy-win-show");
+		this.confirmBuyWinShowBtn = dom.getElementById("dianzibi-confirm-buy-win-show");
 		this.confirmBuyWinShowBtn.addEventListener(touch, this.showConfirmBuyWin.bind(this));
 		// 弹窗
-		this.buyCoinWinEl = dom.getElementById("buy-coin-win");
-		this.buyCoinWinCloseBtn = dom.getElementById("buy-coin-win-close");
+		this.buyCoinWinEl = dom.getElementById("dianzibi-buy-coin-win");
+		this.buyCoinWinCloseBtn = dom.getElementById("dianzibi-buy-coin-win-close");
 		this.buyCoinWinCloseBtn.addEventListener(touch, this.hideBuyCoinWin.bind(this));
-		this.buyCoinWinShowBtn = dom.getElementById("buy-coin-win-show");
+		this.buyCoinWinShowBtn = dom.getElementById("dianzibi-buy-coin-win-show");
 		this.buyCoinWinShowBtn.addEventListener(touch, this.showBuyCoinWin.bind(this));
 
-		this.successPutCoinEl = dom.getElementById("success-put-coin");
-		this.successBuyEl = dom.getElementById("success-buy");
-		this.coinInsufficientEl = dom.getElementById("coin-insufficient");
-		this.confirmBuyWinEl = dom.getElementById("confirm-buy-win");
+		this.successPutCoinEl = dom.getElementById("dianzibi-success-put-coin");
+		this.successBuyEl = dom.getElementById("dianzibi-success-buy");
+		this.coinInsufficientEl = dom.getElementById("dianzibi-coin-insufficient");
+		this.confirmBuyWinEl = dom.getElementById("dianzibi-confirm-buy-win");
 		this.confirmBuyWinEl.getElementsByClassName("win-close")[0].addEventListener(touch, this.hideConfirmBuyWin.bind(this));
 		this.confirmBuyWinEl.getElementsByClassName("confirm-btn")[0].addEventListener(touch, this.toPay.bind(this));
-		this.recordWinEl = dom.getElementById("record-win");
-		this.showRecordWinBtn = dom.getElementById("record-win-show");
+		this.recordWinEl = dom.getElementById("dianzibi-record-win");
+		this.showRecordWinBtn = dom.getElementById("dianzibi-record-win-show");
 		this.showRecordWinBtn.addEventListener(touch, this.showRecordWinEl.bind(this));
 		this.recordWinEl.getElementsByClassName("retrun-btn")[0].addEventListener(touch, this.hideRecordWinEl.bind(this));
 		this.recordUpBtn = this.recordWinEl.getElementsByClassName("up-btn")[0];
@@ -152,8 +122,10 @@
 		this.recordDownBtn.addEventListener(touch, this.recordDown.bind(this));
 		// DialogLoading
 		this.DialogLoading = dom.getElementById("DialogLoading");
+
+
 		this.getRecordListDemo = function(){
-			return document.getElementById("recordListDemo");
+			return dom.getElementById("dianzibi-recordListDemo");
 		}
 	}
 	AllPay.prototype = {
@@ -498,7 +470,59 @@
 			this.currCoinNum += this.selectDevice[device_msg.coinNum];
 			this.setCoinNum();
 		},
+		// 投币
+		putCoin: function(e) {
+			e && e.preventDefault();
+			var device_msg = configs.deviceList;
+			if (!this.selectDevice[device_msg.deviceId]) {
+				// 请选择设备
+				this.countDown = 1.5;
+				this.showEorreWin("请选择设备");
+				return;
+			}
+			if (userData.remainCoin < this.currCoinNum) {
+				//余币不足
+				this.coinInsufficientEl.style.display = "block";
+				this.hideWin(this.coinInsufficientEl, 3);
+				return;
+			}
+			// 调用投币接口
+			// --------------------------------------------------------------------------------------
+			this.showLoading();
+			setTimeout(this.putCoinSuccess.bind(this), 1000);
+			return;
+			// 成功后减币数，并判断是否为零
+			var device_msg = configs.deviceList;
+			var self = this;
+			var json = {
+				openId: userData.openId,
+				coinNum: this.currCoinNum,
+				deviceId: this.selectDevice[device_msg.deviceId],
 
+			};
+			util.ajax({
+				url: configs.url.putCoin,
+				type: "POST",
+				async: true,
+				data: this.parseData(json),
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				success: function(data) {
+					data = JSON.parse(data);
+					self.closeLoading();
+					console.log(data.code);
+					if (data.code !== '200') {
+						self.showEorreWin(data.msg);
+					} else {
+						self.putCoinSuccess();
+					}
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		},
 		// 封装请求数据
 		parseData: function(obj) {
 			var data_arr = [];
@@ -574,7 +598,57 @@
 			e && e.preventDefault();
 			this.confirmBuyWinEl.style.display = "none";
 		},
-
+		toPay: function(e) {
+			// 确认支付
+			e.preventDefault();
+			var fee_msg = configs.feeList;
+			var self = this;
+			var json = {
+				"deviceId": userData.deviceId,
+				"deviceMac": userData.deviceMac,
+				"openId": userData.openId,
+				"count": self.selectFee[fee_msg.count],
+				"auth_token": userData.auth_token
+			};
+			this.showLoading();
+			this.hideConfirmBuyWin();
+			setTimeout(function() {
+				userData.remainCoin += self.selectFee[fee_msg.pulseNum];
+				self.showPaySuccessDialog();
+				self.setRemainCoin();
+				self.closeLoading();
+			}.bind(this), 1000);
+			return;
+			// 支付接口
+			util.ajax({
+				url: configs.url.toPay,
+				type: "POST",
+				async: true,
+				data: this.parseData(json),
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				success: function(data) {
+					data = JSON.parse(data);
+					self.closeLoading();
+					console.log(data.code);
+					if (data.code !== '200') {
+						self.showEorreWin(data.msg);
+					} else {
+						WeixinJSBridge.invoke('getBrandWCPayRequest', data.result, function(res) {
+							if (res.err_msg == "get_brand_wcpay_request:ok") {
+								userData.remainCoin += self.selectFee[fee_msg.pulseNum];
+								self.showPaySuccessDialog();
+								self.setRemainCoin();
+							}
+						});
+					}
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		},
 		showLoading: function() {
 			this.DialogLoading.style.display = "block";
 		},
@@ -612,7 +686,49 @@
 			e.preventDefault();
 			this.recordWinEl.style.display = "none";
 		},
-
+		loadRecordList: function(start, count) {
+			// 请求接口
+			this.showLoading();
+			this._isLoading = true;
+			var device_msg = configs.deviceList;
+			var self = this;
+			var json = {
+				openId: userData.openId,
+				start: start,
+				count: count,
+				deviceId: this.selectDevice[device_msg.deviceId]
+			};
+			var data = getRandomTest();
+			setTimeout(function() {
+				this.setRecordList(data);
+				this.closeLoading();
+			}.bind(this), 1000);
+			return;
+			util.ajax({
+				url: configs.url.getRecordList,
+				type: "POST",
+				async: true,
+				data: this.parseData(json),
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				success: function(data) {
+					data = JSON.parse(data);
+					var result = data.result;
+					self.closeLoading();
+					console.log(data.code);
+					if (data.code !== '200') {
+						self.showEorreWin(data.msg);
+					} else {
+						self.setRecordList(data);
+						self.closeLoading();
+					}
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		},
 		// 写下消费记录
 		setRecordList: function(data) {
 			if (!data) {
@@ -629,10 +745,8 @@
 			}
 			this.setBtnStaus();
 			this._isLoading = false;
-
-
 			var record_msg = configs.recordList;
-			var html_demo = this.getRecordListDemo(). innerHTML;
+			var html_demo = this.getRecordListDemo().innerHTML;
 			var html_list = this.recordWinEl.getElementsByClassName("record-list-box")[0];
 			var html_arr = [];
 			var list = data.list || data;
@@ -692,159 +806,5 @@
 			this.hideWin(errorWin, 1.5);
 		}
 	}
-	// 请求方法
-	// 支付
-	AllPay.prototype.toPay = function() {
-		// 确认支付
-		e.preventDefault();
-		var fee_msg = configs.feeList;
-		var self = this;
-		var json = {
-			"deviceId": userData.deviceId,
-			"deviceMac": userData.deviceMac,
-			"openId": userData.openId,
-			"count": self.selectFee[fee_msg.count],
-			"auth_token": userData.auth_token,
-			'feeBusinessDetailId': self.selectFee[fee.feeId]
-		};
-		this.showLoading();
-		this.hideConfirmBuyWin();
-		setTimeout(function() {
-			userData.remainCoin += self.selectFee[fee_msg.pulseNum];
-			self.showPaySuccessDialog();
-			self.setRemainCoin();
-			self.closeLoading();
-		}.bind(this), 1000);
-
-		return;
-		// 支付接口
-		util.ajax({
-			url: configs.url.toPay,
-			type: "POST",
-			async: true,
-			data: this.parseData(json),
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			success: function(data) {
-				data = JSON.parse(data);
-				self.closeLoading();
-				console.log(data.code);
-				if (data.code !== '200') {
-					self.showEorreWin(data.msg);
-				} else {
-					WeixinJSBridge.invoke('getBrandWCPayRequest', data.result, function(res) {
-						if (res.err_msg == "get_brand_wcpay_request:ok") {
-							userData.remainCoin += self.selectFee[fee_msg.pulseNum];
-							self.showPaySuccessDialog();
-							self.setRemainCoin();
-						}
-					});
-				}
-			},
-			error: function(error) {
-				console.log(error);
-			}
-		});
-	};
-	// 投币
-	AllPay.prototype.putCoin = function(e) {
-		e && e.preventDefault();
-		var device_msg = configs.deviceList;
-		if (!this.selectDevice[device_msg.deviceId]) {
-			// 请选择设备
-			this.countDown = 1.5;
-			this.showEorreWin("请选择设备");
-			return;
-		}
-		if (userData.remainCoin < this.currCoinNum) {
-			//余币不足
-			this.coinInsufficientEl.style.display = "block";
-			this.hideWin(this.coinInsufficientEl, 3);
-			return;
-		}
-		// 调用投币接口
-		// --------------------------------------------------------------------------------------
-		this.showLoading();
-		setTimeout(this.putCoinSuccess.bind(this), 1000);
-		return;
-		// 成功后减币数，并判断是否为零
-		var device_msg = configs.deviceList;
-		var self = this;
-		var json = {
-			openId: userData.openId,
-			coinNum: this.currCoinNum,
-			deviceId: this.selectDevice[device_msg.deviceId],
-		};
-		util.ajax({
-			url: configs.url.putCoin,
-			type: "POST",
-			async: true,
-			data: this.parseData(json),
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			success: function(data) {
-				data = JSON.parse(data);
-				self.closeLoading();
-				console.log(data.code);
-				if (data.code !== '200') {
-					self.showEorreWin(data.msg);
-				} else {
-					self.putCoinSuccess();
-				}
-			},
-			error: function(error) {
-				console.log(error);
-			}
-		});
-	};
-	// 消费记录
-	AllPay.prototype.loadRecordList = function(start, count) {
-		// 请求接口
-		this.showLoading();
-		this._isLoading = true;
-		var device_msg = configs.deviceList;
-		var self = this;
-		var json = {
-			openId: userData.openId,
-			start: start,
-			count: count,
-			deviceId: this.selectDevice[device_msg.deviceId]
-		};
-		var data = getRandomTest();
-		setTimeout(function() {
-			this.setRecordList(data);
-			this.closeLoading();
-		}.bind(this), 1000);
-		return;
-		util.ajax({
-			url: configs.url.getRecordList,
-			type: "POST",
-			async: true,
-			data: this.parseData(json),
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			success: function(data) {
-				data = JSON.parse(data);
-				var result = data.result;
-				self.closeLoading();
-				console.log(data.code);
-				if (data.code !== '200') {
-					self.showEorreWin(data.msg);
-				} else {
-					self.setRecordList(data);
-					self.closeLoading();
-				}
-			},
-			error: function(error) {
-				console.log(error);
-			}
-		});
-	};
-	document.addEventListener("DOMContentLoaded", function() {
-		var app = new AllPay();
-		app.init();
-	}, false);
-})()
+	this.page = new AllPay();
+}

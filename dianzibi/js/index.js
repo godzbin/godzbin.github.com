@@ -30,50 +30,69 @@
 				fee: arr[j],
 				pulseNum: arr[j] / 100 + 1
 			})
-		}	
+		}
 	})();
-	function getRandomTest(){
+
+	function getRandomTest() {
 		var recordListTest = [];
 		for (var k = 0; k < 5; k++) {
 			var i = parseInt(Math.random() * 24);
 			recordListTest.push({
 				time: "2016-11-20 21:28:45",
-				address: "这是测试"+String.fromCharCode(64 + parseInt(i)),
+				address: "这是测试" + String.fromCharCode(64 + parseInt(i)),
 				device: String.fromCharCode(64 + parseInt(i)),
 				type: Math.random() > 0.5 ? 0 : 1,
-				coin:  parseInt(Math.random() * 30),
+				coin: parseInt(Math.random() * 30),
 				remainCoin: parseInt(Math.random() * 100),
 				status: Math.random() > 0.9 ? false : true
 			})
 		}
 		return recordListTest;
 	}
+	var configs = {
+		deviceList: {
+			deviceId : "deviceId",
+			deviceName: "deviceName",
+			coinNum: "coinNum",
+			status: "status",
+			maxCoinCount: "maxCoinCount"
+		},
+		feeList: {
+			count: "count",
+			fee: "fee",
+			pulseNum: "pulseNum"
+		},
+		url:{
+			putCoin: "putCoin",
+			toPay: "toPay",
+			getRecordList: "getRecordList" 
+		}
+	};
 
-
-	function App(){
+	function App() {
 		var dom = document;
 		var touch = "touchstart";
 		this.tabEl = dom.getElementsByClassName("tab")[0];
-		this.tabEl.addEventListener(touch,this.showTabBox.bind(this));
+		this.tabEl.addEventListener(touch, this.showTabBox.bind(this));
 	}
 	App.prototype = {
-		showTabBox: function(e){
+		showTabBox: function(e) {
 			e.preventDefault();
 			var target = e.target;
 			console.log(e);
 			var childrens = this.tabEl.children;
 			childrens[0].className = childrens[0].className.replace("active", "");
 			childrens[1].className = childrens[1].className.replace("active", "");
-			target.className +=  " active";
+			target.className += " active";
 			this.hideAllTabBox();
 			var app_box_id = target.getAttribute("bindId");
 			console.log(app_box_id);
 			var box = document.getElementById(app_box_id);
 			box.style.display = "block";
 		},
-		hideAllTabBox: function(){
-			var boxs= document.getElementsByClassName("app-box");
-			for(var i=0; i<boxs.length; i++){
+		hideAllTabBox: function() {
+			var boxs = document.getElementsByClassName("app-box");
+			for (var i = 0; i < boxs.length; i++) {
 				boxs[i].style.display = "none";
 			}
 		}
@@ -181,8 +200,8 @@
 			for (var i = 0; i < pages; i++) {
 				var box = document.createElement("div");
 				box.className = "list-main-box-child list-main-box-child" + i;
-				box.style.width = width+ "px";
-				var new_box=this.deviceListEl.appendChild(box);
+				box.style.width = width + "px";
+				var new_box = this.deviceListEl.appendChild(box);
 			}
 		},
 		setRemainCoin: function() {
@@ -488,7 +507,7 @@
 			if (userData.remainCoin < this.currCoinNum) {
 				//余币不足
 				this.coinInsufficientEl.style.display = "block";
-				this.hideWin(this.coinInsufficientEl,3);
+				this.hideWin(this.coinInsufficientEl, 3);
 				return;
 			}
 			// 调用投币接口
@@ -514,12 +533,12 @@
 			coin.innerText = this.currCoinNum;
 			this.setRemainCoin();
 			this.successPutCoinEl.style.display = "block";
-			this.hideWin(this.successPutCoinEl,3);
+			this.hideWin(this.successPutCoinEl, 3);
 			this.currCoinNum = this.selectDevice.coinNum;
 			this.setCoinNum();
 		},
 		// 倒计时隐藏窗口
-		hideWin: function(win,countDown) {
+		hideWin: function(win, countDown) {
 			var countDownEl = win.getElementsByClassName("countDown")[0];
 			countDownEl.innerText = countDown + "s";
 			win.style.opacity = 1;
@@ -531,7 +550,7 @@
 					}, 200);
 				} else {
 					countDown--;
-					this.hideWin(win,countDown);
+					this.hideWin(win, countDown);
 				}
 			}.bind(this), 1000);
 		},
@@ -646,7 +665,7 @@
 		showRecordWinEl: function(e) {
 			e.preventDefault();
 			this.recordWinEl.style.display = "block";
-			if(!this._recordLoading){
+			if (!this._recordLoading) {
 				this._currPageRecord = 1;
 				this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
 			}
@@ -658,7 +677,7 @@
 		loadRecordList: function(start, count) {
 			// 请求接口
 			this.showLoading();
-			this._isLoading= true;
+			this._isLoading = true;
 			var loading = this.recordWinEl.getElementsByClassName("loading")[0];
 			var loadingMore = this.recordWinEl.getElementsByClassName("loadingMore")[0];
 			var last = this.recordWinEl.getElementsByClassName("last")[0];
@@ -671,11 +690,11 @@
 				// this._recordLoadingStart += this._recordLoadingCount;
 				if (this._recordLoadingStart > total) {
 					this._recordLoadingLast = true;
-				}else{
+				} else {
 					this._recordLoadingLast = false;
 				}
 				this.setBtnStaus();
-				this._isLoading= false;
+				this._isLoading = false;
 				this.closeLoading();
 			}.bind(this), 1000);
 		},
@@ -703,31 +722,31 @@
 		},
 		recordUp: function(e) {
 			e.preventDefault();
-			if(this._currPageRecord == 1 || this._isLoading){
+			if (this._currPageRecord == 1 || this._isLoading) {
 				return;
 			}
-			this._currPageRecord --;
-			this._recordLoadingStart = this._recordLoadingStart-this._recordLoadingCount;
+			this._currPageRecord--;
+			this._recordLoadingStart = this._recordLoadingStart - this._recordLoadingCount;
 			this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
 		},
 		recordDown: function(e) {
 			e.preventDefault();
-			if(this._recordLoadingLast || this._isLoading){
+			if (this._recordLoadingLast || this._isLoading) {
 				return;
 			}
-			this._currPageRecord ++;
-			this._recordLoadingStart = this._recordLoadingStart+this._recordLoadingCount;
+			this._currPageRecord++;
+			this._recordLoadingStart = this._recordLoadingStart + this._recordLoadingCount;
 			this.loadRecordList(this._recordLoadingStart, this._recordLoadingCount);
 		},
-		setBtnStaus: function(){
-			if(this._currPageRecord == 1){
+		setBtnStaus: function() {
+			if (this._currPageRecord == 1) {
 				this.recordUpBtn.className += " disable";
-			}else{
+			} else {
 				this.recordUpBtn.className = this.recordUpBtn.className.replace("disable", "");
 			}
-			if(this._recordLoadingLast){
+			if (this._recordLoadingLast) {
 				this.recordDownBtn.className += " disable";
-			}else{
+			} else {
 				this.recordDownBtn.className = this.recordUpBtn.className.replace("disable", "");
 			}
 		},
@@ -745,4 +764,3 @@
 		dianzibi.init();
 	}, false);
 })()
-

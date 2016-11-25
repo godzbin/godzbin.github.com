@@ -4,7 +4,12 @@
 	<meta content="width=device-width, height=device-height ,initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" id="metaViewPort" />
 	<meta charset="UTF-8">
 	<title>奥付云</title>
-	<link rel="stylesheet" href="css/index.min.css?v-3">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/page_wechat.css">
+	<link rel="stylesheet" href="css/win.css">
+	<link rel="stylesheet" href="css/loading.css">
+	<!-- <link rel="stylesheet" href="css/index.min.css?v-3"> -->
 </head>
 <body>
 <!-- <div class="img"></div> -->
@@ -26,12 +31,12 @@
 					<!-- <div class="logo">
 					</div> -->	
 					<div class="info-num">
-						余币： <span id="remainCoin"></span><span class='big-font'>币</span>
+						余币： <span id="dianzibi-remainCoin"></span><span class='big-font'>币</span>
 					</div>
 				</div>
 				<div class="btn-main">
-					<a class="btn" id="buy-coin-win-show">
-						<p>*<span id="btnCoinPrice">-</span>元/币</p>
+					<a class="btn" id="dianzibi-buy-coin-win-show">
+						<p>*<span id="dianzibi-btnCoinPrice">-</span>元/币</p>
 					</a>
 				</div>
 			</header>
@@ -43,18 +48,18 @@
 					选择设备编号，并点击“投币”
 				</div>
 				<div class="list-content">
-					<div class="list-btn list-btn-left" id="deviceListUp"></div>
-					<div class="list-btn list-btn-right" id="deviceListDown"></div>
+					<div class="list-btn list-btn-left" id="dianzibi-deviceListUp"></div>
+					<div class="list-btn list-btn-right" id="dianzibi-deviceListDown"></div>
 					<div class="list-main">
-						<div class="list-main-content" id="deviceListMain">
+						<div class="list-main-content" id="dianzibi-deviceListMain">
 						<!-- 设备列表 -->
-							<div class="list-main-box" id="deviceList">
+							<div class="list-main-box" id="dianzibi-deviceList">
 
 							</div>
 						</div>
 						<!-- 设备列表分页显示圆点 -->
 						<div class="list-main-now">
-							<div class="list-main-now-main" id="deviceListSpot">
+							<div class="list-main-now-main" id="dianzibi-deviceListSpot">
 								
 							</div>
 						</div>
@@ -66,12 +71,12 @@
 		<div class="coin-num">
 			<div class="coin-num-main">
 				<div class="coin-num-box">
-					<div class="num-btn minus" id="minus"></div>
-					<div class="num-text" id="currCoinNum">?</div>
-					<div class="num-btn plus" id="plus"></div>
+					<div class="num-btn minus" id="dianzibi-minus"></div>
+					<div class="num-text" id="dianzibi-currCoinNum">?</div>
+					<div class="num-btn plus" id="dianzibi-plus"></div>
 				</div>
 				<div class="coin-num-btn">
-					<a id="coinNumBtn"></a>
+					<a id="dianzibi-coinNumBtn"></a>
 				</div>
 			</div>
 			<p class="coin-num-text">
@@ -82,7 +87,7 @@
 			<div class="about-box">
 				<a href="http://url.cn/41MHGW9">关于星奈吉&奥付云</a>
 			</div>
-			<div class="btn-box btn-box-first" id="record-win-show">
+			<div class="btn-box btn-box-first" id="dianzibi-record-win-show">
 				消费记录
 			</div>
 			<div class="btn-box">
@@ -158,25 +163,25 @@
 	</div>
 	
 	<!-- 购币 -->
-	<div class="bottom-push-win buy-coin-win" id="buy-coin-win">
+	<div class="bottom-push-win buy-coin-win" id="dianzibi-buy-coin-win">
 		<div class="bottom-push-win-main">
 			<div class="win-title">
 				请选择购币金额
-				<p class="win-title-info">*<span id="buy-coin-win-coin-price"></span>元/币</p>
+				<p class="win-title-info">*<span id="dianzibi-buy-coin-win-coin-price"></span>元/币</p>
 			</div>
 			<div class="win-content">
-				<div class="fee-list" id="feeList">
+				<div class="fee-list" id="dianzibi-feeList">
 					
 				</div>
 			</div>
 			<div class="win-btns">
-				<a class="win-btn-close" id="buy-coin-win-close">取消</a>
-				<a class="win-btn-buy" id="confirm-buy-win-show">购币</a>
+				<a class="win-btn-close" id="dianzibi-buy-coin-win-close">取消</a>
+				<a class="win-btn-buy" id="dianzibi-confirm-buy-win-show">购币</a>
 			</div>
 		</div>
 	</div>
 	<!-- 购币成功 -->
-	<div class="prompt-win success-buy" id="success-buy">
+	<div class="prompt-win success-buy" id="dianzibi-success-buy">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<div class="success-buy-icon"></div>
@@ -188,7 +193,7 @@
 		</div>
 	</div>
 	<!-- 投币成功 -->
-	<div class="prompt-win success-coin" id="success-put-coin">
+	<div class="prompt-win success-coin" id="dianzibi-success-put-coin">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<span class="success-coin-icon">成功</span>
@@ -201,7 +206,7 @@
 		</div>
 	</div>
 	<!-- 余币不足 -->
-	<div class="prompt-win coin-insufficient" id="coin-insufficient">
+	<div class="prompt-win coin-insufficient" id="dianzibi-coin-insufficient">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<p class="prompt-win-content-text">
@@ -215,7 +220,7 @@
 		</div>
 	</div>
 	<!-- 确认购币 -->
-	<div class="center-push-win confirm-buy-win" id="confirm-buy-win">
+	<div class="center-push-win confirm-buy-win" id="dianzibi-confirm-buy-win">
 		<div class="center-push-win-main">
 			<div class="win-title">
 				<div class="win-close"></div>
@@ -236,7 +241,7 @@
 		</div>
 	</div>
 	<!-- 消费记录 -->
-	<div class="bottom-push-win record-win" id="record-win">
+	<div class="bottom-push-win record-win" id="dianzibi-record-win">
 		<div class="bottom-push-win-main">
 			<div class="win-title">
 				消费记录
@@ -273,7 +278,7 @@
 		</div>
 	</div>
 	<!-- 购币成功 -->
-	<div class="prompt-win error-win" id="error-win">
+	<div class="prompt-win error-win" id="dianzibi-error-win">
 		<div class="prompt-win-main">
 			<div class="prompt-win-content">
 				<p class="prompt-win-content-text msg"></p>
@@ -304,14 +309,87 @@
 	        </div>
 	    </div>
 	</div>
-	<script type="text/html" id="deviceListDemo">
+	
+	<!-- wechat 弹窗 -->
+	<div class="component-dialog payDialog" id="payDialog">
+	    <div class="dialog-mask"></div>
+	    <div class="dialog-wrapper">
+	        <div class="dialog-header">
+	            <div>
+	                <i class="close" id="payDialogClose"></i>
+	                <p class="dialogTit">支付</p>
+	            </div>
+	        </div>
+	        <div class="dialog-content">
+	            <div class="info-main">
+	                <div class="info-box " id="payCountBox">
+	                    <p class="name">游戏次数:</p>
+	                    <p class="value"><span id="payCount">22</span>次</p>
+	                </div>
+	                <div class="info-box">
+	                    <p class="name">上币数量:</p>
+	                    <p class="value"><span id="payPulse">111</span>枚</p>
+	                </div>
+	                <div class="info-box">
+	                    <p class="name">支付金额:</p>
+	                    <p class="value">￥<span id="payFee">22</span></p>
+	                </div>
+	                <div class="info-box prompt-box">
+	                    <p class="prompt">温馨提示：若支付成功1分钟内无上币，系统将于5分钟内自动退款；<span class="heightlight">限本机（上币）使用</span></p>
+	                </div>
+	                <button class="pay-btn" id="confirmPay">
+	                    确认支付
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="component-dialog alertDialog" id="alertDialog">
+	    <div class="dialog-mask"></div>
+	    <div class="dialog-wrapper">
+	        <div class="dialog-header">
+	            <div>
+	                <i class="close" id="alertDialogClose"></i>
+	                <p class="dialogTit">温馨提示</p>
+	            </div>
+	        </div>
+	        <div class="dialog-content">
+	            <div slot="diaContent" class="dialogComm">
+	                <div class="dialogAlertInfo"></div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="component-dialog paySuccessDialog" id="paySuccessDialog">
+	    <div class="dialog-wrapper dialog-main">
+	        <div class="dialog-header">
+	            <p class="dialogTit"> <span></span>支付成功</p>
+	        </div>
+	        <div class="dialog-content">
+	            <div class="info-main">
+	                <div class="info-main-text">
+	                    若1分钟内无出币，5-15分钟内自动退款。
+	                </div>
+	                <div class="info-main-img alipay">
+	                    
+	                </div>
+	            </div>
+	            <div class="info-button">
+	                <button class="pay-btn" id="paySuccessClose">我知道了</button>
+	            </div>
+	        </div>
+	    </div>
+
+
+	<!-- dianzibi demo -->
+	<script type="text/html" id="dianzibi-deviceListDemo">
 		<div class="list-box {{disable}}" index="{{index}}">
 			<img src="images/Gold_coin.png" alt="">
 			<p class="list-box-name">{{deviceName}}</p>
 			<p class="list-box-num">{{coinNum}}币/次</p>
 		</div>
 	</script>
-	<script type="text/html" id="feeListDemo">
+	<script type="text/html" id="dianzibi-feeListDemo">
 		<div class="fee-list-box" >
 			<div class="fee-info" index="{{index}}">
 				<img src="images/Gold_coin.png" alt="">
@@ -321,7 +399,7 @@
 			<span class="fee-give" style="display: {{display}}">{{giveNum}}币</span>
 		</div>
 	</script>
-	<script type="text/html" id="recordListDemo">
+	<script type="text/html" id="dianzibi-recordListDemo">
 		<tr>
 			<td>{{time}}</td>
 			<td>{{address}}{{device}}</td>
@@ -333,6 +411,20 @@
 			<td>{{status}}</td>
 		</tr>
 	</script>
+	<!-- wechat demo -->
+	<script type="text/html" id="feeDemo">
+    		<div class="packages-box-main-package" id= "fee{{index}}" index="{{index}}">
+	                    <div class="packages-box-main-package-content">
+	                        <img class="packages-box-main-select" src="./doll/images/blue_gold_coin.png" alt="">
+	                        <p class="packages-box-main-package-content-price">{{fee}}元</p>
+	                        <p class="packages-box-main-package-content-bi">{{pulseNum}}</p>
+	                    </div>
+	                    <div class="packages-box-main-package-add" style="display: {{display}}">
+	                        省{{giveNum}}元
+	                    </div>
+	              </div>
+	</script>
+
 	<script>
 		function setWidth() {
 			var width = document.documentElement.clientWidth;
@@ -351,6 +443,11 @@
 			setWidth();
 		}
 	</script>
-	<script src="js/index.js?v-3"></script>
+	<script src="js/configs.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/allPay.js"></script>
+	<script src="js/dianzibi.js"></script>
+	<script src="js/wechat_pay.js"></script>
+	<!-- <script src="js/index.js?v-3"></script> -->
 </body>
 </html>

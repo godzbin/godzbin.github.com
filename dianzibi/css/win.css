@@ -312,8 +312,8 @@
      color: #ddd;
 }
 .record-win .win-btns .retrun-btn {
-    border-left: 1px #ddd solid;    
-    border-right: 1px #ddd solid;    
+    border-left: 1px #B37474 solid;    
+    border-right: 1px #B37474 solid;    
 }
 
 .record-win .win-content {
@@ -372,4 +372,207 @@
     color: #B37474;
     font-size: .22rem;
     padding: .2rem;
+}
+
+
+/**/
+.alertDialog .dialog-wrapper {
+    top: 30%;
+}
+
+.component-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.component-dialog .dialog-wrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 95%;
+    margin: auto;
+    color: #00a7f7;
+    border-radius: 15px;
+    background: #caecf9;
+}
+
+.component-dialog .dialog-header {
+    padding: 12px 0;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    background: #00a7f7;
+}
+
+.component-dialog .dialogTit {
+    font-size: .4rem;
+    font-weight: 600;
+}
+
+.component-dialog .close {
+    position: absolute;
+    top: 15px;
+    left: 6%;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('../images/close.png') no-repeat;
+    background-size: 100%;
+}
+
+.component-dialog .dialog-content {
+    font-size: .3rem;
+    line-height: .5rem;
+    overflow: scroll;
+    width: 90% !important;
+}
+
+.alertDialog .dialog-content {
+    /*margin: .5rem auto;*/
+}
+
+.component-dialog .dialogAlertInfo {
+    margin: .3rem 0;
+    text-align: center;
+}
+
+.component-dialog .dialogHr {
+    width: 100%;
+    height: 2px;
+    margin: .3rem 0;
+    background: #94c6e2;
+}
+
+.component-dialog .dialogInfo .unit {
+    float: right;
+    margin-left: 5px;
+}
+
+.component-dialog .dialogInfo .count {
+    float: right;
+}
+
+::-webkit-scrollbar {
+    width: 0px !important;
+    height: 2px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .5);
+}
+
+.component-dialog .dialog-footer .btnLeft {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cc5000;
+    background: #ffc248;
+}
+
+.payDialog .dialog-wrapper {
+    top: 15%;
+    bottom: auto;
+    width: 85%;
+}
+
+.payDialog .info-main {
+    padding: .3rem 0;
+}
+
+.payDialog .info-main .info-box {
+    overflow: auto;
+}
+
+.payDialog .info-main .info-box .name,
+.payDialog .info-main .info-box .value {
+    font-size: .33rem;
+    line-height: .6rem;
+    margin: 0;
+}
+
+.payDialog .info-main .info-box .name {
+    float: left;
+}
+
+.payDialog .info-main .info-box .value {
+    float: right;
+}
+
+.payDialog .info-main .prompt-box {
+    margin-top: .3rem;
+    padding-top: .3rem;
+    border-top: 1px #0099e4 solid;
+}
+
+.payDialog .info-main .prompt-box .prompt {
+    font-size: .25rem;
+    line-height: .4rem;
+    text-align: left;
+}
+
+.payDialog .info-main .prompt-box .prompt .heightlight {
+    color: #f00;
+}
+
+.pay-btn {
+    font-size: .3rem;
+    width: 100%;
+    height: .7rem;
+    margin: .2rem 0;
+    color: #cd5000;
+    border: 0;
+    border-bottom: 2px #cc5100 solid;
+    border-radius: .1rem;
+    background-color: #ffc248;
+}
+
+.paySuccessDialog {
+    /*display: block;*/
+}
+
+.paySuccessDialog .dialog-wrapper {
+    top: 15%;
+    bottom: auto;
+    width: 85%;
+}
+
+.paySuccessDialog .dialog-wrapper .dialog-header {
+    text-align: center;
+    /*height: .3rem;*/
+}
+
+.paySuccessDialog .dialog-wrapper .dialogTit span {
+    padding-left: .5rem;
+    background: url('../images/icon_3x.png') no-repeat left center;
+    background-size: .45rem;
+}
+
+.paySuccessDialog .info-main {
+    font-size: .35rem;
+    padding: .2rem 0;
+    text-align: left;
+    color: #0663b0;
+}
+
+.paySuccessDialog .info-main-img {
+    width: 70%;
+    height: 1.4rem;
+    margin-top: .3rem;
+    border: 2px #0d64aa dashed;
+    border-radius: .1rem;
+}
+
+.paySuccessDialog .info-main-img.wechar {
+    background: url('../images/picture.png') no-repeat center;
+    background-size: 95%;
+}
+
+.paySuccessDialog .info-main-img.alipay {
+    background: url('../images/alipay_screenshots.jpg') no-repeat center;
+    background-size: 95%;
+    border: 2px #B55A11 dashed;
 }
