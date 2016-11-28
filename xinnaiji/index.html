@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 	<!-- <base href="${ctxPath}/"></base> -->
 	<meta content="width=device-width, height=device-height ,initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" id="metaViewPort" />
 	<meta charset="UTF-8">
 	<title>星奈吉</title>
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/win.css">
-	<link rel="stylesheet" href="css/loading.css">
-	<!-- <link rel="stylesheet" href="css/index.min.css?v-3"> -->
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/win.css">
+	<link rel="stylesheet" href="./css/loading.css">
+	<!-- <link rel="stylesheet" href="./xingnaiji/css/index.min.css?v-3"> -->
 </head>
 <body>
 <!-- <div class="img"></div> -->
@@ -20,7 +21,7 @@
 				<div class="logo">
 				</div>	
 				<div class="info-num">
-					余币： <span id="remainCoin"></span><span class='big-font'>币</span>
+					余币:<span id="remainCoin"></span><span class='big-font'>币</span>
 				</div>
 			</div>
 			<div class="btn-main">
@@ -33,7 +34,8 @@
 		<!-- 设备列表 -->
 		<div class="list">
 			<div class="list-title">
-				<img src="images/Credit_card.png" alt="">
+				<div class="list-title-img"></div>
+				<!-- <img src="images/Credit_card.png" alt=""> -->
 				选择设备编号，并点击“投币”
 			</div>
 			<div class="list-content">
@@ -61,20 +63,20 @@
 		<div class="coin-num-main">
 			<div class="coin-num-box">
 				<div class="num-btn minus" id="minus"></div>
-				<div class="num-text" id="currCoinNum">?</div>
 				<div class="num-btn plus" id="plus"></div>
+				<div class="num-text" id="currCoinNum">?</div>
 			</div>
 			<div class="coin-num-btn">
 				<a id="coinNumBtn"></a>
 			</div>
 		</div>
 		<p class="coin-num-text">
-			*若1分钟内启动设备失效，系统将于30分钟内自动退币
+			*若1分钟内投币失败，系统将于30分钟内自动退币
 		</p>
 	</div>
 	<footer>
 		<div class="about-box">
-			<a href="http://url.cn/41MHGW9">关于星奈吉&奥付云</a>
+			<a class='about-box-a'>关于星奈吉&奥付云</a>
 		</div>
 		<div class="btn-box btn-box-first" id="record-win-show">
 			消费记录
@@ -199,6 +201,20 @@
 			</div>
 		</div>
 	</div>
+	<!-- 关于 -->
+	<div class="bottom-push-win about-win" id="about-win">
+		<div class="bottom-push-win-main">
+			<div class="win-title">
+				关于星奈吉
+			</div>
+			<div class="win-content">
+				<div class="about-content"></div>
+			</div>
+			<div class="win-btns">
+				<a class="retrun-btn">返回</a>
+			</div>
+		</div>
+	</div>
 	<!-- 购币成功 -->
 	<div class="prompt-win error-win" id="error-win">
 		<div class="prompt-win-main">
@@ -233,7 +249,8 @@
 	</div>
 	<script type="text/html" id="deviceListDemo">
 		<div class="list-box {{disable}}" index="{{index}}">
-			<img src="images/Gold_coin.png" alt="">
+			<!-- <img src="images/Gold_coin.png" alt=""> -->
+			<div class="active-img"></div>
 			<p class="list-box-name">{{deviceName}}</p>
 			<p class="list-box-num">{{coinNum}}币/次</p>
 		</div>
@@ -241,7 +258,8 @@
 	<script type="text/html" id="feeListDemo">
 		<div class="fee-list-box" >
 			<div class="fee-info" index="{{index}}">
-				<img src="images/Gold_coin.png" alt="">
+				<!-- <img src="images/Gold_coin.png" alt=""> -->
+				<div class="active-img"></div>
 				<p class="fee"><span>{{fee}}</span>元</p>
 				<p class="coin">{{pulseNum}}币</p>
 			</div>
@@ -261,6 +279,26 @@
 		</tr>
 	</script>
 	<script>
+		// var userData = {
+	 //        	openId:'${user_json.openId !}',
+	 //        	deviceId:${device_json.deviceId},
+	 //        	deviceMac:${device_json.deviceMac},
+	 //        	deviceType:${device_json.deviceType!1},
+	 //        	coinPrice: ${ec_json.coinPrice!100},
+	 //        	coinNum: ${device_json.coinNum!1},
+	 //        	maxCoinThreshold: ${device_json.maxCoinThreshold!1},
+	 //        	auth_token:'${auth_token!}',
+		// 	deviceList: ${ec_json.devices},
+		// 	// 余币
+		// 	remainCoin: ${user_json.ecNum!0},
+		// 	feeList: ${ec_json.feeBusinesses},
+		// 	list:${pay_json.fee},
+		// 	isAdjustBuyEcNum: ${ec_json.isAdjustBuyEcNum},
+		// 	proprietorId: ${device_json.proprietorId !0},
+		// 	addressId: ${device_json.addressId!""}
+		// }
+	</script>
+	<script>
 		function setWidth() {
 			var width = document.documentElement.clientWidth;
 			var height = document.documentElement.clientHeight;
@@ -278,6 +316,8 @@
 			setWidth();
 		}
 	</script>
-	<script src="js/index.js?v-3"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/index.js?v-3"></script>
+	<!-- <script src="./xingnaiji/js/index.min.js?v-3"></script> -->
 </body>
 </html>

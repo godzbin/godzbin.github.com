@@ -42,12 +42,13 @@
 .dianzibi-app .info .info-num span {
     font-weight: 600;
     font-size: .6rem;
-    padding-right: .15rem;
+    padding: 0 .15rem;
 }
 
 .dianzibi-app .info .info-num .big-font {
     font-size: .42rem;
     font-weight: 700;
+    padding: 0;
 }
 
 .dianzibi-app .btn-main {
@@ -92,11 +93,14 @@
     position: relative;
 }
 
-.dianzibi-app .list-title img {
+.dianzibi-app .list-title .list-title-img {
     position: absolute;
     width: .7rem;
+    height: .6rem;
     top: -0.1rem;
     left: .3rem;
+    background: url("../images/Credit_card.png") no-repeat center;
+    background-size: 100% 100%;
 }
 
 .dianzibi-app .list-content {
@@ -124,10 +128,10 @@
 
 .dianzibi-app .list-btn-right {
     transform: rotate(180deg);
-    -ms-transform:rotate(180deg);
-    -moz-transform:rotate(180deg); 
-    -webkit-transform:rotate(180deg);
-    -o-transform:rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
     float: right;
 }
 
@@ -153,7 +157,7 @@
     transform: translateZ(0);
     transition: left 1.5s ease-out;
     width: 30rem;
-     z-index: 66;
+    z-index: 66;
 }
 
 .dianzibi-app .list-main-box-child {
@@ -194,13 +198,16 @@
     display: none;
 }
 
-.dianzibi-app .list-box.active img {
+.dianzibi-app .list-box.active .active-img {
     display: block;
     position: absolute;
     width: .4rem;
     height: .4rem;
     top: -0.15rem;
     right: -0.15rem;
+    background: url(../images/Gold_coin.png) no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 
 .dianzibi-app .list-box:nth-child(3n) {
@@ -284,7 +291,6 @@
 
 .dianzibi-app .coin-num-box .num-btn,
 .dianzibi-app .coin-num-box .num-text {
-    float: left;
     text-align: center;
     font-size: .4rem;
     padding: .2rem 0;
@@ -299,19 +305,20 @@
 }
 
 .dianzibi-app .coin-num-box .num-btn.minus {
+    float: left;
     padding-left: .2rem;
     background: url(../images/Minus.png) no-repeat right center;
     background-size: .5rem;
 }
 
 .dianzibi-app .coin-num-box .num-btn.plus {
+    float: right;
     padding-right: .2rem;
     background: url(../images/Plus.png) no-repeat left center;
     background-size: .5rem;
 }
 
 .dianzibi-app .coin-num-box .num-text {
-    width: 1rem;
     line-height: .7rem;
     font-size: .46rem;
     color: #FF4573;
@@ -370,4 +377,11 @@
 
 .dianzibi-app footer .btn-box-first {
     background-color: #DD999A;
+}
+.win-btns a{
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #ECAAAB;
+    color: #8F5554;
 }

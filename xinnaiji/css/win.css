@@ -95,13 +95,16 @@
     position: relative;
 }
 
-.buy-coin-win .fee-list-box .fee-info img {
+.buy-coin-win .fee-list-box .fee-info .active-img {
     display: none;
     position: absolute;
     width: .4rem;
     height: .4rem;
     top: -0.15rem;
     right: -0.15rem;
+     background: url(../images/Gold_coin.png) no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 
 .buy-coin-win .fee-list-box.active .fee-info {
@@ -380,4 +383,17 @@
     color: #B37474;
     font-size: .22rem;
     padding: .2rem;
+}
+
+
+.about-win .about-content{
+    padding: .2rem;
+    height: 4rem;
+    overflow: scroll;
+    text-align: center;
+    background-color: #FBD8DE;
+}
+.about-win .about-content p{
+    color: #B37474;
+    line-height: .4rem;
 }
