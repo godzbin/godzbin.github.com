@@ -12,27 +12,27 @@
 		'auth_token': "11111"
 	}
 	var userData = userData || defaultUserData;
-	// (function test() {
-	// 	for (var i = 1; i < 22; i++) {
-	// 		userData.deviceList.push({
-	// 			deviceId: i,
-	// 			deviceName: String.fromCharCode(64 + parseInt(i)),
-	// 			coinNum: Math.random() > 0.8 ? 2 : 1,
-	// 			status: Math.random() > 0.9 ? false : true,
-	// 			maxCoinCount: 30
-	// 		});
-	// 	}
-	// 	var arr = [100, 500, 1000, 2000, 5000, 10000]
-	// 		// var arr = []
-	// 	for (var j = 0; j < arr.length; j++) {
-	// 		userData.feeList.push({
-	// 			feeId: j+1,
-	// 			count: arr[j] / 100,
-	// 			fee: arr[j],
-	// 			pulseNum: arr[j] / 100 + 1
-	// 		})
-	// 	}
-	// })();
+	(function test() {
+		for (var i = 1; i < 22; i++) {
+			userData.deviceList.push({
+				deviceId: i,
+				deviceMark: String.fromCharCode(64 + parseInt(i)),
+				pulseNum: Math.random() > 0.8 ? 2 : 1,
+				isOnLine: Math.random() > 0.9 ? false : true,
+				maxCoinThreshold: 30
+			});
+		}
+		var arr = [100, 500, 1000, 2000, 5000, 10000]
+			// var arr = []
+		for (var j = 0; j < arr.length; j++) {
+			userData.feeList.push({
+				feeId: j + 1,
+				count: arr[j] / 100,
+				fee: arr[j],
+				pulseNum: arr[j] / 100 + 1
+			})
+		}
+	})();
 
 	function getRandomTest() {
 		var recordListTest = [];
@@ -155,7 +155,7 @@
 		this.getRecordListDemo = function() {
 			return document.getElementById("recordListDemo");
 		}
-		this.aboutBtn = dom.getElementsByClassName("about-box-a")[0];
+		this.aboutBtn = dom.getElementsByClassName("about-box")[0];
 		this.aboutBtn.addEventListener(touch, this.showAboutWin.bind(this));
 		this.aboutWin = dom.getElementById("about-win");
 		this.aboutWin.getElementsByClassName("retrun-btn")[0].addEventListener(touch, this.hideAboutWin.bind(this));
@@ -637,7 +637,7 @@
 			var html_demo = this.getRecordListDemo().innerHTML;
 			var html_list = this.recordWinEl.getElementsByClassName("record-list-box")[0];
 			var html_arr = [];
-			var list = data.list;
+			var list = data.list || data;
 			var length = list.length;
 			for (var i = 0; i < length; i++) {
 				var html = html_demo.replace(/{{time}}/g, list[i][record_msg.time])
@@ -720,14 +720,14 @@
 		};
 		this.showLoading();
 		this.hideConfirmBuyWin();
-		// setTimeout(function() {
-		// 	userData.remainCoin +=  parseInt (self.selectFee[fee_msg.pulseNum]);
-		// 	self.showPaySuccessDialog();
-		// 	self.setRemainCoin();
-		// 	self.closeLoading();
-		// }.bind(this), 1000);
+		setTimeout(function() {
+			userData.remainCoin += parseInt(self.selectFee[fee_msg.pulseNum]);
+			self.showPaySuccessDialog();
+			self.setRemainCoin();
+			self.closeLoading();
+		}.bind(this), 1000);
 
-		// return;
+		return;
 		// 支付接口
 		util.ajax({
 			url: configs.url.toPay,
@@ -777,8 +777,8 @@
 		// 调用投币接口
 		// --------------------------------------------------------------------------------------
 		this.showLoading();
-		// setTimeout(this.putCoinSuccess.bind(this), 1000);
-		// return;
+		setTimeout(this.putCoinSuccess.bind(this), 1000);
+		return;
 		// 成功后减币数，并判断是否为零
 		var device_msg = configs.deviceList;
 		var self = this;
@@ -828,11 +828,11 @@
 			deviceId: this.selectDevice[device_msg.deviceId]
 		};
 		var data = getRandomTest();
-		// setTimeout(function() {
-		// 	this.setRecordList(data);
-		// 	this.closeLoading();
-		// }.bind(this), 1000);
-		// return;
+		setTimeout(function() {
+			this.setRecordList(data);
+			this.closeLoading();
+		}.bind(this), 1000);
+		return;
 		util.ajax({
 			url: configs.url.getRecordList,
 			type: "POST",
@@ -880,23 +880,8 @@
 				success: function(data) {
 					self.closeLoading();
 					console.log(data);
-					aboutContent.innerHTML = data.toString();
-					function getPicInfo() {
-						var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
-						var imgs = [];
-						for (var i = 0; i < imgObj.length; i++) {
-							imgs.push(imgObj[i].src);
-							nowImgurl = this.src; //获取当前点击图片url
-							//下面调用微信内置图片浏览组建
-							imgObj[i].onclick = function() {
-								WeixinJSBridge.invoke("imagePreview", {
-									"urls": imgs,
-									"current": nowImgurl
-								});
-							}
-						}
-					}
-					getPicInfo();
+					aboutContent.innerHTML = data? data.toString() : "";
+					self.getPicInfo();
 				},
 				error: function(error) {
 					self.closeLoading();
@@ -905,54 +890,27 @@
 			});
 		}
 	};
+	AllPay.prototype.getPicInfo = function() {
+		var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
+		var imgs = [];
+		for (var i = 0; i < imgObj.length; i++) {
+			imgs.push(imgObj[i].src);
+			nowImgurl = this.src; //获取当前点击图片url
+			//下面调用微信内置图片浏览组建
+			imgObj[i].onclick = function() {
+				WeixinJSBridge.invoke("imagePreview", {
+					"urls": imgs,
+					"current": nowImgurl
+				});
+			}
+		}
+	};
 	AllPay.prototype.hideAboutWin = function(e) {
 		this.aboutWin.style.display = "none";
 	};
 	document.addEventListener("DOMContentLoaded", function() {
 		var app = new AllPay();
 		app.init();
-
-		function addLoadEvent(func) {
-			//将函数作为参数，此函数就是 onload 触发时需要执行的某个函数
-			var oldonload = window.onload;
-			//将原来的 onload 的值赋给临时变量 oldonload。
-			if (typeof window.onload != "function") {
-				//判断 onload 的类型是否是 function。如果已经执行window.onload=function(){...} 赋值，那么此时 onload 的类型就是 function
-				//否，则说明 onload 还没有被赋值，当前任务 func 为第一个加入的任务
-				window.onload = func();
-
-				//作为第一个任务，给 onload 赋值
-			} else {
-				//是，则说明 onload 已被赋值，onload 中先前已有任务加入
-				window.onload = function() {
-					oldonload();
-					func();
-					//作为后续任务，追加到先前的任务后面
-				}
-			}
-		}
-		var imgs = new Array();
-		var nowImgurl = "";
-
-		function getPicInfo() {
-			var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
-
-			for (var i = 0; i < imgObj.length; i++) {
-				imgs.push(imgObj[i].src);
-				nowImgurl = this.src; //获取当前点击图片url
-				//下面调用微信内置图片浏览组建
-				imgObj[i].onclick = function() {
-					alert(1);
-					WeixinJSBridge.invoke("imagePreview", {
-						"urls": imgs,
-						"current": nowImgurl
-					})
-					alert(2);
-				}
-			}
-		}
-
-		addLoadEvent(getPicInfo); //监听事件
 	}, false);
 
 })()
