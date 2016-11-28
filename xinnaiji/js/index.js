@@ -848,6 +848,7 @@
 				console.log(data.code);
 				if (data.code !== '200') {
 					self.showEorreWin(data.msg);
+
 				} else {
 					self.setRecordList(data);
 					self.closeLoading();
@@ -880,6 +881,23 @@
 					self.closeLoading();
 					console.log(data);
 					aboutContent.innerHTML = data.toString();
+					function getPicInfo() {
+						var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
+
+						for (var i = 0; i < imgObj.length; i++) {
+							imgs.push(imgObj[i].src);
+							nowImgurl = this.src; //获取当前点击图片url
+							//下面调用微信内置图片浏览组建
+							imgObj[i].onclick = function() {
+								alert(1);
+								WeixinJSBridge.invoke("imagePreview", {
+									"urls": imgs,
+									"current": nowImgurl
+								})
+								alert(2);
+							}
+						}
+					}
 				},
 				error: function(error) {
 					self.closeLoading();
@@ -925,10 +943,12 @@
 				nowImgurl = this.src; //获取当前点击图片url
 				//下面调用微信内置图片浏览组建
 				imgObj[i].onclick = function() {
+					alert(1);
 					WeixinJSBridge.invoke("imagePreview", {
 						"urls": imgs,
 						"current": nowImgurl
 					})
+					alert(2);
 				}
 			}
 		}
