@@ -889,12 +889,10 @@
 							nowImgurl = this.src; //获取当前点击图片url
 							//下面调用微信内置图片浏览组建
 							imgObj[i].onclick = function() {
-								alert(1);
 								WeixinJSBridge.invoke("imagePreview", {
 									"urls": imgs,
 									"current": nowImgurl
-								})
-								alert(2);
+								});
 							}
 						}
 					}
