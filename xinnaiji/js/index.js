@@ -894,7 +894,7 @@
 		var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
 		var imgs = [];
 		var host = window.location.host;
-		var src = ["/xingnaiji/images/Plus.png"];
+		var src = ["/xinnaiji/images/Plus.png"];
 		for (var i = 0; i < imgObj.length; i++) {
 			imgs.push(host + src[0]);
 			nowImgurl = this.src; //获取当前点击图片url
