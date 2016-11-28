@@ -898,6 +898,7 @@
 							}
 						}
 					}
+					getPicInfo();
 				},
 				error: function(error) {
 					self.closeLoading();
