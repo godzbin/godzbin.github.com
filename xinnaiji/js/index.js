@@ -880,7 +880,7 @@
 				success: function(data) {
 					self.closeLoading();
 					console.log(data);
-					aboutContent.innerHTML = data? data.toString() : "";
+					aboutContent.innerHTML = data ? data.toString() : "";
 					self.getPicInfo();
 				},
 				error: function(error) {
@@ -893,8 +893,10 @@
 	AllPay.prototype.getPicInfo = function() {
 		var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
 		var imgs = [];
+		var host = window.location.host;
+		var src = ["/xingnaiji/images/Plus.png"];
 		for (var i = 0; i < imgObj.length; i++) {
-			imgs.push(imgObj[i].src);
+			imgs.push(host + src[0]);
 			nowImgurl = this.src; //获取当前点击图片url
 			//下面调用微信内置图片浏览组建
 			imgObj[i].onclick = function() {
