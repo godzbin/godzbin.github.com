@@ -214,8 +214,6 @@
 			this.initDeviceList();
 			// 设置当前选中的设备
 			this.setDeviceListActive(userData.deviceId);
-
-			this.showAboutWin();
 		},
 		// 设置头部单币价格
 		setCoinPrice: function() {
