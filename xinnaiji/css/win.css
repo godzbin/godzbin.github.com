@@ -54,7 +54,7 @@
     box-sizing: border-box;
     display: block;
     padding: .2rem 0;
-    font-size: .35rem;
+    font-size: .32rem;
     text-align: center;
 }
 
@@ -78,6 +78,7 @@
 .buy-coin-win .fee-list-box {
     float: left;
     width: 28%;
+    height: 1.5rem;
     margin-right: 7%;
     margin-bottom: .3rem;
     text-align: center;
@@ -383,17 +384,4 @@
     color: #B37474;
     font-size: .22rem;
     padding: .2rem;
-}
-
-
-.about-win .about-content{
-    padding: .2rem;
-    height: 4rem;
-    overflow: scroll;
-    text-align: center;
-    background-color: #FBD8DE;
-}
-.about-win .about-content p{
-    color: #B37474;
-    line-height: .4rem;
 }

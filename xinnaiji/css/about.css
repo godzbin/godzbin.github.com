@@ -1,0 +1,201 @@
+.about-win {
+    /*display: block;*/
+}
+.about-win .win-title{
+}
+.about-win .bottom-push-win-main{
+	height: 85%;
+	background-color: #FFE3EB;
+}
+.about-win .win-content{
+	overflow: auto;
+	height: 82%;
+}
+.about-win .about-content {
+    padding: 0 .2rem;
+    position: relative;
+    height: 100%;
+    /*height: 6.8rem;*/
+    overflow: scroll;
+    text-align: center;
+    background-color: #FFE3EB;
+    text-align: left;
+}
+.about-win .about-content .about-content-box {
+	 padding:.1rem 0  0.3rem 0;
+	 margin-bottom: .2rem;
+	 border-bottom:  1px #754241 dashed ;
+	 position: relative;
+}
+.about-win .about-content .about-content-box:last-child{
+	border-bottom:  0;
+}
+.about-win .about-content .about-content-box p {
+    line-height: .31rem;
+    font-size: .18rem;
+    text-indent: 2em;
+    color: #754241;
+}
+
+.about-win .about-content .about-content-box .title {
+    text-indent: 0em;
+    padding-top: .2rem;
+    padding-left: 1.6rem;
+    font-size: .16rem;
+    background: no-repeat left top;
+    background-size: 1.6rem .45rem;
+}
+
+.about-win .about-content .about-content-box .xingnaiji-title {
+    background-image: url("../images/logo.png");
+}
+.about-win .about-content .about-content-box .allpay-title{
+	background-image: url("../images/allpay_logo.png");
+}
+.about-win .about-content .about-content-box .xingnaiji-box-img {
+    float: right;
+    width: 1.3rem;
+}
+.about-win .win-btns{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+.about-win .about-content .about-content-box .more{
+	display: none;
+}
+.about-win .about-content .about-content-box  .allpay-box-img{
+	float: right;
+	width: 2.5rem;
+}
+.about-win .about-content .about-content-box  .xingnaiji-info-title{
+	padding-left: 1.4rem;
+	padding-top: .05rem;
+	padding-bottom: .1rem;
+	font-size: .25rem;
+	background-image: url("../images/logo.png");
+	background-size: 1.3rem ;
+}
+.about-win .about-content .about-content-box .img-box{
+	padding: .2rem 0;
+	overflow: auto;
+	zoom: 1;
+}
+.about-win .about-content .about-content-box  .xingnaiji-info-img{
+	width: 33.33%;
+	height: 1.5rem;
+	float: left;
+}
+.about-win .about-content .about-content-box .info p{
+	text-indent: 0em;
+}
+.about-win .about-content .about-content-box .info a{
+	text-decoration: underline;
+	color: #1D5E92;
+}
+.about-win .about-content .about-content-box  .QCRcod-box{
+	
+	width: 100%;
+	text-align: center;
+}
+.about-win .about-content .about-content-box  .QCRcod-box p{
+	text-indent: 0em;
+}
+.about-win .about-content .about-content-box  .QCRcod-box img{
+	width: 1.5rem;
+	padding-top: .2rem ;
+}
+.about-win .about-content .about-content-box .more-btn{
+	font-size: .18rem;
+	position: absolute;
+	right: 0;
+	bottom: .35rem;
+	color: #fff;
+	padding-left: .25rem;
+	padding-right: .05rem;
+	padding-top: .05rem;
+	border-radius: .05rem;
+	background: url("../images/down.png") no-repeat .05rem center;
+	background-size: .2rem;
+	background-color: #805151;
+}
+.about-win .about-content .about-content-box .more{
+	overflow: auto;
+	zoom:1;
+}
+.about-win .about-content .about-content-box .hide-more-btn{
+	position: relative;
+	float: right;
+	right: 0;
+	font-size: .18rem;
+	color: #fff;
+	padding-left: .25rem;
+	padding-right: .05rem;
+	padding-top: .05rem;
+	border-radius: .05rem;
+	background: url("../images/up.png") no-repeat .05rem center;
+	background-size: .2rem;
+	background-color: #805151;
+}
+.about-win .about-content .about-content-box .more-imgs{
+	overflow: auto ;
+	zoom:1;
+}
+.about-win .about-content .about-content-box .more-img1{
+	float: left;
+	width: 30%;
+	margin-left: 5%;
+}
+.about-win .about-content .about-content-box .more-img2{
+	float: left;
+	width: 55%;
+	margin : .2rem 5%;
+}
+.about-win .about-content .about-content-box .info .imgs{
+	overflow:  auto;
+	zoom:1;
+}
+.about-win .about-content .about-content-box .info .imgs .imgBox{
+	float: left;
+	width: 33.33%;
+	box-sizing: border-box;
+	text-align: center;
+	padding: .2rem 0;
+}
+.about-win .about-content .about-content-box .info .imgs .imgBox img{
+	width: 1rem;
+}
+.about-win .about-content .about-content-box .info-main{
+	overflow: auto;
+	zoom: 1;
+}
+.about-win .about-content .about-content-box .QRCode-box{
+	width: 20%;
+	float: left;
+	text-align: center;
+}
+
+.about-win .about-content .about-content-box .QRCode-box img{
+	width: 95%;
+}
+.about-win .about-content .about-content-box  .info-boxs{
+	width: 60%;
+	float: left;
+}
+.about-win .about-content .about-content-box  .more-info-box{
+	overflow:  auto;
+	zoom: 1;
+}
+.about-win .about-content .about-content-box  .more-info-value,
+.about-win .about-content .about-content-box  .more-info-name{
+	float: left;
+}
+.about-win .about-content .about-content-box  .more-info-name{
+	width:  6em;
+	max-width: 40%;
+}
+.about-win .about-content .about-content-box  .more-info-value{
+	width: 10em;
+	max-width: 60%;
+}

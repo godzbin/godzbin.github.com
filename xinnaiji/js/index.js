@@ -79,6 +79,30 @@
 			toPay: "./payment/buyEcByWechat",
 			getRecordList: "getRecordList",
 			about: "./about.html"
+		},
+		imgUrls: {
+			imgs1: [
+				"./images/allpay/page1/1.jpg",
+				"./images/allpay/page1/2.jpg",
+				"./images/allpay/page1/3.jpg",
+				"./images/allpay/page1/4.jpg",
+				"./images/allpay/page1/5.jpg",
+				"./images/allpay/page1/6.jpg",
+				"./images/allpay/page1/7.jpg",
+			],
+			imgs2: [
+				"./images/allpay/page2/1.jpg",
+				"./images/allpay/page2/2.jpg",
+				"./images/allpay/page2/3.jpg",
+				"./images/allpay/page2/4.jpg",
+			],
+			imgs3: [
+				"./images/allpay/page3/1.jpg",
+				"./images/allpay/page3/2.jpg",
+				"./images/allpay/page3/3.jpg",
+				"./images/allpay/page3/4.jpg",
+				"./images/allpay/page3/5.jpg",
+			]
 		}
 	};
 
@@ -190,6 +214,8 @@
 			this.initDeviceList();
 			// 设置当前选中的设备
 			this.setDeviceListActive(userData.deviceId);
+
+			this.showAboutWin();
 		},
 		// 设置头部单币价格
 		setCoinPrice: function() {
@@ -862,7 +888,7 @@
 
 	// 关于
 	AllPay.prototype.showAboutWin = function(e) {
-		e.preventDefault();
+		e && e.preventDefault();
 		this.aboutWin.style.display = "block";
 		var aboutContent = this.aboutWin.getElementsByClassName("about-content")[0];
 
@@ -879,9 +905,10 @@
 				},
 				success: function(data) {
 					self.closeLoading();
-					console.log(data);
+					// console.log(data);
 					aboutContent.innerHTML = data ? data.toString() : "";
-					self.getPicInfo();
+
+					self.initAbout();
 				},
 				error: function(error) {
 					self.closeLoading();
@@ -890,22 +917,74 @@
 			});
 		}
 	};
-	AllPay.prototype.getPicInfo = function() {
-		var imgObj = document.getElementsByTagName('img'); //获取图文中所有的img标签对象
+	AllPay.prototype.getPicInfo = function(imgObj) {
 		var imgs = [];
-		var host = window.location.host;
-		var src = ["/xinnaiji/images/Plus.png"];
 		for (var i = 0; i < imgObj.length; i++) {
-			imgs.push(host + src[0]);
-			nowImgurl = this.src; //获取当前点击图片url
-			//下面调用微信内置图片浏览组建
-			imgObj[i].onclick = function() {
-				WeixinJSBridge.invoke("imagePreview", {
-					"urls": imgs,
-					"current": nowImgurl
-				});
+			if (imgs.indexOf(imgObj[i].getAttribute("src-big")) == -1) {
+				imgs.push(imgObj[i].getAttribute("src-big"));
 			}
+			//下面调用微信内置图片浏览组建
+			imgObj[i].addEventListener("click", click);
 		}
+
+		function click(e) {
+			var newImgs = [];
+			var nowImgurl = e.target.getAttribute("src-big");
+			for (var i = 0; i < imgs.length; i++) {
+				var new_img = new Image();
+				new_img.src = imgs[i];
+				if (imgs[i] == nowImgurl) {
+					nowImgurl = new_img.src;
+				}
+				newImgs[i] = new_img.src;
+			}
+			WeixinJSBridge.invoke("imagePreview", {
+				"urls": newImgs,
+				"current": nowImgurl
+			});
+		}
+	};
+	AllPay.prototype.getAllpayPicInfo = function(imgObj, imgs) {
+		//下面调用微信内置图片浏览组建
+		nowImgurl = this.src;
+
+		function click(e) {
+			for (var i = 0; i < imgs.length; i++) {
+				var new_img = new Image();
+				new_img.src = imgs[i];
+				imgs[i] = new_img.src;
+			}
+			WeixinJSBridge.invoke("imagePreview", {
+				"urls": imgs,
+				"current": nowImgurl
+			});
+		}
+		//下面调用微信内置图片浏览组建
+		imgObj.addEventListener("click", click);
+	};
+	AllPay.prototype.initAbout = function() {
+		this.aboutMoreBtn = this.aboutWin.getElementsByClassName("more-btn")[0];
+		this.aboutMoreEl = this.aboutWin.getElementsByClassName("more")[0];
+		this.aboutHideMoreBtn = this.aboutWin.getElementsByClassName("hide-more-btn")[0];
+		var topText = this.aboutWin.getElementsByClassName("allpay-top-text")[0];
+		this.aboutMoreBtn.addEventListener("touchstart", function() {
+			this.aboutMoreEl.style.display = "block";
+			topText.style.display = "none";
+			this.aboutMoreBtn.style.display = "none";
+		}.bind(this));
+		this.aboutHideMoreBtn.addEventListener("touchstart", function() {
+			this.aboutMoreEl.style.display = "none";
+			topText.style.display = "block";
+			this.aboutMoreBtn.style.display = "block";
+		}.bind(this));
+		var clickImgs = this.aboutWin.getElementsByClassName("click-img");
+		this.getPicInfo(clickImgs);
+		var allpayInfoImgs1 = this.aboutWin.getElementsByClassName("allpay-info-imgs-1")[0];
+		var allpayInfoImgs2 = this.aboutWin.getElementsByClassName("allpay-info-imgs-2")[0];
+		var allpayInfoImgs3 = this.aboutWin.getElementsByClassName("allpay-info-imgs-3")[0];
+		this.getAllpayPicInfo(allpayInfoImgs1, configs.imgUrls.imgs1);
+		this.getAllpayPicInfo(allpayInfoImgs2, configs.imgUrls.imgs2);
+		this.getAllpayPicInfo(allpayInfoImgs3, configs.imgUrls.imgs3);
 	};
 	AllPay.prototype.hideAboutWin = function(e) {
 		this.aboutWin.style.display = "none";

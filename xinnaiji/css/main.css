@@ -1,11 +1,11 @@
-.dianzibi-app .img {
+.img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
-    background: url(../images/2016-11-21-A套餐开始高亮-星奈吉会员充值界面.png) no-repeat;
+    opacity: 0.1;
+    background: url(../images/2.png) no-repeat;
     background-size: 100% 100%;
     z-index: 99;
 }
