@@ -17,6 +17,7 @@
 			userData.deviceList.push({
 				deviceId: i,
 				deviceMark: String.fromCharCode(64 + parseInt(i)),
+				deviceName: String.fromCharCode(64 + parseInt(i)),
 				pulseNum: Math.random() > 0.8 ? 2 : 1,
 				isOnLine: Math.random() > 0.9 ? false : true,
 				maxCoinThreshold: 30
@@ -53,7 +54,8 @@
 	var configs = {
 		deviceList: {
 			deviceId: "deviceId",
-			deviceName: "deviceMark",
+			deviceName: "deviceName",
+			deviceMark: "deviceMark",
 			coinNum: "pulseNum",
 			status: "isOnLine",
 			maxCoinCount: "maxCoinThreshold"
@@ -88,20 +90,40 @@
 				"./images/allpay/page1/4.jpg",
 				"./images/allpay/page1/5.jpg",
 				"./images/allpay/page1/6.jpg",
-				"./images/allpay/page1/7.jpg",
+				"./images/allpay/page1/7.jpg"
 			],
 			imgs2: [
 				"./images/allpay/page2/1.jpg",
 				"./images/allpay/page2/2.jpg",
 				"./images/allpay/page2/3.jpg",
-				"./images/allpay/page2/4.jpg",
+				"./images/allpay/page2/4.jpg"
 			],
 			imgs3: [
 				"./images/allpay/page3/1.jpg",
 				"./images/allpay/page3/2.jpg",
 				"./images/allpay/page3/3.jpg",
 				"./images/allpay/page3/4.jpg",
-				"./images/allpay/page3/5.jpg",
+				"./images/allpay/page3/5.jpg"
+			],
+			imgsAll: [
+				"./images/big/allpay_machine_large.jpg",
+				"./images/big/allpay_system_large.jpg",
+				"./images/allpay/page1/1.jpg",
+				"./images/allpay/page1/2.jpg",
+				"./images/allpay/page1/3.jpg",
+				"./images/allpay/page1/4.jpg",
+				"./images/allpay/page1/5.jpg",
+				"./images/allpay/page1/6.jpg",
+				"./images/allpay/page1/7.jpg",
+				"./images/allpay/page2/1.jpg",
+				"./images/allpay/page2/2.jpg",
+				"./images/allpay/page2/3.jpg",
+				"./images/allpay/page2/4.jpg",
+				"./images/allpay/page3/1.jpg",
+				"./images/allpay/page3/2.jpg",
+				"./images/allpay/page3/3.jpg",
+				"./images/allpay/page3/4.jpg",
+				"./images/allpay/page3/5.jpg"
 			]
 		}
 	};
@@ -548,7 +570,7 @@
 			} else {
 				pleaseBuyCoin.style.display = "none";
 			}
-			device.innerText = this.selectDevice.deviceName;
+			device.innerText = this.selectDevice[device_msg.deviceName];
 			coin.innerText = this.currCoinNum;
 			this.setRemainCoin();
 			this.successPutCoinEl.style.display = "block";
@@ -944,13 +966,15 @@
 	};
 	AllPay.prototype.getAllpayPicInfo = function(imgObj, imgs) {
 		//下面调用微信内置图片浏览组建
-		nowImgurl = this.src;
 
 		function click(e) {
+			var newImgs = [];
+			nowImgurl = this.src;
 			for (var i = 0; i < imgs.length; i++) {
 				var new_img = new Image();
 				new_img.src = imgs[i];
 				imgs[i] = new_img.src;
+				newImgs[i] = new_img.src;
 			}
 			WeixinJSBridge.invoke("imagePreview", {
 				"urls": imgs,
@@ -964,7 +988,7 @@
 		this.aboutMoreBtn = this.aboutWin.getElementsByClassName("more-btn")[0];
 		this.aboutMoreEl = this.aboutWin.getElementsByClassName("more")[0];
 		this.aboutHideMoreBtn = this.aboutWin.getElementsByClassName("hide-more-btn")[0];
-		var topText = this.aboutWin.getElementsByClassName("allpay-top-text")[0];
+		var topText = this.aboutWin.getElementsByClassName("allpay-top-text-box")[0];
 		this.aboutMoreBtn.addEventListener("touchstart", function() {
 			this.aboutMoreEl.style.display = "block";
 			topText.style.display = "none";
@@ -977,9 +1001,13 @@
 		}.bind(this));
 		var clickImgs = this.aboutWin.getElementsByClassName("click-img");
 		this.getPicInfo(clickImgs);
+		var allpayInfoImgsAll = this.aboutWin.getElementsByClassName("allpay-info-imgs-all");
 		var allpayInfoImgs1 = this.aboutWin.getElementsByClassName("allpay-info-imgs-1")[0];
 		var allpayInfoImgs2 = this.aboutWin.getElementsByClassName("allpay-info-imgs-2")[0];
 		var allpayInfoImgs3 = this.aboutWin.getElementsByClassName("allpay-info-imgs-3")[0];
+		for(var i=0;i< allpayInfoImgsAll.length; i++){
+			this.getAllpayPicInfo(allpayInfoImgsAll[i], configs.imgUrls.imgsAll);
+		}
 		this.getAllpayPicInfo(allpayInfoImgs1, configs.imgUrls.imgs1);
 		this.getAllpayPicInfo(allpayInfoImgs2, configs.imgUrls.imgs2);
 		this.getAllpayPicInfo(allpayInfoImgs3, configs.imgUrls.imgs3);
