@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>奥付云</title>
+  <style>
+    * {
+      margin: 0 auto;
+      padding: 0;
+    }
+    
+    body {
+      margin: 0 auto;
+      padding: 0;
+      font-size: .3rem;
+      text-align: center;
+      padding: 0 0.5rem;
+      color: #666;
+    }
+    
+    a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      background: #009ef7;
+      border-radius: 5px;
+      padding: .2rem 0;
+      width: 100%;
+    }
+    
+    .header {
+      padding-top: .5rem;
+      padding-bottom: .2rem;
+      border-bottom: 1px #ddd solid;
+    }
+    
+    .header .title {
+      color: #000;
+      font-size: .45rem;
+      line-height: .8rem;
+    }
+    
+    .box {
+      padding: .2rem 0;
+      border-bottom: 1px #ddd solid;
+      overflow: auto;
+      zoom: 1;
+    }
+    
+    .last-box {
+      border-bottom: 0;
+    }
+    .last-box a{
+      background: #939ebc;
+    }
+    .box .img-box {
+      box-sizing: border-box;
+      float: left;
+      width: 50%;
+      padding: .2rem;
+      padding-bottom: 0;
+    }
+    
+    .box .img-box img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="title">奥付云纸钞盒安装教程</div>
+    <div>请选择纸钞机类型</div>
+  </div>
+  <div class="box">
+    <a href="./page1.html">1.连接RS232串口纸钞机</a>
+    <div class="img-box">
+      <img src="../images/instructions/RS232_1.png" alt="">
+      <p>(2下3下)</p>
+    </div>
+    <div class="img-box">
+      <img src="../images/instructions/RS232_2.png" alt="">
+      <p>标准DB9接头</p>
+    </div>
+  </div>
+  <div class="box">
+    <a href="./page2.html">2.连接脉冲纸钞机</a>
+    <div class="img-box">
+      <img src="../images/instructions/maichong_1.png" alt="">
+      <p>(2上3下)</p>
+    </div>
+    <div class="img-box">
+      <img src="../images/instructions/maichong_2.png" alt="">
+      <p>R7U02单线</p>
+    </div>
+  </div>
+  <div class="box last-box">
+    <a href="./page3.html">3.连接其它串口(TTL)纸钞机</a>
+  </div>
+  <script>
+    function setWidth() {
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var new_width = 0;
+      if (width < height) {
+        new_width = width * (1 - (width / height - 375 / 590));
+      } else {
+        new_width = width;
+      }
+      var fontSize = new_width / 6.4;
+      document.documentElement.style.fontSize = fontSize + "px";
+    }
+    setWidth();
+    window.onresize = function () {
+      setWidth();
+    };
+  </script>
+</body>
+
+</html>
