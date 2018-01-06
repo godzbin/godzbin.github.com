@@ -2,7 +2,7 @@
   <div class="Bottom">
     <div model="horizontal" class="layout-bottom">
         <Row>
-            <Col span="1" class="muise-bg">
+            <Col span="2" class="muise-bg">
               <img src="../assets/muise-bg.jpg" alt="">
             </Col>
             <Col span="3" class="muise-btn">
@@ -42,6 +42,7 @@ export default {
     height: 79px;
     line-height: 79px;
     border-top: 1px #ddd solid;
+    background: #fff;
   }
   .muise-bg {
     text-align: left;
