@@ -2,7 +2,7 @@
   <div id="app">
     <div class="layout">
       <Top></Top>
-          <Row class="layout-content">
+      <div class="layout-content">
               <Col :span="spanLeft" class="left-nav-main">
                 <Button type="text" @click="toggleClick" class="toggle-btn">
                   <Icon type="navicon" size="32"></Icon>
@@ -14,7 +14,7 @@
                     <router-view></router-view>
                     </transition>
               </Col>
-          </Row>
+      </div>
       <Bottom></Bottom>
     </div>
 </div>
