@@ -7,13 +7,43 @@
         "a": "超链接"
     }
     var userData = {
-        id: "0",
-        type: "div",
-        text: "",
-        src: "",
-        name: "主界面",
-        style: {},
-        content: []
+        "id": "0",
+        "type": "div",
+        "text": "",
+        "src": "",
+        "name": "主界面",
+        "style": {},
+        "content": [
+            {
+                "style": {
+                    "width": "100%",
+                    "height": "100px",
+                    "background": "#ddd",
+                    "padding": "",
+                    "margin": "",
+                    "color": "",
+                    "fontSize": "",
+                    "lineHeight": "",
+                    "textIndent": "",
+                    "borderWidth": "",
+                    "borderColor": "",
+                    "borderRadius": "",
+                    "borderStyle": "",
+                    "textAlign": "center",
+                    "float": "",
+                    "fontWeight": ""
+                },
+                "type": "div",
+                "name": "自定义盒子",
+                "className": "",
+                "text": "这里可以自己设置界面样式",
+                "src": "",
+                "href": "",
+                "img-list": "",
+                "content": [],
+                "id": "91e7bb7a-65d8-43b9-a20b-34c0b7ac0208"
+            }
+        ]
     };
 
     // 获取元素
