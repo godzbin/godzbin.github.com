@@ -1,0 +1,26 @@
+header {
+    background: #C62F2F;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 99;
+}
+header .main{
+    max-width: 900px;
+}
+header::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+header .logo {
+    float: left;
+    background: #a80d0d;
+    border-radius: 2px;
+    padding: 5px;
+    color: #f0f0f0;
+    font-size: 22px;
+}
