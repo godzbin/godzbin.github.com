@@ -1,0 +1,26 @@
+.godz-nav{
+    border-right: 1px #ddd solid;
+    padding-top: 15px; 
+}
+.nav-title{
+    font-size: 16px;
+    padding: 10px;
+    color:#666;
+}
+.godz-nav .godz-nav-group{
+    padding-bottom: 10px;
+}
+.godz-nav ul{
+    list-style: none;
+}
+.godz-nav ul li{
+    padding: 10px 20px;
+}
+.godz-nav ul li:hover{
+    background: #f0f0f0;
+}
+.godz-nav ul li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}

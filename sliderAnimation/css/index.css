@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+.btn{
+    background: #4d86d1;
+    border: 0;
+    margin: 10px;
+    color:#fff;
+    padding: 10px;
+}
+.body {
+    position: relative;
+    margin: 10px;
+    overflow: auto;
+    zoom: 1;
+}
+
+.mainBox {
+    /*border: 1px #999 solid;*/
+    background: #eee;
+    float: left;
+}
+
+.mainBox2 {
+    margin-left: 100px;
+}
+
+.childBox {
+    position: absolute;
+    background: #f00;
+    margin: 5px;
+    /*float: left;*/
+}
+
+.slider-box{
+    position:  relative;
+}

@@ -1,0 +1,79 @@
+.godz-timeline {
+    padding: 15px;
+    text-align: left;
+}
+
+.godz-timeline .spot {
+    position: relative;
+    padding: 15px 15px 15px 60px;
+}
+
+.godz-timeline .spot::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 20px;
+    left: 27.5px;
+    background: #3188cf;
+    border-radius: 10px;
+}
+
+.godz-timeline .spot::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.godz-timeline .spot .spot-left {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.godz-timeline .spot .dots {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #68bbff;
+    border: 5px #3188cf solid;
+}
+
+.godz-timeline .spot .time {
+    color: #999;
+    padding: 5px 15px 15px 15px;
+}
+
+.godz-timeline .spot .spot-main {
+    padding: 15px;
+    background: #3188cf;
+    color: #fff;
+    border-radius: 5px;
+    animation: loadSpot .5s linear;
+    position: relative;
+}
+
+@keyframes loadSpot {
+    from {
+        left: 50px;
+        opacity: .5;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.godz-timeline .spot:nth-child(2n) .spot-main {
+    background: #68bbff;
+}
+
+.godz-timeline .spot .spot-main .title {
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.godz-timeline .spot .spot-main .desc {
+    line-height: 25px;
+    color: #f0f0f0;
+}
